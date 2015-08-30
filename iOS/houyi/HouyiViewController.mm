@@ -113,11 +113,7 @@ using namespace Houyi;
         
         [self onCreate];
     }
-    
-    [mLabelFPS setText:@""];
-    [mLabelVCount setText:@""];
-    [mLabelElement setText:@""];
-    
+
     [super viewDidLayoutSubviews];
 }
 
