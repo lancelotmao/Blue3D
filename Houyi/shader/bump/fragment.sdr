@@ -1,0 +1,92 @@
+precision highp float;
+
+uniform sampler2D tex;
+uniform sampler2D tex_bump;
+
+// 0 No Texture; 1 Combine; 2 Replace; 3 Modulate
+uniform int uTextureMode;
+
+uniform int iLightingEnabled;
+uniform int iAttenuationEnabled;
+uniform vec4 uLightColor[4];
+uniform int uLightCount;
+uniform vec4 uAmbientLight;
+uniform vec4 uMaterialAmbient;
+uniform vec4 uMaterialDiffuse;
+uniform vec4 uMaterialSpec;
+uniform float uShininess;
+uniform int uDoubleSided;
+uniform vec3 uEyePosition;
+uniform int uIsLightPosFixed;
+
+varying vec2 vTexcoords;
+varying vec4 vPos;
+varying vec3 vNormal;
+varying vec3 vLightPos;
+
+void main() {
+
+	vec3 normal = 2.0 * texture2D(tex_bump, vTexcoords.st).rgb - 1.0;
+    normal = normalize (normal);
+    
+	float density = 0.0;
+    vec4 lightResult = vec4(0.0, 0.0, 0.0, 0.0);
+    if (iLightingEnabled != 0)
+    {
+        lightResult = uAmbientLight * uMaterialAmbient;
+        vec4 posInLightSpace = vPos;
+        vec3 lv = normalize(vLightPos);
+        
+        density = clamp(dot(normal, lv), 0.0, 1.0);
+        lightResult += vec4(uMaterialDiffuse.xyz * uLightColor[0].xyz * density, uMaterialDiffuse.w);
+        
+        // specular light
+        if (uMaterialSpec.w > 0.01 && density > 0.0)
+        {
+            float specPower = 0.0;
+            vec3 camVec = normalize(uEyePosition - posInLightSpace.xyz);
+            vec3 halfV = normalize(lv + camVec);
+            specPower = pow(max(0.0, dot(halfV, normal)), uShininess);
+            lightResult += vec4(uMaterialSpec.xyz * normalize(uLightColor[0].xyz) * specPower, 0);
+        }
+        lightResult = clamp(lightResult, 0.0, 1.0);
+    }
+    else
+    {
+    	lightResult = uMaterialDiffuse;
+        density = 1.0;
+    }
+    
+	if (uTextureMode == 0)
+    {
+        gl_FragColor = lightResult;
+    }
+    else
+    {
+        vec4 texColor = texture2D(tex, vTexcoords);
+        vec4 baseColor = texColor * density;
+        if (uTextureMode == 1)
+        {
+            gl_FragColor = vec4(baseColor.xyz + lightResult.xyz, texColor.w);
+        }
+        else if(uTextureMode == 2)
+        {
+            gl_FragColor = vec4(baseColor.xyz, texColor.w);
+        }
+        else if(uTextureMode == 3)
+        {
+            gl_FragColor = baseColor * lightResult;
+        }
+        else if(uTextureMode == 4)
+        {
+            if (vTexcoords.s < 0.0 || vTexcoords.t <= 0.0)
+            {
+                gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+            }
+            else
+            {
+                gl_FragColor = vec4(baseColor.xyz + lightResult.xyz, texColor.w);
+            }
+        }
+    }
+}

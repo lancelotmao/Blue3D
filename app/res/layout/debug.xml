@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    >
+
+    <TextView
+        android:id="@+id/tv_fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="FPS:" />
+
+    <TextView
+        android:id="@+id/tv_vcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vertex Count:" />
+    
+    <TextView
+        android:id="@+id/tv_element_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element Count:" />
+
+</LinearLayout>

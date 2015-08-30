@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_frame">
+	
+    <ImageView android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="?android:attr/actionBarSize"
+	    android:src="@drawable/pause"
+	    android:id = "@+id/iv_play"
+	    android:layout_gravity="top|center"
+	    android:visibility="gone">
+    </ImageView>
+</FrameLayout>

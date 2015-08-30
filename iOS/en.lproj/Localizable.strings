@@ -1,0 +1,35 @@
+/* 
+  File.strings
+  Houyi
+
+  Created by Lance Mao on 1/2/14.
+  Copyright (c) 2014 Lance Mao. All rights reserved.
+*/
+
+"Samples" = "Samples";
+"Pocket 3D" = "Blue 3D";
+"My GPU" = "GPU";
+"Log Out" = "Log Out";
+"Go Up" = "Go Up";
+"DropBox Root" = "My Drop Box";
+"File" = "File";
+"Files" = "Files";
+
+"downloading_texture" = "Downloading Texture";
+"yes" = "Yes";
+"no" = "No";
+"about" = "Thanks for choosing Blue 3D!";
+"about_content" = "Quick control tip:\n- Use two finger pinching and paning to look around\n- Double click on screen to restore to initial position";
+"check_it_out" = "Check it out";
+"later" = "Later";
+"iap_title" = "Free Version can download %d models only. Please upgrade to Pro Version.";
+"iap_content" = "Pro version allows you to have unlimited dropbox download and also removes ads. Purchase?";
+"show_hide" = "Show/Hide";
+"control" = "Control";
+"shading" = "Shading";
+"presentation" = "Presentation";
+"stop_presentation" = "Stop Presentation";
+"screenshot" = "Screen Shot";
+"Purchase Status" = "Purchase Status";
+"Purchase Success" = "Purchase successful. Thanks for buying Blue 3D!";
+"Purchase Failed" = "Error during purchase, please try again later";

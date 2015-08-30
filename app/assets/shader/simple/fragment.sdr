@@ -1,0 +1,34 @@
+precision mediump float;
+
+uniform sampler2D tex;
+
+// 0 No Texture; 1 Combine; 2 Replace; 3 Modulate
+uniform int uTextureMode;
+
+varying vec2 vTexcoords;
+varying vec4 vLightResult;
+varying float vDensity;
+
+void main() {
+	if (uTextureMode == 0)
+    {
+        gl_FragColor = vLightResult;
+    }
+    else
+    {
+        vec4 texColor = texture2D(tex, vTexcoords);
+        vec4 baseColor = texColor * vDensity;
+        if (uTextureMode == 1)
+        {
+            gl_FragColor = baseColor + vLightResult;
+        }
+        else if(uTextureMode == 2)
+        {
+            gl_FragColor = vec4(baseColor.xyz, texColor.w);
+        }
+        else
+        {
+            gl_FragColor = baseColor * vLightResult;
+        }
+    }
+}

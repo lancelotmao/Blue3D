@@ -1,0 +1,2072 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		164F36251B92F186003CADF6 /* HouyiUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 164F36231B92F186003CADF6 /* HouyiUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		164F36261B92F186003CADF6 /* HouyiUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 164F36241B92F186003CADF6 /* HouyiUtils.mm */; };
+		16FFE1D91B92CFE300F8BE19 /* Houyi.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1D81B92CFE300F8BE19 /* Houyi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE1DF1B92CFE300F8BE19 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE1D31B92CFE300F8BE19 /* Houyi.framework */; };
+		16FFE1E61B92CFE300F8BE19 /* HouyiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1E51B92CFE300F8BE19 /* HouyiTests.m */; };
+		16FFE3121B92D1D300F8BE19 /* RubikResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1F11B92D1D300F8BE19 /* RubikResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3131B92D1D300F8BE19 /* RubikResolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1F21B92D1D300F8BE19 /* RubikResolver.cpp */; };
+		16FFE3141B92D1D300F8BE19 /* HouyiHeavenlyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1F41B92D1D300F8BE19 /* HouyiHeavenlyObject.cpp */; };
+		16FFE3151B92D1D300F8BE19 /* HouyiPlanet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1F51B92D1D300F8BE19 /* HouyiPlanet.cpp */; };
+		16FFE3161B92D1D300F8BE19 /* HouyiPlanetarySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1F61B92D1D300F8BE19 /* HouyiPlanetarySystem.cpp */; };
+		16FFE3171B92D1D300F8BE19 /* HouyiSolarSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1F71B92D1D300F8BE19 /* HouyiSolarSystem.cpp */; };
+		16FFE3181B92D1D300F8BE19 /* HouyiHeavenlyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1F91B92D1D300F8BE19 /* HouyiHeavenlyObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3191B92D1D300F8BE19 /* HouyiPlanet.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1FA1B92D1D300F8BE19 /* HouyiPlanet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE31A1B92D1D300F8BE19 /* HouyiPlanetarySystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1FB1B92D1D300F8BE19 /* HouyiPlanetarySystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE31B1B92D1D300F8BE19 /* HouyiSolarSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1FC1B92D1D300F8BE19 /* HouyiSolarSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE31C1B92D1D300F8BE19 /* HouyiStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1FD1B92D1D300F8BE19 /* HouyiStar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3241B92D1D300F8BE19 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE2071B92D1D300F8BE19 /* CMakeLists.txt */; };
+		16FFE3251B92D1D300F8BE19 /* HouyiAABB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2081B92D1D300F8BE19 /* HouyiAABB.cpp */; };
+		16FFE3261B92D1D300F8BE19 /* HouyiAbsListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2091B92D1D300F8BE19 /* HouyiAbsListView.cpp */; };
+		16FFE3271B92D1D300F8BE19 /* HouyiAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20A1B92D1D300F8BE19 /* HouyiAllocator.cpp */; };
+		16FFE3281B92D1D300F8BE19 /* HouyiAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20B1B92D1D300F8BE19 /* HouyiAnimation.cpp */; };
+		16FFE3291B92D1D300F8BE19 /* HouyiAudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20C1B92D1D300F8BE19 /* HouyiAudioManager.cpp */; };
+		16FFE32A1B92D1D300F8BE19 /* HouyiAudioTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20D1B92D1D300F8BE19 /* HouyiAudioTrack.cpp */; };
+		16FFE32B1B92D1D300F8BE19 /* HouyiAxis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20E1B92D1D300F8BE19 /* HouyiAxis.cpp */; };
+		16FFE32C1B92D1D300F8BE19 /* HouyiCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE20F1B92D1D300F8BE19 /* HouyiCamera.cpp */; };
+		16FFE32D1B92D1D300F8BE19 /* HouyiCameraAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2101B92D1D300F8BE19 /* HouyiCameraAnimation.cpp */; };
+		16FFE32E1B92D1D300F8BE19 /* HouyiCameraNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2111B92D1D300F8BE19 /* HouyiCameraNode.cpp */; };
+		16FFE32F1B92D1D300F8BE19 /* HouyiCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2121B92D1D300F8BE19 /* HouyiCanvas.cpp */; };
+		16FFE3301B92D1D300F8BE19 /* HouyiCanvasFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2131B92D1D300F8BE19 /* HouyiCanvasFactory.cpp */; };
+		16FFE3311B92D1D300F8BE19 /* HouyiCapability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2141B92D1D300F8BE19 /* HouyiCapability.cpp */; };
+		16FFE3321B92D1D300F8BE19 /* HouyiCubeEnvMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2151B92D1D300F8BE19 /* HouyiCubeEnvMap.cpp */; };
+		16FFE3331B92D1D300F8BE19 /* HouyiDataInputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2161B92D1D300F8BE19 /* HouyiDataInputStream.cpp */; };
+		16FFE3341B92D1D300F8BE19 /* HouyiFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2171B92D1D300F8BE19 /* HouyiFile.cpp */; };
+		16FFE3351B92D1D300F8BE19 /* HouyiFPCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2181B92D1D300F8BE19 /* HouyiFPCamera.cpp */; };
+		16FFE3361B92D1D300F8BE19 /* HouyiGameWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2191B92D1D300F8BE19 /* HouyiGameWorld.cpp */; };
+		16FFE3371B92D1D300F8BE19 /* HouyiGestureDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21A1B92D1D300F8BE19 /* HouyiGestureDetector.cpp */; };
+		16FFE3381B92D1D300F8BE19 /* HouyiGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21B1B92D1D300F8BE19 /* HouyiGrid.cpp */; };
+		16FFE3391B92D1D300F8BE19 /* HouyiImageFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21C1B92D1D300F8BE19 /* HouyiImageFactory.cpp */; };
+		16FFE33A1B92D1D300F8BE19 /* HouyiJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21D1B92D1D300F8BE19 /* HouyiJointNode.cpp */; };
+		16FFE33B1B92D1D300F8BE19 /* HouyiKeyFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21E1B92D1D300F8BE19 /* HouyiKeyFrame.cpp */; };
+		16FFE33C1B92D1D300F8BE19 /* HouyiLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE21F1B92D1D300F8BE19 /* HouyiLight.cpp */; };
+		16FFE33D1B92D1D300F8BE19 /* HouyiMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2201B92D1D300F8BE19 /* HouyiMap.cpp */; };
+		16FFE33E1B92D1D300F8BE19 /* HouyiMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2211B92D1D300F8BE19 /* HouyiMaterial.cpp */; };
+		16FFE33F1B92D1D300F8BE19 /* HouyiMaterialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2221B92D1D300F8BE19 /* HouyiMaterialManager.cpp */; };
+		16FFE3401B92D1D300F8BE19 /* HouyiMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2231B92D1D300F8BE19 /* HouyiMesh.cpp */; };
+		16FFE3411B92D1D300F8BE19 /* HouyiMeshOptimizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2241B92D1D300F8BE19 /* HouyiMeshOptimizer.cpp */; };
+		16FFE3421B92D1D300F8BE19 /* HouyiModelViewCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2251B92D1D300F8BE19 /* HouyiModelViewCamera.cpp */; };
+		16FFE3431B92D1D300F8BE19 /* HouyiMotionEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2261B92D1D300F8BE19 /* HouyiMotionEvent.cpp */; };
+		16FFE3441B92D1D300F8BE19 /* HouyiNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2271B92D1D300F8BE19 /* HouyiNode.cpp */; };
+		16FFE3451B92D1D300F8BE19 /* HouyiObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2281B92D1D300F8BE19 /* HouyiObject.cpp */; };
+		16FFE3461B92D1D300F8BE19 /* HouyiOrthographicCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2291B92D1D300F8BE19 /* HouyiOrthographicCamera.cpp */; };
+		16FFE3471B92D1D300F8BE19 /* HouyiPopupWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22A1B92D1D300F8BE19 /* HouyiPopupWorld.cpp */; };
+		16FFE3481B92D1D300F8BE19 /* HouyiRenderEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22B1B92D1D300F8BE19 /* HouyiRenderEntity.cpp */; };
+		16FFE3491B92D1D300F8BE19 /* HouyiRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22C1B92D1D300F8BE19 /* HouyiRenderer.cpp */; };
+		16FFE34A1B92D1D300F8BE19 /* HouyiRigidBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22D1B92D1D300F8BE19 /* HouyiRigidBody.cpp */; };
+		16FFE34B1B92D1D300F8BE19 /* HouyiRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22E1B92D1D300F8BE19 /* HouyiRoot.cpp */; };
+		16FFE34C1B92D1D300F8BE19 /* HouyiScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE22F1B92D1D300F8BE19 /* HouyiScene.cpp */; };
+		16FFE34D1B92D1D300F8BE19 /* HouyiSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2301B92D1D300F8BE19 /* HouyiSceneManager.cpp */; };
+		16FFE34E1B92D1D300F8BE19 /* HouyiSceneNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2311B92D1D300F8BE19 /* HouyiSceneNode.cpp */; };
+		16FFE34F1B92D1D300F8BE19 /* HouyiSceneNodeAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2321B92D1D300F8BE19 /* HouyiSceneNodeAnimation.cpp */; };
+		16FFE3501B92D1D300F8BE19 /* HouyiSceneOptimizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2331B92D1D300F8BE19 /* HouyiSceneOptimizer.cpp */; };
+		16FFE3511B92D1D300F8BE19 /* HouyiSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2341B92D1D300F8BE19 /* HouyiSettings.cpp */; };
+		16FFE3521B92D1D300F8BE19 /* HouyiShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2351B92D1D300F8BE19 /* HouyiShaderManager.cpp */; };
+		16FFE3531B92D1D300F8BE19 /* HouyiSkeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2361B92D1D300F8BE19 /* HouyiSkeleton.cpp */; };
+		16FFE3541B92D1D300F8BE19 /* HouyiSphereEnvMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2371B92D1D300F8BE19 /* HouyiSphereEnvMap.cpp */; };
+		16FFE3551B92D1D300F8BE19 /* HouyiStringUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2381B92D1D300F8BE19 /* HouyiStringUtils.cpp */; };
+		16FFE3561B92D1D300F8BE19 /* HouyiSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2391B92D1D300F8BE19 /* HouyiSurface.cpp */; };
+		16FFE3571B92D1D300F8BE19 /* HouyiTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23A1B92D1D300F8BE19 /* HouyiTexture.cpp */; };
+		16FFE3581B92D1D300F8BE19 /* HouyiTextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23B1B92D1D300F8BE19 /* HouyiTextureManager.cpp */; };
+		16FFE3591B92D1D300F8BE19 /* HouyiTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23C1B92D1D300F8BE19 /* HouyiTransform.cpp */; };
+		16FFE35A1B92D1D300F8BE19 /* HouyiUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23D1B92D1D300F8BE19 /* HouyiUtil.cpp */; };
+		16FFE35B1B92D1D300F8BE19 /* HouyiVertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23E1B92D1D300F8BE19 /* HouyiVertexBuffer.cpp */; };
+		16FFE35C1B92D1D300F8BE19 /* HouyiViewState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE23F1B92D1D300F8BE19 /* HouyiViewState.cpp */; };
+		16FFE35D1B92D1D300F8BE19 /* HouyiViewStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2401B92D1D300F8BE19 /* HouyiViewStateManager.cpp */; };
+		16FFE35E1B92D1D300F8BE19 /* HouyiWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2411B92D1D300F8BE19 /* HouyiWorld.cpp */; };
+		16FFE3601B92D1D300F8BE19 /* HouyiAABB.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2441B92D1D300F8BE19 /* HouyiAABB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3611B92D1D300F8BE19 /* HouyiAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2451B92D1D300F8BE19 /* HouyiAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3621B92D1D300F8BE19 /* HouyiAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2461B92D1D300F8BE19 /* HouyiAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3631B92D1D300F8BE19 /* HouyiArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2471B92D1D300F8BE19 /* HouyiArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3641B92D1D300F8BE19 /* HouyiAudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2481B92D1D300F8BE19 /* HouyiAudioManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3651B92D1D300F8BE19 /* HouyiAudioTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2491B92D1D300F8BE19 /* HouyiAudioTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3661B92D1D300F8BE19 /* HouyiAxis.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24A1B92D1D300F8BE19 /* HouyiAxis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3671B92D1D300F8BE19 /* HouyiCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24B1B92D1D300F8BE19 /* HouyiCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3681B92D1D300F8BE19 /* HouyiCameraAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24C1B92D1D300F8BE19 /* HouyiCameraAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3691B92D1D300F8BE19 /* HouyiCameraNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24D1B92D1D300F8BE19 /* HouyiCameraNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36A1B92D1D300F8BE19 /* HouyiCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24E1B92D1D300F8BE19 /* HouyiCanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36B1B92D1D300F8BE19 /* HouyiCanvasFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE24F1B92D1D300F8BE19 /* HouyiCanvasFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36C1B92D1D300F8BE19 /* HouyiCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2501B92D1D300F8BE19 /* HouyiCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36D1B92D1D300F8BE19 /* HouyiColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2511B92D1D300F8BE19 /* HouyiColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36E1B92D1D300F8BE19 /* HouyiConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2521B92D1D300F8BE19 /* HouyiConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE36F1B92D1D300F8BE19 /* HouyiCubeEnvMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2531B92D1D300F8BE19 /* HouyiCubeEnvMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3701B92D1D300F8BE19 /* HouyiDataInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2541B92D1D300F8BE19 /* HouyiDataInputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3711B92D1D300F8BE19 /* HouyiDataOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2551B92D1D300F8BE19 /* HouyiDataOutputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3721B92D1D300F8BE19 /* HouyiDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2561B92D1D300F8BE19 /* HouyiDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3731B92D1D300F8BE19 /* HouyiFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2571B92D1D300F8BE19 /* HouyiFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3741B92D1D300F8BE19 /* HouyiForce.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2581B92D1D300F8BE19 /* HouyiForce.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3751B92D1D300F8BE19 /* HouyiFPCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2591B92D1D300F8BE19 /* HouyiFPCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3761B92D1D300F8BE19 /* HouyiGameWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25A1B92D1D300F8BE19 /* HouyiGameWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3771B92D1D300F8BE19 /* HouyiGestureDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25B1B92D1D300F8BE19 /* HouyiGestureDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3781B92D1D300F8BE19 /* HouyiGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25C1B92D1D300F8BE19 /* HouyiGrid.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3791B92D1D300F8BE19 /* HouyiImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25D1B92D1D300F8BE19 /* HouyiImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37A1B92D1D300F8BE19 /* HouyiImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25E1B92D1D300F8BE19 /* HouyiImageFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37B1B92D1D300F8BE19 /* HouyiIndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE25F1B92D1D300F8BE19 /* HouyiIndexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37C1B92D1D300F8BE19 /* HouyiJointNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2601B92D1D300F8BE19 /* HouyiJointNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37D1B92D1D300F8BE19 /* HouyiKeyFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2611B92D1D300F8BE19 /* HouyiKeyFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37E1B92D1D300F8BE19 /* HouyiLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2621B92D1D300F8BE19 /* HouyiLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE37F1B92D1D300F8BE19 /* HouyiLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2631B92D1D300F8BE19 /* HouyiLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3801B92D1D300F8BE19 /* HouyiMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2641B92D1D300F8BE19 /* HouyiMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3811B92D1D300F8BE19 /* HouyiMapLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2651B92D1D300F8BE19 /* HouyiMapLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3821B92D1D300F8BE19 /* HouyiMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2661B92D1D300F8BE19 /* HouyiMaterial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3831B92D1D300F8BE19 /* HouyiMaterialManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2671B92D1D300F8BE19 /* HouyiMaterialManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3841B92D1D300F8BE19 /* HouyiMemoryPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2681B92D1D300F8BE19 /* HouyiMemoryPool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3851B92D1D300F8BE19 /* HouyiMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2691B92D1D300F8BE19 /* HouyiMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3861B92D1D300F8BE19 /* HouyiMeshOptimizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26A1B92D1D300F8BE19 /* HouyiMeshOptimizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3871B92D1D300F8BE19 /* HouyiModelViewCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26B1B92D1D300F8BE19 /* HouyiModelViewCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3881B92D1D300F8BE19 /* HouyiMotionEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26C1B92D1D300F8BE19 /* HouyiMotionEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3891B92D1D300F8BE19 /* HouyiNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26D1B92D1D300F8BE19 /* HouyiNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38A1B92D1D300F8BE19 /* HouyiObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26E1B92D1D300F8BE19 /* HouyiObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38B1B92D1D300F8BE19 /* HouyiOrthographicCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE26F1B92D1D300F8BE19 /* HouyiOrthographicCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38C1B92D1D300F8BE19 /* HouyiPopupWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2701B92D1D300F8BE19 /* HouyiPopupWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38D1B92D1D300F8BE19 /* HouyiRenderEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2711B92D1D300F8BE19 /* HouyiRenderEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38E1B92D1D300F8BE19 /* HouyiRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2721B92D1D300F8BE19 /* HouyiRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE38F1B92D1D300F8BE19 /* HouyiRenderState.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2731B92D1D300F8BE19 /* HouyiRenderState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3901B92D1D300F8BE19 /* HouyiRenderTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2741B92D1D300F8BE19 /* HouyiRenderTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3911B92D1D300F8BE19 /* HouyiRigidBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2751B92D1D300F8BE19 /* HouyiRigidBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3921B92D1D300F8BE19 /* HouyiRoot.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2761B92D1D300F8BE19 /* HouyiRoot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3931B92D1D300F8BE19 /* HouyiScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2771B92D1D300F8BE19 /* HouyiScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3941B92D1D300F8BE19 /* HouyiSceneManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2781B92D1D300F8BE19 /* HouyiSceneManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3951B92D1D300F8BE19 /* HouyiSceneNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2791B92D1D300F8BE19 /* HouyiSceneNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3961B92D1D300F8BE19 /* HouyiSceneNodeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27A1B92D1D300F8BE19 /* HouyiSceneNodeAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3971B92D1D300F8BE19 /* HouyiSceneOptimizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27B1B92D1D300F8BE19 /* HouyiSceneOptimizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3981B92D1D300F8BE19 /* HouyiSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27C1B92D1D300F8BE19 /* HouyiSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3991B92D1D300F8BE19 /* HouyiSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27D1B92D1D300F8BE19 /* HouyiSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39A1B92D1D300F8BE19 /* HouyiShaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27E1B92D1D300F8BE19 /* HouyiShaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39B1B92D1D300F8BE19 /* HouyiSkeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE27F1B92D1D300F8BE19 /* HouyiSkeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39C1B92D1D300F8BE19 /* HouyiSphereEnvMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2801B92D1D300F8BE19 /* HouyiSphereEnvMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39D1B92D1D300F8BE19 /* HouyiStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2811B92D1D300F8BE19 /* HouyiStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39E1B92D1D300F8BE19 /* HouyiStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2821B92D1D300F8BE19 /* HouyiStringUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE39F1B92D1D300F8BE19 /* HouyiSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2831B92D1D300F8BE19 /* HouyiSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A01B92D1D300F8BE19 /* HouyiTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2841B92D1D300F8BE19 /* HouyiTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A11B92D1D300F8BE19 /* HouyiTextureManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2851B92D1D300F8BE19 /* HouyiTextureManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A21B92D1D300F8BE19 /* HouyiTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2861B92D1D300F8BE19 /* HouyiTransform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A31B92D1D300F8BE19 /* HouyiUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2871B92D1D300F8BE19 /* HouyiUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A41B92D1D300F8BE19 /* HouyiVertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2881B92D1D300F8BE19 /* HouyiVertexBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A51B92D1D300F8BE19 /* HouyiViewState.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2891B92D1D300F8BE19 /* HouyiViewState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A61B92D1D300F8BE19 /* HouyiViewStateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28A1B92D1D300F8BE19 /* HouyiViewStateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A71B92D1D300F8BE19 /* HouyiWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28B1B92D1D300F8BE19 /* HouyiWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A81B92D1D300F8BE19 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28C1B92D1D300F8BE19 /* Platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3A91B92D1D300F8BE19 /* RefCount.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28D1B92D1D300F8BE19 /* RefCount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3AA1B92D1D300F8BE19 /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28E1B92D1D300F8BE19 /* SmartPtr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3AB1B92D1D300F8BE19 /* TextureImageChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE28F1B92D1D300F8BE19 /* TextureImageChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3AC1B92D1D300F8BE19 /* HouyiiOSAudioTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2911B92D1D300F8BE19 /* HouyiiOSAudioTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3AD1B92D1D300F8BE19 /* HouyiiOSAudoTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2921B92D1D300F8BE19 /* HouyiiOSAudoTrack.cpp */; };
+		16FFE3AE1B92D1D300F8BE19 /* HouyiiOSCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2931B92D1D300F8BE19 /* HouyiiOSCanvas.cpp */; };
+		16FFE3AF1B92D1D300F8BE19 /* HouyiiOSCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2941B92D1D300F8BE19 /* HouyiiOSCanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3B01B92D1D300F8BE19 /* HouyiiOSImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2951B92D1D300F8BE19 /* HouyiiOSImage.cpp */; };
+		16FFE3B11B92D1D300F8BE19 /* HouyiiOSImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2961B92D1D300F8BE19 /* HouyiiOSImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3B21B92D1D300F8BE19 /* ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2971B92D1D300F8BE19 /* ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3B31B92D1D300F8BE19 /* TextureImageChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2981B92D1D300F8BE19 /* TextureImageChecker.cpp */; };
+		16FFE3B41B92D1D300F8BE19 /* HouyiCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29A1B92D1D300F8BE19 /* HouyiCircle.cpp */; };
+		16FFE3B51B92D1D300F8BE19 /* HouyiCircleOutline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29B1B92D1D300F8BE19 /* HouyiCircleOutline.cpp */; };
+		16FFE3B61B92D1D300F8BE19 /* HouyiCone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29C1B92D1D300F8BE19 /* HouyiCone.cpp */; };
+		16FFE3B71B92D1D300F8BE19 /* HouyiCuboid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29D1B92D1D300F8BE19 /* HouyiCuboid.cpp */; };
+		16FFE3B81B92D1D300F8BE19 /* HouyiCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29E1B92D1D300F8BE19 /* HouyiCylinder.cpp */; };
+		16FFE3B91B92D1D300F8BE19 /* HouyiGeoPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE29F1B92D1D300F8BE19 /* HouyiGeoPlane.cpp */; };
+		16FFE3BA1B92D1D300F8BE19 /* HouyiGeoSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2A01B92D1D300F8BE19 /* HouyiGeoSphere.cpp */; };
+		16FFE3BB1B92D1D300F8BE19 /* HouyiRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2A11B92D1D300F8BE19 /* HouyiRing.cpp */; };
+		16FFE3BC1B92D1D300F8BE19 /* HouyiCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A31B92D1D300F8BE19 /* HouyiCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3BD1B92D1D300F8BE19 /* HouyiCircleOutline.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A41B92D1D300F8BE19 /* HouyiCircleOutline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3BE1B92D1D300F8BE19 /* HouyiCone.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A51B92D1D300F8BE19 /* HouyiCone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3BF1B92D1D300F8BE19 /* HouyiCuboid.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A61B92D1D300F8BE19 /* HouyiCuboid.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C01B92D1D300F8BE19 /* HouyiCylinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A71B92D1D300F8BE19 /* HouyiCylinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C11B92D1D300F8BE19 /* HouyiGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A81B92D1D300F8BE19 /* HouyiGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C21B92D1D300F8BE19 /* HouyiGeoPlane.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2A91B92D1D300F8BE19 /* HouyiGeoPlane.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C31B92D1D300F8BE19 /* HouyiGeoSphere.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2AA1B92D1D300F8BE19 /* HouyiGeoSphere.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C41B92D1D300F8BE19 /* HouyiPrime.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2AB1B92D1D300F8BE19 /* HouyiPrime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C51B92D1D300F8BE19 /* HouyiRing.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2AC1B92D1D300F8BE19 /* HouyiRing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3C61B92D1D300F8BE19 /* SmallPT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2AE1B92D1D300F8BE19 /* SmallPT.cpp */; };
+		16FFE3C71B92D1D300F8BE19 /* HouyiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B01B92D1D300F8BE19 /* HouyiButton.cpp */; };
+		16FFE3C81B92D1D300F8BE19 /* HouyiDragImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B11B92D1D300F8BE19 /* HouyiDragImageView.cpp */; };
+		16FFE3C91B92D1D300F8BE19 /* HouyiEditableImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B21B92D1D300F8BE19 /* HouyiEditableImageView.cpp */; };
+		16FFE3CA1B92D1D300F8BE19 /* HouyiImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B31B92D1D300F8BE19 /* HouyiImageView.cpp */; };
+		16FFE3CB1B92D1D300F8BE19 /* HouyiListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B41B92D1D300F8BE19 /* HouyiListView.cpp */; };
+		16FFE3CC1B92D1D300F8BE19 /* HouyiTextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B51B92D1D300F8BE19 /* HouyiTextView.cpp */; };
+		16FFE3CD1B92D1D300F8BE19 /* HouyiTileImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B61B92D1D300F8BE19 /* HouyiTileImageView.cpp */; };
+		16FFE3CE1B92D1D300F8BE19 /* HouyiView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B71B92D1D300F8BE19 /* HouyiView.cpp */; };
+		16FFE3CF1B92D1D300F8BE19 /* HouyiWaveformView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2B81B92D1D300F8BE19 /* HouyiWaveformView.cpp */; };
+		16FFE3D01B92D1D300F8BE19 /* HouyiAbsListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BA1B92D1D300F8BE19 /* HouyiAbsListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D11B92D1D300F8BE19 /* HouyiAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BB1B92D1D300F8BE19 /* HouyiAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D21B92D1D300F8BE19 /* HouyiButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BC1B92D1D300F8BE19 /* HouyiButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D31B92D1D300F8BE19 /* HouyiDragImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BD1B92D1D300F8BE19 /* HouyiDragImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D41B92D1D300F8BE19 /* HouyiEditableImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BE1B92D1D300F8BE19 /* HouyiEditableImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D51B92D1D300F8BE19 /* HouyiImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2BF1B92D1D300F8BE19 /* HouyiImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D61B92D1D300F8BE19 /* HouyiListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C01B92D1D300F8BE19 /* HouyiListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D71B92D1D300F8BE19 /* HouyiTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C11B92D1D300F8BE19 /* HouyiTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D81B92D1D300F8BE19 /* HouyiTileImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C21B92D1D300F8BE19 /* HouyiTileImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3D91B92D1D300F8BE19 /* HouyiUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C31B92D1D300F8BE19 /* HouyiUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3DA1B92D1D300F8BE19 /* HouyiView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C41B92D1D300F8BE19 /* HouyiView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3DB1B92D1D300F8BE19 /* HouyiWaveformView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2C51B92D1D300F8BE19 /* HouyiWaveformView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3DC1B92D1D300F8BE19 /* Collada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2C71B92D1D300F8BE19 /* Collada.cpp */; };
+		16FFE3DD1B92D1D300F8BE19 /* Houyi3dsLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2C81B92D1D300F8BE19 /* Houyi3dsLoader.cpp */; };
+		16FFE3DE1B92D1D300F8BE19 /* HouyiAbsColladaLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2C91B92D1D300F8BE19 /* HouyiAbsColladaLoader.cpp */; };
+		16FFE3DF1B92D1D300F8BE19 /* HouyiColladaLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CA1B92D1D300F8BE19 /* HouyiColladaLoader.cpp */; };
+		16FFE3E01B92D1D300F8BE19 /* HouyiDefaultLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CB1B92D1D300F8BE19 /* HouyiDefaultLoader.cpp */; };
+		16FFE3E11B92D1D300F8BE19 /* HouyiDefaultSaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CC1B92D1D300F8BE19 /* HouyiDefaultSaver.cpp */; };
+		16FFE3E21B92D1D300F8BE19 /* HouyiLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CD1B92D1D300F8BE19 /* HouyiLoader.cpp */; };
+		16FFE3E31B92D1D300F8BE19 /* HouyiMapLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CE1B92D1D300F8BE19 /* HouyiMapLoader.cpp */; };
+		16FFE3E41B92D1D300F8BE19 /* HouyiObjLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2CF1B92D1D300F8BE19 /* HouyiObjLoader.cpp */; };
+		16FFE3E51B92D1D300F8BE19 /* HouyiSaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2D01B92D1D300F8BE19 /* HouyiSaver.cpp */; };
+		16FFE3E61B92D1D300F8BE19 /* HouyiStlLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2D11B92D1D300F8BE19 /* HouyiStlLoader.cpp */; };
+		16FFE3E71B92D1D300F8BE19 /* Collada.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D31B92D1D300F8BE19 /* Collada.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3E81B92D1D300F8BE19 /* Houyi3dsLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D41B92D1D300F8BE19 /* Houyi3dsLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3E91B92D1D300F8BE19 /* HouyiAbsColladaLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D51B92D1D300F8BE19 /* HouyiAbsColladaLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3EA1B92D1D300F8BE19 /* HouyiColladaLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D61B92D1D300F8BE19 /* HouyiColladaLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3EB1B92D1D300F8BE19 /* HouyiDefaultLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D71B92D1D300F8BE19 /* HouyiDefaultLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3EC1B92D1D300F8BE19 /* HouyiDefaultSaver.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D81B92D1D300F8BE19 /* HouyiDefaultSaver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3ED1B92D1D300F8BE19 /* HouyiLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2D91B92D1D300F8BE19 /* HouyiLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3EE1B92D1D300F8BE19 /* HouyiMapLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2DA1B92D1D300F8BE19 /* HouyiMapLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3EF1B92D1D300F8BE19 /* HouyiObjLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2DB1B92D1D300F8BE19 /* HouyiObjLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3F01B92D1D300F8BE19 /* HouyiSaver.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2DC1B92D1D300F8BE19 /* HouyiSaver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3F11B92D1D300F8BE19 /* HouyiStlLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2DD1B92D1D300F8BE19 /* HouyiStlLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3F21B92D1D300F8BE19 /* HouyiVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2DE1B92D1D300F8BE19 /* HouyiVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3F31B92D1D300F8BE19 /* HouyiMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E01B92D1D300F8BE19 /* HouyiMath.cpp */; };
+		16FFE3F41B92D1D300F8BE19 /* HouyiMatrix3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E11B92D1D300F8BE19 /* HouyiMatrix3.cpp */; };
+		16FFE3F51B92D1D300F8BE19 /* HouyiMatrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E21B92D1D300F8BE19 /* HouyiMatrix4.cpp */; };
+		16FFE3F61B92D1D300F8BE19 /* HouyiPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E31B92D1D300F8BE19 /* HouyiPlane.cpp */; };
+		16FFE3F71B92D1D300F8BE19 /* HouyiQuaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E41B92D1D300F8BE19 /* HouyiQuaternion.cpp */; };
+		16FFE3F81B92D1D300F8BE19 /* HouyiSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E51B92D1D300F8BE19 /* HouyiSphere.cpp */; };
+		16FFE3F91B92D1D300F8BE19 /* HouyiVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E61B92D1D300F8BE19 /* HouyiVector2.cpp */; };
+		16FFE3FA1B92D1D300F8BE19 /* HouyiVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E71B92D1D300F8BE19 /* HouyiVector3.cpp */; };
+		16FFE3FB1B92D1D300F8BE19 /* HouyiVector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2E81B92D1D300F8BE19 /* HouyiVector4.cpp */; };
+		16FFE3FC1B92D1D300F8BE19 /* HouyiAxisAlignedBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2EA1B92D1D300F8BE19 /* HouyiAxisAlignedBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3FD1B92D1D300F8BE19 /* HouyiMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2EB1B92D1D300F8BE19 /* HouyiMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3FE1B92D1D300F8BE19 /* HouyiMatrix3.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2EC1B92D1D300F8BE19 /* HouyiMatrix3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE3FF1B92D1D300F8BE19 /* HouyiMatrix4.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2ED1B92D1D300F8BE19 /* HouyiMatrix4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4001B92D1D300F8BE19 /* HouyiPlane.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2EE1B92D1D300F8BE19 /* HouyiPlane.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4011B92D1D300F8BE19 /* HouyiPlaneBoundedVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2EF1B92D1D300F8BE19 /* HouyiPlaneBoundedVolume.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4021B92D1D300F8BE19 /* HouyiQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F01B92D1D300F8BE19 /* HouyiQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4031B92D1D300F8BE19 /* HouyiRay.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F11B92D1D300F8BE19 /* HouyiRay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4041B92D1D300F8BE19 /* HouyiSphere.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F21B92D1D300F8BE19 /* HouyiSphere.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4051B92D1D300F8BE19 /* HouyiVector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F31B92D1D300F8BE19 /* HouyiVector2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4061B92D1D300F8BE19 /* HouyiVector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F41B92D1D300F8BE19 /* HouyiVector3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4071B92D1D300F8BE19 /* HouyiVector4.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F51B92D1D300F8BE19 /* HouyiVector4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4081B92D1D300F8BE19 /* HRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE2F61B92D1D300F8BE19 /* HRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4091B92D1D300F8BE19 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE2F81B92D1D300F8BE19 /* CMakeLists.txt */; };
+		16FFE40A1B92D1D300F8BE19 /* HouyiGLDefaultPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FA1B92D1D300F8BE19 /* HouyiGLDefaultPass.cpp */; };
+		16FFE40B1B92D1D300F8BE19 /* HouyiGLEnvPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FB1B92D1D300F8BE19 /* HouyiGLEnvPass.cpp */; };
+		16FFE40C1B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FC1B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.cpp */; };
+		16FFE40D1B92D1D300F8BE19 /* HouyiGLESRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FD1B92D1D300F8BE19 /* HouyiGLESRenderer.cpp */; };
+		16FFE40E1B92D1D300F8BE19 /* HouyiGLESTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FE1B92D1D300F8BE19 /* HouyiGLESTexture.cpp */; };
+		16FFE40F1B92D1D300F8BE19 /* HouyiGLFirePass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE2FF1B92D1D300F8BE19 /* HouyiGLFirePass.cpp */; };
+		16FFE4101B92D1D300F8BE19 /* HouyiGLPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE3001B92D1D300F8BE19 /* HouyiGLPass.cpp */; };
+		16FFE4111B92D1D300F8BE19 /* HouyiGLShadowPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE3011B92D1D300F8BE19 /* HouyiGLShadowPass.cpp */; };
+		16FFE4121B92D1D300F8BE19 /* HouyiGLUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE3021B92D1D300F8BE19 /* HouyiGLUtils.cpp */; };
+		16FFE4131B92D1D300F8BE19 /* glshaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3041B92D1D300F8BE19 /* glshaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4141B92D1D300F8BE19 /* HIShaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3051B92D1D300F8BE19 /* HIShaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4151B92D1D300F8BE19 /* HouyiGLDefaultPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3061B92D1D300F8BE19 /* HouyiGLDefaultPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4161B92D1D300F8BE19 /* HouyiGLEnvPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3071B92D1D300F8BE19 /* HouyiGLEnvPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4171B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3081B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4181B92D1D300F8BE19 /* HouyiGLESRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3091B92D1D300F8BE19 /* HouyiGLESRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4191B92D1D300F8BE19 /* HouyiGLESTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30A1B92D1D300F8BE19 /* HouyiGLESTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE41A1B92D1D300F8BE19 /* HouyiGLFirePass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30B1B92D1D300F8BE19 /* HouyiGLFirePass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE41B1B92D1D300F8BE19 /* HouyiGLPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30C1B92D1D300F8BE19 /* HouyiGLPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE41C1B92D1D300F8BE19 /* HouyiGLShadowPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30D1B92D1D300F8BE19 /* HouyiGLShadowPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE41D1B92D1D300F8BE19 /* HouyiGLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30E1B92D1D300F8BE19 /* HouyiGLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE41E1B92D1D300F8BE19 /* HouyiPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE30F1B92D1D300F8BE19 /* HouyiPass.cpp */; };
+		16FFE41F1B92D1D300F8BE19 /* HouyiPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3111B92D1D300F8BE19 /* HouyiPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16FFE4661B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4221B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4231B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4681B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4251B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4691B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4261B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE46A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4281B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4291B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE46C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42B1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE46D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42C1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE46E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42E1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE46F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42F1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4701B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4311B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4711B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4321B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4721B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4341B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4351B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4741B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4371B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4751B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4381B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4761B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43A1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4771B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43B1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4781B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43D1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4791B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43E1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4401B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE47B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4411B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE47C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4431B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE47D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4441B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE47E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4461B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4471B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4801B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4491B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4811B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44A1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4821B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44C1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4831B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44D1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4841B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44F1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4851B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4501B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4861B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4521B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4871B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4531B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4881B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4551B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4891B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4561B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE48A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4581B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE48B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4591B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE48C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45B1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE48D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45C1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45E1B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE48F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45F1B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4901B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4611B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4911B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4621B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4921B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4641B92D23300F8BE19 /* fragment.sdr */; };
+		16FFE4931B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4651B92D23300F8BE19 /* vertex.sdr */; };
+		16FFE4951B92D36F00F8BE19 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4941B92D36F00F8BE19 /* OpenGLES.framework */; };
+		16FFE4971B92D37600F8BE19 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4961B92D37600F8BE19 /* libxml2.dylib */; };
+		16FFE4991B92D39400F8BE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4981B92D39400F8BE19 /* Foundation.framework */; };
+		16FFE49B1B92D3CE00F8BE19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE49A1B92D3CE00F8BE19 /* UIKit.framework */; };
+		16FFE49D1B92D3D700F8BE19 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE49C1B92D3D700F8BE19 /* GLKit.framework */; };
+		16FFE49F1B92D60F00F8BE19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE49E1B92D60F00F8BE19 /* CoreGraphics.framework */; };
+		16FFE4A11B92D61A00F8BE19 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4A01B92D61A00F8BE19 /* CoreMedia.framework */; };
+		16FFE4A71B92D99E00F8BE19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4A61B92D99E00F8BE19 /* AVFoundation.framework */; };
+		16FFE4A91B92D9E900F8BE19 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4A81B92D9E900F8BE19 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16FFE1E01B92CFE300F8BE19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16FFE1CA1B92CFE300F8BE19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16FFE1D21B92CFE300F8BE19;
+			remoteInfo = Houyi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		164F36231B92F186003CADF6 /* HouyiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiUtils.h; sourceTree = "<group>"; };
+		164F36241B92F186003CADF6 /* HouyiUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HouyiUtils.mm; sourceTree = "<group>"; };
+		16FFE1D31B92CFE300F8BE19 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Houyi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16FFE1D71B92CFE300F8BE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16FFE1D81B92CFE300F8BE19 /* Houyi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Houyi.h; sourceTree = "<group>"; };
+		16FFE1DE1B92CFE300F8BE19 /* HouyiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouyiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16FFE1E41B92CFE300F8BE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16FFE1E51B92CFE300F8BE19 /* HouyiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouyiTests.m; sourceTree = "<group>"; };
+		16FFE1F11B92D1D300F8BE19 /* RubikResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubikResolver.h; sourceTree = "<group>"; };
+		16FFE1F21B92D1D300F8BE19 /* RubikResolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RubikResolver.cpp; sourceTree = "<group>"; };
+		16FFE1F41B92D1D300F8BE19 /* HouyiHeavenlyObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiHeavenlyObject.cpp; sourceTree = "<group>"; };
+		16FFE1F51B92D1D300F8BE19 /* HouyiPlanet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiPlanet.cpp; sourceTree = "<group>"; };
+		16FFE1F61B92D1D300F8BE19 /* HouyiPlanetarySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiPlanetarySystem.cpp; sourceTree = "<group>"; };
+		16FFE1F71B92D1D300F8BE19 /* HouyiSolarSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSolarSystem.cpp; sourceTree = "<group>"; };
+		16FFE1F91B92D1D300F8BE19 /* HouyiHeavenlyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiHeavenlyObject.h; sourceTree = "<group>"; };
+		16FFE1FA1B92D1D300F8BE19 /* HouyiPlanet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPlanet.h; sourceTree = "<group>"; };
+		16FFE1FB1B92D1D300F8BE19 /* HouyiPlanetarySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPlanetarySystem.h; sourceTree = "<group>"; };
+		16FFE1FC1B92D1D300F8BE19 /* HouyiSolarSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSolarSystem.h; sourceTree = "<group>"; };
+		16FFE1FD1B92D1D300F8BE19 /* HouyiStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiStar.h; sourceTree = "<group>"; };
+		16FFE2071B92D1D300F8BE19 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		16FFE2081B92D1D300F8BE19 /* HouyiAABB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAABB.cpp; sourceTree = "<group>"; };
+		16FFE2091B92D1D300F8BE19 /* HouyiAbsListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAbsListView.cpp; sourceTree = "<group>"; };
+		16FFE20A1B92D1D300F8BE19 /* HouyiAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAllocator.cpp; sourceTree = "<group>"; };
+		16FFE20B1B92D1D300F8BE19 /* HouyiAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAnimation.cpp; sourceTree = "<group>"; };
+		16FFE20C1B92D1D300F8BE19 /* HouyiAudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAudioManager.cpp; sourceTree = "<group>"; };
+		16FFE20D1B92D1D300F8BE19 /* HouyiAudioTrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAudioTrack.cpp; sourceTree = "<group>"; };
+		16FFE20E1B92D1D300F8BE19 /* HouyiAxis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAxis.cpp; sourceTree = "<group>"; };
+		16FFE20F1B92D1D300F8BE19 /* HouyiCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCamera.cpp; sourceTree = "<group>"; };
+		16FFE2101B92D1D300F8BE19 /* HouyiCameraAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCameraAnimation.cpp; sourceTree = "<group>"; };
+		16FFE2111B92D1D300F8BE19 /* HouyiCameraNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCameraNode.cpp; sourceTree = "<group>"; };
+		16FFE2121B92D1D300F8BE19 /* HouyiCanvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCanvas.cpp; sourceTree = "<group>"; };
+		16FFE2131B92D1D300F8BE19 /* HouyiCanvasFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCanvasFactory.cpp; sourceTree = "<group>"; };
+		16FFE2141B92D1D300F8BE19 /* HouyiCapability.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCapability.cpp; sourceTree = "<group>"; };
+		16FFE2151B92D1D300F8BE19 /* HouyiCubeEnvMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCubeEnvMap.cpp; sourceTree = "<group>"; };
+		16FFE2161B92D1D300F8BE19 /* HouyiDataInputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiDataInputStream.cpp; sourceTree = "<group>"; };
+		16FFE2171B92D1D300F8BE19 /* HouyiFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiFile.cpp; sourceTree = "<group>"; };
+		16FFE2181B92D1D300F8BE19 /* HouyiFPCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiFPCamera.cpp; sourceTree = "<group>"; };
+		16FFE2191B92D1D300F8BE19 /* HouyiGameWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGameWorld.cpp; sourceTree = "<group>"; };
+		16FFE21A1B92D1D300F8BE19 /* HouyiGestureDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGestureDetector.cpp; sourceTree = "<group>"; };
+		16FFE21B1B92D1D300F8BE19 /* HouyiGrid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGrid.cpp; sourceTree = "<group>"; };
+		16FFE21C1B92D1D300F8BE19 /* HouyiImageFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiImageFactory.cpp; sourceTree = "<group>"; };
+		16FFE21D1B92D1D300F8BE19 /* HouyiJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiJointNode.cpp; sourceTree = "<group>"; };
+		16FFE21E1B92D1D300F8BE19 /* HouyiKeyFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiKeyFrame.cpp; sourceTree = "<group>"; };
+		16FFE21F1B92D1D300F8BE19 /* HouyiLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiLight.cpp; sourceTree = "<group>"; };
+		16FFE2201B92D1D300F8BE19 /* HouyiMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMap.cpp; sourceTree = "<group>"; };
+		16FFE2211B92D1D300F8BE19 /* HouyiMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMaterial.cpp; sourceTree = "<group>"; };
+		16FFE2221B92D1D300F8BE19 /* HouyiMaterialManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMaterialManager.cpp; sourceTree = "<group>"; };
+		16FFE2231B92D1D300F8BE19 /* HouyiMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMesh.cpp; sourceTree = "<group>"; };
+		16FFE2241B92D1D300F8BE19 /* HouyiMeshOptimizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMeshOptimizer.cpp; sourceTree = "<group>"; };
+		16FFE2251B92D1D300F8BE19 /* HouyiModelViewCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiModelViewCamera.cpp; sourceTree = "<group>"; };
+		16FFE2261B92D1D300F8BE19 /* HouyiMotionEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMotionEvent.cpp; sourceTree = "<group>"; };
+		16FFE2271B92D1D300F8BE19 /* HouyiNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiNode.cpp; sourceTree = "<group>"; };
+		16FFE2281B92D1D300F8BE19 /* HouyiObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiObject.cpp; sourceTree = "<group>"; };
+		16FFE2291B92D1D300F8BE19 /* HouyiOrthographicCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiOrthographicCamera.cpp; sourceTree = "<group>"; };
+		16FFE22A1B92D1D300F8BE19 /* HouyiPopupWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiPopupWorld.cpp; sourceTree = "<group>"; };
+		16FFE22B1B92D1D300F8BE19 /* HouyiRenderEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiRenderEntity.cpp; sourceTree = "<group>"; };
+		16FFE22C1B92D1D300F8BE19 /* HouyiRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiRenderer.cpp; sourceTree = "<group>"; };
+		16FFE22D1B92D1D300F8BE19 /* HouyiRigidBody.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiRigidBody.cpp; sourceTree = "<group>"; };
+		16FFE22E1B92D1D300F8BE19 /* HouyiRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiRoot.cpp; sourceTree = "<group>"; };
+		16FFE22F1B92D1D300F8BE19 /* HouyiScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiScene.cpp; sourceTree = "<group>"; };
+		16FFE2301B92D1D300F8BE19 /* HouyiSceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSceneManager.cpp; sourceTree = "<group>"; };
+		16FFE2311B92D1D300F8BE19 /* HouyiSceneNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSceneNode.cpp; sourceTree = "<group>"; };
+		16FFE2321B92D1D300F8BE19 /* HouyiSceneNodeAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSceneNodeAnimation.cpp; sourceTree = "<group>"; };
+		16FFE2331B92D1D300F8BE19 /* HouyiSceneOptimizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSceneOptimizer.cpp; sourceTree = "<group>"; };
+		16FFE2341B92D1D300F8BE19 /* HouyiSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSettings.cpp; sourceTree = "<group>"; };
+		16FFE2351B92D1D300F8BE19 /* HouyiShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiShaderManager.cpp; sourceTree = "<group>"; };
+		16FFE2361B92D1D300F8BE19 /* HouyiSkeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSkeleton.cpp; sourceTree = "<group>"; };
+		16FFE2371B92D1D300F8BE19 /* HouyiSphereEnvMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSphereEnvMap.cpp; sourceTree = "<group>"; };
+		16FFE2381B92D1D300F8BE19 /* HouyiStringUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiStringUtils.cpp; sourceTree = "<group>"; };
+		16FFE2391B92D1D300F8BE19 /* HouyiSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSurface.cpp; sourceTree = "<group>"; };
+		16FFE23A1B92D1D300F8BE19 /* HouyiTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiTexture.cpp; sourceTree = "<group>"; };
+		16FFE23B1B92D1D300F8BE19 /* HouyiTextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiTextureManager.cpp; sourceTree = "<group>"; };
+		16FFE23C1B92D1D300F8BE19 /* HouyiTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiTransform.cpp; sourceTree = "<group>"; };
+		16FFE23D1B92D1D300F8BE19 /* HouyiUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiUtil.cpp; sourceTree = "<group>"; };
+		16FFE23E1B92D1D300F8BE19 /* HouyiVertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiVertexBuffer.cpp; sourceTree = "<group>"; };
+		16FFE23F1B92D1D300F8BE19 /* HouyiViewState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiViewState.cpp; sourceTree = "<group>"; };
+		16FFE2401B92D1D300F8BE19 /* HouyiViewStateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiViewStateManager.cpp; sourceTree = "<group>"; };
+		16FFE2411B92D1D300F8BE19 /* HouyiWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiWorld.cpp; sourceTree = "<group>"; };
+		16FFE2441B92D1D300F8BE19 /* HouyiAABB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAABB.h; sourceTree = "<group>"; };
+		16FFE2451B92D1D300F8BE19 /* HouyiAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAllocator.h; sourceTree = "<group>"; };
+		16FFE2461B92D1D300F8BE19 /* HouyiAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAnimation.h; sourceTree = "<group>"; };
+		16FFE2471B92D1D300F8BE19 /* HouyiArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiArray.h; sourceTree = "<group>"; };
+		16FFE2481B92D1D300F8BE19 /* HouyiAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAudioManager.h; sourceTree = "<group>"; };
+		16FFE2491B92D1D300F8BE19 /* HouyiAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAudioTrack.h; sourceTree = "<group>"; };
+		16FFE24A1B92D1D300F8BE19 /* HouyiAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAxis.h; sourceTree = "<group>"; };
+		16FFE24B1B92D1D300F8BE19 /* HouyiCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCamera.h; sourceTree = "<group>"; };
+		16FFE24C1B92D1D300F8BE19 /* HouyiCameraAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCameraAnimation.h; sourceTree = "<group>"; };
+		16FFE24D1B92D1D300F8BE19 /* HouyiCameraNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCameraNode.h; sourceTree = "<group>"; };
+		16FFE24E1B92D1D300F8BE19 /* HouyiCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCanvas.h; sourceTree = "<group>"; };
+		16FFE24F1B92D1D300F8BE19 /* HouyiCanvasFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCanvasFactory.h; sourceTree = "<group>"; };
+		16FFE2501B92D1D300F8BE19 /* HouyiCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCapability.h; sourceTree = "<group>"; };
+		16FFE2511B92D1D300F8BE19 /* HouyiColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiColor.h; sourceTree = "<group>"; };
+		16FFE2521B92D1D300F8BE19 /* HouyiConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiConst.h; sourceTree = "<group>"; };
+		16FFE2531B92D1D300F8BE19 /* HouyiCubeEnvMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCubeEnvMap.h; sourceTree = "<group>"; };
+		16FFE2541B92D1D300F8BE19 /* HouyiDataInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDataInputStream.h; sourceTree = "<group>"; };
+		16FFE2551B92D1D300F8BE19 /* HouyiDataOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDataOutputStream.h; sourceTree = "<group>"; };
+		16FFE2561B92D1D300F8BE19 /* HouyiDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDef.h; sourceTree = "<group>"; };
+		16FFE2571B92D1D300F8BE19 /* HouyiFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiFile.h; sourceTree = "<group>"; };
+		16FFE2581B92D1D300F8BE19 /* HouyiForce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiForce.h; sourceTree = "<group>"; };
+		16FFE2591B92D1D300F8BE19 /* HouyiFPCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiFPCamera.h; sourceTree = "<group>"; };
+		16FFE25A1B92D1D300F8BE19 /* HouyiGameWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGameWorld.h; sourceTree = "<group>"; };
+		16FFE25B1B92D1D300F8BE19 /* HouyiGestureDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGestureDetector.h; sourceTree = "<group>"; };
+		16FFE25C1B92D1D300F8BE19 /* HouyiGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGrid.h; sourceTree = "<group>"; };
+		16FFE25D1B92D1D300F8BE19 /* HouyiImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiImage.h; sourceTree = "<group>"; };
+		16FFE25E1B92D1D300F8BE19 /* HouyiImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiImageFactory.h; sourceTree = "<group>"; };
+		16FFE25F1B92D1D300F8BE19 /* HouyiIndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiIndexBuffer.h; sourceTree = "<group>"; };
+		16FFE2601B92D1D300F8BE19 /* HouyiJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiJointNode.h; sourceTree = "<group>"; };
+		16FFE2611B92D1D300F8BE19 /* HouyiKeyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiKeyFrame.h; sourceTree = "<group>"; };
+		16FFE2621B92D1D300F8BE19 /* HouyiLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiLight.h; sourceTree = "<group>"; };
+		16FFE2631B92D1D300F8BE19 /* HouyiLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiLog.h; sourceTree = "<group>"; };
+		16FFE2641B92D1D300F8BE19 /* HouyiMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMap.h; sourceTree = "<group>"; };
+		16FFE2651B92D1D300F8BE19 /* HouyiMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMapLayer.h; sourceTree = "<group>"; };
+		16FFE2661B92D1D300F8BE19 /* HouyiMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMaterial.h; sourceTree = "<group>"; };
+		16FFE2671B92D1D300F8BE19 /* HouyiMaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMaterialManager.h; sourceTree = "<group>"; };
+		16FFE2681B92D1D300F8BE19 /* HouyiMemoryPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMemoryPool.h; sourceTree = "<group>"; };
+		16FFE2691B92D1D300F8BE19 /* HouyiMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMesh.h; sourceTree = "<group>"; };
+		16FFE26A1B92D1D300F8BE19 /* HouyiMeshOptimizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMeshOptimizer.h; sourceTree = "<group>"; };
+		16FFE26B1B92D1D300F8BE19 /* HouyiModelViewCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiModelViewCamera.h; sourceTree = "<group>"; };
+		16FFE26C1B92D1D300F8BE19 /* HouyiMotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMotionEvent.h; sourceTree = "<group>"; };
+		16FFE26D1B92D1D300F8BE19 /* HouyiNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiNode.h; sourceTree = "<group>"; };
+		16FFE26E1B92D1D300F8BE19 /* HouyiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiObject.h; sourceTree = "<group>"; };
+		16FFE26F1B92D1D300F8BE19 /* HouyiOrthographicCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiOrthographicCamera.h; sourceTree = "<group>"; };
+		16FFE2701B92D1D300F8BE19 /* HouyiPopupWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPopupWorld.h; sourceTree = "<group>"; };
+		16FFE2711B92D1D300F8BE19 /* HouyiRenderEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRenderEntity.h; sourceTree = "<group>"; };
+		16FFE2721B92D1D300F8BE19 /* HouyiRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRenderer.h; sourceTree = "<group>"; };
+		16FFE2731B92D1D300F8BE19 /* HouyiRenderState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRenderState.h; sourceTree = "<group>"; };
+		16FFE2741B92D1D300F8BE19 /* HouyiRenderTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRenderTarget.h; sourceTree = "<group>"; };
+		16FFE2751B92D1D300F8BE19 /* HouyiRigidBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRigidBody.h; sourceTree = "<group>"; };
+		16FFE2761B92D1D300F8BE19 /* HouyiRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRoot.h; sourceTree = "<group>"; };
+		16FFE2771B92D1D300F8BE19 /* HouyiScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiScene.h; sourceTree = "<group>"; };
+		16FFE2781B92D1D300F8BE19 /* HouyiSceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSceneManager.h; sourceTree = "<group>"; };
+		16FFE2791B92D1D300F8BE19 /* HouyiSceneNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSceneNode.h; sourceTree = "<group>"; };
+		16FFE27A1B92D1D300F8BE19 /* HouyiSceneNodeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSceneNodeAnimation.h; sourceTree = "<group>"; };
+		16FFE27B1B92D1D300F8BE19 /* HouyiSceneOptimizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSceneOptimizer.h; sourceTree = "<group>"; };
+		16FFE27C1B92D1D300F8BE19 /* HouyiSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSerializable.h; sourceTree = "<group>"; };
+		16FFE27D1B92D1D300F8BE19 /* HouyiSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSettings.h; sourceTree = "<group>"; };
+		16FFE27E1B92D1D300F8BE19 /* HouyiShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiShaderManager.h; sourceTree = "<group>"; };
+		16FFE27F1B92D1D300F8BE19 /* HouyiSkeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSkeleton.h; sourceTree = "<group>"; };
+		16FFE2801B92D1D300F8BE19 /* HouyiSphereEnvMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSphereEnvMap.h; sourceTree = "<group>"; };
+		16FFE2811B92D1D300F8BE19 /* HouyiStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiStats.h; sourceTree = "<group>"; };
+		16FFE2821B92D1D300F8BE19 /* HouyiStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiStringUtils.h; sourceTree = "<group>"; };
+		16FFE2831B92D1D300F8BE19 /* HouyiSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSurface.h; sourceTree = "<group>"; };
+		16FFE2841B92D1D300F8BE19 /* HouyiTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiTexture.h; sourceTree = "<group>"; };
+		16FFE2851B92D1D300F8BE19 /* HouyiTextureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiTextureManager.h; sourceTree = "<group>"; };
+		16FFE2861B92D1D300F8BE19 /* HouyiTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiTransform.h; sourceTree = "<group>"; };
+		16FFE2871B92D1D300F8BE19 /* HouyiUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiUtil.h; sourceTree = "<group>"; };
+		16FFE2881B92D1D300F8BE19 /* HouyiVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiVertexBuffer.h; sourceTree = "<group>"; };
+		16FFE2891B92D1D300F8BE19 /* HouyiViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiViewState.h; sourceTree = "<group>"; };
+		16FFE28A1B92D1D300F8BE19 /* HouyiViewStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiViewStateManager.h; sourceTree = "<group>"; };
+		16FFE28B1B92D1D300F8BE19 /* HouyiWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiWorld.h; sourceTree = "<group>"; };
+		16FFE28C1B92D1D300F8BE19 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		16FFE28D1B92D1D300F8BE19 /* RefCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefCount.h; sourceTree = "<group>"; };
+		16FFE28E1B92D1D300F8BE19 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
+		16FFE28F1B92D1D300F8BE19 /* TextureImageChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureImageChecker.h; sourceTree = "<group>"; };
+		16FFE2911B92D1D300F8BE19 /* HouyiiOSAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiiOSAudioTrack.h; sourceTree = "<group>"; };
+		16FFE2921B92D1D300F8BE19 /* HouyiiOSAudoTrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiiOSAudoTrack.cpp; sourceTree = "<group>"; };
+		16FFE2931B92D1D300F8BE19 /* HouyiiOSCanvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiiOSCanvas.cpp; sourceTree = "<group>"; };
+		16FFE2941B92D1D300F8BE19 /* HouyiiOSCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiiOSCanvas.h; sourceTree = "<group>"; };
+		16FFE2951B92D1D300F8BE19 /* HouyiiOSImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiiOSImage.cpp; sourceTree = "<group>"; };
+		16FFE2961B92D1D300F8BE19 /* HouyiiOSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiiOSImage.h; sourceTree = "<group>"; };
+		16FFE2971B92D1D300F8BE19 /* ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios.h; sourceTree = "<group>"; };
+		16FFE2981B92D1D300F8BE19 /* TextureImageChecker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureImageChecker.cpp; sourceTree = "<group>"; };
+		16FFE29A1B92D1D300F8BE19 /* HouyiCircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCircle.cpp; sourceTree = "<group>"; };
+		16FFE29B1B92D1D300F8BE19 /* HouyiCircleOutline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCircleOutline.cpp; sourceTree = "<group>"; };
+		16FFE29C1B92D1D300F8BE19 /* HouyiCone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCone.cpp; sourceTree = "<group>"; };
+		16FFE29D1B92D1D300F8BE19 /* HouyiCuboid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCuboid.cpp; sourceTree = "<group>"; };
+		16FFE29E1B92D1D300F8BE19 /* HouyiCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiCylinder.cpp; sourceTree = "<group>"; };
+		16FFE29F1B92D1D300F8BE19 /* HouyiGeoPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGeoPlane.cpp; sourceTree = "<group>"; };
+		16FFE2A01B92D1D300F8BE19 /* HouyiGeoSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGeoSphere.cpp; sourceTree = "<group>"; };
+		16FFE2A11B92D1D300F8BE19 /* HouyiRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiRing.cpp; sourceTree = "<group>"; };
+		16FFE2A31B92D1D300F8BE19 /* HouyiCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCircle.h; sourceTree = "<group>"; };
+		16FFE2A41B92D1D300F8BE19 /* HouyiCircleOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCircleOutline.h; sourceTree = "<group>"; };
+		16FFE2A51B92D1D300F8BE19 /* HouyiCone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCone.h; sourceTree = "<group>"; };
+		16FFE2A61B92D1D300F8BE19 /* HouyiCuboid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCuboid.h; sourceTree = "<group>"; };
+		16FFE2A71B92D1D300F8BE19 /* HouyiCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiCylinder.h; sourceTree = "<group>"; };
+		16FFE2A81B92D1D300F8BE19 /* HouyiGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGeometry.h; sourceTree = "<group>"; };
+		16FFE2A91B92D1D300F8BE19 /* HouyiGeoPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGeoPlane.h; sourceTree = "<group>"; };
+		16FFE2AA1B92D1D300F8BE19 /* HouyiGeoSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGeoSphere.h; sourceTree = "<group>"; };
+		16FFE2AB1B92D1D300F8BE19 /* HouyiPrime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPrime.h; sourceTree = "<group>"; };
+		16FFE2AC1B92D1D300F8BE19 /* HouyiRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRing.h; sourceTree = "<group>"; };
+		16FFE2AE1B92D1D300F8BE19 /* SmallPT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmallPT.cpp; sourceTree = "<group>"; };
+		16FFE2B01B92D1D300F8BE19 /* HouyiButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiButton.cpp; sourceTree = "<group>"; };
+		16FFE2B11B92D1D300F8BE19 /* HouyiDragImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiDragImageView.cpp; sourceTree = "<group>"; };
+		16FFE2B21B92D1D300F8BE19 /* HouyiEditableImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiEditableImageView.cpp; sourceTree = "<group>"; };
+		16FFE2B31B92D1D300F8BE19 /* HouyiImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiImageView.cpp; sourceTree = "<group>"; };
+		16FFE2B41B92D1D300F8BE19 /* HouyiListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiListView.cpp; sourceTree = "<group>"; };
+		16FFE2B51B92D1D300F8BE19 /* HouyiTextView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiTextView.cpp; sourceTree = "<group>"; };
+		16FFE2B61B92D1D300F8BE19 /* HouyiTileImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiTileImageView.cpp; sourceTree = "<group>"; };
+		16FFE2B71B92D1D300F8BE19 /* HouyiView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiView.cpp; sourceTree = "<group>"; };
+		16FFE2B81B92D1D300F8BE19 /* HouyiWaveformView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiWaveformView.cpp; sourceTree = "<group>"; };
+		16FFE2BA1B92D1D300F8BE19 /* HouyiAbsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAbsListView.h; sourceTree = "<group>"; };
+		16FFE2BB1B92D1D300F8BE19 /* HouyiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAdapter.h; sourceTree = "<group>"; };
+		16FFE2BC1B92D1D300F8BE19 /* HouyiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiButton.h; sourceTree = "<group>"; };
+		16FFE2BD1B92D1D300F8BE19 /* HouyiDragImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDragImageView.h; sourceTree = "<group>"; };
+		16FFE2BE1B92D1D300F8BE19 /* HouyiEditableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiEditableImageView.h; sourceTree = "<group>"; };
+		16FFE2BF1B92D1D300F8BE19 /* HouyiImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiImageView.h; sourceTree = "<group>"; };
+		16FFE2C01B92D1D300F8BE19 /* HouyiListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiListView.h; sourceTree = "<group>"; };
+		16FFE2C11B92D1D300F8BE19 /* HouyiTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiTextView.h; sourceTree = "<group>"; };
+		16FFE2C21B92D1D300F8BE19 /* HouyiTileImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiTileImageView.h; sourceTree = "<group>"; };
+		16FFE2C31B92D1D300F8BE19 /* HouyiUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiUI.h; sourceTree = "<group>"; };
+		16FFE2C41B92D1D300F8BE19 /* HouyiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiView.h; sourceTree = "<group>"; };
+		16FFE2C51B92D1D300F8BE19 /* HouyiWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiWaveformView.h; sourceTree = "<group>"; };
+		16FFE2C71B92D1D300F8BE19 /* Collada.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collada.cpp; sourceTree = "<group>"; };
+		16FFE2C81B92D1D300F8BE19 /* Houyi3dsLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Houyi3dsLoader.cpp; sourceTree = "<group>"; };
+		16FFE2C91B92D1D300F8BE19 /* HouyiAbsColladaLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiAbsColladaLoader.cpp; sourceTree = "<group>"; };
+		16FFE2CA1B92D1D300F8BE19 /* HouyiColladaLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiColladaLoader.cpp; sourceTree = "<group>"; };
+		16FFE2CB1B92D1D300F8BE19 /* HouyiDefaultLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiDefaultLoader.cpp; sourceTree = "<group>"; };
+		16FFE2CC1B92D1D300F8BE19 /* HouyiDefaultSaver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiDefaultSaver.cpp; sourceTree = "<group>"; };
+		16FFE2CD1B92D1D300F8BE19 /* HouyiLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiLoader.cpp; sourceTree = "<group>"; };
+		16FFE2CE1B92D1D300F8BE19 /* HouyiMapLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMapLoader.cpp; sourceTree = "<group>"; };
+		16FFE2CF1B92D1D300F8BE19 /* HouyiObjLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiObjLoader.cpp; sourceTree = "<group>"; };
+		16FFE2D01B92D1D300F8BE19 /* HouyiSaver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSaver.cpp; sourceTree = "<group>"; };
+		16FFE2D11B92D1D300F8BE19 /* HouyiStlLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiStlLoader.cpp; sourceTree = "<group>"; };
+		16FFE2D31B92D1D300F8BE19 /* Collada.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collada.h; sourceTree = "<group>"; };
+		16FFE2D41B92D1D300F8BE19 /* Houyi3dsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Houyi3dsLoader.h; sourceTree = "<group>"; };
+		16FFE2D51B92D1D300F8BE19 /* HouyiAbsColladaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAbsColladaLoader.h; sourceTree = "<group>"; };
+		16FFE2D61B92D1D300F8BE19 /* HouyiColladaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiColladaLoader.h; sourceTree = "<group>"; };
+		16FFE2D71B92D1D300F8BE19 /* HouyiDefaultLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDefaultLoader.h; sourceTree = "<group>"; };
+		16FFE2D81B92D1D300F8BE19 /* HouyiDefaultSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiDefaultSaver.h; sourceTree = "<group>"; };
+		16FFE2D91B92D1D300F8BE19 /* HouyiLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiLoader.h; sourceTree = "<group>"; };
+		16FFE2DA1B92D1D300F8BE19 /* HouyiMapLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMapLoader.h; sourceTree = "<group>"; };
+		16FFE2DB1B92D1D300F8BE19 /* HouyiObjLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiObjLoader.h; sourceTree = "<group>"; };
+		16FFE2DC1B92D1D300F8BE19 /* HouyiSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSaver.h; sourceTree = "<group>"; };
+		16FFE2DD1B92D1D300F8BE19 /* HouyiStlLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiStlLoader.h; sourceTree = "<group>"; };
+		16FFE2DE1B92D1D300F8BE19 /* HouyiVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiVector.h; sourceTree = "<group>"; };
+		16FFE2E01B92D1D300F8BE19 /* HouyiMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMath.cpp; sourceTree = "<group>"; };
+		16FFE2E11B92D1D300F8BE19 /* HouyiMatrix3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMatrix3.cpp; sourceTree = "<group>"; };
+		16FFE2E21B92D1D300F8BE19 /* HouyiMatrix4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiMatrix4.cpp; sourceTree = "<group>"; };
+		16FFE2E31B92D1D300F8BE19 /* HouyiPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiPlane.cpp; sourceTree = "<group>"; };
+		16FFE2E41B92D1D300F8BE19 /* HouyiQuaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiQuaternion.cpp; sourceTree = "<group>"; };
+		16FFE2E51B92D1D300F8BE19 /* HouyiSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiSphere.cpp; sourceTree = "<group>"; };
+		16FFE2E61B92D1D300F8BE19 /* HouyiVector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiVector2.cpp; sourceTree = "<group>"; };
+		16FFE2E71B92D1D300F8BE19 /* HouyiVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiVector3.cpp; sourceTree = "<group>"; };
+		16FFE2E81B92D1D300F8BE19 /* HouyiVector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiVector4.cpp; sourceTree = "<group>"; };
+		16FFE2EA1B92D1D300F8BE19 /* HouyiAxisAlignedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAxisAlignedBox.h; sourceTree = "<group>"; };
+		16FFE2EB1B92D1D300F8BE19 /* HouyiMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMath.h; sourceTree = "<group>"; };
+		16FFE2EC1B92D1D300F8BE19 /* HouyiMatrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMatrix3.h; sourceTree = "<group>"; };
+		16FFE2ED1B92D1D300F8BE19 /* HouyiMatrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiMatrix4.h; sourceTree = "<group>"; };
+		16FFE2EE1B92D1D300F8BE19 /* HouyiPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPlane.h; sourceTree = "<group>"; };
+		16FFE2EF1B92D1D300F8BE19 /* HouyiPlaneBoundedVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPlaneBoundedVolume.h; sourceTree = "<group>"; };
+		16FFE2F01B92D1D300F8BE19 /* HouyiQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiQuaternion.h; sourceTree = "<group>"; };
+		16FFE2F11B92D1D300F8BE19 /* HouyiRay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiRay.h; sourceTree = "<group>"; };
+		16FFE2F21B92D1D300F8BE19 /* HouyiSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiSphere.h; sourceTree = "<group>"; };
+		16FFE2F31B92D1D300F8BE19 /* HouyiVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiVector2.h; sourceTree = "<group>"; };
+		16FFE2F41B92D1D300F8BE19 /* HouyiVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiVector3.h; sourceTree = "<group>"; };
+		16FFE2F51B92D1D300F8BE19 /* HouyiVector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiVector4.h; sourceTree = "<group>"; };
+		16FFE2F61B92D1D300F8BE19 /* HRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRect.h; sourceTree = "<group>"; };
+		16FFE2F81B92D1D300F8BE19 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		16FFE2FA1B92D1D300F8BE19 /* HouyiGLDefaultPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLDefaultPass.cpp; sourceTree = "<group>"; };
+		16FFE2FB1B92D1D300F8BE19 /* HouyiGLEnvPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLEnvPass.cpp; sourceTree = "<group>"; };
+		16FFE2FC1B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLESCubeMapTexture.cpp; sourceTree = "<group>"; };
+		16FFE2FD1B92D1D300F8BE19 /* HouyiGLESRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLESRenderer.cpp; sourceTree = "<group>"; };
+		16FFE2FE1B92D1D300F8BE19 /* HouyiGLESTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLESTexture.cpp; sourceTree = "<group>"; };
+		16FFE2FF1B92D1D300F8BE19 /* HouyiGLFirePass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLFirePass.cpp; sourceTree = "<group>"; };
+		16FFE3001B92D1D300F8BE19 /* HouyiGLPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLPass.cpp; sourceTree = "<group>"; };
+		16FFE3011B92D1D300F8BE19 /* HouyiGLShadowPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLShadowPass.cpp; sourceTree = "<group>"; };
+		16FFE3021B92D1D300F8BE19 /* HouyiGLUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiGLUtils.cpp; sourceTree = "<group>"; };
+		16FFE3041B92D1D300F8BE19 /* glshaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glshaders.h; sourceTree = "<group>"; };
+		16FFE3051B92D1D300F8BE19 /* HIShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIShaders.h; sourceTree = "<group>"; };
+		16FFE3061B92D1D300F8BE19 /* HouyiGLDefaultPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLDefaultPass.h; sourceTree = "<group>"; };
+		16FFE3071B92D1D300F8BE19 /* HouyiGLEnvPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLEnvPass.h; sourceTree = "<group>"; };
+		16FFE3081B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLESCubeMapTexture.h; sourceTree = "<group>"; };
+		16FFE3091B92D1D300F8BE19 /* HouyiGLESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLESRenderer.h; sourceTree = "<group>"; };
+		16FFE30A1B92D1D300F8BE19 /* HouyiGLESTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLESTexture.h; sourceTree = "<group>"; };
+		16FFE30B1B92D1D300F8BE19 /* HouyiGLFirePass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLFirePass.h; sourceTree = "<group>"; };
+		16FFE30C1B92D1D300F8BE19 /* HouyiGLPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLPass.h; sourceTree = "<group>"; };
+		16FFE30D1B92D1D300F8BE19 /* HouyiGLShadowPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLShadowPass.h; sourceTree = "<group>"; };
+		16FFE30E1B92D1D300F8BE19 /* HouyiGLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiGLUtils.h; sourceTree = "<group>"; };
+		16FFE30F1B92D1D300F8BE19 /* HouyiPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HouyiPass.cpp; sourceTree = "<group>"; };
+		16FFE3111B92D1D300F8BE19 /* HouyiPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiPass.h; sourceTree = "<group>"; };
+		16FFE4221B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4231B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4251B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4261B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4281B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4291B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE42B1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE42C1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE42E1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE42F1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4311B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4321B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4341B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4351B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4371B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4381B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE43A1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE43B1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE43D1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE43E1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4401B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4411B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4431B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4441B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4461B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4471B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4491B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE44A1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE44C1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE44D1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE44F1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4501B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4521B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4531B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4551B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4561B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4581B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4591B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE45B1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE45C1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE45E1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE45F1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4611B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4621B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4641B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
+		16FFE4651B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE4941B92D36F00F8BE19 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		16FFE4961B92D37600F8BE19 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		16FFE4981B92D39400F8BE19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		16FFE49A1B92D3CE00F8BE19 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		16FFE49C1B92D3D700F8BE19 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		16FFE49E1B92D60F00F8BE19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		16FFE4A01B92D61A00F8BE19 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		16FFE4A61B92D99E00F8BE19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		16FFE4A81B92D9E900F8BE19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16FFE1CF1B92CFE300F8BE19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE4A91B92D9E900F8BE19 /* QuartzCore.framework in Frameworks */,
+				16FFE4A71B92D99E00F8BE19 /* AVFoundation.framework in Frameworks */,
+				16FFE4A11B92D61A00F8BE19 /* CoreMedia.framework in Frameworks */,
+				16FFE49F1B92D60F00F8BE19 /* CoreGraphics.framework in Frameworks */,
+				16FFE49D1B92D3D700F8BE19 /* GLKit.framework in Frameworks */,
+				16FFE49B1B92D3CE00F8BE19 /* UIKit.framework in Frameworks */,
+				16FFE4991B92D39400F8BE19 /* Foundation.framework in Frameworks */,
+				16FFE4971B92D37600F8BE19 /* libxml2.dylib in Frameworks */,
+				16FFE4951B92D36F00F8BE19 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16FFE1DB1B92CFE300F8BE19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE1DF1B92CFE300F8BE19 /* Houyi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		164F36221B92EEA7003CADF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4A81B92D9E900F8BE19 /* QuartzCore.framework */,
+				16FFE4A61B92D99E00F8BE19 /* AVFoundation.framework */,
+				16FFE4A01B92D61A00F8BE19 /* CoreMedia.framework */,
+				16FFE49E1B92D60F00F8BE19 /* CoreGraphics.framework */,
+				16FFE49C1B92D3D700F8BE19 /* GLKit.framework */,
+				16FFE49A1B92D3CE00F8BE19 /* UIKit.framework */,
+				16FFE4981B92D39400F8BE19 /* Foundation.framework */,
+				16FFE4961B92D37600F8BE19 /* libxml2.dylib */,
+				16FFE4941B92D36F00F8BE19 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16FFE1C91B92CFE300F8BE19 = {
+			isa = PBXGroup;
+			children = (
+				164F36221B92EEA7003CADF6 /* Frameworks */,
+				16FFE4201B92D23300F8BE19 /* shader */,
+				16FFE1EF1B92D1D300F8BE19 /* ai */,
+				16FFE1F31B92D1D300F8BE19 /* astronomy */,
+				16FFE1FE1B92D1D300F8BE19 /* framework */,
+				16FFE2991B92D1D300F8BE19 /* geometry */,
+				16FFE2AD1B92D1D300F8BE19 /* gi */,
+				16FFE2AF1B92D1D300F8BE19 /* gui */,
+				16FFE2C61B92D1D300F8BE19 /* loader */,
+				16FFE2DF1B92D1D300F8BE19 /* math */,
+				16FFE2F71B92D1D300F8BE19 /* renderer */,
+				16FFE1D51B92CFE300F8BE19 /* Houyi */,
+				16FFE1E21B92CFE300F8BE19 /* HouyiTests */,
+				16FFE1D41B92CFE300F8BE19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16FFE1D41B92CFE300F8BE19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1D31B92CFE300F8BE19 /* Houyi.framework */,
+				16FFE1DE1B92CFE300F8BE19 /* HouyiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16FFE1D51B92CFE300F8BE19 /* Houyi */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1D81B92CFE300F8BE19 /* Houyi.h */,
+				16FFE1D61B92CFE300F8BE19 /* Supporting Files */,
+			);
+			path = Houyi;
+			sourceTree = "<group>";
+		};
+		16FFE1D61B92CFE300F8BE19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1D71B92CFE300F8BE19 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16FFE1E21B92CFE300F8BE19 /* HouyiTests */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1E51B92CFE300F8BE19 /* HouyiTests.m */,
+				16FFE1E31B92CFE300F8BE19 /* Supporting Files */,
+			);
+			path = HouyiTests;
+			sourceTree = "<group>";
+		};
+		16FFE1E31B92CFE300F8BE19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1E41B92CFE300F8BE19 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16FFE1EF1B92D1D300F8BE19 /* ai */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1F01B92D1D300F8BE19 /* include */,
+				16FFE1F21B92D1D300F8BE19 /* RubikResolver.cpp */,
+			);
+			path = ai;
+			sourceTree = "<group>";
+		};
+		16FFE1F01B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1F11B92D1D300F8BE19 /* RubikResolver.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE1F31B92D1D300F8BE19 /* astronomy */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1F41B92D1D300F8BE19 /* HouyiHeavenlyObject.cpp */,
+				16FFE1F51B92D1D300F8BE19 /* HouyiPlanet.cpp */,
+				16FFE1F61B92D1D300F8BE19 /* HouyiPlanetarySystem.cpp */,
+				16FFE1F71B92D1D300F8BE19 /* HouyiSolarSystem.cpp */,
+				16FFE1F81B92D1D300F8BE19 /* include */,
+			);
+			path = astronomy;
+			sourceTree = "<group>";
+		};
+		16FFE1F81B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE1F91B92D1D300F8BE19 /* HouyiHeavenlyObject.h */,
+				16FFE1FA1B92D1D300F8BE19 /* HouyiPlanet.h */,
+				16FFE1FB1B92D1D300F8BE19 /* HouyiPlanetarySystem.h */,
+				16FFE1FC1B92D1D300F8BE19 /* HouyiSolarSystem.h */,
+				16FFE1FD1B92D1D300F8BE19 /* HouyiStar.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE1FE1B92D1D300F8BE19 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2071B92D1D300F8BE19 /* CMakeLists.txt */,
+				16FFE2081B92D1D300F8BE19 /* HouyiAABB.cpp */,
+				16FFE2091B92D1D300F8BE19 /* HouyiAbsListView.cpp */,
+				16FFE20A1B92D1D300F8BE19 /* HouyiAllocator.cpp */,
+				16FFE20B1B92D1D300F8BE19 /* HouyiAnimation.cpp */,
+				16FFE20C1B92D1D300F8BE19 /* HouyiAudioManager.cpp */,
+				16FFE20D1B92D1D300F8BE19 /* HouyiAudioTrack.cpp */,
+				16FFE20E1B92D1D300F8BE19 /* HouyiAxis.cpp */,
+				16FFE20F1B92D1D300F8BE19 /* HouyiCamera.cpp */,
+				16FFE2101B92D1D300F8BE19 /* HouyiCameraAnimation.cpp */,
+				16FFE2111B92D1D300F8BE19 /* HouyiCameraNode.cpp */,
+				16FFE2121B92D1D300F8BE19 /* HouyiCanvas.cpp */,
+				16FFE2131B92D1D300F8BE19 /* HouyiCanvasFactory.cpp */,
+				16FFE2141B92D1D300F8BE19 /* HouyiCapability.cpp */,
+				16FFE2151B92D1D300F8BE19 /* HouyiCubeEnvMap.cpp */,
+				16FFE2161B92D1D300F8BE19 /* HouyiDataInputStream.cpp */,
+				16FFE2171B92D1D300F8BE19 /* HouyiFile.cpp */,
+				16FFE2181B92D1D300F8BE19 /* HouyiFPCamera.cpp */,
+				16FFE2191B92D1D300F8BE19 /* HouyiGameWorld.cpp */,
+				16FFE21A1B92D1D300F8BE19 /* HouyiGestureDetector.cpp */,
+				16FFE21B1B92D1D300F8BE19 /* HouyiGrid.cpp */,
+				16FFE21C1B92D1D300F8BE19 /* HouyiImageFactory.cpp */,
+				16FFE21D1B92D1D300F8BE19 /* HouyiJointNode.cpp */,
+				16FFE21E1B92D1D300F8BE19 /* HouyiKeyFrame.cpp */,
+				16FFE21F1B92D1D300F8BE19 /* HouyiLight.cpp */,
+				16FFE2201B92D1D300F8BE19 /* HouyiMap.cpp */,
+				16FFE2211B92D1D300F8BE19 /* HouyiMaterial.cpp */,
+				16FFE2221B92D1D300F8BE19 /* HouyiMaterialManager.cpp */,
+				16FFE2231B92D1D300F8BE19 /* HouyiMesh.cpp */,
+				16FFE2241B92D1D300F8BE19 /* HouyiMeshOptimizer.cpp */,
+				16FFE2251B92D1D300F8BE19 /* HouyiModelViewCamera.cpp */,
+				16FFE2261B92D1D300F8BE19 /* HouyiMotionEvent.cpp */,
+				16FFE2271B92D1D300F8BE19 /* HouyiNode.cpp */,
+				16FFE2281B92D1D300F8BE19 /* HouyiObject.cpp */,
+				16FFE2291B92D1D300F8BE19 /* HouyiOrthographicCamera.cpp */,
+				16FFE22A1B92D1D300F8BE19 /* HouyiPopupWorld.cpp */,
+				16FFE22B1B92D1D300F8BE19 /* HouyiRenderEntity.cpp */,
+				16FFE22C1B92D1D300F8BE19 /* HouyiRenderer.cpp */,
+				16FFE22D1B92D1D300F8BE19 /* HouyiRigidBody.cpp */,
+				16FFE22E1B92D1D300F8BE19 /* HouyiRoot.cpp */,
+				16FFE22F1B92D1D300F8BE19 /* HouyiScene.cpp */,
+				16FFE2301B92D1D300F8BE19 /* HouyiSceneManager.cpp */,
+				16FFE2311B92D1D300F8BE19 /* HouyiSceneNode.cpp */,
+				16FFE2321B92D1D300F8BE19 /* HouyiSceneNodeAnimation.cpp */,
+				16FFE2331B92D1D300F8BE19 /* HouyiSceneOptimizer.cpp */,
+				16FFE2341B92D1D300F8BE19 /* HouyiSettings.cpp */,
+				16FFE2351B92D1D300F8BE19 /* HouyiShaderManager.cpp */,
+				16FFE2361B92D1D300F8BE19 /* HouyiSkeleton.cpp */,
+				16FFE2371B92D1D300F8BE19 /* HouyiSphereEnvMap.cpp */,
+				16FFE2381B92D1D300F8BE19 /* HouyiStringUtils.cpp */,
+				16FFE2391B92D1D300F8BE19 /* HouyiSurface.cpp */,
+				16FFE23A1B92D1D300F8BE19 /* HouyiTexture.cpp */,
+				16FFE23B1B92D1D300F8BE19 /* HouyiTextureManager.cpp */,
+				16FFE23C1B92D1D300F8BE19 /* HouyiTransform.cpp */,
+				16FFE23D1B92D1D300F8BE19 /* HouyiUtil.cpp */,
+				16FFE23E1B92D1D300F8BE19 /* HouyiVertexBuffer.cpp */,
+				16FFE23F1B92D1D300F8BE19 /* HouyiViewState.cpp */,
+				16FFE2401B92D1D300F8BE19 /* HouyiViewStateManager.cpp */,
+				16FFE2411B92D1D300F8BE19 /* HouyiWorld.cpp */,
+				16FFE2421B92D1D300F8BE19 /* include */,
+				16FFE2901B92D1D300F8BE19 /* ios */,
+				16FFE2981B92D1D300F8BE19 /* TextureImageChecker.cpp */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		16FFE2421B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2441B92D1D300F8BE19 /* HouyiAABB.h */,
+				16FFE2451B92D1D300F8BE19 /* HouyiAllocator.h */,
+				16FFE2461B92D1D300F8BE19 /* HouyiAnimation.h */,
+				16FFE2471B92D1D300F8BE19 /* HouyiArray.h */,
+				16FFE2481B92D1D300F8BE19 /* HouyiAudioManager.h */,
+				16FFE2491B92D1D300F8BE19 /* HouyiAudioTrack.h */,
+				16FFE24A1B92D1D300F8BE19 /* HouyiAxis.h */,
+				16FFE24B1B92D1D300F8BE19 /* HouyiCamera.h */,
+				16FFE24C1B92D1D300F8BE19 /* HouyiCameraAnimation.h */,
+				16FFE24D1B92D1D300F8BE19 /* HouyiCameraNode.h */,
+				16FFE24E1B92D1D300F8BE19 /* HouyiCanvas.h */,
+				16FFE24F1B92D1D300F8BE19 /* HouyiCanvasFactory.h */,
+				16FFE2501B92D1D300F8BE19 /* HouyiCapability.h */,
+				16FFE2511B92D1D300F8BE19 /* HouyiColor.h */,
+				16FFE2521B92D1D300F8BE19 /* HouyiConst.h */,
+				16FFE2531B92D1D300F8BE19 /* HouyiCubeEnvMap.h */,
+				16FFE2541B92D1D300F8BE19 /* HouyiDataInputStream.h */,
+				16FFE2551B92D1D300F8BE19 /* HouyiDataOutputStream.h */,
+				16FFE2561B92D1D300F8BE19 /* HouyiDef.h */,
+				16FFE2571B92D1D300F8BE19 /* HouyiFile.h */,
+				16FFE2581B92D1D300F8BE19 /* HouyiForce.h */,
+				16FFE2591B92D1D300F8BE19 /* HouyiFPCamera.h */,
+				16FFE25A1B92D1D300F8BE19 /* HouyiGameWorld.h */,
+				16FFE25B1B92D1D300F8BE19 /* HouyiGestureDetector.h */,
+				16FFE25C1B92D1D300F8BE19 /* HouyiGrid.h */,
+				16FFE25D1B92D1D300F8BE19 /* HouyiImage.h */,
+				16FFE25E1B92D1D300F8BE19 /* HouyiImageFactory.h */,
+				16FFE25F1B92D1D300F8BE19 /* HouyiIndexBuffer.h */,
+				16FFE2601B92D1D300F8BE19 /* HouyiJointNode.h */,
+				16FFE2611B92D1D300F8BE19 /* HouyiKeyFrame.h */,
+				16FFE2621B92D1D300F8BE19 /* HouyiLight.h */,
+				16FFE2631B92D1D300F8BE19 /* HouyiLog.h */,
+				16FFE2641B92D1D300F8BE19 /* HouyiMap.h */,
+				16FFE2651B92D1D300F8BE19 /* HouyiMapLayer.h */,
+				16FFE2661B92D1D300F8BE19 /* HouyiMaterial.h */,
+				16FFE2671B92D1D300F8BE19 /* HouyiMaterialManager.h */,
+				16FFE2681B92D1D300F8BE19 /* HouyiMemoryPool.h */,
+				16FFE2691B92D1D300F8BE19 /* HouyiMesh.h */,
+				16FFE26A1B92D1D300F8BE19 /* HouyiMeshOptimizer.h */,
+				16FFE26B1B92D1D300F8BE19 /* HouyiModelViewCamera.h */,
+				16FFE26C1B92D1D300F8BE19 /* HouyiMotionEvent.h */,
+				16FFE26D1B92D1D300F8BE19 /* HouyiNode.h */,
+				16FFE26E1B92D1D300F8BE19 /* HouyiObject.h */,
+				16FFE26F1B92D1D300F8BE19 /* HouyiOrthographicCamera.h */,
+				16FFE2701B92D1D300F8BE19 /* HouyiPopupWorld.h */,
+				16FFE2711B92D1D300F8BE19 /* HouyiRenderEntity.h */,
+				16FFE2721B92D1D300F8BE19 /* HouyiRenderer.h */,
+				16FFE2731B92D1D300F8BE19 /* HouyiRenderState.h */,
+				16FFE2741B92D1D300F8BE19 /* HouyiRenderTarget.h */,
+				16FFE2751B92D1D300F8BE19 /* HouyiRigidBody.h */,
+				16FFE2761B92D1D300F8BE19 /* HouyiRoot.h */,
+				16FFE2771B92D1D300F8BE19 /* HouyiScene.h */,
+				16FFE2781B92D1D300F8BE19 /* HouyiSceneManager.h */,
+				16FFE2791B92D1D300F8BE19 /* HouyiSceneNode.h */,
+				16FFE27A1B92D1D300F8BE19 /* HouyiSceneNodeAnimation.h */,
+				16FFE27B1B92D1D300F8BE19 /* HouyiSceneOptimizer.h */,
+				16FFE27C1B92D1D300F8BE19 /* HouyiSerializable.h */,
+				16FFE27D1B92D1D300F8BE19 /* HouyiSettings.h */,
+				16FFE27E1B92D1D300F8BE19 /* HouyiShaderManager.h */,
+				16FFE27F1B92D1D300F8BE19 /* HouyiSkeleton.h */,
+				16FFE2801B92D1D300F8BE19 /* HouyiSphereEnvMap.h */,
+				16FFE2811B92D1D300F8BE19 /* HouyiStats.h */,
+				16FFE2821B92D1D300F8BE19 /* HouyiStringUtils.h */,
+				16FFE2831B92D1D300F8BE19 /* HouyiSurface.h */,
+				16FFE2841B92D1D300F8BE19 /* HouyiTexture.h */,
+				16FFE2851B92D1D300F8BE19 /* HouyiTextureManager.h */,
+				16FFE2861B92D1D300F8BE19 /* HouyiTransform.h */,
+				16FFE2871B92D1D300F8BE19 /* HouyiUtil.h */,
+				16FFE2881B92D1D300F8BE19 /* HouyiVertexBuffer.h */,
+				16FFE2891B92D1D300F8BE19 /* HouyiViewState.h */,
+				16FFE28A1B92D1D300F8BE19 /* HouyiViewStateManager.h */,
+				16FFE28B1B92D1D300F8BE19 /* HouyiWorld.h */,
+				16FFE28C1B92D1D300F8BE19 /* Platform.h */,
+				16FFE28D1B92D1D300F8BE19 /* RefCount.h */,
+				16FFE28E1B92D1D300F8BE19 /* SmartPtr.h */,
+				16FFE28F1B92D1D300F8BE19 /* TextureImageChecker.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE2901B92D1D300F8BE19 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2911B92D1D300F8BE19 /* HouyiiOSAudioTrack.h */,
+				16FFE2921B92D1D300F8BE19 /* HouyiiOSAudoTrack.cpp */,
+				16FFE2931B92D1D300F8BE19 /* HouyiiOSCanvas.cpp */,
+				16FFE2941B92D1D300F8BE19 /* HouyiiOSCanvas.h */,
+				16FFE2951B92D1D300F8BE19 /* HouyiiOSImage.cpp */,
+				16FFE2961B92D1D300F8BE19 /* HouyiiOSImage.h */,
+				164F36231B92F186003CADF6 /* HouyiUtils.h */,
+				164F36241B92F186003CADF6 /* HouyiUtils.mm */,
+				16FFE2971B92D1D300F8BE19 /* ios.h */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		16FFE2991B92D1D300F8BE19 /* geometry */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE29A1B92D1D300F8BE19 /* HouyiCircle.cpp */,
+				16FFE29B1B92D1D300F8BE19 /* HouyiCircleOutline.cpp */,
+				16FFE29C1B92D1D300F8BE19 /* HouyiCone.cpp */,
+				16FFE29D1B92D1D300F8BE19 /* HouyiCuboid.cpp */,
+				16FFE29E1B92D1D300F8BE19 /* HouyiCylinder.cpp */,
+				16FFE29F1B92D1D300F8BE19 /* HouyiGeoPlane.cpp */,
+				16FFE2A01B92D1D300F8BE19 /* HouyiGeoSphere.cpp */,
+				16FFE2A11B92D1D300F8BE19 /* HouyiRing.cpp */,
+				16FFE2A21B92D1D300F8BE19 /* include */,
+			);
+			path = geometry;
+			sourceTree = "<group>";
+		};
+		16FFE2A21B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2A31B92D1D300F8BE19 /* HouyiCircle.h */,
+				16FFE2A41B92D1D300F8BE19 /* HouyiCircleOutline.h */,
+				16FFE2A51B92D1D300F8BE19 /* HouyiCone.h */,
+				16FFE2A61B92D1D300F8BE19 /* HouyiCuboid.h */,
+				16FFE2A71B92D1D300F8BE19 /* HouyiCylinder.h */,
+				16FFE2A81B92D1D300F8BE19 /* HouyiGeometry.h */,
+				16FFE2A91B92D1D300F8BE19 /* HouyiGeoPlane.h */,
+				16FFE2AA1B92D1D300F8BE19 /* HouyiGeoSphere.h */,
+				16FFE2AB1B92D1D300F8BE19 /* HouyiPrime.h */,
+				16FFE2AC1B92D1D300F8BE19 /* HouyiRing.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE2AD1B92D1D300F8BE19 /* gi */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2AE1B92D1D300F8BE19 /* SmallPT.cpp */,
+			);
+			path = gi;
+			sourceTree = "<group>";
+		};
+		16FFE2AF1B92D1D300F8BE19 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2B01B92D1D300F8BE19 /* HouyiButton.cpp */,
+				16FFE2B11B92D1D300F8BE19 /* HouyiDragImageView.cpp */,
+				16FFE2B21B92D1D300F8BE19 /* HouyiEditableImageView.cpp */,
+				16FFE2B31B92D1D300F8BE19 /* HouyiImageView.cpp */,
+				16FFE2B41B92D1D300F8BE19 /* HouyiListView.cpp */,
+				16FFE2B51B92D1D300F8BE19 /* HouyiTextView.cpp */,
+				16FFE2B61B92D1D300F8BE19 /* HouyiTileImageView.cpp */,
+				16FFE2B71B92D1D300F8BE19 /* HouyiView.cpp */,
+				16FFE2B81B92D1D300F8BE19 /* HouyiWaveformView.cpp */,
+				16FFE2B91B92D1D300F8BE19 /* include */,
+			);
+			path = gui;
+			sourceTree = "<group>";
+		};
+		16FFE2B91B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2BA1B92D1D300F8BE19 /* HouyiAbsListView.h */,
+				16FFE2BB1B92D1D300F8BE19 /* HouyiAdapter.h */,
+				16FFE2BC1B92D1D300F8BE19 /* HouyiButton.h */,
+				16FFE2BD1B92D1D300F8BE19 /* HouyiDragImageView.h */,
+				16FFE2BE1B92D1D300F8BE19 /* HouyiEditableImageView.h */,
+				16FFE2BF1B92D1D300F8BE19 /* HouyiImageView.h */,
+				16FFE2C01B92D1D300F8BE19 /* HouyiListView.h */,
+				16FFE2C11B92D1D300F8BE19 /* HouyiTextView.h */,
+				16FFE2C21B92D1D300F8BE19 /* HouyiTileImageView.h */,
+				16FFE2C31B92D1D300F8BE19 /* HouyiUI.h */,
+				16FFE2C41B92D1D300F8BE19 /* HouyiView.h */,
+				16FFE2C51B92D1D300F8BE19 /* HouyiWaveformView.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE2C61B92D1D300F8BE19 /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2C71B92D1D300F8BE19 /* Collada.cpp */,
+				16FFE2C81B92D1D300F8BE19 /* Houyi3dsLoader.cpp */,
+				16FFE2C91B92D1D300F8BE19 /* HouyiAbsColladaLoader.cpp */,
+				16FFE2CA1B92D1D300F8BE19 /* HouyiColladaLoader.cpp */,
+				16FFE2CB1B92D1D300F8BE19 /* HouyiDefaultLoader.cpp */,
+				16FFE2CC1B92D1D300F8BE19 /* HouyiDefaultSaver.cpp */,
+				16FFE2CD1B92D1D300F8BE19 /* HouyiLoader.cpp */,
+				16FFE2CE1B92D1D300F8BE19 /* HouyiMapLoader.cpp */,
+				16FFE2CF1B92D1D300F8BE19 /* HouyiObjLoader.cpp */,
+				16FFE2D01B92D1D300F8BE19 /* HouyiSaver.cpp */,
+				16FFE2D11B92D1D300F8BE19 /* HouyiStlLoader.cpp */,
+				16FFE2D21B92D1D300F8BE19 /* include */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
+		16FFE2D21B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2D31B92D1D300F8BE19 /* Collada.h */,
+				16FFE2D41B92D1D300F8BE19 /* Houyi3dsLoader.h */,
+				16FFE2D51B92D1D300F8BE19 /* HouyiAbsColladaLoader.h */,
+				16FFE2D61B92D1D300F8BE19 /* HouyiColladaLoader.h */,
+				16FFE2D71B92D1D300F8BE19 /* HouyiDefaultLoader.h */,
+				16FFE2D81B92D1D300F8BE19 /* HouyiDefaultSaver.h */,
+				16FFE2D91B92D1D300F8BE19 /* HouyiLoader.h */,
+				16FFE2DA1B92D1D300F8BE19 /* HouyiMapLoader.h */,
+				16FFE2DB1B92D1D300F8BE19 /* HouyiObjLoader.h */,
+				16FFE2DC1B92D1D300F8BE19 /* HouyiSaver.h */,
+				16FFE2DD1B92D1D300F8BE19 /* HouyiStlLoader.h */,
+				16FFE2DE1B92D1D300F8BE19 /* HouyiVector.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE2DF1B92D1D300F8BE19 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2E01B92D1D300F8BE19 /* HouyiMath.cpp */,
+				16FFE2E11B92D1D300F8BE19 /* HouyiMatrix3.cpp */,
+				16FFE2E21B92D1D300F8BE19 /* HouyiMatrix4.cpp */,
+				16FFE2E31B92D1D300F8BE19 /* HouyiPlane.cpp */,
+				16FFE2E41B92D1D300F8BE19 /* HouyiQuaternion.cpp */,
+				16FFE2E51B92D1D300F8BE19 /* HouyiSphere.cpp */,
+				16FFE2E61B92D1D300F8BE19 /* HouyiVector2.cpp */,
+				16FFE2E71B92D1D300F8BE19 /* HouyiVector3.cpp */,
+				16FFE2E81B92D1D300F8BE19 /* HouyiVector4.cpp */,
+				16FFE2E91B92D1D300F8BE19 /* include */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		16FFE2E91B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2EA1B92D1D300F8BE19 /* HouyiAxisAlignedBox.h */,
+				16FFE2EB1B92D1D300F8BE19 /* HouyiMath.h */,
+				16FFE2EC1B92D1D300F8BE19 /* HouyiMatrix3.h */,
+				16FFE2ED1B92D1D300F8BE19 /* HouyiMatrix4.h */,
+				16FFE2EE1B92D1D300F8BE19 /* HouyiPlane.h */,
+				16FFE2EF1B92D1D300F8BE19 /* HouyiPlaneBoundedVolume.h */,
+				16FFE2F01B92D1D300F8BE19 /* HouyiQuaternion.h */,
+				16FFE2F11B92D1D300F8BE19 /* HouyiRay.h */,
+				16FFE2F21B92D1D300F8BE19 /* HouyiSphere.h */,
+				16FFE2F31B92D1D300F8BE19 /* HouyiVector2.h */,
+				16FFE2F41B92D1D300F8BE19 /* HouyiVector3.h */,
+				16FFE2F51B92D1D300F8BE19 /* HouyiVector4.h */,
+				16FFE2F61B92D1D300F8BE19 /* HRect.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE2F71B92D1D300F8BE19 /* renderer */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2F81B92D1D300F8BE19 /* CMakeLists.txt */,
+				16FFE2F91B92D1D300F8BE19 /* GLES20 */,
+				16FFE30F1B92D1D300F8BE19 /* HouyiPass.cpp */,
+				16FFE3101B92D1D300F8BE19 /* include */,
+			);
+			path = renderer;
+			sourceTree = "<group>";
+		};
+		16FFE2F91B92D1D300F8BE19 /* GLES20 */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE2FA1B92D1D300F8BE19 /* HouyiGLDefaultPass.cpp */,
+				16FFE2FB1B92D1D300F8BE19 /* HouyiGLEnvPass.cpp */,
+				16FFE2FC1B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.cpp */,
+				16FFE2FD1B92D1D300F8BE19 /* HouyiGLESRenderer.cpp */,
+				16FFE2FE1B92D1D300F8BE19 /* HouyiGLESTexture.cpp */,
+				16FFE2FF1B92D1D300F8BE19 /* HouyiGLFirePass.cpp */,
+				16FFE3001B92D1D300F8BE19 /* HouyiGLPass.cpp */,
+				16FFE3011B92D1D300F8BE19 /* HouyiGLShadowPass.cpp */,
+				16FFE3021B92D1D300F8BE19 /* HouyiGLUtils.cpp */,
+				16FFE3031B92D1D300F8BE19 /* include */,
+			);
+			path = GLES20;
+			sourceTree = "<group>";
+		};
+		16FFE3031B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE3041B92D1D300F8BE19 /* glshaders.h */,
+				16FFE3051B92D1D300F8BE19 /* HIShaders.h */,
+				16FFE3061B92D1D300F8BE19 /* HouyiGLDefaultPass.h */,
+				16FFE3071B92D1D300F8BE19 /* HouyiGLEnvPass.h */,
+				16FFE3081B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.h */,
+				16FFE3091B92D1D300F8BE19 /* HouyiGLESRenderer.h */,
+				16FFE30A1B92D1D300F8BE19 /* HouyiGLESTexture.h */,
+				16FFE30B1B92D1D300F8BE19 /* HouyiGLFirePass.h */,
+				16FFE30C1B92D1D300F8BE19 /* HouyiGLPass.h */,
+				16FFE30D1B92D1D300F8BE19 /* HouyiGLShadowPass.h */,
+				16FFE30E1B92D1D300F8BE19 /* HouyiGLUtils.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE3101B92D1D300F8BE19 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE3111B92D1D300F8BE19 /* HouyiPass.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16FFE4201B92D23300F8BE19 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4211B92D23300F8BE19 /* bump */,
+				16FFE4241B92D23300F8BE19 /* camera */,
+				16FFE4271B92D23300F8BE19 /* camera_oculus_rift */,
+				16FFE42A1B92D23300F8BE19 /* cubemap */,
+				16FFE42D1B92D23300F8BE19 /* curly */,
+				16FFE4301B92D23300F8BE19 /* default */,
+				16FFE4331B92D23300F8BE19 /* fabricgallery */,
+				16FFE4361B92D23300F8BE19 /* fire */,
+				16FFE4391B92D23300F8BE19 /* gbook */,
+				16FFE43C1B92D23300F8BE19 /* glowing_texture */,
+				16FFE43F1B92D23300F8BE19 /* msaa */,
+				16FFE4421B92D23300F8BE19 /* othographic */,
+				16FFE4451B92D23300F8BE19 /* ppl */,
+				16FFE4481B92D23300F8BE19 /* ripple */,
+				16FFE44B1B92D23300F8BE19 /* rubik */,
+				16FFE44E1B92D23300F8BE19 /* scifi */,
+				16FFE4511B92D23300F8BE19 /* shadow_cast */,
+				16FFE4541B92D23300F8BE19 /* simple */,
+				16FFE4571B92D23300F8BE19 /* static_default */,
+				16FFE45A1B92D23300F8BE19 /* static_default_100 */,
+				16FFE45D1B92D23300F8BE19 /* static_ppl */,
+				16FFE4601B92D23300F8BE19 /* static_ppl_100 */,
+				16FFE4631B92D23300F8BE19 /* wavvy */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
+		16FFE4211B92D23300F8BE19 /* bump */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4221B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4231B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = bump;
+			sourceTree = "<group>";
+		};
+		16FFE4241B92D23300F8BE19 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4251B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4261B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = camera;
+			sourceTree = "<group>";
+		};
+		16FFE4271B92D23300F8BE19 /* camera_oculus_rift */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4281B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4291B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = camera_oculus_rift;
+			sourceTree = "<group>";
+		};
+		16FFE42A1B92D23300F8BE19 /* cubemap */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE42B1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE42C1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = cubemap;
+			sourceTree = "<group>";
+		};
+		16FFE42D1B92D23300F8BE19 /* curly */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE42E1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE42F1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = curly;
+			sourceTree = "<group>";
+		};
+		16FFE4301B92D23300F8BE19 /* default */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4311B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4321B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = default;
+			sourceTree = "<group>";
+		};
+		16FFE4331B92D23300F8BE19 /* fabricgallery */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4341B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4351B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = fabricgallery;
+			sourceTree = "<group>";
+		};
+		16FFE4361B92D23300F8BE19 /* fire */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4371B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4381B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = fire;
+			sourceTree = "<group>";
+		};
+		16FFE4391B92D23300F8BE19 /* gbook */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE43A1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE43B1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = gbook;
+			sourceTree = "<group>";
+		};
+		16FFE43C1B92D23300F8BE19 /* glowing_texture */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE43D1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE43E1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = glowing_texture;
+			sourceTree = "<group>";
+		};
+		16FFE43F1B92D23300F8BE19 /* msaa */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4401B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4411B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = msaa;
+			sourceTree = "<group>";
+		};
+		16FFE4421B92D23300F8BE19 /* othographic */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4431B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4441B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = othographic;
+			sourceTree = "<group>";
+		};
+		16FFE4451B92D23300F8BE19 /* ppl */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4461B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4471B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = ppl;
+			sourceTree = "<group>";
+		};
+		16FFE4481B92D23300F8BE19 /* ripple */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4491B92D23300F8BE19 /* fragment.sdr */,
+				16FFE44A1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = ripple;
+			sourceTree = "<group>";
+		};
+		16FFE44B1B92D23300F8BE19 /* rubik */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE44C1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE44D1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = rubik;
+			sourceTree = "<group>";
+		};
+		16FFE44E1B92D23300F8BE19 /* scifi */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE44F1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4501B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = scifi;
+			sourceTree = "<group>";
+		};
+		16FFE4511B92D23300F8BE19 /* shadow_cast */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4521B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4531B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = shadow_cast;
+			sourceTree = "<group>";
+		};
+		16FFE4541B92D23300F8BE19 /* simple */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4551B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4561B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = simple;
+			sourceTree = "<group>";
+		};
+		16FFE4571B92D23300F8BE19 /* static_default */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4581B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4591B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = static_default;
+			sourceTree = "<group>";
+		};
+		16FFE45A1B92D23300F8BE19 /* static_default_100 */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE45B1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE45C1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = static_default_100;
+			sourceTree = "<group>";
+		};
+		16FFE45D1B92D23300F8BE19 /* static_ppl */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE45E1B92D23300F8BE19 /* fragment.sdr */,
+				16FFE45F1B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = static_ppl;
+			sourceTree = "<group>";
+		};
+		16FFE4601B92D23300F8BE19 /* static_ppl_100 */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4611B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4621B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = static_ppl_100;
+			sourceTree = "<group>";
+		};
+		16FFE4631B92D23300F8BE19 /* wavvy */ = {
+			isa = PBXGroup;
+			children = (
+				16FFE4641B92D23300F8BE19 /* fragment.sdr */,
+				16FFE4651B92D23300F8BE19 /* vertex.sdr */,
+			);
+			path = wavvy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		16FFE1D01B92CFE300F8BE19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE4031B92D1D300F8BE19 /* HouyiRay.h in Headers */,
+				16FFE4001B92D1D300F8BE19 /* HouyiPlane.h in Headers */,
+				16FFE3881B92D1D300F8BE19 /* HouyiMotionEvent.h in Headers */,
+				16FFE3FE1B92D1D300F8BE19 /* HouyiMatrix3.h in Headers */,
+				16FFE36E1B92D1D300F8BE19 /* HouyiConst.h in Headers */,
+				16FFE3651B92D1D300F8BE19 /* HouyiAudioTrack.h in Headers */,
+				16FFE3A01B92D1D300F8BE19 /* HouyiTexture.h in Headers */,
+				16FFE3811B92D1D300F8BE19 /* HouyiMapLayer.h in Headers */,
+				16FFE3671B92D1D300F8BE19 /* HouyiCamera.h in Headers */,
+				16FFE3121B92D1D300F8BE19 /* RubikResolver.h in Headers */,
+				16FFE4161B92D1D300F8BE19 /* HouyiGLEnvPass.h in Headers */,
+				16FFE3BF1B92D1D300F8BE19 /* HouyiCuboid.h in Headers */,
+				16FFE41D1B92D1D300F8BE19 /* HouyiGLUtils.h in Headers */,
+				16FFE3751B92D1D300F8BE19 /* HouyiFPCamera.h in Headers */,
+				16FFE3911B92D1D300F8BE19 /* HouyiRigidBody.h in Headers */,
+				16FFE3DB1B92D1D300F8BE19 /* HouyiWaveformView.h in Headers */,
+				16FFE38D1B92D1D300F8BE19 /* HouyiRenderEntity.h in Headers */,
+				16FFE3F01B92D1D300F8BE19 /* HouyiSaver.h in Headers */,
+				16FFE3F11B92D1D300F8BE19 /* HouyiStlLoader.h in Headers */,
+				16FFE3E71B92D1D300F8BE19 /* Collada.h in Headers */,
+				16FFE3901B92D1D300F8BE19 /* HouyiRenderTarget.h in Headers */,
+				16FFE39F1B92D1D300F8BE19 /* HouyiSurface.h in Headers */,
+				16FFE3BC1B92D1D300F8BE19 /* HouyiCircle.h in Headers */,
+				16FFE3C51B92D1D300F8BE19 /* HouyiRing.h in Headers */,
+				16FFE36B1B92D1D300F8BE19 /* HouyiCanvasFactory.h in Headers */,
+				16FFE3C21B92D1D300F8BE19 /* HouyiGeoPlane.h in Headers */,
+				16FFE3B21B92D1D300F8BE19 /* ios.h in Headers */,
+				16FFE3A81B92D1D300F8BE19 /* Platform.h in Headers */,
+				16FFE3851B92D1D300F8BE19 /* HouyiMesh.h in Headers */,
+				16FFE38F1B92D1D300F8BE19 /* HouyiRenderState.h in Headers */,
+				16FFE3191B92D1D300F8BE19 /* HouyiPlanet.h in Headers */,
+				16FFE3A61B92D1D300F8BE19 /* HouyiViewStateManager.h in Headers */,
+				16FFE3A11B92D1D300F8BE19 /* HouyiTextureManager.h in Headers */,
+				16FFE4041B92D1D300F8BE19 /* HouyiSphere.h in Headers */,
+				16FFE3A51B92D1D300F8BE19 /* HouyiViewState.h in Headers */,
+				16FFE3921B92D1D300F8BE19 /* HouyiRoot.h in Headers */,
+				164F36251B92F186003CADF6 /* HouyiUtils.h in Headers */,
+				16FFE3EF1B92D1D300F8BE19 /* HouyiObjLoader.h in Headers */,
+				16FFE3D91B92D1D300F8BE19 /* HouyiUI.h in Headers */,
+				16FFE3C01B92D1D300F8BE19 /* HouyiCylinder.h in Headers */,
+				16FFE3681B92D1D300F8BE19 /* HouyiCameraAnimation.h in Headers */,
+				16FFE4051B92D1D300F8BE19 /* HouyiVector2.h in Headers */,
+				16FFE37C1B92D1D300F8BE19 /* HouyiJointNode.h in Headers */,
+				16FFE37A1B92D1D300F8BE19 /* HouyiImageFactory.h in Headers */,
+				16FFE4141B92D1D300F8BE19 /* HIShaders.h in Headers */,
+				16FFE38A1B92D1D300F8BE19 /* HouyiObject.h in Headers */,
+				16FFE3711B92D1D300F8BE19 /* HouyiDataOutputStream.h in Headers */,
+				16FFE39A1B92D1D300F8BE19 /* HouyiShaderManager.h in Headers */,
+				16FFE4011B92D1D300F8BE19 /* HouyiPlaneBoundedVolume.h in Headers */,
+				16FFE3EC1B92D1D300F8BE19 /* HouyiDefaultSaver.h in Headers */,
+				16FFE4081B92D1D300F8BE19 /* HRect.h in Headers */,
+				16FFE3EA1B92D1D300F8BE19 /* HouyiColladaLoader.h in Headers */,
+				16FFE3A71B92D1D300F8BE19 /* HouyiWorld.h in Headers */,
+				16FFE3861B92D1D300F8BE19 /* HouyiMeshOptimizer.h in Headers */,
+				16FFE1D91B92CFE300F8BE19 /* Houyi.h in Headers */,
+				16FFE3EE1B92D1D300F8BE19 /* HouyiMapLoader.h in Headers */,
+				16FFE3F21B92D1D300F8BE19 /* HouyiVector.h in Headers */,
+				16FFE31A1B92D1D300F8BE19 /* HouyiPlanetarySystem.h in Headers */,
+				16FFE3941B92D1D300F8BE19 /* HouyiSceneManager.h in Headers */,
+				16FFE4131B92D1D300F8BE19 /* glshaders.h in Headers */,
+				16FFE36D1B92D1D300F8BE19 /* HouyiColor.h in Headers */,
+				16FFE4151B92D1D300F8BE19 /* HouyiGLDefaultPass.h in Headers */,
+				16FFE3AC1B92D1D300F8BE19 /* HouyiiOSAudioTrack.h in Headers */,
+				16FFE3D11B92D1D300F8BE19 /* HouyiAdapter.h in Headers */,
+				16FFE3AB1B92D1D300F8BE19 /* TextureImageChecker.h in Headers */,
+				16FFE3771B92D1D300F8BE19 /* HouyiGestureDetector.h in Headers */,
+				16FFE36C1B92D1D300F8BE19 /* HouyiCapability.h in Headers */,
+				16FFE3FD1B92D1D300F8BE19 /* HouyiMath.h in Headers */,
+				16FFE3A21B92D1D300F8BE19 /* HouyiTransform.h in Headers */,
+				16FFE3841B92D1D300F8BE19 /* HouyiMemoryPool.h in Headers */,
+				16FFE3D01B92D1D300F8BE19 /* HouyiAbsListView.h in Headers */,
+				16FFE3931B92D1D300F8BE19 /* HouyiScene.h in Headers */,
+				16FFE39E1B92D1D300F8BE19 /* HouyiStringUtils.h in Headers */,
+				16FFE3731B92D1D300F8BE19 /* HouyiFile.h in Headers */,
+				16FFE3611B92D1D300F8BE19 /* HouyiAllocator.h in Headers */,
+				16FFE41F1B92D1D300F8BE19 /* HouyiPass.h in Headers */,
+				16FFE3E91B92D1D300F8BE19 /* HouyiAbsColladaLoader.h in Headers */,
+				16FFE3621B92D1D300F8BE19 /* HouyiAnimation.h in Headers */,
+				16FFE3691B92D1D300F8BE19 /* HouyiCameraNode.h in Headers */,
+				16FFE3781B92D1D300F8BE19 /* HouyiGrid.h in Headers */,
+				16FFE37F1B92D1D300F8BE19 /* HouyiLog.h in Headers */,
+				16FFE3FF1B92D1D300F8BE19 /* HouyiMatrix4.h in Headers */,
+				16FFE37E1B92D1D300F8BE19 /* HouyiLight.h in Headers */,
+				16FFE31B1B92D1D300F8BE19 /* HouyiSolarSystem.h in Headers */,
+				16FFE3EB1B92D1D300F8BE19 /* HouyiDefaultLoader.h in Headers */,
+				16FFE3601B92D1D300F8BE19 /* HouyiAABB.h in Headers */,
+				16FFE3ED1B92D1D300F8BE19 /* HouyiLoader.h in Headers */,
+				16FFE3D61B92D1D300F8BE19 /* HouyiListView.h in Headers */,
+				16FFE3B11B92D1D300F8BE19 /* HouyiiOSImage.h in Headers */,
+				16FFE3891B92D1D300F8BE19 /* HouyiNode.h in Headers */,
+				16FFE3951B92D1D300F8BE19 /* HouyiSceneNode.h in Headers */,
+				16FFE3FC1B92D1D300F8BE19 /* HouyiAxisAlignedBox.h in Headers */,
+				16FFE3D31B92D1D300F8BE19 /* HouyiDragImageView.h in Headers */,
+				16FFE31C1B92D1D300F8BE19 /* HouyiStar.h in Headers */,
+				16FFE3C11B92D1D300F8BE19 /* HouyiGeometry.h in Headers */,
+				16FFE3D41B92D1D300F8BE19 /* HouyiEditableImageView.h in Headers */,
+				16FFE3821B92D1D300F8BE19 /* HouyiMaterial.h in Headers */,
+				16FFE3AF1B92D1D300F8BE19 /* HouyiiOSCanvas.h in Headers */,
+				16FFE3AA1B92D1D300F8BE19 /* SmartPtr.h in Headers */,
+				16FFE41A1B92D1D300F8BE19 /* HouyiGLFirePass.h in Headers */,
+				16FFE37D1B92D1D300F8BE19 /* HouyiKeyFrame.h in Headers */,
+				16FFE3D81B92D1D300F8BE19 /* HouyiTileImageView.h in Headers */,
+				16FFE3A91B92D1D300F8BE19 /* RefCount.h in Headers */,
+				16FFE4171B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.h in Headers */,
+				16FFE39C1B92D1D300F8BE19 /* HouyiSphereEnvMap.h in Headers */,
+				16FFE3991B92D1D300F8BE19 /* HouyiSettings.h in Headers */,
+				16FFE3181B92D1D300F8BE19 /* HouyiHeavenlyObject.h in Headers */,
+				16FFE36A1B92D1D300F8BE19 /* HouyiCanvas.h in Headers */,
+				16FFE4181B92D1D300F8BE19 /* HouyiGLESRenderer.h in Headers */,
+				16FFE38B1B92D1D300F8BE19 /* HouyiOrthographicCamera.h in Headers */,
+				16FFE3981B92D1D300F8BE19 /* HouyiSerializable.h in Headers */,
+				16FFE3791B92D1D300F8BE19 /* HouyiImage.h in Headers */,
+				16FFE3971B92D1D300F8BE19 /* HouyiSceneOptimizer.h in Headers */,
+				16FFE3761B92D1D300F8BE19 /* HouyiGameWorld.h in Headers */,
+				16FFE3A31B92D1D300F8BE19 /* HouyiUtil.h in Headers */,
+				16FFE4191B92D1D300F8BE19 /* HouyiGLESTexture.h in Headers */,
+				16FFE3831B92D1D300F8BE19 /* HouyiMaterialManager.h in Headers */,
+				16FFE3E81B92D1D300F8BE19 /* Houyi3dsLoader.h in Headers */,
+				16FFE3D71B92D1D300F8BE19 /* HouyiTextView.h in Headers */,
+				16FFE3BE1B92D1D300F8BE19 /* HouyiCone.h in Headers */,
+				16FFE3A41B92D1D300F8BE19 /* HouyiVertexBuffer.h in Headers */,
+				16FFE3DA1B92D1D300F8BE19 /* HouyiView.h in Headers */,
+				16FFE39B1B92D1D300F8BE19 /* HouyiSkeleton.h in Headers */,
+				16FFE3961B92D1D300F8BE19 /* HouyiSceneNodeAnimation.h in Headers */,
+				16FFE38E1B92D1D300F8BE19 /* HouyiRenderer.h in Headers */,
+				16FFE4021B92D1D300F8BE19 /* HouyiQuaternion.h in Headers */,
+				16FFE3661B92D1D300F8BE19 /* HouyiAxis.h in Headers */,
+				16FFE3801B92D1D300F8BE19 /* HouyiMap.h in Headers */,
+				16FFE3871B92D1D300F8BE19 /* HouyiModelViewCamera.h in Headers */,
+				16FFE3D21B92D1D300F8BE19 /* HouyiButton.h in Headers */,
+				16FFE41C1B92D1D300F8BE19 /* HouyiGLShadowPass.h in Headers */,
+				16FFE37B1B92D1D300F8BE19 /* HouyiIndexBuffer.h in Headers */,
+				16FFE38C1B92D1D300F8BE19 /* HouyiPopupWorld.h in Headers */,
+				16FFE3641B92D1D300F8BE19 /* HouyiAudioManager.h in Headers */,
+				16FFE3701B92D1D300F8BE19 /* HouyiDataInputStream.h in Headers */,
+				16FFE4061B92D1D300F8BE19 /* HouyiVector3.h in Headers */,
+				16FFE3C41B92D1D300F8BE19 /* HouyiPrime.h in Headers */,
+				16FFE3721B92D1D300F8BE19 /* HouyiDef.h in Headers */,
+				16FFE3BD1B92D1D300F8BE19 /* HouyiCircleOutline.h in Headers */,
+				16FFE4071B92D1D300F8BE19 /* HouyiVector4.h in Headers */,
+				16FFE3741B92D1D300F8BE19 /* HouyiForce.h in Headers */,
+				16FFE39D1B92D1D300F8BE19 /* HouyiStats.h in Headers */,
+				16FFE41B1B92D1D300F8BE19 /* HouyiGLPass.h in Headers */,
+				16FFE3631B92D1D300F8BE19 /* HouyiArray.h in Headers */,
+				16FFE3C31B92D1D300F8BE19 /* HouyiGeoSphere.h in Headers */,
+				16FFE3D51B92D1D300F8BE19 /* HouyiImageView.h in Headers */,
+				16FFE36F1B92D1D300F8BE19 /* HouyiCubeEnvMap.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		16FFE1D21B92CFE300F8BE19 /* Houyi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16FFE1E91B92CFE300F8BE19 /* Build configuration list for PBXNativeTarget "Houyi" */;
+			buildPhases = (
+				16FFE1CE1B92CFE300F8BE19 /* Sources */,
+				16FFE1CF1B92CFE300F8BE19 /* Frameworks */,
+				16FFE1D01B92CFE300F8BE19 /* Headers */,
+				16FFE1D11B92CFE300F8BE19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Houyi;
+			productName = Houyi;
+			productReference = 16FFE1D31B92CFE300F8BE19 /* Houyi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		16FFE1DD1B92CFE300F8BE19 /* HouyiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16FFE1EC1B92CFE300F8BE19 /* Build configuration list for PBXNativeTarget "HouyiTests" */;
+			buildPhases = (
+				16FFE1DA1B92CFE300F8BE19 /* Sources */,
+				16FFE1DB1B92CFE300F8BE19 /* Frameworks */,
+				16FFE1DC1B92CFE300F8BE19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16FFE1E11B92CFE300F8BE19 /* PBXTargetDependency */,
+			);
+			name = HouyiTests;
+			productName = HouyiTests;
+			productReference = 16FFE1DE1B92CFE300F8BE19 /* HouyiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16FFE1CA1B92CFE300F8BE19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Lance Mao";
+				TargetAttributes = {
+					16FFE1D21B92CFE300F8BE19 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 277ZS7Z8W4;
+					};
+					16FFE1DD1B92CFE300F8BE19 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 16FFE1CD1B92CFE300F8BE19 /* Build configuration list for PBXProject "Houyi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 16FFE1C91B92CFE300F8BE19;
+			productRefGroup = 16FFE1D41B92CFE300F8BE19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16FFE1D21B92CFE300F8BE19 /* Houyi */,
+				16FFE1DD1B92CFE300F8BE19 /* HouyiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16FFE1D11B92CFE300F8BE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE4741B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4091B92D1D300F8BE19 /* CMakeLists.txt in Resources */,
+				16FFE4901B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE3241B92D1D300F8BE19 /* CMakeLists.txt in Resources */,
+				16FFE4871B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4811B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE48A1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4771B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4761B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4751B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE48D1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4911B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4721B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE48F1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4841B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4931B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE48C1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE46C1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE46F1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE46D1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4701B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4801B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE47E1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4791B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE47C1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4861B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4891B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4681B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE46A1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE48B1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4691B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4921B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE47B1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4711B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4661B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4821B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE46E1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4781B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */,
+				16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4851B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE47D1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4831B92D23300F8BE19 /* vertex.sdr in Resources */,
+				16FFE4881B92D23300F8BE19 /* fragment.sdr in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16FFE1DC1B92CFE300F8BE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16FFE1CE1B92CFE300F8BE19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE3C81B92D1D300F8BE19 /* HouyiDragImageView.cpp in Sources */,
+				16FFE4121B92D1D300F8BE19 /* HouyiGLUtils.cpp in Sources */,
+				16FFE3561B92D1D300F8BE19 /* HouyiSurface.cpp in Sources */,
+				16FFE32E1B92D1D300F8BE19 /* HouyiCameraNode.cpp in Sources */,
+				16FFE3381B92D1D300F8BE19 /* HouyiGrid.cpp in Sources */,
+				16FFE33A1B92D1D300F8BE19 /* HouyiJointNode.cpp in Sources */,
+				16FFE3E31B92D1D300F8BE19 /* HouyiMapLoader.cpp in Sources */,
+				16FFE3321B92D1D300F8BE19 /* HouyiCubeEnvMap.cpp in Sources */,
+				16FFE3F51B92D1D300F8BE19 /* HouyiMatrix4.cpp in Sources */,
+				16FFE3401B92D1D300F8BE19 /* HouyiMesh.cpp in Sources */,
+				16FFE3511B92D1D300F8BE19 /* HouyiSettings.cpp in Sources */,
+				16FFE33C1B92D1D300F8BE19 /* HouyiLight.cpp in Sources */,
+				16FFE3171B92D1D300F8BE19 /* HouyiSolarSystem.cpp in Sources */,
+				16FFE34D1B92D1D300F8BE19 /* HouyiSceneManager.cpp in Sources */,
+				16FFE32F1B92D1D300F8BE19 /* HouyiCanvas.cpp in Sources */,
+				16FFE3F81B92D1D300F8BE19 /* HouyiSphere.cpp in Sources */,
+				16FFE3CC1B92D1D300F8BE19 /* HouyiTextView.cpp in Sources */,
+				16FFE3481B92D1D300F8BE19 /* HouyiRenderEntity.cpp in Sources */,
+				16FFE3AD1B92D1D300F8BE19 /* HouyiiOSAudoTrack.cpp in Sources */,
+				16FFE3491B92D1D300F8BE19 /* HouyiRenderer.cpp in Sources */,
+				16FFE3521B92D1D300F8BE19 /* HouyiShaderManager.cpp in Sources */,
+				16FFE3B81B92D1D300F8BE19 /* HouyiCylinder.cpp in Sources */,
+				16FFE32B1B92D1D300F8BE19 /* HouyiAxis.cpp in Sources */,
+				16FFE33B1B92D1D300F8BE19 /* HouyiKeyFrame.cpp in Sources */,
+				16FFE3C61B92D1D300F8BE19 /* SmallPT.cpp in Sources */,
+				16FFE3161B92D1D300F8BE19 /* HouyiPlanetarySystem.cpp in Sources */,
+				16FFE3151B92D1D300F8BE19 /* HouyiPlanet.cpp in Sources */,
+				16FFE3DC1B92D1D300F8BE19 /* Collada.cpp in Sources */,
+				16FFE3E61B92D1D300F8BE19 /* HouyiStlLoader.cpp in Sources */,
+				16FFE35B1B92D1D300F8BE19 /* HouyiVertexBuffer.cpp in Sources */,
+				16FFE41E1B92D1D300F8BE19 /* HouyiPass.cpp in Sources */,
+				16FFE3BA1B92D1D300F8BE19 /* HouyiGeoSphere.cpp in Sources */,
+				16FFE3131B92D1D300F8BE19 /* RubikResolver.cpp in Sources */,
+				16FFE3351B92D1D300F8BE19 /* HouyiFPCamera.cpp in Sources */,
+				16FFE3F71B92D1D300F8BE19 /* HouyiQuaternion.cpp in Sources */,
+				16FFE3281B92D1D300F8BE19 /* HouyiAnimation.cpp in Sources */,
+				16FFE3BB1B92D1D300F8BE19 /* HouyiRing.cpp in Sources */,
+				16FFE32D1B92D1D300F8BE19 /* HouyiCameraAnimation.cpp in Sources */,
+				16FFE3E11B92D1D300F8BE19 /* HouyiDefaultSaver.cpp in Sources */,
+				16FFE3DF1B92D1D300F8BE19 /* HouyiColladaLoader.cpp in Sources */,
+				16FFE3471B92D1D300F8BE19 /* HouyiPopupWorld.cpp in Sources */,
+				16FFE34A1B92D1D300F8BE19 /* HouyiRigidBody.cpp in Sources */,
+				16FFE3F31B92D1D300F8BE19 /* HouyiMath.cpp in Sources */,
+				16FFE33D1B92D1D300F8BE19 /* HouyiMap.cpp in Sources */,
+				16FFE3DE1B92D1D300F8BE19 /* HouyiAbsColladaLoader.cpp in Sources */,
+				16FFE3591B92D1D300F8BE19 /* HouyiTransform.cpp in Sources */,
+				16FFE40C1B92D1D300F8BE19 /* HouyiGLESCubeMapTexture.cpp in Sources */,
+				16FFE3F41B92D1D300F8BE19 /* HouyiMatrix3.cpp in Sources */,
+				164F36261B92F186003CADF6 /* HouyiUtils.mm in Sources */,
+				16FFE3441B92D1D300F8BE19 /* HouyiNode.cpp in Sources */,
+				16FFE3B91B92D1D300F8BE19 /* HouyiGeoPlane.cpp in Sources */,
+				16FFE3FA1B92D1D300F8BE19 /* HouyiVector3.cpp in Sources */,
+				16FFE32C1B92D1D300F8BE19 /* HouyiCamera.cpp in Sources */,
+				16FFE3F61B92D1D300F8BE19 /* HouyiPlane.cpp in Sources */,
+				16FFE3CF1B92D1D300F8BE19 /* HouyiWaveformView.cpp in Sources */,
+				16FFE3CA1B92D1D300F8BE19 /* HouyiImageView.cpp in Sources */,
+				16FFE40D1B92D1D300F8BE19 /* HouyiGLESRenderer.cpp in Sources */,
+				16FFE3331B92D1D300F8BE19 /* HouyiDataInputStream.cpp in Sources */,
+				16FFE3311B92D1D300F8BE19 /* HouyiCapability.cpp in Sources */,
+				16FFE3391B92D1D300F8BE19 /* HouyiImageFactory.cpp in Sources */,
+				16FFE40F1B92D1D300F8BE19 /* HouyiGLFirePass.cpp in Sources */,
+				16FFE3461B92D1D300F8BE19 /* HouyiOrthographicCamera.cpp in Sources */,
+				16FFE3571B92D1D300F8BE19 /* HouyiTexture.cpp in Sources */,
+				16FFE3251B92D1D300F8BE19 /* HouyiAABB.cpp in Sources */,
+				16FFE3C71B92D1D300F8BE19 /* HouyiButton.cpp in Sources */,
+				16FFE3B41B92D1D300F8BE19 /* HouyiCircle.cpp in Sources */,
+				16FFE3141B92D1D300F8BE19 /* HouyiHeavenlyObject.cpp in Sources */,
+				16FFE3B51B92D1D300F8BE19 /* HouyiCircleOutline.cpp in Sources */,
+				16FFE35A1B92D1D300F8BE19 /* HouyiUtil.cpp in Sources */,
+				16FFE3421B92D1D300F8BE19 /* HouyiModelViewCamera.cpp in Sources */,
+				16FFE3361B92D1D300F8BE19 /* HouyiGameWorld.cpp in Sources */,
+				16FFE4101B92D1D300F8BE19 /* HouyiGLPass.cpp in Sources */,
+				16FFE34B1B92D1D300F8BE19 /* HouyiRoot.cpp in Sources */,
+				16FFE3531B92D1D300F8BE19 /* HouyiSkeleton.cpp in Sources */,
+				16FFE40E1B92D1D300F8BE19 /* HouyiGLESTexture.cpp in Sources */,
+				16FFE3301B92D1D300F8BE19 /* HouyiCanvasFactory.cpp in Sources */,
+				16FFE3F91B92D1D300F8BE19 /* HouyiVector2.cpp in Sources */,
+				16FFE3501B92D1D300F8BE19 /* HouyiSceneOptimizer.cpp in Sources */,
+				16FFE3551B92D1D300F8BE19 /* HouyiStringUtils.cpp in Sources */,
+				16FFE35E1B92D1D300F8BE19 /* HouyiWorld.cpp in Sources */,
+				16FFE35C1B92D1D300F8BE19 /* HouyiViewState.cpp in Sources */,
+				16FFE3CD1B92D1D300F8BE19 /* HouyiTileImageView.cpp in Sources */,
+				16FFE33F1B92D1D300F8BE19 /* HouyiMaterialManager.cpp in Sources */,
+				16FFE3271B92D1D300F8BE19 /* HouyiAllocator.cpp in Sources */,
+				16FFE3541B92D1D300F8BE19 /* HouyiSphereEnvMap.cpp in Sources */,
+				16FFE3261B92D1D300F8BE19 /* HouyiAbsListView.cpp in Sources */,
+				16FFE40B1B92D1D300F8BE19 /* HouyiGLEnvPass.cpp in Sources */,
+				16FFE3B61B92D1D300F8BE19 /* HouyiCone.cpp in Sources */,
+				16FFE3C91B92D1D300F8BE19 /* HouyiEditableImageView.cpp in Sources */,
+				16FFE3341B92D1D300F8BE19 /* HouyiFile.cpp in Sources */,
+				16FFE35D1B92D1D300F8BE19 /* HouyiViewStateManager.cpp in Sources */,
+				16FFE3AE1B92D1D300F8BE19 /* HouyiiOSCanvas.cpp in Sources */,
+				16FFE3411B92D1D300F8BE19 /* HouyiMeshOptimizer.cpp in Sources */,
+				16FFE3B01B92D1D300F8BE19 /* HouyiiOSImage.cpp in Sources */,
+				16FFE3E01B92D1D300F8BE19 /* HouyiDefaultLoader.cpp in Sources */,
+				16FFE3291B92D1D300F8BE19 /* HouyiAudioManager.cpp in Sources */,
+				16FFE3431B92D1D300F8BE19 /* HouyiMotionEvent.cpp in Sources */,
+				16FFE3CE1B92D1D300F8BE19 /* HouyiView.cpp in Sources */,
+				16FFE3B31B92D1D300F8BE19 /* TextureImageChecker.cpp in Sources */,
+				16FFE34C1B92D1D300F8BE19 /* HouyiScene.cpp in Sources */,
+				16FFE3E21B92D1D300F8BE19 /* HouyiLoader.cpp in Sources */,
+				16FFE3CB1B92D1D300F8BE19 /* HouyiListView.cpp in Sources */,
+				16FFE3451B92D1D300F8BE19 /* HouyiObject.cpp in Sources */,
+				16FFE33E1B92D1D300F8BE19 /* HouyiMaterial.cpp in Sources */,
+				16FFE4111B92D1D300F8BE19 /* HouyiGLShadowPass.cpp in Sources */,
+				16FFE3FB1B92D1D300F8BE19 /* HouyiVector4.cpp in Sources */,
+				16FFE3B71B92D1D300F8BE19 /* HouyiCuboid.cpp in Sources */,
+				16FFE3E41B92D1D300F8BE19 /* HouyiObjLoader.cpp in Sources */,
+				16FFE34F1B92D1D300F8BE19 /* HouyiSceneNodeAnimation.cpp in Sources */,
+				16FFE34E1B92D1D300F8BE19 /* HouyiSceneNode.cpp in Sources */,
+				16FFE3DD1B92D1D300F8BE19 /* Houyi3dsLoader.cpp in Sources */,
+				16FFE3371B92D1D300F8BE19 /* HouyiGestureDetector.cpp in Sources */,
+				16FFE3581B92D1D300F8BE19 /* HouyiTextureManager.cpp in Sources */,
+				16FFE40A1B92D1D300F8BE19 /* HouyiGLDefaultPass.cpp in Sources */,
+				16FFE3E51B92D1D300F8BE19 /* HouyiSaver.cpp in Sources */,
+				16FFE32A1B92D1D300F8BE19 /* HouyiAudioTrack.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16FFE1DA1B92CFE300F8BE19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16FFE1E61B92CFE300F8BE19 /* HouyiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16FFE1E11B92CFE300F8BE19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16FFE1D21B92CFE300F8BE19 /* Houyi */;
+			targetProxy = 16FFE1E01B92CFE300F8BE19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16FFE1E71B92CFE300F8BE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		16FFE1E81B92CFE300F8BE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		16FFE1EA1B92CFE300F8BE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					libs/freetype/include,
+				);
+				INFOPLIST_FILE = Houyi/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		16FFE1EB1B92CFE300F8BE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					libs/freetype/include,
+				);
+				INFOPLIST_FILE = Houyi/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		16FFE1ED1B92CFE300F8BE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HouyiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16FFE1EE1B92CFE300F8BE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HouyiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16FFE1CD1B92CFE300F8BE19 /* Build configuration list for PBXProject "Houyi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16FFE1E71B92CFE300F8BE19 /* Debug */,
+				16FFE1E81B92CFE300F8BE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16FFE1E91B92CFE300F8BE19 /* Build configuration list for PBXNativeTarget "Houyi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16FFE1EA1B92CFE300F8BE19 /* Debug */,
+				16FFE1EB1B92CFE300F8BE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16FFE1EC1B92CFE300F8BE19 /* Build configuration list for PBXNativeTarget "HouyiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16FFE1ED1B92CFE300F8BE19 /* Debug */,
+				16FFE1EE1B92CFE300F8BE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16FFE1CA1B92CFE300F8BE19 /* Project object */;
+}

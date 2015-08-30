@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RadioGroup 
+	    android:id="@+id/rg_shading_mode"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+	    <RadioButton 
+		  android:id="@+id/rb_sm_default"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"  
+		  android:checked="true" 
+		  android:text="@string/sm_default" />
+		<RadioButton 
+		  android:id="@+id/rb_sm_ppl"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"   
+		  android:text="@string/sm_ppl" />
+		<RadioButton 
+		  android:id="@+id/rb_sm_solid"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"   
+		  android:text="@string/sm_solid" />
+		<RadioButton 
+		  android:id="@+id/rb_sm_wireframe"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"   
+		  android:text="@string/sm_wireframe" />
+		<RadioButton 
+		  android:id="@+id/rb_sm_hologram"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"   
+		  android:text="@string/sm_hologram" 
+		  android:visibility="gone"/>
+	</RadioGroup>
+
+</LinearLayout>

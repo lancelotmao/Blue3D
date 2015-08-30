@@ -1,0 +1,34 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float uScale;
+uniform float vScale;
+
+uniform float uScroll;
+
+varying vec2 texcoords;
+
+void main() {
+	gl_PointSize = 5.0;
+	
+	texcoords.st = aTexcoord.st * vec2(uScale, vScale);
+    
+    // x & z
+    vec2 P0 = vec2(-0.5, 0.0);
+    vec2 P1 = vec2(0.5 - uScroll, uScroll * 0.25);
+    float Q0MoveRatio = 0.0 + (0.25 - 0.0) * uScroll;
+    vec2 Q0 = vec2(P0.x + (P1.x - P0.x) * Q0MoveRatio, uScroll * 1.5);
+    vec2 Q1 = vec2(P0.x + (P1.x - P0.x) * (1.0-Q0MoveRatio), uScroll * 0.25);
+    
+    float t = aPosition.x + 0.5;
+    vec2 Q = Q0 + (Q1 - Q0) * t;
+    vec2 P0Q = P0 + (Q - P0) * t;
+    vec2 QP1 = Q + (P1 - Q) * t;
+    
+    vec2 Bezier = P0Q + (QP1 - P0Q) * t;
+    vec3 pos = vec3(aPosition.x + uScroll * (Bezier.x - aPosition.x), aPosition.y, Bezier.y);
+}

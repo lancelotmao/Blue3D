@@ -1,0 +1,46 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+attribute vec3 aNormal;
+
+uniform mat3 matNormal;
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform int iLightingEnabled;
+uniform vec4 uLightPos[4];
+uniform vec4 uLightColor[4];
+uniform vec4 uMaterialDiffuse;
+uniform float uScale;
+
+uniform float vScale;
+
+varying vec2 vTexcoords;
+varying vec4 vLightResult;
+varying float vDensity;
+
+void main() {
+	vTexcoords.st = vec2(aTexcoord.s * uScale, (1.0 - aTexcoord.t) * vScale);
+    
+    vec4 pos = matWorld * aPosition;
+    vec3 normal = matNormal * aNormal;
+    
+    if (iLightingEnabled != 0)
+    {
+        vec4 posInLightSpace = matEye * pos;
+        vec3 normalInLightSpace = mat3(matEye) * normal;
+        vec3 lv = normalize(uLightPos[0].xyz - posInLightSpace.xyz);
+        
+        vDensity = clamp(dot(normalInLightSpace, lv), 0.0, 1.0);
+        vLightResult = clamp(vec4(uMaterialDiffuse.xyz * uLightColor[0].xyz * vDensity, uMaterialDiffuse.w), 0.0, 1.0);
+    }
+    else
+    {
+        vDensity = 1.0;
+        vLightResult = uMaterialDiffuse;
+    }
+    
+    vec4 outPos = matProjection * matEye * pos;
+    outPos.z = outPos.z * outPos.w;
+    gl_Position = outPos;
+}

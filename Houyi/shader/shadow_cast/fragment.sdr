@@ -1,0 +1,12 @@
+precision mediump float;
+
+varying vec4 vPos;
+
+void main() {
+    // because we are projecting onto light coordinate
+    // w can be not normalized. We must normalize it
+    float normalizedDistance  = vPos.z / vPos.w;
+    
+    // TODO encode float z into RGB
+    gl_FragColor = vec4(normalizedDistance, normalizedDistance, normalizedDistance, 1.0);
+}

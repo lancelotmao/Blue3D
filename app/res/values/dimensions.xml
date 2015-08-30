@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cell_height">80dp</dimen>
+    <integer name="column_count_port">3</integer>
+    <integer name="column_count_land">5</integer>
+</resources>

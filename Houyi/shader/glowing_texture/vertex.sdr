@@ -1,0 +1,38 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+attribute vec3 aNormal;
+
+uniform mat3 matNormal;
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float uPointSize;
+uniform int iLightingEnabled;
+uniform vec4 uLightPos[4];
+uniform vec4 uLightColor[4];
+uniform int uLightCount;
+uniform vec4 uAmbientLight;
+uniform vec4 uMaterialAmbient;
+uniform vec4 uMaterialDiffuse;
+uniform vec4 uMaterialSpec;
+uniform float uShininess;
+uniform int uDoubleSided;
+uniform vec3 uEyePosition;
+uniform int uIsLightPosFixed;
+
+uniform float uScale;
+uniform float vScale;
+
+varying vec2 vTexcoords;
+
+void main() {
+	gl_PointSize = uPointSize;
+	vTexcoords.st = vec2(aTexcoord.s * uScale, (1.0 - aTexcoord.t) * vScale);
+    
+    vec4 pos = matWorld * aPosition;
+    
+    vec4 outPos = matProjection * matEye * pos;
+    //outPos.z = outPos.z * outPos.w;
+    gl_Position = outPos;
+}

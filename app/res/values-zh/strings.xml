@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">蓝三维</string>
+    <string name="about">关于</string>
+    <string name="upgrade">升级</string>
+    
+	<string name="sample">示例</string>
+	<string name="local_storage">本地</string>
+	<string name="dropbox">Drop Box</string>
+	
+	<!-- menu -->
+	<string name="show_hide">显示/隐藏</string>
+	<string name="control">控制</string>
+	<string name="shading">渲染</string>
+	<string name="presentation">开始演示</string>
+	<string name="stop_presentation">停止演示</string>
+	<string name="screenshot">截屏</string>
+	
+	<!-- dialog -->
+	<string name="show_hide_setting">显示/隐藏设置</string>
+	<string name="show_hide_stats">显示FPS和统计</string>
+	<string name="show_hide_grid">显示参考网格</string>
+	<string name="show_hide_axis">显示坐标系</string>
+	
+	<string name="model_viewer">模型查看器</string>
+	<string name="share">分享</string>
+</resources>

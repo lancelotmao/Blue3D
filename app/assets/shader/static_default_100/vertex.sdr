@@ -1,0 +1,76 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+attribute vec3 aNormal;
+attribute vec4 aColor;
+
+uniform mat3 matNormal;
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform int iLightingEnabled;
+uniform vec4 uLightPos[4];
+uniform vec4 uLightColor[4];
+uniform int uLightCount;
+uniform vec4 uAmbientLight;
+uniform vec4 uMaterialAmbient;
+uniform vec4 uMaterialDiffuse;
+uniform vec4 uMaterialSpec;
+uniform float uShininess;
+uniform int uDoubleSided;
+uniform vec3 uEyePosition;
+uniform int uIsLightPosFixed;
+
+uniform float uScale;
+uniform float vScale;
+
+varying vec2 vTexcoords;
+varying vec4 vLightResult;
+varying float vDensity;
+
+void main() {
+	vTexcoords.st = vec2(aTexcoord.s * uScale, (1.0 - aTexcoord.t) * vScale);
+    
+    vec4 pos = matWorld * aPosition;
+    vec3 normal = normalize(matNormal * aNormal);
+    
+    if (iLightingEnabled != 0)
+    {
+    	vDensity = 0.0;
+        vLightResult = uAmbientLight * uMaterialAmbient;
+        int i = 0;
+    	vec4 posInLightSpace = uIsLightPosFixed == 0 ? pos : matEye * pos;
+		vec3 normalInLightSpace = uIsLightPosFixed == 0 ? normal : mat3(matEye) * normal;
+        vec3 lv = normalize(uLightPos[i].xyz - posInLightSpace.xyz);
+        
+        if (uDoubleSided != 0)
+        {
+        	vDensity = abs(dot(normalInLightSpace, lv));
+        }
+        else
+        {
+            vDensity = clamp(dot(normalInLightSpace, lv), 0.0, 1.0);
+		}
+			
+        vLightResult += clamp(vec4(uMaterialDiffuse.xyz * uLightColor[i].xyz * vDensity, uMaterialDiffuse.w), 0.0, 1.0);
+        
+        // specular light
+        if (uMaterialSpec.w > 0.01 && vDensity > 0.0)
+        {
+            vec3 camVec = normalize(uEyePosition - posInLightSpace.xyz);
+            vec3 halfV = normalize(lv + camVec);
+            float specPower = pow(max(0.0, dot(halfV, normalInLightSpace)), uShininess);
+            vLightResult += vec4(uMaterialSpec.xyz * normalize(uLightColor[i].xyz) * specPower, 0);
+        }
+        vLightResult = clamp(vLightResult, 0.0, 1.0);
+    }
+    else
+    {
+        vDensity = 1.0;
+        vLightResult = uMaterialDiffuse + aColor;
+    }
+    
+    vec4 outPos = matProjection * matEye * pos;
+    //outPos.z = outPos.z * outPos.w;
+    gl_Position = outPos;
+}

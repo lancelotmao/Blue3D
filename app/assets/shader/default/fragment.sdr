@@ -1,0 +1,129 @@
+precision mediump float;
+
+uniform sampler2D tex;
+uniform vec2 uTexScroll;
+// 0 No Texture; 1 Combine; 2 Replace; 3 Modulate
+uniform int uTextureMode;
+
+// shadow uniforms
+uniform int uShadowEnabled;
+uniform sampler2D texShadowMap;
+uniform float width;
+uniform float height;
+uniform float uShadowFactor;
+uniform int uIsOccluder;
+// accepted value is 1, 4, 16
+uniform int uShadowMappingAASampleRate;
+
+varying vec4 lightResult;
+varying vec2 texcoords;
+varying float vDensity;
+varying vec4 vLCPos;
+
+void main() {
+	int count = 0;
+	int shadowAASampleRate = uShadowMappingAASampleRate;
+	
+	if (uShadowEnabled != 0)
+	{
+	    float invW = 1.0 / width;
+	    float invH = 1.0 / height;
+	    
+	    vec4 normalizedLCPos = vLCPos / vLCPos.w;
+	    float LCZ = normalizedLCPos.z;
+	    vec2 shadowCoord = (normalizedLCPos.st + 1.0) / 2.0;
+	    
+	    vec4 shadowTexColor = texture2D(texShadowMap, shadowCoord.st);
+	    if (shadowTexColor.s > 0.0 && shadowTexColor.s < 1.0
+	        && shadowTexColor.t > 0.0 && shadowTexColor.t < 1.0)
+	    {
+	        if(uIsOccluder != 0)
+	        {
+	            // for occluder, avoid z fighting by loosing condition
+	            LCZ -= 0.01;
+	        }
+	        
+	        if (uShadowMappingAASampleRate == 16)
+	        {
+	            for (int i = 0;i < 4;++i)
+	            {
+	                for (int j = 0;j < 4;++j)
+	                {
+	                    vec4 stc = texture2D(texShadowMap,
+	                            vec2(shadowCoord.s + (-1.5+float(i)) * invW, shadowCoord.t + (-1.5+float(j)) * invH));
+	    
+	                    if (LCZ > stc.r)
+	                    {
+	                        count++;
+	                    }
+	                }
+	            }
+	        }
+	        else if (uShadowMappingAASampleRate == 4)
+	        {
+	            for (int i = 0;i < 2;++i)
+	            {
+	                for (int j = 0;j < 2;++j)
+	                {
+	                    vec4 stc = texture2D(texShadowMap,
+	                            vec2(shadowCoord.s + (-0.5+float(i)) * invW, shadowCoord.t + (-0.5+float(j)) * invH));
+	    
+	                    if (LCZ > stc.r)
+	                    {
+	                        count++;
+	                    }
+	                }
+	            }
+	        }
+	        else
+	        {
+	            shadowAASampleRate = 1;
+	            vec4 stc = texture2D(texShadowMap, shadowCoord.st);
+	            if (LCZ > stc.r)
+	            {
+	                count++;
+	            }
+	        }
+	    }
+	}
+    
+    // flip Y
+    vec2 tc = texcoords + uTexScroll;
+    
+    if (count == 0)
+    {
+    	if (uTextureMode == 0)
+    	{
+    		gl_FragColor = lightResult;
+    	}
+    	else
+    	{
+	        vec4 texColor = texture2D(tex, tc + uTexScroll);
+	        vec4 baseColor = texColor * vDensity;
+	        if (uTextureMode == 1)
+	        {
+	            gl_FragColor = baseColor + lightResult;
+	        }
+	        else if(uTextureMode == 2)
+	        {
+	            gl_FragColor = vec4(baseColor.xyz, texColor.w);
+	        }
+	        else
+	        {
+	            gl_FragColor = baseColor * lightResult;
+	        }
+	    }
+//        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+    }
+    else if (uIsOccluder != 0)
+    {
+        vec4 texColor = texture2D(tex, tc);
+        vec4 baseColor = texColor * vDensity + lightResult;
+        // self shadowing. avoid completely black
+        gl_FragColor = vec4(baseColor.xyz * uShadowFactor, baseColor.w);
+    }
+    else
+    {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, float(count) / float(shadowAASampleRate));
+    }
+}

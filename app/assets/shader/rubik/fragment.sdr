@@ -1,0 +1,11 @@
+precision mediump float;
+
+uniform vec4 color;
+uniform samplerCube EnvMap;
+
+varying vec3 vReflect;
+
+void main() {
+    vec3 envColor = vec3(textureCube(EnvMap, vReflect));
+    gl_FragColor = vec4(color.xyz * 0.4 + envColor * 0.6, color.w);
+}

@@ -1,0 +1,17 @@
+attribute vec4 aPosition;
+attribute vec3 aNormal;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform vec3 uEyePosition;
+
+varying vec3 vReflect;
+
+void main() {
+    vec3 pos = (matWorld * aPosition).xyz;
+    vec3 norm = normalize(mat3(matWorld) * aNormal);
+    vReflect = reflect(pos - uEyePosition, norm);
+    gl_Position = matProjection * (matEye * vec4(pos, 1.0));
+}

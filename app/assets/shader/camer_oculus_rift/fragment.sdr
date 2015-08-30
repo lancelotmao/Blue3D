@@ -1,0 +1,32 @@
+#extension GL_OES_EGL_image_external : require
+
+precision mediump float;
+
+uniform samplerExternalOES tex;
+uniform int uIsMirrored;
+
+varying vec2 vTexcoord;
+
+vec2 HmdWarp(vec2 in01)
+{
+	vec4 HmdWarpParam = vec4(2.5, 0.5, 0.25, 0.05);
+    vec2 lensCenter = vec2(0.5, 0.5);
+    vec2 theta = (in01 - lensCenter) * 2.0;
+    float rSq = theta.x * theta.x + theta.y * theta.y;
+    vec2 rvector = theta * (HmdWarpParam.x + HmdWarpParam.y * rSq + HmdWarpParam.z * rSq * rSq + HmdWarpParam.w * rSq * rSq * rSq);
+    return lensCenter + 0.15 * rvector;
+}
+
+void main()
+{
+	vec2 tc = HmdWarp(vTexcoord);
+	if (tc.s < 0.0 || tc.s > 1.0 || tc.t < 0.0 || tc.t > 1.0) {
+		gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+	} else {
+		if (uIsMirrored == 1)
+		{
+			tc = vec2(tc.s * 0.5 + 0.25, tc.t);
+		}
+		gl_FragColor = texture2D(tex, tc); 
+	}
+}

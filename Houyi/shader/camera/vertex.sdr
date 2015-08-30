@@ -1,0 +1,14 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+varying vec2 vTexcoord;
+
+void main() {
+    vTexcoord.st = aTexcoord;
+    vec4 pos = vec4(aPosition.xy, 1.0, 1.0);
+    gl_Position = matProjection * matEye * matWorld * pos;
+}

@@ -1,0 +1,28 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float px;
+uniform float py;
+uniform float R;
+uniform float waveLength;
+uniform float waveMag;
+
+varying vec2 texcoords;
+
+void main() {
+	gl_PointSize = 5.0;
+    vec3 pos = aPosition.xyz;
+    texcoords.st = aTexcoord.st;
+    
+    vec3 P = vec3(px, py, 0);
+    float distanceToWave = R - length(pos - P);
+    if (distanceToWave > -waveLength / 2.0 && distanceToWave < waveLength / 2.0)
+    {
+    	pos.z = sin(distanceToWave) * waveMag;
+    }
+	gl_Position = matProjection * (matEye * (matWorld * vec4(pos.xyz, 1.0)));
+}

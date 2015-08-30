@@ -1,0 +1,17 @@
+precision mediump float;
+
+uniform sampler2D tex;
+
+// 0 No Texture; 1 Combine; 2 Replace; 3 Modulate
+uniform int uTextureMode;
+
+varying vec2 vTexcoords;
+varying vec4 vLightResult;
+varying float vDensity;
+varying vec3 vTangent;
+
+void main() {
+	vec3 base = vec3(0.6823, 0.7961, 1.0);
+	float len = length(vTangent) * 2.0 - 1.0;
+	gl_FragColor = vec4(base * vDensity, len);
+}

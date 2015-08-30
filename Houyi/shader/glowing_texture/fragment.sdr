@@ -1,0 +1,22 @@
+precision mediump float;
+
+uniform float uTick;
+uniform sampler2D tex;
+
+varying vec2 vTexcoords;
+
+void main() {
+	float sinT = sin(uTick/2.0);
+    vec4 texColor = texture2D(tex, vTexcoords);
+    float a = texColor.w;
+    if (a < 1.0)
+    {
+    	gl_FragColor = vec4(texColor.xyz + vec3(sinT, sinT, sinT) * (1.0-a), 1.0);
+    }
+    else
+    {
+	    gl_FragColor = texColor;
+	}
+	
+	//gl_FragColor = vec4(vec3(sinT, sinT, sinT), 1.0);
+}

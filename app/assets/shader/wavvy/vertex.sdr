@@ -1,0 +1,17 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float tick;
+
+varying vec2 texcoords;
+
+void main() {
+	gl_PointSize = 5.0;
+    texcoords.st = aTexcoord.st;
+    
+	gl_Position = matProjection * (matEye * (matWorld * aPosition));
+}

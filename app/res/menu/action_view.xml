@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/action_camera"
+        android:icon="@drawable/ic_camera"
+        android:showAsAction="always"
+        android:title="@string/open_camera"/>
+    
+	<item android:id="@+id/action_show_hide"
+          android:title="@string/show_hide"/>
+	
+	<item android:id="@+id/action_control"
+          android:title="@string/control"/>
+	
+	<item android:id="@+id/action_shading"
+          android:title="@string/shading"/>
+	
+	<item android:id="@+id/action_presentation"
+          android:title="@string/presentation"/>
+	
+	<item android:id="@+id/action_screenshot"
+          android:title="@string/screenshot"/>
+</menu>

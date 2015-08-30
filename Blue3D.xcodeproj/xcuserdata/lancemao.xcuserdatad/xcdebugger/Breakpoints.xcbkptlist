@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2901"
+         endingLineNumber = "2901"
+         landmarkName = "AbsColladaLoader::prepareMaterial()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2826"
+         endingLineNumber = "2826"
+         landmarkName = "AbsColladaLoader::findTransformBySID(const JointNodePtr&amp; nodePtr, const string sid, Transform&amp; res)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2837"
+         endingLineNumber = "2837"
+         landmarkName = "AbsColladaLoader::findIndexInSkinTable(const SkinPtr&amp; skinPtr, const JointNodePtr&amp; node)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "framework/HouyiSceneOptimizer.cpp"
+         timestampString = "415884449.401729"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "358"
+         endingLineNumber = "358"
+         landmarkName = "SceneOptimizer::optimize(World* world, Loader* loader)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2830"
+         endingLineNumber = "2830"
+         landmarkName = "AbsColladaLoader::findTransformBySID(const JointNodePtr&amp; nodePtr, const string sid, Transform&amp; res)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "framework/HouyiMaterial.cpp"
+         timestampString = "415849759.833858"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
+         landmarkName = "Material::getDiffuseColor()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiColladaLoader.cpp"
+         timestampString = "415849887.585617"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "239"
+         endingLineNumber = "239"
+         landmarkName = "ColladaLoader::convertSceneNode(SceneNodePtr gnPtr)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2952"
+         endingLineNumber = "2952"
+         landmarkName = "AbsColladaLoader::prepareNode()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2951"
+         endingLineNumber = "2951"
+         landmarkName = "AbsColladaLoader::prepareNode()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415883733.509778"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "730"
+         endingLineNumber = "730"
+         landmarkName = "AbsColladaLoader::loadSceneNode(VisualScene&amp; vs, xmlNode* node)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "loader/HouyiAbsColladaLoader.cpp"
+         timestampString = "415884174.363143"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "799"
+         endingLineNumber = "799"
+         landmarkName = "AbsColladaLoader::loadSceneNode(VisualScene&amp; vs, xmlNode* node)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "framework/HouyiSceneOptimizer.cpp"
+         timestampString = "415884579.344891"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
+         landmarkName = "SceneOptimizer::optimize(World* world, Loader* loader)"
+         landmarkType = "5">
+      </FileBreakpoint>
+   </FileBreakpoints>
+</Bucket>

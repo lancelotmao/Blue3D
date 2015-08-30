@@ -1,0 +1,30 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+attribute vec3 aNormal;
+
+uniform mat3 matNormal;
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float uScale;
+uniform float vScale;
+uniform int uIsLightPosFixed;
+
+varying vec2 vTexcoords;
+varying vec4 vPos;
+varying vec3 vNormal;
+
+void main() {
+	vTexcoords.st = vec2(aTexcoord.s * uScale, (1.0 - aTexcoord.t) * vScale);
+    
+    vec4 pos = matWorld * aPosition;
+    vec3 normal = normalize(matNormal * aNormal);
+    
+    vPos = uIsLightPosFixed == 0 ? pos : matEye * pos;
+	vNormal = uIsLightPosFixed == 0 ? normal : mat3(matEye) * normal;
+    
+    vec4 outPos = matProjection * matEye * pos;
+    //outPos.z = outPos.z * outPos.w;
+    gl_Position = outPos;
+}

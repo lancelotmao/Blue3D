@@ -1,0 +1,51 @@
+precision mediump float;
+
+uniform sampler2D tex;
+uniform float width;
+uniform float height;
+uniform float sampleRate;
+
+varying vec2 texcoords;
+
+void main() {
+    float invW = 1.0 / width;
+    float invH = 1.0 / height;
+    
+    if (sampleRate == 2.0)
+    {
+        // OGSS
+//        gl_FragColor = 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t)) 
+//        + 0.25 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t))
+//        + 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t + invH))
+//        + 0.25 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t + invH));
+        
+        // RGSS 45
+//        gl_FragColor = 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t)) 
+//        + 0.25 * texture2D(tex, vec2(texcoords.s - invW, texcoords.t))
+//        + 0.25 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t))
+//        + 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t + invH));
+        
+        // RGSS 27
+        float angle = radians(27.0);
+        gl_FragColor = 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t)) 
+        + 0.25 * texture2D(tex, vec2(texcoords.s + invW * cos(angle), texcoords.t + invH * sin(angle)))
+        + 0.25 * texture2D(tex, vec2(texcoords.s + invW - invW * sin(angle), texcoords.t + invH + invH * sin(angle)))
+        + 0.25 * texture2D(tex, vec2(texcoords.s - invW * sin(angle), texcoords.t + invH * cos(angle)));
+    }
+    else if (sampleRate == 3.0)
+    {
+        gl_FragColor = 0.125 * texture2D(tex, vec2(texcoords.s - invW, texcoords.t))
+                        + 0.125 * texture2D(tex, vec2(texcoords.s, texcoords.t - invH))
+                        + 0.125 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t))
+                        + 0.125 * texture2D(tex, vec2(texcoords.s, texcoords.t + invH))
+                        + 0.25 * texture2D(tex, vec2(texcoords.s, texcoords.t))
+                        + 0.0625 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t + invH))
+                        + 0.0625 * texture2D(tex, vec2(texcoords.s - invW, texcoords.t - invH))
+                        + 0.0625 * texture2D(tex, vec2(texcoords.s - invW, texcoords.t + invH))
+                        + 0.0625 * texture2D(tex, vec2(texcoords.s + invW, texcoords.t - invH));
+    } else {
+        gl_FragColor = texture2D(tex, texcoords.st);
+    }
+    
+    //gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);  
+}

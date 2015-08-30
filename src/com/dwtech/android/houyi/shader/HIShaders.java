@@ -1,0 +1,30 @@
+// automatically generated interface
+package com.dwtech.android.houyi.shader;
+
+public interface HIShaders {
+	int HSHADER_COUNT = 23;
+
+	int HSHADER_BUMP = 0;
+	int HSHADER_CAMERA = 1;
+	int HSHADER_CAMERA_OCULUS_RIFT = 2;
+	int HSHADER_CUBEMAP = 3;
+	int HSHADER_CURLY = 4;
+	int HSHADER_DEFAULT = 5;
+	int HSHADER_FABRICGALLERY = 6;
+	int HSHADER_FIRE = 7;
+	int HSHADER_GBOOK = 8;
+	int HSHADER_GLOWING_TEXTURE = 9;
+	int HSHADER_MSAA = 10;
+	int HSHADER_OTHOGRAPHIC = 11;
+	int HSHADER_PPL = 12;
+	int HSHADER_RIPPLE = 13;
+	int HSHADER_RUBIK = 14;
+	int HSHADER_SCIFI = 15;
+	int HSHADER_SHADOW_CAST = 16;
+	int HSHADER_SIMPLE = 17;
+	int HSHADER_STATIC_DEFAULT = 18;
+	int HSHADER_STATIC_DEFAULT_100 = 19;
+	int HSHADER_STATIC_PPL = 20;
+	int HSHADER_STATIC_PPL_100 = 21;
+	int HSHADER_WAVVY = 22;
+}

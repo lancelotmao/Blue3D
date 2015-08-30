@@ -1,0 +1,100 @@
+precision highp float;
+
+uniform sampler2D tex;
+
+// 0 No Texture; 1 Combine; 2 Replace; 3 Modulate
+uniform int uTextureMode;
+
+uniform int iLightingEnabled;
+uniform int iAttenuationEnabled;
+uniform vec4 uLightPos[4];
+uniform vec4 uLightColor[4];
+uniform int uLightCount;
+uniform vec4 uAmbientLight;
+uniform vec4 uMaterialAmbient;
+uniform vec4 uMaterialDiffuse;
+uniform vec4 uMaterialSpec;
+uniform float uShininess;
+uniform int uDoubleSided;
+uniform vec3 uEyePosition;
+uniform int uIsLightPosFixed;
+
+varying vec2 vTexcoords;
+varying vec4 vPos;
+varying vec3 vNormal;
+
+void main() {
+
+	float vDensity = 0.0;
+    vec4 lightResult = vec4(0.0, 0.0, 0.0, 0.0);
+    if (iLightingEnabled != 0)
+    {
+        lightResult = uAmbientLight * uMaterialAmbient;
+        vec4 posInLightSpace = vPos;
+        vec3 normalInLightSpace = normalize(vNormal);
+        int i = 0;
+        vec3 lv = normalize(uLightPos[i].w == 0.0 ? uLightPos[i].xyz : (uLightPos[i].xyz - posInLightSpace.xyz));
+        
+        float atten = (iAttenuationEnabled == 0) ? 1.0 : 1.0 / length(uLightPos[i].xyz - posInLightSpace.xyz);
+        float density = 1.0;
+        if (uDoubleSided != 0)
+        {
+        	density = abs(dot(normalInLightSpace, lv));
+        }
+        else
+        {
+            density = clamp(dot(normalInLightSpace, lv), 0.0, 1.0);
+		}
+        vDensity += density * atten;
+        lightResult += vec4(uMaterialDiffuse.xyz * uLightColor[i].xyz * density, uMaterialDiffuse.w) * atten;
+        
+        // specular light
+        if (uMaterialSpec.w > 0.01 && density > 0.0)
+        {
+            float specPower = 0.0;
+            vec3 camVec = normalize(uEyePosition - posInLightSpace.xyz);
+            vec3 halfV = normalize(lv + camVec);
+            specPower = pow(max(0.0, dot(halfV, normalInLightSpace)), uShininess);
+            lightResult += vec4(uMaterialSpec.xyz * normalize(uLightColor[i].xyz) * specPower, 0);
+        }
+        lightResult = clamp(lightResult, 0.0, 1.0);
+    }
+    else
+    {
+    	lightResult = uMaterialDiffuse;
+        vDensity = 1.0;
+    }
+    
+	if (uTextureMode == 0)
+    {
+        gl_FragColor = lightResult;
+    }
+    else
+    {
+        vec4 texColor = texture2D(tex, vTexcoords);
+        vec4 baseColor = texColor * vDensity;
+        if (uTextureMode == 1)
+        {
+            gl_FragColor = baseColor + lightResult;
+        }
+        else if(uTextureMode == 2)
+        {
+            gl_FragColor = vec4(baseColor.xyz, texColor.w);
+        }
+        else if(uTextureMode == 3)
+        {
+            gl_FragColor = baseColor * lightResult;
+        }
+        else if(uTextureMode == 4)
+        {
+            if (vTexcoords.s < 0.0 || vTexcoords.t <= 0.0)
+            {
+                gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+            }
+            else
+            {
+                gl_FragColor = vec4(baseColor.xyz + lightResult.xyz, texColor.w);
+            }
+        }
+    }
+}

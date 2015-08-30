@@ -1,0 +1,55 @@
+// http://wdnuon.blogspot.kr/2010/05/implementing-ibooks-page-curling-using.html
+// http://www2.parc.com/istl/groups/uir/publications/items/UIR-2004-10-Hong-DeformingPages.pdf
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+
+uniform float uScale;
+uniform float vScale;
+
+// actually we need pass sin(theta), cos(theta), sin(rho), cos(rho)
+// but here we keep the original to illustrate the algorithm
+uniform float A;
+uniform float theta;
+uniform float rho;
+uniform float offsetx;
+uniform float offsety;
+uniform float targetx;
+uniform float targety;
+
+varying vec2 texcoords;
+
+void main() {
+	gl_PointSize = 5.0;
+	
+	texcoords.st = aTexcoord.st * vec2(uScale, vScale);
+    vec3 pos = aPosition.xyz;
+    vec3 outv = pos;
+    
+    pos.x -= offsetx;
+    pos.y -= offsety;
+    
+    // Radius of the circle circumscribed by vertex (vi.x, vi.y) around A on the x-y plane
+    float R     = sqrt(pos.x * pos.x + (pos.y - A) * (pos.y - A)); 
+    // Now get the radius of the cone cross section intersected by our vertex in 3D space.
+    float r     = R * sin(theta);                       
+    // Angle subtended by arc |ST| on the cone cross section.
+    float beta  = asin(pos.x / R) / sin(theta);       
+   
+    vec3 v1;
+    // *** MAGIC!!! ***
+    v1.x  = r * sin(beta);
+    v1.y  = R + A - r * (1.0 - cos(beta)) * sin(theta); 
+    v1.z  = r * (1.0 - cos(beta)) * cos(theta);
+    // Apply a basic rotation transform around the y axis to rotate the curled page.
+    // These two steps could be combined through simple substitution, but are left
+    // separate to keep the math simple for debugging and illustrative purposes.
+    outv.x = (v1.x * cos(rho) - v1.z * sin(rho));
+    outv.y =  v1.y;
+    outv.z = (v1.x * sin(rho) + v1.z * cos(rho));
+    
+	gl_Position = matProjection * (matEye * (matWorld * vec4(outv.x + targetx, outv.y + targety, outv.z, 1.0)));
+}

@@ -1,0 +1,47 @@
+attribute vec4 aPosition;
+attribute vec4 aIndex;
+attribute vec4 aWeight;
+
+uniform mat4 matLightProjection;
+uniform mat4 matLightView;
+
+uniform int iBoneEnabled;
+uniform mat4 matBindShape;
+uniform mat4 matBone[48];
+
+varying vec4 vPos;
+
+void main() {
+    vec4 pos = aPosition;
+    
+    if (iBoneEnabled != 0)
+    {
+        vec4 posBindShape = matBindShape * aPosition;
+        
+        int index = int(aIndex.x);
+        vec4 boneSpacePos = (matBone[index] * posBindShape) * aWeight.x;
+        
+        if (aWeight.y > 0.01)
+        {
+            index = int(aIndex.y);
+            boneSpacePos += (matBone[index] * posBindShape) * aWeight.y;
+        }
+        
+        if (aWeight.z > 0.01)
+        {
+            index = int(aIndex.z);
+            boneSpacePos += (matBone[index] * posBindShape) * aWeight.z;
+        }
+        
+        if (aWeight.w > 0.01)
+        {
+            index = int(aIndex.w);
+            boneSpacePos += (matBone[index] * posBindShape) * aWeight.w;
+        }
+        
+        pos = vec4(boneSpacePos.xyz, 1.0);
+    }
+    
+    vPos = matLightProjection * matLightView * pos;
+    gl_Position = vPos;
+}

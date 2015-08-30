@@ -1,0 +1,81 @@
+attribute vec4 aPosition;
+attribute vec2 aTexcoord;
+attribute vec3 aNormal;
+attribute vec4 aIndex;
+attribute vec4 aWeight;
+
+uniform mat3 matNormal;
+uniform mat4 matWorld;
+uniform mat4 matEye;
+uniform mat4 matProjection;
+uniform mat4 matLightProjection;
+uniform mat4 matLightView;
+
+uniform int iBoneEnabled;
+uniform mat4 matBindShape;
+uniform mat4 matBone[48];
+
+uniform int uIsLightPosFixed;
+
+varying vec2 texcoords;
+varying vec4 vLCPos;
+varying vec4 vPos;
+varying vec3 vNormal;
+
+void main() {
+	gl_PointSize = 5.0;
+    texcoords = vec2(aTexcoord.s, 1.0 - aTexcoord.t);
+    
+    vec4 pos = aPosition;
+    vec3 normal = normalize(aNormal);
+    if (iBoneEnabled != 0)
+    {
+        vec4 posBindShape = matBindShape * aPosition;
+        vec3 normalBindShape = mat3(matBindShape) * normal;
+        
+        int index = int(aIndex.x);
+        vec4 boneSpacePos = (matBone[index] * posBindShape) * aWeight.x;
+        mat3 mn = mat3(matBone[index]);
+        vec3 boneSpaceNormal = (mn * normalBindShape) * aWeight.x;
+        
+        if (aWeight.y > 0.01)
+        {
+        	index = int(aIndex.y);
+	        boneSpacePos += (matBone[index] * posBindShape) * aWeight.y;
+	        mn = mat3(matBone[index]);
+	        boneSpaceNormal += (mn * normalBindShape) * aWeight.y;
+	    }
+        
+        if (aWeight.z > 0.01)
+        {
+        	index = int(aIndex.z);
+	        boneSpacePos += (matBone[index] * posBindShape) * aWeight.z;
+	        mn = mat3(matBone[index]);
+	        boneSpaceNormal += (mn * normalBindShape) * aWeight.z;
+	    }
+        
+        if (aWeight.w > 0.01)
+        {
+        	index = int(aIndex.w);
+	        boneSpacePos += (matBone[index] * posBindShape) * aWeight.w;
+	        mn = mat3(matBone[index]);
+	        boneSpaceNormal += (mn * normalBindShape) * aWeight.w;
+	    }
+        
+    	pos = vec4(boneSpacePos.xyz, 1.0);
+        normal = boneSpaceNormal;
+    }
+    
+    // transform position and normal to world
+    pos = matWorld * pos;
+    normal = normalize(matNormal * normalize(normal));
+    
+    vPos = uIsLightPosFixed == 0 ? pos : matEye * pos;
+	vNormal = uIsLightPosFixed == 0 ? normal : mat3(matEye) * normal;
+
+    vLCPos = matLightProjection * matLightView * vec4(pos.xyz, 1.0);
+    
+    vec4 outPos = matProjection * matEye * pos;
+    //outPos.z = outPos.z * outPos.w;
+    gl_Position = outPos;
+}
