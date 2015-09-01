@@ -1,2 +1,0 @@
-set solib-search-path ./obj/local/armeabi
-directory /Users/lancemao/Software/android-ndk-r9c/platforms/android-15/arch-arm/usr/include jni jni/../framework/include jni/../framework/android jni/../renderer/include jni/../renderer/GLES20/include jni/../geometry/include jni/../math/include jni/../loader/include jni/../ai/include jni/../gui/include jni/../astronomy/include jni/../libs/libxml /Users/lancemao/Software/android-ndk-r9c/sources/cxx-stl/stlport/stlport /Users/lancemao/Software/android-ndk-r9c/sources/cxx-stl//gabi++/include

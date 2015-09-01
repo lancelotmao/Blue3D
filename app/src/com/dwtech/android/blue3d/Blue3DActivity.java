@@ -471,7 +471,7 @@ OnNavigationListener {
         if (file.isDirectory()) {
             mCD = file;
             startListFolder(LIST_FOLDER_LOCAL);
-        } else if (path.toLowerCase().endsWith(".dae") || path.toLowerCase().endsWith(".tmx")) {
+        } else if (path.toLowerCase().endsWith(".hae") || path.toLowerCase().endsWith(".dae") || path.toLowerCase().endsWith(".tmx")) {
             startLocal(path, false);
             DataManager.mFocus = index - mAdapter.getFolderCount();
         }
@@ -527,7 +527,7 @@ OnNavigationListener {
             File f = new File(path);
             if (f.isDirectory()) {
                 item.setIsDir(true);
-            } else if (!file.toLowerCase().endsWith(".dae") && !file.toLowerCase().endsWith(".tmx")) {
+            } else if (!file.toLowerCase().endsWith(".dae") && file.toLowerCase().endsWith(".hae") && !file.toLowerCase().endsWith(".tmx")) {
                 continue;
             }
             mAdapter.addItem(item);

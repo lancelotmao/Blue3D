@@ -97,6 +97,8 @@
 		16B94BE118A4599A00DFEF2C /* FileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B94BE018A4599A00DFEF2C /* FileItem.m */; };
 		16C9B9A5189B4C5C000C8942 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A3189B4C5C000C8942 /* icon.png */; };
 		16C9B9A6189B4C5C000C8942 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A4189B4C5C000C8942 /* icon@2x.png */; };
+		16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; };
+		16E8C66D1B9497F900A27772 /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16F1A7D3191B9FBE00427621 /* HouyiAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */; };
 		16FFE4AD1B92E02400F8BE19 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16459B00189CDF2000D59171 /* DropboxSDK.framework */; };
 		16FFE4B31B92E23600F8BE19 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4B21B92E23600F8BE19 /* Houyi.framework */; };
@@ -113,6 +115,20 @@
 			script = "# scntool\n";
 		};
 /* End PBXBuildRule section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		16E8C66E1B9497F900A27772 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				16E8C66D1B9497F900A27772 /* Houyi.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1609364718B846080010DE37 /* HouyiIAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiIAPManager.h; sourceTree = "<group>"; };
@@ -232,6 +248,7 @@
 		16B94BE018A4599A00DFEF2C /* FileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileItem.m; sourceTree = "<group>"; };
 		16C9B9A3189B4C5C000C8942 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ios/icon/icon.png; sourceTree = SOURCE_ROOT; };
 		16C9B9A4189B4C5C000C8942 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "ios/icon/icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		16E8C6681B9497EF00A27772 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Houyi.framework; path = "/Users/lancemao/Library/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos/Houyi.framework"; sourceTree = "<absolute>"; };
 		16F1A7CF191B9FBE00427621 /* HouyiAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAssetManager.h; sourceTree = "<group>"; };
 		16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouyiAssetManager.m; sourceTree = "<group>"; };
 		16FFE4B01B92E17B00F8BE19 /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = iOS/Houyi.framework; sourceTree = "<group>"; };
@@ -244,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FFE4B31B92E23600F8BE19 /* Houyi.framework in Frameworks */,
+				16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */,
 				163C328218D4514C0099A0C3 /* CoreMedia.framework in Frameworks */,
 				163C328018D451400099A0C3 /* ImageIO.framework in Frameworks */,
 				164AE11718D1E2FC001D5E26 /* AVFoundation.framework in Frameworks */,
@@ -298,6 +316,7 @@
 		162234C316CBC85E002D845F = {
 			isa = PBXGroup;
 			children = (
+				16E8C6681B9497EF00A27772 /* Houyi.framework */,
 				161D565619244BDF00F46E3A /* assets */,
 				166A46091922EBFD001DC405 /* csource */,
 				162234FD16CBC8F2002D845F /* iOS */,
@@ -491,6 +510,7 @@
 				162234C816CBC85E002D845F /* Sources */,
 				162234C916CBC85E002D845F /* Frameworks */,
 				162234CA16CBC85E002D845F /* Resources */,
+				16E8C66E1B9497F900A27772 /* Embed Frameworks */,
 			);
 			buildRules = (
 				164F36291B92FB54003CADF6 /* PBXBuildRule */,
@@ -511,6 +531,11 @@
 				CLASSPREFIX = Houyi;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Lance Mao";
+				TargetAttributes = {
+					162234CB16CBC85E002D845F = {
+						DevelopmentTeam = 277ZS7Z8W4;
+					};
+				};
 			};
 			buildConfigurationList = 162234C716CBC85E002D845F /* Build configuration list for PBXProject "Blue3D" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -711,8 +736,8 @@
 					"-DDEBUG",
 					"-DDEBUG_MEM",
 				);
-				PROVISIONING_PROFILE = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
+				PROVISIONING_PROFILE = "da858572-196a-40d3-abea-7fc8bf4acee7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "da858572-196a-40d3-abea-7fc8bf4acee7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7";
@@ -754,8 +779,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
+				PROVISIONING_PROFILE = "da858572-196a-40d3-abea-7fc8bf4acee7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "da858572-196a-40d3-abea-7fc8bf4acee7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -767,18 +792,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: MAO LONGDONG (3233LU5S43)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MAO LONGDONG (3233LU5S43)";
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOS",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS/Blue3D-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "iOS/Blue3D-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/libs\"",
@@ -786,8 +813,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = "Blue 3D";
-				PROVISIONING_PROFILE = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
+				PROVISIONING_PROFILE = "da858572-196a-40d3-abea-7fc8bf4acee7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "da858572-196a-40d3-abea-7fc8bf4acee7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -798,26 +825,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: MAO LONGDONG (3233LU5S43)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MAO LONGDONG (3233LU5S43)";
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOS",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS/Blue3D-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "iOS/Blue3D-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/libs\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Blue 3D";
-				PROVISIONING_PROFILE = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E315CC5-92A1-411C-86C0-930E4CE15B38";
+				PROVISIONING_PROFILE = "da858572-196a-40d3-abea-7fc8bf4acee7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "da858572-196a-40d3-abea-7fc8bf4acee7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;

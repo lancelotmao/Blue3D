@@ -1,7 +1,12 @@
 app/bin
 app/obj
+app/libs/armeabi
 bin
 exported_header
 gen
 obj
 UserInterfaceState.xcuserstate
+Houyi/.settings
+Houyi/libs/armeabi
+google-play-services_lib/.settings
+.settings

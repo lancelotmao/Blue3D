@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Lance Mao. All rights reserved.
 //
 
+#ifdef __APPLE__
 #import <UIKit/UIKit.h>
 
 //! Project version number for Houyi.
@@ -13,9 +14,9 @@ FOUNDATION_EXPORT double HouyiVersionNumber;
 
 //! Project version string for Houyi.
 FOUNDATION_EXPORT const unsigned char HouyiVersionString[];
+#endif
 
 // main
-//#include "HouyiConst.h"
 #include "HouyiRoot.h"
 #include "HouyiOrthographicCamera.h"
 #include "HouyiGLESRenderer.h"
@@ -39,7 +40,9 @@ FOUNDATION_EXPORT const unsigned char HouyiVersionString[];
 #include "HouyiMeshOptimizer.h"
 #include "HouyiSphereEnvMap.h"
 #include "HouyiCubeEnvMap.h"
+#ifdef __APPLE__
 #include "HouyiUtils.h"
+#endif
 
 // math
 #include "HouyiPlane.h"

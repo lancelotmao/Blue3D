@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163C4FA31B95D97900483DC5 /* Houyi.h in Headers */ = {isa = PBXBuildFile; fileRef = 163C4FA11B95D97900483DC5 /* Houyi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		163C4FA41B95D97900483DC5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 163C4FA21B95D97900483DC5 /* Info.plist */; };
 		164F36251B92F186003CADF6 /* HouyiUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 164F36231B92F186003CADF6 /* HouyiUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		164F36261B92F186003CADF6 /* HouyiUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 164F36241B92F186003CADF6 /* HouyiUtils.mm */; };
-		16FFE1D91B92CFE300F8BE19 /* Houyi.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1D81B92CFE300F8BE19 /* Houyi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16FFE1DF1B92CFE300F8BE19 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE1D31B92CFE300F8BE19 /* Houyi.framework */; };
 		16FFE1E61B92CFE300F8BE19 /* HouyiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE1E51B92CFE300F8BE19 /* HouyiTests.m */; };
 		16FFE3121B92D1D300F8BE19 /* RubikResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE1F11B92D1D300F8BE19 /* RubikResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -342,11 +343,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163C4FA11B95D97900483DC5 /* Houyi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Houyi.h; sourceTree = "<group>"; };
+		163C4FA21B95D97900483DC5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		164F36231B92F186003CADF6 /* HouyiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiUtils.h; sourceTree = "<group>"; };
 		164F36241B92F186003CADF6 /* HouyiUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HouyiUtils.mm; sourceTree = "<group>"; };
 		16FFE1D31B92CFE300F8BE19 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Houyi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		16FFE1D71B92CFE300F8BE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16FFE1D81B92CFE300F8BE19 /* Houyi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Houyi.h; sourceTree = "<group>"; };
 		16FFE1DE1B92CFE300F8BE19 /* HouyiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouyiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FFE1E41B92CFE300F8BE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16FFE1E51B92CFE300F8BE19 /* HouyiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouyiTests.m; sourceTree = "<group>"; };
@@ -716,6 +717,8 @@
 		16FFE1C91B92CFE300F8BE19 = {
 			isa = PBXGroup;
 			children = (
+				163C4FA11B95D97900483DC5 /* Houyi.h */,
+				163C4FA21B95D97900483DC5 /* Info.plist */,
 				164F36221B92EEA7003CADF6 /* Frameworks */,
 				16FFE4201B92D23300F8BE19 /* shader */,
 				16FFE1EF1B92D1D300F8BE19 /* ai */,
@@ -727,7 +730,6 @@
 				16FFE2C61B92D1D300F8BE19 /* loader */,
 				16FFE2DF1B92D1D300F8BE19 /* math */,
 				16FFE2F71B92D1D300F8BE19 /* renderer */,
-				16FFE1D51B92CFE300F8BE19 /* Houyi */,
 				16FFE1E21B92CFE300F8BE19 /* HouyiTests */,
 				16FFE1D41B92CFE300F8BE19 /* Products */,
 			);
@@ -740,23 +742,6 @@
 				16FFE1DE1B92CFE300F8BE19 /* HouyiTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		16FFE1D51B92CFE300F8BE19 /* Houyi */ = {
-			isa = PBXGroup;
-			children = (
-				16FFE1D81B92CFE300F8BE19 /* Houyi.h */,
-				16FFE1D61B92CFE300F8BE19 /* Supporting Files */,
-			);
-			path = Houyi;
-			sourceTree = "<group>";
-		};
-		16FFE1D61B92CFE300F8BE19 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				16FFE1D71B92CFE300F8BE19 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		16FFE1E21B92CFE300F8BE19 /* HouyiTests */ = {
@@ -1489,7 +1474,6 @@
 				16FFE3EA1B92D1D300F8BE19 /* HouyiColladaLoader.h in Headers */,
 				16FFE3A71B92D1D300F8BE19 /* HouyiWorld.h in Headers */,
 				16FFE3861B92D1D300F8BE19 /* HouyiMeshOptimizer.h in Headers */,
-				16FFE1D91B92CFE300F8BE19 /* Houyi.h in Headers */,
 				16FFE3EE1B92D1D300F8BE19 /* HouyiMapLoader.h in Headers */,
 				16FFE3F21B92D1D300F8BE19 /* HouyiVector.h in Headers */,
 				16FFE31A1B92D1D300F8BE19 /* HouyiPlanetarySystem.h in Headers */,
@@ -1581,6 +1565,7 @@
 				16FFE3631B92D1D300F8BE19 /* HouyiArray.h in Headers */,
 				16FFE3C31B92D1D300F8BE19 /* HouyiGeoSphere.h in Headers */,
 				16FFE3D51B92D1D300F8BE19 /* HouyiImageView.h in Headers */,
+				163C4FA31B95D97900483DC5 /* Houyi.h in Headers */,
 				16FFE36F1B92D1D300F8BE19 /* HouyiCubeEnvMap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1706,6 +1691,7 @@
 				16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */,
 				16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */,
 				16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */,
+				163C4FA41B95D97900483DC5 /* Info.plist in Resources */,
 				16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */,
 				16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */,
 				16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */,
@@ -1971,7 +1957,7 @@
 					/usr/include/libxml2,
 					libs/freetype/include,
 				);
-				INFOPLIST_FILE = Houyi/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1996,7 +1982,7 @@
 					/usr/include/libxml2,
 					libs/freetype/include,
 				);
-				INFOPLIST_FILE = Houyi/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

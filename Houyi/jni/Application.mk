@@ -1,10 +1,11 @@
 APP_STL := stlport_static
 APP_OPTIM := debug
+APP_PLATFORM := android-18
 
 # Enable NEON
 TARGET_ARCH_ABI=armeabi-v7a
 
-NDK_TOOLCHAIN_VERSION := 4.8
+NDK_TOOLCHAIN_VERSION := 4.9
 
 # Use clang to avoid GCC version and to have better diagnostic error message
 #NDK_TOOLCHAIN_VERSION := clang
