@@ -68,6 +68,14 @@
       root:kDBRootDropbox];
     [DBSession setSharedSession:dbSession];
     
+    // test for dynamic bundle
+    NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.lance.Houyi"];
+    NSError* e = nil;
+    BOOL p = [bundle preflightAndReturnError:&e];
+    if (p) {
+        [bundle load];
+    }
+    
     return YES;
 }
 							

@@ -101,7 +101,6 @@
 		16E8C66D1B9497F900A27772 /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16F1A7D3191B9FBE00427621 /* HouyiAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */; };
 		16FFE4AD1B92E02400F8BE19 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16459B00189CDF2000D59171 /* DropboxSDK.framework */; };
-		16FFE4B31B92E23600F8BE19 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4B21B92E23600F8BE19 /* Houyi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -251,8 +250,6 @@
 		16E8C6681B9497EF00A27772 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Houyi.framework; path = "/Users/lancemao/Library/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos/Houyi.framework"; sourceTree = "<absolute>"; };
 		16F1A7CF191B9FBE00427621 /* HouyiAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAssetManager.h; sourceTree = "<group>"; };
 		16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouyiAssetManager.m; sourceTree = "<group>"; };
-		16FFE4B01B92E17B00F8BE19 /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = iOS/Houyi.framework; sourceTree = "<group>"; };
-		16FFE4B21B92E23600F8BE19 /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = "Houyi/build/Debug-iphoneos/Houyi.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +257,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FFE4B31B92E23600F8BE19 /* Houyi.framework in Frameworks */,
 				16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */,
 				163C328218D4514C0099A0C3 /* CoreMedia.framework in Frameworks */,
 				163C328018D451400099A0C3 /* ImageIO.framework in Frameworks */,
@@ -316,7 +312,6 @@
 		162234C316CBC85E002D845F = {
 			isa = PBXGroup;
 			children = (
-				16E8C6681B9497EF00A27772 /* Houyi.framework */,
 				161D565619244BDF00F46E3A /* assets */,
 				166A46091922EBFD001DC405 /* csource */,
 				162234FD16CBC8F2002D845F /* iOS */,
@@ -336,8 +331,7 @@
 		162234CE16CBC85E002D845F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16FFE4B21B92E23600F8BE19 /* Houyi.framework */,
-				16FFE4B01B92E17B00F8BE19 /* Houyi.framework */,
+				16E8C6681B9497EF00A27772 /* Houyi.framework */,
 				163C328118D4514C0099A0C3 /* CoreMedia.framework */,
 				163C327F18D451400099A0C3 /* ImageIO.framework */,
 				164AE11618D1E2FC001D5E26 /* AVFoundation.framework */,
