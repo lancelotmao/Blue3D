@@ -371,24 +371,24 @@ namespace Houyi
         
         inline static void scalar(Vector4* v, float* scalar)
         {
-#if DEBUG
+//#if DEBUG
             (*v) = (*v) * (*scalar);
-#else
-            asm volatile
-            (
-             
-             "vldmia %1, {q1}     \n\t"
-             //"vdup.32 %1, {q1}     \n\t"
-             
-             "vmul.f32 q0, q0, d2[0] \n\t"
-             
-             "vstmia %0, {q0}"
-             
-             : // no output
-             : "r" (v), "r" (scalar)
-             : "memory", "q0", "q1"
-             );
-#endif
+//#else
+//            asm volatile
+//            (
+//             
+//             "vldmia %1, {q1}     \n\t"
+//             //"vdup.32 %1, {q1}     \n\t"
+//             
+//             "vmul.f32 q0, q0, d2[0] \n\t"
+//             
+//             "vstmia %0, {q0}"
+//             
+//             : // no output
+//             : "r" (v), "r" (scalar)
+//             : "memory", "q0", "q1"
+//             );
+//#endif
         }
         
         // matrix is column major but we have row major by default so tranpose is needed

@@ -36,16 +36,13 @@
 
 - (void)initCamera
 {
-    if (mSession) {
-        [mSession removeOutput:mStillImageOutput];
-        [mSession removeInput:mCaptureInput];
-    }
-    
-    mCaptureInput = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
-    if (mCaptureInput) {
-        mSession = [[AVCaptureSession alloc] init];
-        [mSession addInput:mCaptureInput];
-        [mSession addOutput:mStillImageOutput];
+    if (!mSession) {
+        mCaptureInput = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
+        if (mCaptureInput) {
+            mSession = [[AVCaptureSession alloc] init];
+            [mSession addInput:mCaptureInput];
+            [mSession addOutput:mStillImageOutput];
+        }
     }
 }
 
@@ -65,7 +62,8 @@
     [self initCamera];
     [mSession startRunning];
     Settings::getInstance()->setClearColor(Color(0, 0, 0, 0));
-    mCameraLayer = [AVCaptureVideoPreviewLayer layerWithSession: mSession];
+    if (!mCameraLayer)
+        mCameraLayer = [AVCaptureVideoPreviewLayer layerWithSession: mSession];
     [self updateCameraLayer];
     [mCameraView.layer addSublayer:mCameraLayer];
 }
