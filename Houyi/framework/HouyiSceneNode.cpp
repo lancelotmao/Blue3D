@@ -319,6 +319,7 @@ namespace Houyi
         if (mAABB && mAABB->isValid())
         {
             mAABB->setVisibility(EVisible);
+            mScene->addAABBToRenderable(this);
             if (all)
             {
                 for (int i = 0; i < childrenCount(); ++i)
