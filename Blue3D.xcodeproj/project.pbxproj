@@ -97,8 +97,8 @@
 		16B94BE118A4599A00DFEF2C /* FileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B94BE018A4599A00DFEF2C /* FileItem.m */; };
 		16C9B9A5189B4C5C000C8942 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A3189B4C5C000C8942 /* icon.png */; };
 		16C9B9A6189B4C5C000C8942 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A4189B4C5C000C8942 /* icon@2x.png */; };
+		16CB4D2B1BA263D000382F1C /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16CB4D2A1BA263D000382F1C /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; };
-		16E8C66D1B9497F900A27772 /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16F1A7D3191B9FBE00427621 /* HouyiAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */; };
 		16FFE4AD1B92E02400F8BE19 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16459B00189CDF2000D59171 /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
@@ -122,7 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				16E8C66D1B9497F900A27772 /* Houyi.framework in Embed Frameworks */,
+				16CB4D2B1BA263D000382F1C /* Houyi.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +247,7 @@
 		16B94BE018A4599A00DFEF2C /* FileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileItem.m; sourceTree = "<group>"; };
 		16C9B9A3189B4C5C000C8942 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ios/icon/icon.png; sourceTree = SOURCE_ROOT; };
 		16C9B9A4189B4C5C000C8942 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "ios/icon/icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		16CB4D2A1BA263D000382F1C /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = iOS/framework/Houyi.framework; sourceTree = "<group>"; };
 		16E8C6681B9497EF00A27772 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Houyi.framework; path = "/Users/lancemao/Library/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos/Houyi.framework"; sourceTree = "<absolute>"; };
 		16F1A7CF191B9FBE00427621 /* HouyiAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAssetManager.h; sourceTree = "<group>"; };
 		16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouyiAssetManager.m; sourceTree = "<group>"; };
@@ -331,6 +332,7 @@
 		162234CE16CBC85E002D845F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16CB4D2A1BA263D000382F1C /* Houyi.framework */,
 				16E8C6681B9497EF00A27772 /* Houyi.framework */,
 				163C328118D4514C0099A0C3 /* CoreMedia.framework */,
 				163C327F18D451400099A0C3 /* ImageIO.framework */,
@@ -501,6 +503,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 162234FA16CBC85E002D845F /* Build configuration list for PBXNativeTarget "Blue3D" */;
 			buildPhases = (
+				16CB4D291BA263AF00382F1C /* ShellScript */,
 				162234C816CBC85E002D845F /* Sources */,
 				162234C916CBC85E002D845F /* Frameworks */,
 				162234CA16CBC85E002D845F /* Resources */,
@@ -613,6 +616,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16CB4D291BA263AF00382F1C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r ${BUILT_PRODUCTS_DIR}/Houyi.framework ${SRCROOT}/iOS/framework/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		162234C816CBC85E002D845F /* Sources */ = {
