@@ -12,6 +12,8 @@
 		1609365118B8D8A80010DE37 /* BlueSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1609365018B8D8A80010DE37 /* BlueSetting.m */; };
 		1609365A18B8EDDE0010DE37 /* SettingPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1609365818B8EDDD0010DE37 /* SettingPopOverViewController.m */; };
 		1609365B18B8EDDE0010DE37 /* SettingPopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1609365918B8EDDE0010DE37 /* SettingPopOverViewController.xib */; };
+		1619AA291BA5B71F007E9BE8 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1619AA281BA5B71F007E9BE8 /* Houyi.framework */; };
+		1619AA2A1BA5B722007E9BE8 /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1619AA281BA5B71F007E9BE8 /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		161D563A19244A0100F46E3A /* BlueAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 161D563619244A0100F46E3A /* BlueAdapter.cpp */; };
 		161D563B19244A0100F46E3A /* BlueWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 161D563819244A0100F46E3A /* BlueWorld.cpp */; };
 		161D566319244BED00F46E3A /* _01_-_Default1noCulling.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 161D565719244BED00F46E3A /* _01_-_Default1noCulling.JPG */; };
@@ -97,8 +99,6 @@
 		16B94BE118A4599A00DFEF2C /* FileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B94BE018A4599A00DFEF2C /* FileItem.m */; };
 		16C9B9A5189B4C5C000C8942 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A3189B4C5C000C8942 /* icon.png */; };
 		16C9B9A6189B4C5C000C8942 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C9B9A4189B4C5C000C8942 /* icon@2x.png */; };
-		16CB4D2B1BA263D000382F1C /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16CB4D2A1BA263D000382F1C /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8C6681B9497EF00A27772 /* Houyi.framework */; };
 		16F1A7D3191B9FBE00427621 /* HouyiAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */; };
 		16FFE4AD1B92E02400F8BE19 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16459B00189CDF2000D59171 /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
@@ -122,7 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				16CB4D2B1BA263D000382F1C /* Houyi.framework in Embed Frameworks */,
+				1619AA2A1BA5B722007E9BE8 /* Houyi.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +138,7 @@
 		1609365718B8EDDD0010DE37 /* SettingPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPopOverViewController.h; sourceTree = "<group>"; };
 		1609365818B8EDDD0010DE37 /* SettingPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPopOverViewController.m; sourceTree = "<group>"; };
 		1609365918B8EDDE0010DE37 /* SettingPopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingPopOverViewController.xib; sourceTree = "<group>"; };
+		1619AA281BA5B71F007E9BE8 /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = iOS/Houyi.framework; sourceTree = "<group>"; };
 		161D563619244A0100F46E3A /* BlueAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlueAdapter.cpp; path = app/csource/BlueAdapter.cpp; sourceTree = "<group>"; };
 		161D563719244A0100F46E3A /* BlueAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueAdapter.h; path = app/csource/BlueAdapter.h; sourceTree = "<group>"; };
 		161D563819244A0100F46E3A /* BlueWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlueWorld.cpp; path = app/csource/BlueWorld.cpp; sourceTree = "<group>"; };
@@ -247,8 +248,6 @@
 		16B94BE018A4599A00DFEF2C /* FileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileItem.m; sourceTree = "<group>"; };
 		16C9B9A3189B4C5C000C8942 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ios/icon/icon.png; sourceTree = SOURCE_ROOT; };
 		16C9B9A4189B4C5C000C8942 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "ios/icon/icon@2x.png"; sourceTree = SOURCE_ROOT; };
-		16CB4D2A1BA263D000382F1C /* Houyi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Houyi.framework; path = iOS/framework/Houyi.framework; sourceTree = "<group>"; };
-		16E8C6681B9497EF00A27772 /* Houyi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Houyi.framework; path = "/Users/lancemao/Library/Developer/Xcode/DerivedData/Blue3D-azlpexkuzlbahiaporscvaidvbai/Build/Products/Debug-iphoneos/Houyi.framework"; sourceTree = "<absolute>"; };
 		16F1A7CF191B9FBE00427621 /* HouyiAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouyiAssetManager.h; sourceTree = "<group>"; };
 		16F1A7D0191B9FBE00427621 /* HouyiAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouyiAssetManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,7 +257,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E8C66C1B9497F900A27772 /* Houyi.framework in Frameworks */,
 				163C328218D4514C0099A0C3 /* CoreMedia.framework in Frameworks */,
 				163C328018D451400099A0C3 /* ImageIO.framework in Frameworks */,
 				164AE11718D1E2FC001D5E26 /* AVFoundation.framework in Frameworks */,
@@ -267,6 +265,7 @@
 				16B94BDD18A43EC700DFEF2C /* libsqlite3.dylib in Frameworks */,
 				16459B03189CDF5700D59171 /* Security.framework in Frameworks */,
 				16A6C287171506CB003A9FFE /* libxml2.dylib in Frameworks */,
+				1619AA291BA5B71F007E9BE8 /* Houyi.framework in Frameworks */,
 				1682EBFB16F3EBEE00ECC433 /* libz.dylib in Frameworks */,
 				16215C2D16D3A75D00B5ECB6 /* QuartzCore.framework in Frameworks */,
 				162234D016CBC85E002D845F /* UIKit.framework in Frameworks */,
@@ -332,8 +331,7 @@
 		162234CE16CBC85E002D845F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16CB4D2A1BA263D000382F1C /* Houyi.framework */,
-				16E8C6681B9497EF00A27772 /* Houyi.framework */,
+				1619AA281BA5B71F007E9BE8 /* Houyi.framework */,
 				163C328118D4514C0099A0C3 /* CoreMedia.framework */,
 				163C327F18D451400099A0C3 /* ImageIO.framework */,
 				164AE11618D1E2FC001D5E26 /* AVFoundation.framework */,
@@ -629,7 +627,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -r ${BUILT_PRODUCTS_DIR}/Houyi.framework ${SRCROOT}/iOS/framework/";
+			shellScript = "cp -r -f ${BUILT_PRODUCTS_DIR}/Houyi.framework ${SRCROOT}/iOS/.";
 		};
 /* End PBXShellScriptBuildPhase section */
 
