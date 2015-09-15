@@ -42,6 +42,10 @@ namespace Houyi
             loader = HouyiNew DefaultLoader();
         }
         // due to Apple will convert dae to binary, we add hae to avoid processing
+        // or You can still use dae by going to the project's Build Phases
+        // and then making sure .dae files are marked as "Uncompressed"
+        // under the Copy Bundle Resources section
+        // and also in Build Rules, make sure DAE file is processed using 'Copy SceneKit Assets'
         else if (StringUtils::hasSuffix(filePath, ".dae") || StringUtils::hasSuffix(filePath, ".hae"))
         {
             loader = HouyiNew collada::ColladaLoader(filePath);

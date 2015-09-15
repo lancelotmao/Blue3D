@@ -86,8 +86,8 @@
 		164FEE7918D3D1CB009551F6 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FEE7718D3D1CB009551F6 /* SingleImageViewController.xib */; };
 		1664D654194C3129008CB9BC /* samba.houyi in Resources */ = {isa = PBXBuildFile; fileRef = 1664D653194C3129008CB9BC /* samba.houyi */; };
 		1664D656194C32AE008CB9BC /* female.houyi in Resources */ = {isa = PBXBuildFile; fileRef = 1664D655194C32AE008CB9BC /* female.houyi */; };
-		1664D65B194C658F008CB9BC /* astroboy.hae in Resources */ = {isa = PBXBuildFile; fileRef = 1664D659194C658F008CB9BC /* astroboy.hae */; };
-		1664D65C194C658F008CB9BC /* Crate_dae.hae in Resources */ = {isa = PBXBuildFile; fileRef = 1664D65A194C658F008CB9BC /* Crate_dae.hae */; };
+		1664D65B194C658F008CB9BC /* astroboy.dae in Resources */ = {isa = PBXBuildFile; fileRef = 1664D659194C658F008CB9BC /* astroboy.dae */; settings = {ATTRIBUTES = ("--decompress", ); }; };
+		1664D65C194C658F008CB9BC /* Crate_dae.dae in Resources */ = {isa = PBXBuildFile; fileRef = 1664D65A194C658F008CB9BC /* Crate_dae.dae */; settings = {ATTRIBUTES = ("--decompress", ); }; };
 		166A46141922EDB8001DC405 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A46131922EDB8001DC405 /* DataManager.m */; };
 		1681281F18CA912B006FA2D9 /* icon_ipad_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1681281D18CA912A006FA2D9 /* icon_ipad_72.png */; };
 		1681282018CA912B006FA2D9 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1681281E18CA912B006FA2D9 /* icon57.png */; };
@@ -106,7 +106,7 @@
 /* Begin PBXBuildRule section */
 		164F36291B92FB54003CADF6 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
+			compilerSpec = "com.apple.build-tasks.copy-scenekit-assets";
 			fileType = text.xml.dae;
 			isEditable = 1;
 			outputFiles = (
@@ -232,8 +232,8 @@
 		164FEE7718D3D1CB009551F6 /* SingleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImageViewController.xib; sourceTree = "<group>"; };
 		1664D653194C3129008CB9BC /* samba.houyi */ = {isa = PBXFileReference; lastKnownFileType = file; name = samba.houyi; path = app/assets/samba.houyi; sourceTree = "<group>"; };
 		1664D655194C32AE008CB9BC /* female.houyi */ = {isa = PBXFileReference; lastKnownFileType = file; name = female.houyi; path = app/assets/female.houyi; sourceTree = "<group>"; };
-		1664D659194C658F008CB9BC /* astroboy.hae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = astroboy.hae; path = app/assets/astroboy.hae; sourceTree = "<group>"; };
-		1664D65A194C658F008CB9BC /* Crate_dae.hae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Crate_dae.hae; path = app/assets/Crate_dae.hae; sourceTree = "<group>"; };
+		1664D659194C658F008CB9BC /* astroboy.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; name = astroboy.dae; path = app/assets/astroboy.dae; sourceTree = "<group>"; };
+		1664D65A194C658F008CB9BC /* Crate_dae.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; name = Crate_dae.dae; path = app/assets/Crate_dae.dae; sourceTree = "<group>"; };
 		166A46121922EDB8001DC405 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		166A46131922EDB8001DC405 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		1681281D18CA912A006FA2D9 /* icon_ipad_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_ipad_72.png; path = icon/icon_ipad_72.png; sourceTree = "<group>"; };
@@ -283,8 +283,8 @@
 		161D565619244BDF00F46E3A /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				1664D659194C658F008CB9BC /* astroboy.hae */,
-				1664D65A194C658F008CB9BC /* Crate_dae.hae */,
+				1664D659194C658F008CB9BC /* astroboy.dae */,
+				1664D65A194C658F008CB9BC /* Crate_dae.dae */,
 				1664D655194C32AE008CB9BC /* female.houyi */,
 				1664D653194C3129008CB9BC /* samba.houyi */,
 				1624ED22193041F60055EE67 /* select.png */,
@@ -600,14 +600,14 @@
 				16459B1B18A276A500D59171 /* SampleCell.xib in Resources */,
 				161D567B19244D9E00F46E3A /* astroboy.png in Resources */,
 				1609365B18B8EDDE0010DE37 /* SettingPopOverViewController.xib in Resources */,
-				1664D65B194C658F008CB9BC /* astroboy.hae in Resources */,
+				1664D65B194C658F008CB9BC /* astroboy.dae in Resources */,
 				164FEE6A18D3D065009551F6 /* Default-568h@2x.png in Resources */,
 				1681282018CA912B006FA2D9 /* icon57.png in Resources */,
 				161D568719244ED400F46E3A /* play.png in Resources */,
 				1664D654194C3129008CB9BC /* samba.houyi in Resources */,
 				164FEE6B18D3D065009551F6 /* Default-Landscape@2x~ipad.png in Resources */,
 				164FEE7218D3D065009551F6 /* dropbox@2x.png in Resources */,
-				1664D65C194C658F008CB9BC /* Crate_dae.hae in Resources */,
+				1664D65C194C658F008CB9BC /* Crate_dae.dae in Resources */,
 				164FEE7918D3D1CB009551F6 /* SingleImageViewController.xib in Resources */,
 				164FEE7118D3D065009551F6 /* dropbox.png in Resources */,
 			);

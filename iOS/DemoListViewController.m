@@ -37,9 +37,9 @@ static NSArray* DAE_NAME;
             @"astroboy.png",
             @"samba.png", nil];
     
-    DAE_NAME = [[NSArray alloc] initWithObjects:@"Crate_dae.hae",
+    DAE_NAME = [[NSArray alloc] initWithObjects:@"Crate_dae.dae",
                   @"female.houyi",
-                  @"astroboy.hae",
+                  @"astroboy.dae",
                   @"samba.houyi", nil];
     
     [super viewDidLoad];
