@@ -1,5 +1,6 @@
 #include "HouyiPass.h"
 #include "Platform.h"
+#include "HouyiRenderer.h"
 
 namespace Houyi
 {
@@ -50,9 +51,9 @@ namespace Houyi
         }
     }
 
-    void Pass::renderPass(Scene* scene)
+    void Pass::renderPass(Renderer* renderer, Scene* scene)
     {
-        onRender(scene);
+        onRender(renderer, scene);
     }
 
     void Pass::endPass()

@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 #include "HouyiPass.h"
+#include "HouyiRenderer.h"
 
 using namespace Houyi;
 
@@ -21,7 +22,7 @@ using namespace Houyi;
 + (NSData*)getDataFromFile:(NSString*) fileName;
 
 // use this function when have custom shader
-+ (Pass*)loadShader:(NSString*) vertexShader : (NSString*) fragmentShader;
++ (Pass*)loadShader:(Renderer*)renderer :(NSString*) vertexShader : (NSString*) fragmentShader;
 
 @end
 

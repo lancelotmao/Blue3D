@@ -15,8 +15,7 @@ namespace Houyi
 
     void PopupWorld::show()
     {
-        Root* root = Root::getInstance();
-        root->addPopupWorld(this);
+        mRoot->addPopupWorld(this);
         mState = EPrepare;
     }
 

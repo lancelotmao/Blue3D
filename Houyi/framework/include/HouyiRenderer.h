@@ -62,6 +62,11 @@ namespace Houyi
         {
             return mSingleViewPort;
         }
+        
+        inline ShaderManager* getShaderManager()
+        {
+            return mShaderMan;
+        }
 
         virtual void setViewport(float left, float top, float width, float height){}
         

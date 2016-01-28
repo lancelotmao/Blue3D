@@ -29,10 +29,9 @@ namespace Houyi
        }
     }
 
-    void Map::onPostInit()
+    void Map::onPostInit(World* world)
     {
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
+        Renderer* renderer = world->getRoot()->getRenderer();
         mWidth = (int)renderer->getWidth();
         mHeight = (int)renderer->getHeight();
 
@@ -55,15 +54,15 @@ namespace Houyi
         mVertexBuffer->setUseVBO(false); // need update texcoord
         mNode = HouyiNew SceneNode();
         mNode->setMesh(plane);
-        root->getWorld()->getFocusScene()->addMesh(plane);
+        world->getFocusScene()->addMesh(plane);
 
         // add material
         mMaterial = HouyiNew Material("gamemapdefaultmat");
         ImagePtr img = mTileSet[0]->getImage();
         if (img)
         {
-            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
-            mMaterial->setTextureMode(RenderState::EMinusTransparent);
+//            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
+//            mMaterial->setTextureMode(RenderState::EMinusTransparent);
         }
         else
         {

@@ -6,12 +6,15 @@
 
 namespace Houyi
 {
+    class Renderer;
     class Scene;
+    class Root;
 
     class ShaderManager : public Object
     {
     public:
-        static ShaderManager* getInstance();
+//        static ShaderManager* getInstance();
+        ShaderManager(Renderer* renderer);
         ~ShaderManager();
 
         void addPass(Pass* pass);
@@ -22,11 +25,11 @@ namespace Houyi
         int getPassCount();
 
         Pass* begineRender(Scene* scene);
-        bool render(Scene* scene);
+        bool render(Renderer* renderer, Scene* scene);
         void endRender(Scene* scene);
 
-        void addDefaultShader(Scene* scene);
-        Pass* getDefaultShader();
+        void addDefaultShader(Root* root, Scene* scene);
+        Pass* getDefaultShader(Renderer* renderer);
         inline Pass* getStaticPPLShader()
         {
             return mStaticPPL;
@@ -34,10 +37,9 @@ namespace Houyi
         void updateShader(Scene* scene);
         void invalidateAll();
 
-        Pass* createShader(int pid);
+        Pass* createShader(int pid, Renderer* renderer);
 
     private:
-        ShaderManager();
         int getStaticDefault();
         int getStaticPPL();
         int getDefault();

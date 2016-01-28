@@ -39,7 +39,7 @@ namespace Houyi
     {
     }
 
-    void Texture::setImage(ImagePtr image)
+    void Texture::setImage(ImagePtr image, TextureManager* tm)
     {
         mImage = image;
         mWidth = image->getWidth();
@@ -88,6 +88,5 @@ namespace Houyi
         {
             mState = EUploadFull;
         }
-        TextureManager::getInstance()->addTextureToUploadQueue(this);
     }
 }

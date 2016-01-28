@@ -43,13 +43,13 @@
     return texData;
 }
 
-+ (Pass*)loadShader:(NSString*) vertexShader : (NSString*) fragmentShader
++ (Pass*)loadShader:(Renderer*)renderer :(NSString*) vertexShader : (NSString*) fragmentShader
 {
-    Root* root = Root::getInstance();
-    if (!root) {
-        NSLog(@"Engine not ignited");
-        return 0;
-    }
+//    Root* root = Root::getInstance();
+//    if (!root) {
+//        NSLog(@"Engine not ignited");
+//        return 0;
+//    }
     
     NSString *vertShaderPathname, *fragShaderPathname;
     
@@ -67,7 +67,6 @@
         return 0;
     }
     
-    Renderer* renderer = root->getRenderer();
     return renderer->loadShader(vSource, fSource);
 }
 

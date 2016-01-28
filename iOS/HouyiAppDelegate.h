@@ -26,5 +26,7 @@
 - (Blue3DViewController*)getViewerVC;
 - (void)purchased;
 - (bool)isPro;
++ (Root*)getRoot;
++ (void)setRoot:(Root*)root;
 
 @end

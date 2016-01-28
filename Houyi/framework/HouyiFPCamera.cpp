@@ -82,35 +82,35 @@ namespace Houyi
 
     void FPCamera::addVirtualPan()
     {
-    	float density = getDensity();
-    	LOGE("density is %f", density);
-    	TextView* textViewF = HouyiNew TextView("F");
-    	HRect rectT(VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * 2 * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
-    	textViewF->setBound(rectT, TextView::EHAlignLeft, TextView::EVAlignBottom);
-    	textViewF->setOnTouchListener(this);
-    	textViewF->setId(FORWARD);
-    	Root::getInstance()->getWorld()->addView(textViewF);
-
-    	TextView* textViewL = HouyiNew TextView("L");
-    	HRect rectL(0, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
-    	textViewL->setBound(rectL, TextView::EHAlignLeft, TextView::EVAlignBottom);
-    	textViewL->setOnTouchListener(this);
-    	textViewL->setId(LEFT);
-    	Root::getInstance()->getWorld()->addView(textViewL);
-
-    	TextView* textViewR = HouyiNew TextView("R");
-    	HRect rectR(VIRTUAL_PAN_WIDTH * density * 2, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
-    	textViewR->setBound(rectR, TextView::EHAlignLeft, TextView::EVAlignBottom);
-    	textViewR->setOnTouchListener(this);
-    	textViewR->setId(RIGHT);
-    	Root::getInstance()->getWorld()->addView(textViewR);
-
-    	TextView* textViewB = HouyiNew TextView("B");
-    	HRect rectB(VIRTUAL_PAN_WIDTH * density, 0, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
-    	textViewB->setBound(rectB, TextView::EHAlignLeft, TextView::EVAlignBottom);
-    	textViewB->setOnTouchListener(this);
-    	textViewB->setId(BACK);
-    	Root::getInstance()->getWorld()->addView(textViewB);
+//    	float density = getDensity();
+//    	LOGE("density is %f", density);
+//    	TextView* textViewF = HouyiNew TextView("F");
+//    	HRect rectT(VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * 2 * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
+//    	textViewF->setBound(rectT, TextView::EHAlignLeft, TextView::EVAlignBottom);
+//    	textViewF->setOnTouchListener(this);
+//    	textViewF->setId(FORWARD);
+//    	Root::getInstance()->getWorld()->addView(textViewF);
+//
+//    	TextView* textViewL = HouyiNew TextView("L");
+//    	HRect rectL(0, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
+//    	textViewL->setBound(rectL, TextView::EHAlignLeft, TextView::EVAlignBottom);
+//    	textViewL->setOnTouchListener(this);
+//    	textViewL->setId(LEFT);
+//    	Root::getInstance()->getWorld()->addView(textViewL);
+//
+//    	TextView* textViewR = HouyiNew TextView("R");
+//    	HRect rectR(VIRTUAL_PAN_WIDTH * density * 2, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
+//    	textViewR->setBound(rectR, TextView::EHAlignLeft, TextView::EVAlignBottom);
+//    	textViewR->setOnTouchListener(this);
+//    	textViewR->setId(RIGHT);
+//    	Root::getInstance()->getWorld()->addView(textViewR);
+//
+//    	TextView* textViewB = HouyiNew TextView("B");
+//    	HRect rectB(VIRTUAL_PAN_WIDTH * density, 0, VIRTUAL_PAN_WIDTH * density, VIRTUAL_PAN_HEIGHT * density);
+//    	textViewB->setBound(rectB, TextView::EHAlignLeft, TextView::EVAlignBottom);
+//    	textViewB->setOnTouchListener(this);
+//    	textViewB->setId(BACK);
+//    	Root::getInstance()->getWorld()->addView(textViewB);
 
     }
 

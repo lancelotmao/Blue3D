@@ -30,7 +30,7 @@ namespace Houyi
         static Pass* createPass(int shaderId);
 
     protected:
-        virtual void onRender(Scene* scene);
+        virtual void onRender(Renderer* renderer, Scene* scene);
 
         // TODO investigate multi-texture
         virtual void uploadTexture(const Texture* texture, const RenderState& renderState, int index = 0);

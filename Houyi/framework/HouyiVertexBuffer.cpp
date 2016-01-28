@@ -18,15 +18,15 @@ namespace Houyi
 
     VertexBuffer::~VertexBuffer()
     {
-        Root* root = Root::getInstance();
-        if (mIsBound && !root->mAutoFinalize)
-        {
-            Renderer* renderer = root->getRenderer();
-            if (renderer)
-            {
-                renderer->deleteHardwareBuffer(getVBOCount(), getVBOs());
-            }
-        }
+//        Root* root = Root::getInstance();
+//        if (mIsBound && !root->mAutoFinalize)
+//        {
+//            Renderer* renderer = root->getRenderer();
+//            if (renderer)
+//            {
+//                renderer->deleteHardwareBuffer(getVBOCount(), getVBOs());
+//            }
+//        }
 
         if (mPosition)
         {

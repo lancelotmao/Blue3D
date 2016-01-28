@@ -1576,64 +1576,64 @@ namespace Houyi
 
     void GLEnvPass::onRender(Scene* scene)
     {
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
-        float width = renderer->getWidth();
-        float height = renderer->getHeight();
-
-        glClear(GL_DEPTH_BUFFER_BIT);
-        CHECK_GL_ERROR("glClear");
-
-        glDisable(GL_DEPTH_TEST);
-
-        if (scene->getCurrentCamera())
-        {
-            Camera camera = *scene->getCurrentCamera();
-            
-            // set camera pos
-            int locCamPos = glGetUniformLocation(mProgram, "cam_pos");
-            if (locCamPos >= 0){
-                Vector3 campos = camera.getPosition();
-                glUniform3f(locCamPos, campos.x, campos.y, campos.z);
-            }
-
-            // 90 degree FOV so that we see one cube face at a time
-            camera.perspective(90, width / height, 1, 1000);
-            uploadProjectionMat(camera.getProjectionMatrix());
-
-            // view matrix will be camera matrix
-            Matrix4 viewMatrix = camera.getViewMatrix();
-            int locMat = glGetUniformLocation(mProgram, "matView");
-            glUniformMatrix4fv(locMat, 1, false, viewMatrix.getData());
-            CHECK_GL_ERROR("Camera error");
-        }
-
-        // use cubemap
-        Texture* cubemapTexture = scene->getCubeMapTexture();
-        if (cubemapTexture)
-        {
-            glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture->getTextureId());
-            glActiveTexture(GL_TEXTURE0);
-            int loc = glGetUniformLocation(mProgram, "EnvMap");
-            glUniform1i(loc, 0);
-            CHECK_GL_ERROR("Cubemap Texture error");
-        }
-        else
-        {
-            LogOnce("Environment map is null\n");
-        }
-
-        GLuint vPositionHandle = glGetAttribLocation(mProgram, "aPosition");
-        // bind position with our hardcoded sphere
-        glVertexAttribPointer(vPositionHandle, 3, GL_FLOAT, 0, 0, vSphere);
-        glEnableVertexAttribArray(vPositionHandle);
-        CHECK_GL_ERROR("position handle error");
-
-        // draw our env sphere
-        glDrawElements(GL_TRIANGLES, sizeof(iSphere)/sizeof(GLushort), GL_UNSIGNED_SHORT, iSphere);
-
-        // we don't want later pass to clear our hard work
-//        rs.clearMaskBit(GL_COLOR_BUFFER_BIT);
-        CHECK_GL_ERROR("Evn pass finished");
+//        Root* root = Root::getInstance();
+//        Renderer* renderer = root->getRenderer();
+//        float width = renderer->getWidth();
+//        float height = renderer->getHeight();
+//
+//        glClear(GL_DEPTH_BUFFER_BIT);
+//        CHECK_GL_ERROR("glClear");
+//
+//        glDisable(GL_DEPTH_TEST);
+//
+//        if (scene->getCurrentCamera())
+//        {
+//            Camera camera = *scene->getCurrentCamera();
+//            
+//            // set camera pos
+//            int locCamPos = glGetUniformLocation(mProgram, "cam_pos");
+//            if (locCamPos >= 0){
+//                Vector3 campos = camera.getPosition();
+//                glUniform3f(locCamPos, campos.x, campos.y, campos.z);
+//            }
+//
+//            // 90 degree FOV so that we see one cube face at a time
+//            camera.perspective(90, width / height, 1, 1000);
+//            uploadProjectionMat(camera.getProjectionMatrix());
+//
+//            // view matrix will be camera matrix
+//            Matrix4 viewMatrix = camera.getViewMatrix();
+//            int locMat = glGetUniformLocation(mProgram, "matView");
+//            glUniformMatrix4fv(locMat, 1, false, viewMatrix.getData());
+//            CHECK_GL_ERROR("Camera error");
+//        }
+//
+//        // use cubemap
+//        Texture* cubemapTexture = scene->getCubeMapTexture();
+//        if (cubemapTexture)
+//        {
+//            glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture->getTextureId());
+//            glActiveTexture(GL_TEXTURE0);
+//            int loc = glGetUniformLocation(mProgram, "EnvMap");
+//            glUniform1i(loc, 0);
+//            CHECK_GL_ERROR("Cubemap Texture error");
+//        }
+//        else
+//        {
+//            LogOnce("Environment map is null\n");
+//        }
+//
+//        GLuint vPositionHandle = glGetAttribLocation(mProgram, "aPosition");
+//        // bind position with our hardcoded sphere
+//        glVertexAttribPointer(vPositionHandle, 3, GL_FLOAT, 0, 0, vSphere);
+//        glEnableVertexAttribArray(vPositionHandle);
+//        CHECK_GL_ERROR("position handle error");
+//
+//        // draw our env sphere
+//        glDrawElements(GL_TRIANGLES, sizeof(iSphere)/sizeof(GLushort), GL_UNSIGNED_SHORT, iSphere);
+//
+//        // we don't want later pass to clear our hard work
+////        rs.clearMaskBit(GL_COLOR_BUFFER_BIT);
+//        CHECK_GL_ERROR("Evn pass finished");
     }
 }

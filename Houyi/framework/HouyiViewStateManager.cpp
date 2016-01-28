@@ -21,6 +21,9 @@ namespace Houyi
         return mIns;
     }
     
+    ViewStateManager::ViewStateManager()
+    {}
+    
     ViewStateManager::~ViewStateManager()
     {
         clear();

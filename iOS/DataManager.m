@@ -10,6 +10,7 @@
 #import "FileItem.h"
 #import "HouyiAssetManager.h"
 #import "BlueSetting.h"
+#import "HouyiAppDelegate.h"
 #include <Houyi/Houyi.h>
 
 using namespace Houyi;
@@ -34,7 +35,7 @@ static DataManager* mIns = 0;
 {
     if (focus != newFocus) {
         NSLog(@"DataManager focus changed. old: %d, new %d", focus, newFocus);
-        World* world = Root::getInstance()->getWorld();
+        World* world = [HouyiAppDelegate getRoot]->getWorld();
         world->clearScene();
         FileItem* item = [items objectAtIndex:newFocus];
         if (!item.localPath) {

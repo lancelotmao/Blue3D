@@ -74,6 +74,11 @@
     BOOL p = [bundle preflightAndReturnError:&e];
     if (p) {
         [bundle load];
+        
+        Class pluginClass = [bundle principalClass];
+        if (pluginClass == nil) {
+            NSLog(@"no principal class in bundle");
+        }
     }
     
     return YES;
@@ -127,6 +132,15 @@
     bool res = [[NSUserDefaults standardUserDefaults] boolForKey:@"ispro"];
     NSLog(@"checking isPro %d", res);
     return res;
+}
+
+static Root* mRoot = 0;
++ (Root*)getRoot {
+    return mRoot;
+}
+
++ (void)setRoot:(Root*)root {
+    mRoot = root;
 }
 
 @end

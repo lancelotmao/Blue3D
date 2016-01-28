@@ -22,14 +22,14 @@ namespace Houyi
 
 	GLESTexture::~GLESTexture()
 	{
-		if (!Root::getInstance()->mAutoFinalize)
-		{
-			glDeleteTextures(1, mTextureIds);
-			checkGlError("glDeleteTextures");
-		}
+//		if (!Root::getInstance()->mAutoFinalize)
+//		{
+//			glDeleteTextures(1, mTextureIds);
+//			checkGlError("glDeleteTextures");
+//		}
 	}
 
-	void GLESTexture::setImage(ImagePtr image)
+	void GLESTexture::setImage(ImagePtr image, TextureManager* tm)
 	{
         if (image == mImage)
         {
@@ -39,7 +39,7 @@ namespace Houyi
         int curWidth = mWidth;
         int curHeight = mHeight;
         
-	    Texture::setImage(image);
+	    Texture::setImage(image, tm);
         
         ensurePOT();
         
@@ -53,7 +53,6 @@ namespace Houyi
             mState = EInvalid;
         }
         mDirty = HRect(0, 0, mWidth, mHeight);
-        TextureManager* tm = TextureManager::getInstance();
         tm->addTextureToUploadQueue(this);
 	}
 

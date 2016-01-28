@@ -6,6 +6,7 @@
 
 namespace Houyi
 {
+    class Renderer;
     class PassListener;
 
     class PassResult
@@ -36,7 +37,7 @@ namespace Houyi
 
         // called by Renderer
         virtual void beginPass();
-        virtual void renderPass(Scene* scene);
+        virtual void renderPass(Renderer* renderer, Scene* scene);
         virtual void endPass();
 
         virtual PassResult& getMyResult();
@@ -74,7 +75,7 @@ namespace Houyi
 
         // obviously sub class has to provide render functionality
         virtual void onStart();
-        virtual void onRender(Scene* scene) = 0;
+        virtual void onRender(Renderer* renderer, Scene* scene) = 0;
         virtual void onFinish();
     protected:
         int mProgram;

@@ -23,15 +23,15 @@ namespace Houyi
 {
     static Root* mInstance = 0;
 
-    Root* Root::getInstance()
-    {
-        if (!mInstance)
-        {
-            mInstance = HouyiNew Root();
-        }
-
-        return mInstance;
-    }
+//    Root* Root::getInstance()
+//    {
+//        if (!mInstance)
+//        {
+//            mInstance = HouyiNew Root();
+//        }
+//
+//        return mInstance;
+//    }
 
     Root::Root() :
         mAutoFinalize(false), mRenderer(0), mWorld(0),
@@ -46,6 +46,9 @@ namespace Houyi
         LOGD("Start deleting Root. mAutoFinalize = %d\n", mAutoFinalize);
         mRunnigAnims.clear();
 
+        ShaderManager* shaderMan = mRenderer->getShaderManager();
+        HouyiDelete(shaderMan);
+        
         if (mRenderer)
         {
             HouyiDelete(mRenderer);
@@ -57,9 +60,6 @@ namespace Houyi
         HouyiDelete(ViewStateManager::getInstance());
         mWorld = 0;
 
-        ShaderManager* shaderMan = ShaderManager::getInstance();
-        HouyiDelete(shaderMan);
-
         Settings* settings = Settings::getInstance();
         HouyiDelete(settings);
 
@@ -67,10 +67,6 @@ namespace Houyi
         HouyiDelete(AudioManager::getInstance());
 
         mInstance = 0;
-
-        // put texture manager to last as others might use it in destructor
-        TextureManager* tm = TextureManager::getInstance();
-        HouyiDelete(tm);
         
         log_set.clear();
 
@@ -150,11 +146,13 @@ namespace Houyi
 
         bool ret = true;
         
-        ViewStateManager::getInstance()->updateTop();
+//        ViewStateManager::getInstance()->updateTop();
         
         mWorld = getWorld();
         if (mWorld)
         {
+//            mWorld->getViewStateManager()->updateTop();
+            mWorld->update();
             if (mRenderer)
             {
                 ret = mRenderer->renderAll(mWorld);
@@ -265,7 +263,7 @@ namespace Houyi
 
     World* Root::getWorld()
     {
-        return (World*)ViewStateManager::getInstance()->getTop();
+        return mWorld;
     }
 
     void Root::setWorld(World* world)
@@ -332,7 +330,7 @@ namespace Houyi
         Renderer* renderer = getRenderer();
         renderer->clearContext();
 
-        ShaderManager* sm = ShaderManager::getInstance();
+        ShaderManager* sm = mRenderer->getShaderManager();
         sm->invalidateAll();
     }
 
@@ -344,7 +342,7 @@ namespace Houyi
             mWorld = 0;
         }
 
-        ShaderManager* shaderMan = ShaderManager::getInstance();
+        ShaderManager* shaderMan = mRenderer->getShaderManager();
         shaderMan->deleteAll();
     }
 
@@ -522,17 +520,17 @@ namespace Houyi
 
     void Root::deleteDeadObject()
     {
-        pthread_mutex_lock (&mDeadObjectsMutex);
-        if (mDeadObjects.size() > 0)
-        {
-            LOGI("Root deleting dead object on rendering thread. count = %zu\n", mDeadObjects.size());
-            for (int i = 0;i < mDeadObjects.size();++i)
-            {
-                HouyiDelete(mDeadObjects[i]);
-            }
-            mDeadObjects.clear();
-            LOGI("Root deleted dead objects\n");
-        }
-        pthread_mutex_unlock (&mDeadObjectsMutex);
+//        pthread_mutex_lock (&mDeadObjectsMutex);
+//        if (mDeadObjects.size() > 0)
+//        {
+//            LOGI("Root deleting dead object on rendering thread. count = %zu\n", mDeadObjects.size());
+//            for (int i = 0;i < mDeadObjects.size();++i)
+//            {
+//                HouyiDelete(mDeadObjects[i]);
+//            }
+//            mDeadObjects.clear();
+//            LOGI("Root deleted dead objects\n");
+//        }
+//        pthread_mutex_unlock (&mDeadObjectsMutex);
      }
 }

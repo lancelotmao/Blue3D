@@ -16,6 +16,7 @@ namespace Houyi
 {
     GLESRenderer::GLESRenderer()
     {
+        mShaderMan = HouyiNew ShaderManager(this);
     }
 
     GLESRenderer::~GLESRenderer()

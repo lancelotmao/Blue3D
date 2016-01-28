@@ -25,7 +25,8 @@ namespace Houyi
     class TextureManager : public Allocator
     {
     public:
-        static TextureManager* getInstance();
+//        static TextureManager* getInstance();
+        TextureManager();
         virtual ~TextureManager();
         
         Texture* createTexture(Scene* scene, const string& imageName, TextureConfig config = TextureConfig::DEFAULT);
@@ -52,10 +53,6 @@ namespace Houyi
             return mUploadQueue.size() > 0;
         }
 
-    private:
-        TextureManager() : mUploadQuota(1)
-        {}
-        
     private:
         static TextureManager* mIns;
         deque<Texture*> mUploadQueue;

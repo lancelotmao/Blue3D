@@ -21,8 +21,8 @@ namespace Houyi
     {
         mStartTime = currentTimeMillis() + delayMilli;
         mState = EWaiting;
-        Root* root = Root::getInstance();
-        root->addAnimation(this);
+//        Root* root = Root::getInstance();
+//        root->addAnimation(this);
     }
 
     void Animation::start(double from, double to, double delayMilli)
@@ -37,8 +37,8 @@ namespace Houyi
     {
         // note remove should happen before notify listener
         // because listener might start animation again
-        Root* root = Root::getInstance();
-        root->removeAnimation(this);
+//        Root* root = Root::getInstance();
+//        root->removeAnimation(this);
         
         mState = EIdle;
         mStartTime = 0;
@@ -50,8 +50,8 @@ namespace Houyi
 
     void Animation::process(double currentTime)
     {
-        Root* root = Root::getInstance();
-        root->requestRender();
+//        Root* root = Root::getInstance();
+//        root->requestRender();
         double animationTime = currentTime - mStartTime;
         if (animationTime < 0)
         {
@@ -63,8 +63,8 @@ namespace Houyi
         {
             // note remove should happen before notify listener
             // because listener might start animation again
-            Root* root = Root::getInstance();
-            root->removeAnimation(this);
+//            Root* root = Root::getInstance();
+//            root->removeAnimation(this);
             
             mState = EIdle;
             if (mListener)

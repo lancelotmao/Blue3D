@@ -24,12 +24,14 @@ namespace Houyi
         
     }
 
-    bool GestureDetector::onTouch(MotionEvent e)
+    bool GestureDetector::onTouch(MotionEvent e, Renderer* renderer)
     {
         bool res = false;
+        if (!renderer)
+        {
+            return res;
+        }
         
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
         float screenWidth = renderer->getWidth();
         float screenHeight = renderer->getHeight();
         float clickThreshold = max(screenWidth, screenHeight) / 20;

@@ -25,6 +25,7 @@ namespace Houyi
     mGrid(0), mUseFPCamera(false)
     {
         mMaterialMan = HouyiNew MaterialManager();
+        mTextureManager = HouyiNew TextureManager();
     }
     
     Scene::~Scene()
@@ -453,8 +454,7 @@ namespace Houyi
         if (!texture) return;
         
         // remove from uploading queue first
-        TextureManager* tm = TextureManager::getInstance();
-        tm->removeTexture(this, texture);
+        mTextureManager->removeTexture(this, texture);
         
         for (int i = 0, n = mTextures.size();i < n;++i)
         {
@@ -475,12 +475,12 @@ namespace Houyi
             Texture* t = mTextures[i];
             if (t)
             {
-                TextureManager* tm = TextureManager::getInstance();
-                tm->removeTexture(this, t);
+                mTextureManager->removeTexture(this, t);
                 HouyiDelete(t);
             }
         }
         mTextures.clear();
+        HouyiDelete(mTextureManager);
     }
     
     void Scene::invalidateAllTexture()
@@ -492,6 +492,7 @@ namespace Houyi
             {
                 t->setTextureId(-1);
                 t->invalidate();
+                mTextureManager->addTextureToUploadQueue(t);
             }
         }
     }

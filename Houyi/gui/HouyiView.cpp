@@ -8,12 +8,11 @@ namespace Houyi
     const float View::SPACE_HEIGHT = 2;
     float View::SPACE_WIN_RATIO = 1;
     
-	View::View() : mBound(0, 0, 0, 0), mAttached(false), mRequestLayout(true), mScaleX(1),
+	View::View() : mRoot(0), mBound(0, 0, 0, 0), mAttached(false), mRequestLayout(true), mScaleX(1),
     mScaleY(1), mScaleZ(1), mRoll(0), mAcceptOutofBoundEvent(false), mOnClickListener(0),
     mGestureDetector(this), mHAlignment(EHAlignLeft), mVAlignment(EVAlignTop), mIsActive(false),
     mAlphaAnimation(0), mAttachedScene(0), mHGravity(EHAlignLeft), mVGravity(EVAlignTop), mOnTouchListener(0)
 	{
-		mRoot = Root::getInstance();
 		mName = "View";
 		mMaterial = HouyiNew Material();
 		mMaterial->setTextureMode(RenderState::EModulate);
@@ -177,7 +176,7 @@ namespace Houyi
 
     void View::layout(const HRect& bound, Scene* scene)
     {
-        if (!mRequestLayout)
+        if (!mRequestLayout || !mRoot)
         {
             return;
         }
@@ -281,8 +280,13 @@ namespace Houyi
             LOGD("View::dispatchTouchEvent %s[%f, %f, %d]\n",
                     mName.c_str(), e.getX(), e.getY(), e.mType);
         }
+        
+        if (!mRoot)
+        {
+            return false;
+        }
 
-        if (mGestureDetector.onTouch(e))
+        if (mGestureDetector.onTouch(e, 0)) // TODO renderer cannot be 0
         {
             if (DEBUG_EVENT)
                 LOGD("%s::dispatchTouchEvent. Gesture Returned\n", mName.c_str());

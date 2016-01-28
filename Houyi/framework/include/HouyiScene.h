@@ -15,6 +15,7 @@
 #include "HouyiRigidBody.h"
 #include "HouyiStats.h"
 #include "HouyiMaterialManager.h"
+#include "HouyiTextureManager.h"
 
 namespace Houyi
 {
@@ -198,6 +199,11 @@ namespace Houyi
             return mMaterialMan;
         }
         
+        inline TextureManager* getTextureManager()
+        {
+            return mTextureManager;
+        }
+        
         inline SceneStats& getStats()
         {
             return mStats;
@@ -300,6 +306,7 @@ namespace Houyi
         vector<RigidBody*> mRigidBodies;
         vector<Texture*> mTextures;
         MaterialManager* mMaterialMan;
+        TextureManager* mTextureManager;
         
         Camera* mCurrentCamera;
         bool mZUp;

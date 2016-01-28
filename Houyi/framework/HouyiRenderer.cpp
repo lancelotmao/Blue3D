@@ -12,9 +12,8 @@ namespace Houyi
             mWidth(0), mHeight(0), mCurrentRenderingScene(0),
             mIsMSAAEnabled(false), mMSAARenderTarget(0), mMSAAQuad(0), mMSAACamera(0), mMSAARequested(false),
             mSampleRate(1), mDefaultFBO(0), mScreenBufferScale(1), mIsTrilinearFilterEnabled(false),
-            mVertexCount(0), mPointCount(0), mLineCount(0), mTriangleCount(0), mCurrentPass(0), mLastPass(0), mSingleViewPort(true)
+            mVertexCount(0), mPointCount(0), mLineCount(0), mTriangleCount(0), mCurrentPass(0), mLastPass(0), mSingleViewPort(true), mShaderMan(0)
     {
-        mShaderMan = ShaderManager::getInstance();
     }
 
     Renderer::~Renderer()
@@ -209,17 +208,12 @@ namespace Houyi
         if (mIsMSAAEnabled)
         {
             bindRenderTarget(mMSAARenderTarget);
-            World* world = Root::getInstance()->getWorld();
             Camera* cam = world->getCurrentCamera();
             if (cam)
             {
                 cam->setAspectRatio(1);
             }
         }
-
-        // check if we have pending texture upload request
-        TextureManager* tm = TextureManager::getInstance();
-        tm->upload();
 
         return true;
     }
@@ -229,6 +223,9 @@ namespace Houyi
         for (int s = world->getSceneCount() - 1;s >= 0;--s)
         {
             mCurrentRenderingScene = world->getScene(s);
+            
+            // check if we have pending texture upload request
+            mCurrentRenderingScene->getTextureManager()->upload();
             
             if (mSingleViewPort)
             {
@@ -293,10 +290,9 @@ namespace Houyi
             renderMSAAQuad();
         }
 
-        TextureManager* tm = TextureManager::getInstance();
-        if (tm->hasPendingTexture())
+        if (mCurrentRenderingScene->getTextureManager()->hasPendingTexture())
         {
-            Root::getInstance()->requestRender();
+            world->getRoot()->requestRender();
         }
         return true;
     }
@@ -323,14 +319,14 @@ namespace Houyi
                 Pass* pass = mat->getPass();
                 if (!pass)
                 {
-                    pass = ShaderManager::getInstance()->getDefaultShader();
+                    pass = mShaderMan->getDefaultShader(this);
                     mat->setPass(pass);
                 }
                 if (pass && mLastPass != pass)
                 {
                     mCurrentPass = pass;
                     pass->beginPass();
-                    pass->renderPass(scene);
+                    pass->renderPass(this, scene);
                 }
             }
             else

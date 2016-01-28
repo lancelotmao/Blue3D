@@ -10,20 +10,18 @@ namespace Houyi
 {
     ShaderManager* ShaderManager::mIns = 0;
 
-    ShaderManager* ShaderManager::getInstance()
-    {
-        if (!mIns)
-        {
-            mIns = HouyiNew ShaderManager();
-        }
-        return mIns;
-    }
+//    ShaderManager* ShaderManager::getInstance()
+//    {
+//        if (!mIns)
+//        {
+//            mIns = HouyiNew ShaderManager();
+//        }
+//        return mIns;
+//    }
 
-    ShaderManager::ShaderManager() : mStaticDefault(0), mStaticPPL(0),
+    ShaderManager::ShaderManager(Renderer* renderer) : mStaticDefault(0), mStaticPPL(0),
     mDynamicDefault(0), mDynamicPPL(0), mDefault(0)
     {
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
         if (!renderer)
         {
             return;
@@ -113,7 +111,7 @@ namespace Houyi
         return *mPassIterator;
     }
 
-    bool ShaderManager::render(Scene* scene)
+    bool ShaderManager::render(Renderer* renderer, Scene* scene)
     {
         mPassIterator = mPasses.begin();
         vector<Pass*>::iterator end = mPasses.end();
@@ -134,8 +132,6 @@ namespace Houyi
 
                 if (pass->getPassState() == Pass::EInvalid)
                 {
-                    Root* root = Root::getInstance();
-                    Renderer* renderer = root->getRenderer();
                     if (renderer->uploadShader(pass))
                     {
                         pass->setPassState(Pass::ENormal);
@@ -143,7 +139,7 @@ namespace Houyi
                 }
 
                 pass->beginPass();
-                pass->renderPass(scene);
+                pass->renderPass(renderer, scene);
                 pass->endPass();
 
                 if (pass->getPassState() == Pass::ENormal)
@@ -172,10 +168,8 @@ namespace Houyi
 
     }
 
-    Pass* ShaderManager::createShader(int pid)
+    Pass* ShaderManager::createShader(int pid, Renderer* renderer)
     {
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
         if (!renderer)
         {
             return 0;
@@ -186,9 +180,8 @@ namespace Houyi
         return pass;
     }
 
-    void ShaderManager::addDefaultShader(Scene* scene)
+    void ShaderManager::addDefaultShader(Root* root, Scene* scene)
     {
-        Root* root = Root::getInstance();
         Renderer* renderer = root->getRenderer();
         if (!renderer)
         {
@@ -245,14 +238,13 @@ namespace Houyi
         }
 
         mDefault = pass;
+        addPass(mDefault);
     }
     
-    Pass* ShaderManager::getDefaultShader()
+    Pass* ShaderManager::getDefaultShader(Renderer* renderer)
     {
         if (!mDefault)
         {
-            Root* root = Root::getInstance();
-            Renderer* renderer = root->getRenderer();
             if (!renderer)
             {
                 return 0;

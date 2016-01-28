@@ -6,6 +6,8 @@
 
 namespace Houyi
 {
+    class TextureManager;
+    
     class TextureConfig
     {
     public:
@@ -38,7 +40,7 @@ namespace Houyi
 
         virtual ~Texture();
 
-        virtual void setImage(ImagePtr image);
+        virtual void setImage(ImagePtr image, TextureManager* tm);
 
         inline ImagePtr getImage() const
         {

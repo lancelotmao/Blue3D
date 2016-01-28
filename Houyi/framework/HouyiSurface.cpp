@@ -31,17 +31,18 @@ namespace Houyi
     {
         if (mBufferValid)
         {
-            Root* root = Root::getInstance();
-            if (!root->mAutoFinalize)
-            {
-                Renderer* renderer = root->getRenderer();
-                if (renderer)
-                {
-                    uint handle[1];
-                    handle[0] = mBufferHandle;
-                    renderer->deleteHardwareBuffer(1, handle);
-                }
-            }
+            // TODO
+//            Root* root = Root::getInstance();
+//            if (!root->mAutoFinalize)
+//            {
+//                Renderer* renderer = root->getRenderer();
+//                if (renderer)
+//                {
+//                    uint handle[1];
+//                    handle[0] = mBufferHandle;
+//                    renderer->deleteHardwareBuffer(1, handle);
+//                }
+//            }
         }
     }
 

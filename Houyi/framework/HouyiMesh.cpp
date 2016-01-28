@@ -70,7 +70,7 @@ namespace Houyi
             if (mMaterial->getTextureCount() > 0)
             {
                 Texture* t = mMaterial->getTexture(0);
-                t->setImage(texture->getImage());
+//                t->setImage(texture->getImage());
             }
             else
             {

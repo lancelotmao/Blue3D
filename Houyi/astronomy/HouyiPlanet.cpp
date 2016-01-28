@@ -17,7 +17,7 @@ namespace Houyi
             mAngularSpeed(0), mAngularSpeedSim(0), mSize(1), mSizeSim(1), mRing(0)
     {
         mName = name;
-        Root* root = Root::getInstance();
+        Root* root = HouyiNew Root(); // TODO
         World* world = root->getWorld();
         Scene* scene = world->getFocusScene();
         
@@ -62,7 +62,7 @@ namespace Houyi
         scene->getMaterialManager()->addMaterial(mat);
         mat->getRenderState().disableLighting();
         mat->getRenderState().disableDepthTest();
-        mat->addTexture(TextureManager::getInstance()->createTexture(img));
+//        mat->addTexture(TextureManager::getInstance()->createTexture(img));
         mNodeName->addMaterial(mat);
         mNodeName->setZOrder(1000);
         addChild(mNodeName);
@@ -70,24 +70,24 @@ namespace Houyi
     
     void Planet::addRing(float innerR, float outterR, string texName)
     {
-        Root* root = Root::getInstance();
-        World* world = root->getWorld();
-        Scene* scene = world->getFocusScene();
-
-        Mesh* mesh = HouyiNew Ring(innerR, outterR, 10);
-        scene->addMesh(mesh);
-        mRing = HouyiNew SceneNode();
-        mRing->setName(mName + " Ring");
-        mRing->setMesh(mesh);
-        Material* mat = HouyiNew Material();
-        scene->getMaterialManager()->addMaterial(mat);
-        Texture* t = TextureManager::getInstance()->createTexture(scene, texName);
-        t->setWrapMode(Texture::WRAP_CLAMP, Texture::WRAP_CLAMP);
-        mat->addTexture(t);
-        mRing->addMaterial(mat);
-        mRing->setZOrder(100);
-
-        addChild(mRing);
+//        Root* root = Root::getInstance();
+//        World* world = root->getWorld();
+//        Scene* scene = world->getFocusScene();
+//
+//        Mesh* mesh = HouyiNew Ring(innerR, outterR, 10);
+//        scene->addMesh(mesh);
+//        mRing = HouyiNew SceneNode();
+//        mRing->setName(mName + " Ring");
+//        mRing->setMesh(mesh);
+//        Material* mat = HouyiNew Material();
+//        scene->getMaterialManager()->addMaterial(mat);
+////        Texture* t = TextureManager::getInstance()->createTexture(scene, texName);
+////        t->setWrapMode(Texture::WRAP_CLAMP, Texture::WRAP_CLAMP);
+////        mat->addTexture(t);
+//        mRing->addMaterial(mat);
+//        mRing->setZOrder(100);
+//
+//        addChild(mRing);
     }
 
     bool Planet::onUpdate()

@@ -18,15 +18,20 @@ namespace Houyi
 {
     TextureManager* TextureManager::mIns = 0;
     
-    TextureManager* TextureManager::getInstance()
+    TextureManager::TextureManager() : mUploadQuota(1)
     {
-        if (!mIns)
-        {
-            mIns = HouyiNew TextureManager();
-            pthread_mutex_init(&mIns->mMutex, 0);
-        }
-        return mIns;
+        pthread_mutex_init(&mMutex, 0);
     }
+    
+//    TextureManager* TextureManager::getInstance()
+//    {
+//        if (!mIns)
+//        {
+//            mIns = HouyiNew TextureManager();
+//            pthread_mutex_init(&mIns->mMutex, 0);
+//        }
+//        return mIns;
+//    }
     
     TextureManager::~TextureManager()
     {
@@ -74,20 +79,15 @@ namespace Houyi
     		return NULL;
     	}
 
-        Root* root = Root::getInstance();
-        Texture* t = 0;
-        if (root->getRenderType() == Root::ERenderTypeGL)
-        {
-            t = HouyiNew GLESTexture(image, config);
-        }
+        Texture* t = HouyiNew GLESTexture(image, config);
         if (t)
         {
             pthread_mutex_lock(&mMutex);
             mUploadQueue.push_back(t);
             pthread_mutex_unlock(&mMutex);
 
-            Root* root = Root::getInstance();
-            root->requestRender();
+//            Root* root = Root::getInstance();
+//            root->requestRender();
         }
         else
         {
@@ -98,20 +98,15 @@ namespace Houyi
     
     Texture* TextureManager::createCubeMapTexture(ImagePtr images[6])
     {
-        Root* root = Root::getInstance();
-        Texture* t = 0;
-        if (root->getRenderType() == Root::ERenderTypeGL)
-        {
-            t = HouyiNew GLESCubeMapTexture(images, false);
-        }
+        Texture* t = HouyiNew GLESCubeMapTexture(images, false);
         if (t)
         {
             pthread_mutex_lock(&mMutex);
             mUploadQueue.push_back(t);
             pthread_mutex_unlock(&mMutex);
 
-            Root* root = Root::getInstance();
-            root->requestRender();
+//            Root* root = Root::getInstance();
+//            root->requestRender();
         }
         else
         {
@@ -220,8 +215,8 @@ namespace Houyi
                     }
                     t->setState(Texture::EValid);
                     q++;
-                    Root* root = Root::getInstance();
-                    root->requestRender();
+//                    Root* root = Root::getInstance();
+//                    root->requestRender();
                 }
                 mUploadQueue.erase(mUploadQueue.begin());
             } while (q < mUploadQuota && mUploadQueue.size() > 0);

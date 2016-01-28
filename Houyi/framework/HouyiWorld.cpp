@@ -26,7 +26,7 @@
 namespace Houyi
 {
     World::World(const string name) : mTick(0), mRenderer(0), mFocusScene(0),
-    mGestureDetector(this), mAxis(0), mCameraNode(0), mMap(0)
+    mGestureDetector(this), mAxis(0), mCameraNode(0), mMap(0), mRootViewNode(0)
     {
         Camera* camera = HouyiNew Camera();
         mDefaulScene = HouyiNew Scene();
@@ -58,10 +58,10 @@ namespace Houyi
     	}
     }
 
-    void World::create()
+    void World::create(Root* root)
     {
         ViewState::create();
-        mRoot = Root::getInstance();
+        mRoot = root;
         mRenderer = mRoot->getRenderer();
     }
     
@@ -85,7 +85,7 @@ namespace Houyi
         {
             Scene* scene = mScenes[i];
             scene->getRootSceneNode()->postInit();
-            ShaderManager::getInstance()->addDefaultShader(scene);
+            mRoot->getRenderer()->getShaderManager()->addDefaultShader(mRoot, scene);
         }
     }
 
@@ -108,15 +108,17 @@ namespace Houyi
         ViewState::update();
         
         // layout function will add view to control scene if it is not added yet
-        mRootViewNode->layout(HRect(0, 0, mRenderer->getWidth(), mRenderer->getHeight()), mDefaulScene);
+        if (mRootViewNode)
+        {
+            mRootViewNode->layout(HRect(0, 0, mRenderer->getWidth(), mRenderer->getHeight()), mDefaulScene);
+        }
         
         for (int i = 0;i < mScenes.size();++i)
         {
             Scene* scene = mScenes[i];
             if (scene->getRigidBodyCount() > 0 || scene->getSkeletonCount() > 0)
             {
-                Root* root = Root::getInstance();
-                root->requestRender();
+                mRoot->requestRender();
             }
 
             for (int i = 0, n = scene->getRigidBodyCount();i < n; ++i)
@@ -198,7 +200,7 @@ namespace Houyi
             return true;
         }
 
-        res = mGestureDetector.onTouch(e);
+        res = mGestureDetector.onTouch(e, mRenderer);
         if (res)
         {
             return true;
@@ -413,8 +415,7 @@ namespace Houyi
 
     void World::requestRender()
     {
-        Root* root = Root::getInstance();
-        root->requestRender();
+        mRoot->requestRender();
     }
 
     void World::clearContext()
@@ -645,7 +646,7 @@ namespace Houyi
     {
         if (mFocusScene != scene)
         {
-            ShaderManager::getInstance()->addDefaultShader(scene);
+            mRoot->getRenderer()->getShaderManager()->addDefaultShader(mRoot, scene);
         }
         mFocusScene = scene;
         sendCommand(10000);

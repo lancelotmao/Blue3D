@@ -31,7 +31,7 @@ namespace Houyi
         if (img)
         {
             mMaterial->clearTexture();
-            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
+//            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
         }
         mMaterial->getRenderState().disableLighting();
         mMaterial->getRenderState().setDoubleSided(true);
@@ -44,37 +44,37 @@ namespace Houyi
     
     void SphereEnvMap::onRenderBegin(Pass* pass)
     {
-        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
-        if (!worldCamera)
-        {
-            return;
-        }
-        Camera cam;
-        cam.setAspectRatio(worldCamera->getAspectRatio());
-        cam.setUp(worldCamera->getUp());
-        cam.setFOV(worldCamera->getFOV());
-        
-        Vector3 f = worldCamera->getForward(true);
-        cam.setPosition(-f);
-        cam.setLookAt(f);
-        cam.lookAt();
-
-        Matrix4 m = cam.getViewMatrix();
-        pass->uploadEyeMat(m);
-
-        cam.setFOV(60);
-        cam.perspective();
-        pass->uploadProjectionMat(cam.getProjectionMatrix());
+//        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
+//        if (!worldCamera)
+//        {
+//            return;
+//        }
+//        Camera cam;
+//        cam.setAspectRatio(worldCamera->getAspectRatio());
+//        cam.setUp(worldCamera->getUp());
+//        cam.setFOV(worldCamera->getFOV());
+//        
+//        Vector3 f = worldCamera->getForward(true);
+//        cam.setPosition(-f);
+//        cam.setLookAt(f);
+//        cam.lookAt();
+//
+//        Matrix4 m = cam.getViewMatrix();
+//        pass->uploadEyeMat(m);
+//
+//        cam.setFOV(60);
+//        cam.perspective();
+//        pass->uploadProjectionMat(cam.getProjectionMatrix());
     }
     
     void SphereEnvMap::onRenderEnd(Pass* pass)
     {
-        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
-        if (!worldCamera)
-        {
-            return;
-        }
-        pass->uploadEyeMat(worldCamera->getViewMatrix());
-        pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
+//        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
+//        if (!worldCamera)
+//        {
+//            return;
+//        }
+//        pass->uploadEyeMat(worldCamera->getViewMatrix());
+//        pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
     }
 }

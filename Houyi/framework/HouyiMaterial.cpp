@@ -48,7 +48,7 @@ namespace Houyi
 
     Texture* Material::createTextureByPath(Scene* scene, const string paths[3])
     {
-        TextureManager* tm = TextureManager::getInstance();
+        TextureManager* tm = scene->getTextureManager();
         Texture* tex = 0;
         for (int i = 0; i < 3;++i)
         {

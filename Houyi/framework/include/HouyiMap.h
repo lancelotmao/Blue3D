@@ -7,6 +7,7 @@
 
 namespace Houyi
 {
+    class Renderer;
     class World;
 
     class Map : public Object
@@ -75,7 +76,7 @@ namespace Houyi
             return mTileHeight;
         }
 
-        void onPostInit();
+        void onPostInit(World* world);
 
         // s is absolute
         void setScroll(Vector2 s);

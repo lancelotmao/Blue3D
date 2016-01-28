@@ -27,10 +27,10 @@ namespace Houyi
 
     GLPass::~GLPass()
     {
-        if (!Root::getInstance()->mAutoFinalize)
-        {
-            glDeleteProgram(mProgram);
-        }
+//        if (!Root::getInstance()->mAutoFinalize)
+//        {
+//            glDeleteProgram(mProgram);
+//        }
     }
     
     void GLPass::init()
@@ -209,7 +209,7 @@ namespace Houyi
         }
     }
 
-    void GLPass::onRender(Scene* scene)
+    void GLPass::onRender(Renderer* renderer, Scene* scene)
     {
         if (scene->getStats().mVertexCount > 4096)
         {
@@ -226,15 +226,15 @@ namespace Houyi
         Pass* res = NULL;
         if (shaderId == HSHADER_CUBEMAP)
         {
-            res = HouyiNew GLEnvPass(vshaders[shaderId], pshaders[shaderId]);
+//            res = HouyiNew GLEnvPass(vshaders[shaderId], pshaders[shaderId]);
         }
         else if (shaderId == HSHADER_SHADOW_CAST)
         {
-            res = HouyiNew GLShadowPass(vshaders[shaderId], pshaders[shaderId]);
+//            res = HouyiNew GLShadowPass(vshaders[shaderId], pshaders[shaderId]);
         }
         else if (shaderId == HSHADER_FIRE)
         {
-            res = HouyiNew GLFirePass(vshaders[shaderId], pshaders[shaderId]);
+//            res = HouyiNew GLFirePass(vshaders[shaderId], pshaders[shaderId]);
         }
         else
         {

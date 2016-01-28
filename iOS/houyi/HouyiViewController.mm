@@ -56,7 +56,7 @@ using namespace Houyi;
 
 - (void)onCreate
 {
-    mRoot = Root::getInstance();
+    mRoot = HouyiNew Root();
     mRoot->init();
     mRoot->onWindowCreated();
     
@@ -198,7 +198,7 @@ using namespace Houyi;
     }
     [mLabelElement setText:ms];
     
-    if (mScreenShotDelegate && !TextureManager::getInstance()->hasPendingTexture())
+    if (mScreenShotDelegate && !mWorld->getFocusScene()->getTextureManager()->hasPendingTexture())
     {
         mWorld->getRootView()->setVisibility(SceneNode::EInvisible);
         mRoot->render();

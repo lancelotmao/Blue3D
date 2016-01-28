@@ -7,7 +7,7 @@ namespace Houyi
     {
         if (mMap)
         {
-            mMap->onPostInit();
+            mMap->onPostInit(this);
         }
     }
     

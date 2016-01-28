@@ -20,12 +20,12 @@ namespace Houyi
     bool Capability::useVBO()
     {
         // TODO dynamically find out
-        return true;
+        return false;
     }
     
     bool Capability::useHardwareBone()
     {
-        return GLSL_VERSION_INT != 100;
+        return false;
     }
 
     bool Capability::useNeon()

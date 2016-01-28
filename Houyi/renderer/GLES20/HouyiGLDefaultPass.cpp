@@ -21,14 +21,12 @@ namespace Houyi
 
     }
 
-    void GLDefaultPass::onRender(Scene* scene)
+    void GLDefaultPass::onRender(Renderer* renderer, Scene* scene)
     {
         CHECK_GL_ERROR("Default Pass start");
 
-        GLPass::onRender(scene);
+        GLPass::onRender(renderer, scene);
 
-        Root* root = Root::getInstance();
-        Renderer* renderer = root->getRenderer();
         if (!renderer)
         {
             LOGE("GLDefaultPass::onRender. Renderer is NULL");

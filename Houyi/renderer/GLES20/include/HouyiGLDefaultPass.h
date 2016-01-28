@@ -13,7 +13,7 @@ namespace Houyi
         virtual ~GLDefaultPass();
 
     protected:
-        virtual void onRender(Scene* scene);
+        virtual void onRender(Renderer* renderer, Scene* scene);
 
         virtual bool linearizeZ();
 

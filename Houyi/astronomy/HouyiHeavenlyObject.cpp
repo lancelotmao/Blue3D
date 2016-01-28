@@ -17,19 +17,19 @@ namespace Houyi
 {
     HeavenlyObject::HeavenlyObject()
     {
-        Root* root = Root::getInstance();
-        World* world = root->getWorld();
-        Scene* scene = world->getFocusScene();
-
-        Mesh* mesh = HouyiNew GeoSphere(1, 5, 10);
-        scene->addMesh(mesh);
-        mBody = HouyiNew SceneNode();
-        mBody->setMesh(mesh);
-        
-        mMaterial = HouyiNew Material();
-        mBody->addMaterial(mMaterial);
-        
-        addChild(mBody);
+//        Root* root = Root::getInstance();
+//        World* world = root->getWorld();
+//        Scene* scene = world->getFocusScene();
+//
+//        Mesh* mesh = HouyiNew GeoSphere(1, 5, 10);
+//        scene->addMesh(mesh);
+//        mBody = HouyiNew SceneNode();
+//        mBody->setMesh(mesh);
+//        
+//        mMaterial = HouyiNew Material();
+//        mBody->addMaterial(mMaterial);
+//        
+//        addChild(mBody);
     }
     
     HeavenlyObject::~HeavenlyObject()
@@ -47,7 +47,7 @@ namespace Houyi
         if (img)
         {
             mMaterial->clearTexture();
-            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
+//            mMaterial->addTexture(TextureManager::getInstance()->createTexture(img));
         }
     }
 }

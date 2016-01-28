@@ -38,6 +38,7 @@ namespace Houyi
         World(const string name = "World");
         virtual ~World();
         virtual void update();
+        virtual void create(Root* root);
         virtual void clearScene(); // except default scene
         virtual void windowChanged(int width, int height);
         virtual void requestRender();
@@ -77,6 +78,7 @@ namespace Houyi
         inline void addScene(Scene* scene)
         {
             mScenes.push_back(scene);
+            postCreate();
         }
         
         inline void insertScene(Scene* scene, int index)
@@ -99,6 +101,11 @@ namespace Houyi
             return mFocusScene;
         }
         
+        inline Root* getRoot()
+        {
+            return mRoot;
+        }
+        
         void setFocusScene(Scene* scene);
 
         inline View* getRootView()
@@ -107,8 +114,8 @@ namespace Houyi
         }
 
         virtual void onCommand(int command);
+        
     protected:
-        virtual void create();
         virtual void postCreate();
         virtual void onWindowChanged();
         virtual void onUpdate();

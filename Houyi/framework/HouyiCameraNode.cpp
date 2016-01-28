@@ -13,7 +13,7 @@ namespace Houyi
         mMaterials.push_back(mMaterial);
         Pass* pass = GLPass::createPass(HSHADER_CAMERA);
 		pass->setName("Camera Pass");
-		ShaderManager::getInstance()->addPass(pass);
+//		ShaderManager::getInstance()->addPass(pass);
 		mMaterial->setPass(pass);
 		mMaterial->getRenderState().disableDepthTest();
 		mMaterial->setPassConfigurable(false);
@@ -39,7 +39,8 @@ namespace Houyi
     {
         Matrix4 m = Matrix4::IDENTITY;
 
-        Renderer* renderer = Root::getInstance()->getRenderer();
+        // TODO
+        Renderer* renderer = 0;//Root::getInstance()->getRenderer();
         if (!renderer)
         {
         	LOGE("CameraNode::onRenderBegin. NULL renderer");
@@ -81,27 +82,27 @@ namespace Houyi
 		}
         pass->uploadEyeMat(m);
 
-        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
-        if (worldCamera)
-        {
-            Camera cam;
-            cam.setAspectRatio(worldCamera->getAspectRatio());
-            cam.setFOV(worldCamera->getFOV());
-            cam.setNearRange(1);
-            cam.setFarRange(100);
-            cam.perspective();
-            pass->uploadProjectionMat(cam.getProjectionMatrix());
-        }
+//        Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
+//        if (worldCamera)
+//        {
+//            Camera cam;
+//            cam.setAspectRatio(worldCamera->getAspectRatio());
+//            cam.setFOV(worldCamera->getFOV());
+//            cam.setNearRange(1);
+//            cam.setFarRange(100);
+//            cam.perspective();
+//            pass->uploadProjectionMat(cam.getProjectionMatrix());
+//        }
     }
 
     void CameraNode::onRenderEnd(Pass* pass)
     {
-    	Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
-		if (!worldCamera)
-		{
-			return;
-		}
-		pass->uploadEyeMat(worldCamera->getViewMatrix());
-		pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
+//    	Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
+//		if (!worldCamera)
+//		{
+//			return;
+//		}
+//		pass->uploadEyeMat(worldCamera->getViewMatrix());
+//		pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
     }
 }

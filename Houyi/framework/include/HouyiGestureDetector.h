@@ -14,6 +14,8 @@
 #include "HouyiVector3.h"
 
 namespace Houyi {
+    class Renderer;
+    
     class Gesture
     {
     public:
@@ -77,7 +79,7 @@ namespace Houyi {
         GestureDetector(GestureListener* listener);
         
         // DIY
-        bool onTouch(MotionEvent e);
+        bool onTouch(MotionEvent e, Renderer* renderer);
         
         // from platform gesture recognizer
         void handlePinch(float scale);

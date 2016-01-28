@@ -76,7 +76,8 @@
 - (void)onCreate
 {
     [super onCreate];
-	// Do any additional setup after loading the view.
+    
+    [HouyiAppDelegate setRoot:mRoot];
     
     int width = mGLKView.frame.size.width;
     int height = mGLKView.frame.size.height;
@@ -94,6 +95,7 @@
         mWorld = world;
     }
     
+    mWorld->create(mRoot);
     mRoot->setWorld(mWorld);
     mRoot->onWindowChanged(width, height);
     

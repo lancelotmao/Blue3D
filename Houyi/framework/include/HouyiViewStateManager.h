@@ -18,6 +18,7 @@ namespace Houyi
     {
     public:
         static ViewStateManager* getInstance();
+        ViewStateManager();
         virtual ~ViewStateManager();
         
         void startViewState(ViewState* state);

@@ -15,7 +15,7 @@ namespace Houyi
         GLESTexture(int tid);
         virtual ~GLESTexture();
 
-        virtual void setImage(ImagePtr image);
+        virtual void setImage(ImagePtr image, TextureManager* tm);
         virtual void setWrapMode(int s, int t);
         virtual void uploadTexture();
         virtual void allocTexMemory();
