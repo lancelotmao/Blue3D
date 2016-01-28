@@ -58,7 +58,6 @@ namespace Houyi
 
     void Renderer::onWindowCreated()
     {
-    	Capability::getGPUInfo();
     }
 
     void Renderer::onWindowChanged(int width, int height)

@@ -308,51 +308,21 @@ namespace Houyi
 
     int ShaderManager::getStaticDefault()
     {
-    	if (Capability::GLSL_VERSION_INT == 100)
-		{
-			return HSHADER_STATIC_DEFAULT_100;
-		}
-		else
-		{
-			return HSHADER_STATIC_DEFAULT;
-		}
+        return HSHADER_STATIC_DEFAULT;
     }
 
     int ShaderManager::getStaticPPL()
     {
-    	if (Capability::GLSL_VERSION_INT == 100)
-    	{
-    		return HSHADER_STATIC_PPL_100;
-    	}
-    	else
-    	{
-    		return HSHADER_STATIC_PPL;
-    	}
+        return HSHADER_STATIC_PPL;
     }
 
     int ShaderManager::getDefault()
     {
-    	if (Capability::GLSL_VERSION_INT == 100)
-		{
-    		// no HW skinning
-			return HSHADER_STATIC_DEFAULT_100;
-		}
-		else
-		{
-			return HSHADER_DEFAULT;
-		}
+    	return HSHADER_DEFAULT;
     }
 
     int ShaderManager::getPPL()
     {
-    	if (Capability::GLSL_VERSION_INT == 100)
-		{
-    		// no HW skinning
-			return HSHADER_STATIC_PPL_100;
-		}
-		else
-		{
-			return HSHADER_PPL;
-		}
+    	return HSHADER_PPL;
     }
 }
