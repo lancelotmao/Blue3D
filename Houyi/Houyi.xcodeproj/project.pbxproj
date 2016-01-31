@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		161C6F111BA7A5CD0043AA89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 161C6F101BA7A5CD0043AA89 /* Info.plist */; };
 		161C6F141BA7A5FB0043AA89 /* Houyi3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 161C6F121BA7A5FB0043AA89 /* Houyi3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		161C6F151BA7A5FB0043AA89 /* Houyi3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 161C6F131BA7A5FB0043AA89 /* Houyi3D.m */; };
 		163C4FA31B95D97900483DC5 /* Houyi.h in Headers */ = {isa = PBXBuildFile; fileRef = 163C4FA11B95D97900483DC5 /* Houyi.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1702,7 +1701,6 @@
 				16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */,
 				16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */,
 				16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				161C6F111BA7A5CD0043AA89 /* Info.plist in Resources */,
 				16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */,
 				16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */,
 				16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */,

@@ -20,7 +20,7 @@
 					<folderInfo id="com.android.toolchain.gcc.383482432.1365286047" name="/" resourcePath="">
 						<toolChain id="com.android.toolchain.gcc.1801206991" name="com.android.toolchain.gcc" superClass="com.android.toolchain.gcc">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.1949228941" isAbstract="false" superClass="com.android.targetPlatform"/>
-							<builder id="com.android.builder.92191473" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Android Builder" superClass="com.android.builder">
+							<builder arguments="-j4" command="ndk-build" id="com.android.builder.92191473" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Android Builder" superClass="com.android.builder">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="obj"/>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="libs"/>
@@ -47,5 +47,8 @@
 		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.383482432;com.android.toolchain.gcc.383482432.1365286047;com.android.gcc.compiler.1059709349;com.android.gcc.inputType.463779219">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.android.AndroidPerProjectProfile"/>
 		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/Houyi"/>
 	</storageModule>
 </cproject>

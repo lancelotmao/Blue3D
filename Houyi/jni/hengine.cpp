@@ -219,7 +219,7 @@ JNI_METHOD(HEngine, jlong, ignite)(JNIEnv * env, jobject obj, jobject assetManag
 
 	if (!mRoot)
 	{
-		mRoot = (Root*)Root::getInstance();
+		mRoot = HouyiNew Root();
 		mRoot->init();
 	}
 	return (jlong)mRoot;
@@ -341,7 +341,7 @@ JNI_METHOD(HEngine, void, addPass)(JNIEnv * env, jobject obj, jlong pass)
     }
 
     Pass* pPass = (Pass*)pass;
-    ShaderManager::getInstance()->addPass(pPass);
+    mRoot->getRenderer()->getShaderManager()->addPass(pPass);
 }
 
 JNI_METHOD(HEngine, void, setPass)(JNIEnv * env, jobject obj, jlong pass)
@@ -353,7 +353,7 @@ JNI_METHOD(HEngine, void, setPass)(JNIEnv * env, jobject obj, jlong pass)
 	}
 
 	Pass* pPass = (Pass*)pass;
-    ShaderManager::getInstance()->setPass(pPass);
+	mRoot->getRenderer()->getShaderManager()->setPass(pPass);
 }
 
 JNI_METHOD(HEngine, void, deletePtr)(JNIEnv * env, jobject obj, jlong ptr)
@@ -1180,7 +1180,7 @@ JNI_METHOD(HouyiTexture, jlong, createTextureFromAsset)(JNIEnv * env, jobject ob
         LOGE("Cannot create bitmap from file. fileName = %s", strFileName);
         return 0;
     }
-    Texture* texture = TextureManager::getInstance()->createTexture(bitmap);
+    Texture* texture = mRoot->getWorld()->getFocusScene()->getTextureManager()->createTexture(bitmap);
     return (jlong)texture;
 }
 
@@ -1193,7 +1193,7 @@ JNI_METHOD(HouyiTexture, jlong, nativeCreateTextureFromBitmap)(JNIEnv * env, job
     }
 
     ImagePtr image = ImageFactory::createImage(bitmap);
-    Texture* texture = TextureManager::getInstance()->createTexture(image);
+    Texture* texture = mRoot->getWorld()->getFocusScene()->getTextureManager()->createTexture(image);
     return (jlong)texture;
 }
 
@@ -1207,7 +1207,7 @@ JNI_METHOD(HouyiTexture, jlong, createTextureFromMemory)(JNIEnv * env, jobject o
 	}
 	else
 	{
-	    Texture* texture = TextureManager::getInstance()->createTexture(ip);
+	    Texture* texture = mRoot->getWorld()->getFocusScene()->getTextureManager()->createTexture(ip);
         texturePtr = (jlong)texture;
 	}
 
@@ -1287,7 +1287,7 @@ JNI_METHOD(HouyiTexture, void, setWrapMode)(JNIEnv * env, jobject obj, jint s, j
 
 JNI_METHOD(HouyiTextureManager, jboolean, hasPendingTexture)(JNIEnv * env, jobject obj)
 {
-    TextureManager* tm = TextureManager::getInstance();
+    TextureManager* tm = mRoot->getWorld()->getFocusScene()->getTextureManager();
     return tm->hasPendingTexture();
 }
 

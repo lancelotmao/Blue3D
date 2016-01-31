@@ -52,7 +52,7 @@ namespace Houyi
         virtual float getSpaceHeight(bool includeScale = false);
 
         virtual void removeChildView(View* child);
-        virtual void removeFromParent();
+        virtual void removeFromParent() override;
         virtual View* getRootView();
         View* _getParent();
         View* _getChildAt(int index);
@@ -75,8 +75,8 @@ namespace Houyi
         virtual bool onTouch(MotionEvent e);
         virtual void setOnClickListener(OnClickListener* listener);
         virtual void setOnTouchListener(OnTouchListener* listener);
-        virtual bool onSingleTapUp(const MotionEvent& e);
-        virtual bool onFling(const MotionEvent& e, float vx, float vy);
+        virtual bool onSingleTapUp(const MotionEvent& e) override;
+        virtual bool onFling(const MotionEvent& e, float vx, float vy) override;
 
         virtual void invalidate();
         virtual void invalidate(HRect dirty);
