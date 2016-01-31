@@ -8,7 +8,7 @@ namespace Houyi
     const float View::SPACE_HEIGHT = 2;
     float View::SPACE_WIN_RATIO = 1;
     
-	View::View() : mRoot(0), mBound(0, 0, 0, 0), mAttached(false), mRequestLayout(true), mScaleX(1),
+	View::View() : mWorld(0), mBound(0, 0, 0, 0), mAttached(false), mRequestLayout(true), mScaleX(1),
     mScaleY(1), mScaleZ(1), mRoll(0), mAcceptOutofBoundEvent(false), mOnClickListener(0),
     mGestureDetector(this), mHAlignment(EHAlignLeft), mVAlignment(EVAlignTop), mIsActive(false),
     mAlphaAnimation(0), mAttachedScene(0), mHGravity(EHAlignLeft), mVGravity(EVAlignTop), mOnTouchListener(0)
@@ -174,14 +174,15 @@ namespace Houyi
         return false;
     }
 
-    void View::layout(const HRect& bound, Scene* scene)
+    void View::layout(const HRect& bound, World* world)
     {
-        if (!mRequestLayout || !mRoot)
+        if (!mRequestLayout || !world)
         {
             return;
         }
         
-        Renderer* renderer = mRoot->getRenderer();
+        Scene* scene = world->getDefaultScene();
+        Renderer* renderer = world->getRoot()->getRenderer();
         float screenWidth = renderer->getWidth();
         float screenHeight = renderer->getHeight();
         float aspectRatio = screenWidth / screenHeight;
@@ -231,7 +232,7 @@ namespace Houyi
             attachToScene(scene);
         }
         
-        bool layoutRequested = onLayout(bound, scene);
+        bool layoutRequested = onLayout(bound, world);
         
         for (int i = 0, n = mChildren.size();i < n;++i)
 		{
@@ -242,7 +243,7 @@ namespace Houyi
                 HRect vBound = HRect(mBound.mLeft + v->mBound.mLeft,
                                      mBound.mTop + v->mBound.mTop,
                                      v->mBound.mWidth, v->mBound.mHeight);
-                v->layout(vBound, scene);
+                v->layout(vBound, world);
             }
 		}
 
@@ -251,7 +252,7 @@ namespace Houyi
         mDisplayDirty = false;
     }
     
-    bool View::onLayout(const HRect& bound, Scene* scene)
+    bool View::onLayout(const HRect& bound, World* world)
     {
         return false;
     }
@@ -281,7 +282,7 @@ namespace Houyi
                     mName.c_str(), e.getX(), e.getY(), e.mType);
         }
         
-        if (!mRoot)
+        if (!mWorld)
         {
             return false;
         }
@@ -293,7 +294,7 @@ namespace Houyi
             return true;
         }
 
-        Renderer* renderer = mRoot->getRenderer();
+        Renderer* renderer = mWorld->getRoot()->getRenderer();
         float screenWidth = renderer->getWidth();
         float screenHeight = renderer->getHeight();
 

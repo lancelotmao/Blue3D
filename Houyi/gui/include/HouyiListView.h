@@ -54,10 +54,10 @@ namespace Houyi
         ListView(Direction dir);
         virtual ~ListView();
         
-        virtual bool onLayout(const HRect& bound, Scene* scene);
+        virtual bool onLayout(const HRect& bound, World* world) override;
         virtual bool onUpdate() override;
-        virtual bool onTouch(MotionEvent e);
-        virtual bool onSingleTapUp(const MotionEvent& e);
+        virtual bool onTouch(MotionEvent e) override;
+        virtual bool onSingleTapUp(const MotionEvent& e) override;
         virtual bool onFling(const MotionEvent& e, float vx, float vy);
 
         virtual void scroll(float delta);

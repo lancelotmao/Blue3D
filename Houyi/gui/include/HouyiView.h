@@ -13,6 +13,7 @@
 namespace Houyi
 {
     class Scene;
+    class World;
     class OnClickListener;
     class OnTouchListener;
     class DragImageView;
@@ -67,8 +68,8 @@ namespace Houyi
             return mRequestLayout;
         }
         
-        virtual void layout(const HRect& bound, Scene* scene);
-        virtual bool onLayout(const HRect& bound, Scene* scene);
+        virtual void layout(const HRect& bound, World* world);
+        virtual bool onLayout(const HRect& bound, World* world);
         virtual void requestLayout();
 
         virtual bool dispatchTouchEvent(MotionEvent e);
@@ -126,8 +127,8 @@ namespace Houyi
 //        virtual void scale(float sx, float sy, float sz);
         virtual void resetTransform();
         
-        virtual void onRenderBegin(Pass* pass);
-        virtual void onRenderEnd(Pass* pass);
+        virtual void onRenderBegin(Pass* pass) override;
+        virtual void onRenderEnd(Pass* pass) override;
 
         virtual void cancel();
 
@@ -142,7 +143,7 @@ namespace Houyi
         }
 
 	protected:
-		Root* mRoot;
+        World* mWorld;
         Scene* mAttachedScene;
 		HRect mBound;
         bool mAttached;

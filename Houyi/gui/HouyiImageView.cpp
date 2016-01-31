@@ -44,32 +44,29 @@ namespace Houyi
         {
             scene->addTexture(mTexture);
         }
+        else if (mImage)
+        {
+            TextureConfig config;
+            // for editting, better to keep original image
+            config.mCreateNewImageForNPOT = false;
+            mTexture = scene->getTextureManager()->createTexture(mImage, config);
+            if (mMaterial->getTextureCount() == 0)
+            {
+                mMaterial->addTexture(mTexture);
+            }
+            scene->addTexture(mTexture);
+            setTexcoord();
+        }
     }
 
     void ImageView::setImage(ImagePtr image)
     {
         if (mTexture)
         {
-//            mTexture->setImage(image);
+            mTexture->setImage(image, mAttachedScene->getTextureManager());
+            setTexcoord();
         }
-        else
-        {
-            TextureConfig config;
-            // for editting, better to keep original image
-            config.mCreateNewImageForNPOT = false;
-//            mTexture = TextureManager::getInstance()->createTexture(image, config);
-//            if (mMaterial->getTextureCount() == 0)
-//            {
-//                mMaterial->addTexture(mTexture);
-//            }
-//            if (mAttached)
-//            {
-//                mAttachedScene->addTexture(mTexture);
-//            }
-        }
-        
         mImage = image;
-        setTexcoord();
     }
 
     ImagePtr ImageView::getImage()

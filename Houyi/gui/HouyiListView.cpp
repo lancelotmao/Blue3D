@@ -7,6 +7,7 @@
 
 #include "HouyiListView.h"
 #include "HouyiUtil.h"
+#include "HouyiWorld.h"
 
 namespace Houyi
 {
@@ -26,13 +27,14 @@ namespace Houyi
         }
     }
     
-    bool ListView::onLayout(const HRect& bound, Scene* scene)
+    bool ListView::onLayout(const HRect& bound, World* world)
     {
         if (!mAdapter)
         {
             return true;
         }
         
+        Scene* scene = world->getDefaultScene();
         float total = 0;
         int size = mAdapter->getSize();
         for (int i = mVisibleFirst;i < size;++i)
@@ -83,7 +85,7 @@ namespace Houyi
                 }
                 float offsetX = containerOffsetX + i * mViewLength;
                 v->setBound(HRect(offsetX - mScroll, mBound.mTop, mViewLength, v->getHeight()), mHAlignment, mVAlignment);
-                v->layout(v->getBound(), scene);
+                v->layout(v->getBound(), world);
                 total += v->getWidth();
                 
                 // done visible range

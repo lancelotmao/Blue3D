@@ -110,7 +110,7 @@ namespace Houyi
         // layout function will add view to control scene if it is not added yet
         if (mRootViewNode)
         {
-            mRootViewNode->layout(HRect(0, 0, mRenderer->getWidth(), mRenderer->getHeight()), mDefaulScene);
+            mRootViewNode->layout(HRect(0, 0, mRenderer->getWidth(), mRenderer->getHeight()), this);
         }
         
         for (int i = 0;i < mScenes.size();++i)
