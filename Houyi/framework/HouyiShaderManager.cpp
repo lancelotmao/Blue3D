@@ -8,17 +8,6 @@
 
 namespace Houyi
 {
-    ShaderManager* ShaderManager::mIns = 0;
-
-//    ShaderManager* ShaderManager::getInstance()
-//    {
-//        if (!mIns)
-//        {
-//            mIns = HouyiNew ShaderManager();
-//        }
-//        return mIns;
-//    }
-
     ShaderManager::ShaderManager(Renderer* renderer) : mStaticDefault(0), mStaticPPL(0),
     mDynamicDefault(0), mDynamicPPL(0), mDefault(0)
     {
@@ -31,12 +20,13 @@ namespace Houyi
         mStaticPPL = renderer->loadShader(getStaticPPL());
         mStaticPPL->setName("Static PPL");
         mDefault = mStaticDefault;
+        addPass(mStaticDefault);
+        addPass(mStaticPPL);
     }
 
     ShaderManager::~ShaderManager()
     {
         deleteAll();
-        mIns = 0;
     }
 
     void ShaderManager::addPass(Pass* pass)

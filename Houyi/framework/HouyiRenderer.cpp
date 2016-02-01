@@ -19,6 +19,7 @@ namespace Houyi
     Renderer::~Renderer()
     {
         clearContext();
+        HouyiDelete(mShaderMan);
     }
 
     void Renderer::clearContext()

@@ -21,18 +21,6 @@ set<string> log_set;
 
 namespace Houyi
 {
-    static Root* mInstance = 0;
-
-//    Root* Root::getInstance()
-//    {
-//        if (!mInstance)
-//        {
-//            mInstance = HouyiNew Root();
-//        }
-//
-//        return mInstance;
-//    }
-
     Root::Root() :
         mAutoFinalize(false), mRenderer(0), mWorld(0),
         mElapsedTime(0), mFrameCount(0), mFPS(0), mPrintFPS(false), mRenderType(ERenderTypeNone)
@@ -46,9 +34,6 @@ namespace Houyi
         LOGD("Start deleting Root. mAutoFinalize = %d\n", mAutoFinalize);
         mRunnigAnims.clear();
 
-        ShaderManager* shaderMan = mRenderer->getShaderManager();
-        HouyiDelete(shaderMan);
-        
         if (mRenderer)
         {
             HouyiDelete(mRenderer);
@@ -66,8 +51,6 @@ namespace Houyi
         HouyiDelete(SceneManager::getInstance());
         HouyiDelete(AudioManager::getInstance());
 
-        mInstance = 0;
-        
         log_set.clear();
 
         pthread_mutex_destroy(&mCommandMutex);

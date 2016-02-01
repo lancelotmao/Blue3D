@@ -181,6 +181,7 @@ namespace Houyi
             return;
         }
         
+        mWorld = world;
         Scene* scene = world->getDefaultScene();
         Renderer* renderer = world->getRoot()->getRenderer();
         float screenWidth = renderer->getWidth();
@@ -287,7 +288,7 @@ namespace Houyi
             return false;
         }
 
-        if (mGestureDetector.onTouch(e, 0)) // TODO renderer cannot be 0
+        if (mGestureDetector.onTouch(e, mWorld->getRoot()->getRenderer()))
         {
             if (DEBUG_EVENT)
                 LOGD("%s::dispatchTouchEvent. Gesture Returned\n", mName.c_str());
