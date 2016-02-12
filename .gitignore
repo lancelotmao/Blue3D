@@ -17,3 +17,6 @@ iOS/Houyi.framework
 app/libs/armeabi
 Houyi/libs/armeabi-v7a
 Houyi/libs/armeabi
+Houyi/Houyi.xcodeproj/xcuserdata
+Houyi.fmwk
+Houyi_sim.fmwk

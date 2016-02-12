@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		16D7E8B51C6DD401003F44D8 /* Uploader */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 16D7E8B61C6DD401003F44D8 /* Build configuration list for PBXAggregateTarget "Uploader" */;
+			buildPhases = (
+				16D7E8BB1C6DD40F003F44D8 /* ShellScript */,
+			);
+			dependencies = (
+				16D7E8BA1C6DD40B003F44D8 /* PBXTargetDependency */,
+			);
+			name = Uploader;
+			productName = Uploader;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		161C6F141BA7A5FB0043AA89 /* Houyi3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 161C6F121BA7A5FB0043AA89 /* Houyi3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		161C6F151BA7A5FB0043AA89 /* Houyi3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 161C6F131BA7A5FB0043AA89 /* Houyi3D.m */; };
@@ -332,6 +347,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		16D7E8B91C6DD40B003F44D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16FFE1CA1B92CFE300F8BE19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16FFE1D21B92CFE300F8BE19;
+			remoteInfo = Houyi;
+		};
 		16FFE1E01B92CFE300F8BE19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 16FFE1CA1B92CFE300F8BE19 /* Project object */;
@@ -1630,6 +1652,9 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Lance Mao";
 				TargetAttributes = {
+					16D7E8B51C6DD401003F44D8 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					16FFE1D21B92CFE300F8BE19 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 277ZS7Z8W4;
@@ -1653,6 +1678,7 @@
 			targets = (
 				16FFE1D21B92CFE300F8BE19 /* Houyi */,
 				16FFE1DD1B92CFE300F8BE19 /* HouyiTests */,
+				16D7E8B51C6DD401003F44D8 /* Uploader */,
 			);
 		};
 /* End PBXProject section */
@@ -1719,6 +1745,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16D7E8BB1C6DD40F003F44D8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf $SRCROOT/tools/Houyi.framework\n\necho $BUILT_PRODUCTS_DIR | grep -q -e \"-iphonesimulator\"\nif [ $? -eq 0 ];then\ncp -Rfv ${BUILT_PRODUCTS_DIR}/Houyi.framework $SRCROOT/tools\ncd ${SRCROOT}/tools\nzip -r -m Houyi_sim.fmwk Houyi.framework\nnode $SRCROOT/tools/upload_sim.js\nfi\n\necho $BUILT_PRODUCTS_DIR | grep -q -e \"-iphoneos\"\nif [ $? -eq 0 ];then\ncp -Rfv ${BUILT_PRODUCTS_DIR}/Houyi.framework $SRCROOT/tools\ncd ${SRCROOT}/tools\nzip -r -m Houyi.fmwk Houyi.framework\nnode $SRCROOT/tools/upload.js\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		16FFE1CE1B92CFE300F8BE19 /* Sources */ = {
@@ -1856,6 +1898,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		16D7E8BA1C6DD40B003F44D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16FFE1D21B92CFE300F8BE19 /* Houyi */;
+			targetProxy = 16D7E8B91C6DD40B003F44D8 /* PBXContainerItemProxy */;
+		};
 		16FFE1E11B92CFE300F8BE19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 16FFE1D21B92CFE300F8BE19 /* Houyi */;
@@ -1864,6 +1911,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		16D7E8B71C6DD401003F44D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16D7E8B81C6DD401003F44D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		16FFE1E71B92CFE300F8BE19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1964,6 +2025,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1978,6 +2040,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG_MEM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1990,6 +2053,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2004,6 +2068,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG_MEM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -2041,6 +2106,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		16D7E8B61C6DD401003F44D8 /* Build configuration list for PBXAggregateTarget "Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D7E8B71C6DD401003F44D8 /* Debug */,
+				16D7E8B81C6DD401003F44D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		16FFE1CD1B92CFE300F8BE19 /* Build configuration list for PBXProject "Houyi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
