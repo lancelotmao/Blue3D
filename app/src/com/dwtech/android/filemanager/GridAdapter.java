@@ -27,9 +27,9 @@ public class GridAdapter extends BaseAdapter {
     public static final int MODE_DROPBOX = 0;
     
     public static final String[] MODEL_NAME = { 
-        "Crate_dae.hae",
+        "Crate_dae.dae",
         "female.houyi",
-        "astroboy.hae", 
+        "astroboy.dae", 
         "samba.houyi"};
     
     private String TUTORIAL[] = {
