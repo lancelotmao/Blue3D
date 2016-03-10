@@ -46,6 +46,7 @@ namespace Houyi
         inline void addCamera(Camera* camera)
         {
             mCameras.push_back(camera);
+            camera->setScene(this);
             if (!mCurrentCamera)
             {
                 mCurrentCamera = camera;
@@ -69,6 +70,7 @@ namespace Houyi
         
         inline void setCurrentCamera(Camera* camera)
         {
+            camera->setScene(this);
             mCurrentCamera = camera;
         }
         

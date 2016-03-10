@@ -1,6 +1,8 @@
 #include "HouyiCameraAnimation.h"
 #include "HouyiCamera.h"
 #include "HouyiMatrix3.h"
+#include "HouyiScene.h"
+#include "HouyiWorld.h"
 
 namespace Houyi
 {
@@ -9,6 +11,10 @@ namespace Houyi
         lookAt = cam->getLookAt();
         position = cam->getPosition();
         roll = cam->getRoll();
+    }
+    
+    CameraAnimation::~CameraAnimation()
+    {
     }
     
     void CameraAnimation::onAnimation(double ratio)
@@ -78,7 +84,7 @@ namespace Houyi
         mAnimType = ETransform;
         setInterpolationType(Animation::EDecelerate);
         setDuration(400);
-        start();
+        start(mCamera.getScene()->getWorld()->getRoot());
     }
     
     void CameraAnimation::startComponentAnim(double duration)
@@ -90,7 +96,7 @@ namespace Houyi
         mAnimType = EComponent;
         setInterpolationType(Animation::EDecelerate);
         setDuration(duration);
-        start();
+        start(mCamera.getScene()->getWorld()->getRoot());
     }
     
     void CameraAnimation::startPresentation(float speed)
@@ -98,7 +104,7 @@ namespace Houyi
         mPresentationSpeed = speed;
         mAnimType = EPresent;
         setDuration(FLT_MAX);
-        start();
+        start(mCamera.getScene()->getWorld()->getRoot());
     }
     
     void CameraAnimation::stopPresentation()

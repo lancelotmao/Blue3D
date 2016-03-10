@@ -5,6 +5,8 @@
 
 namespace Houyi
 {
+    class Root;
+    
     class AnimationListener
     {
     public:
@@ -28,10 +30,10 @@ namespace Houyi
         Animation();
         virtual ~Animation();
 
-        virtual void start(double delayMilli = 0);
-        virtual void start(double from, double to, double delayMilli = 0);
+        virtual void start(Root* root, double delayMilli = 0);
+        virtual void start(Root* root, double from, double to, double delayMilli = 0);
         virtual void stop();
-        virtual void process(double currentTime);
+        virtual void process(Root* root, double currentTime);
 
         virtual void setAnimationListener(AnimationListener* listener)
         {
@@ -87,7 +89,9 @@ namespace Houyi
         double mCurrent;
 
         AnimationListener* mListener;
-
+        
+        Root* mRoot;
+        
     private:
         float interpolate(float x);
 

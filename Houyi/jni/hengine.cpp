@@ -529,9 +529,9 @@ JNI_METHOD(HEngine, void, printFPS)(JNIEnv * env, jobject obj, jboolean print)
 
 JNI_METHOD(HEngine, jint, getVertexCount)(JNIEnv * env, jobject obj)
 {
-    if (mRoot && mRoot->getRenderer())
+    if (mRoot && mRoot->getWorld() && mRoot->getWorld()->getFocusScene())
     {
-        return mRoot->getRenderer()->getVertexCount();
+        return mRoot->getWorld()->getFocusScene()->getStats().mVertexCount;
     }
     return 0;
 }
@@ -547,18 +547,18 @@ JNI_METHOD(HEngine, jint, getPointCount)(JNIEnv * env, jobject obj)
 
 JNI_METHOD(HEngine, jint, getLineCount)(JNIEnv * env, jobject obj)
 {
-    if (mRoot && mRoot->getRenderer())
+    if (mRoot && mRoot->getWorld() && mRoot->getWorld()->getFocusScene())
     {
-        return mRoot->getRenderer()->getLineCount();
+        return mRoot->getWorld()->getFocusScene()->getStats().mLineCount;
     }
     return 0;
 }
 
 JNI_METHOD(HEngine, jint, getTriangleCount)(JNIEnv * env, jobject obj)
 {
-    if (mRoot && mRoot->getRenderer())
+    if (mRoot && mRoot->getWorld() && mRoot->getWorld()->getFocusScene())
     {
-        return mRoot->getRenderer()->getTriangleCount();
+        return mRoot->getWorld()->getFocusScene()->getStats().mTriangleCount;
     }
     return 0;
 }

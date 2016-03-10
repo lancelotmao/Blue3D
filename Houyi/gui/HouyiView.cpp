@@ -533,7 +533,7 @@ namespace Houyi
         }
         mAlphaAnimation->setInterpolationType(interpolateType);
         mAlphaAnimation->setDuration(duration);
-        mAlphaAnimation->start(from, to, delay);
+        mAlphaAnimation->start(mWorld->getRoot(), from, to, delay);
     }
 
     void View::fadeOut(double duration, double delay, int interpolateType)

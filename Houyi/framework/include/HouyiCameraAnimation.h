@@ -38,10 +38,7 @@ namespace Houyi
             mListener = this;
         }
 
-        virtual ~CameraAnimation()
-        {
-            stop();
-        }
+        virtual ~CameraAnimation();
 
         virtual void onAnimation(double ratio);
         virtual void onAnimationStop();

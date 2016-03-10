@@ -124,7 +124,7 @@ namespace Houyi
         
         if (mFlingAnim.isActive())
         {
-            mFlingAnim.process(currentTimeMillis());
+            mFlingAnim.process(mWorld->getRoot(), currentTimeMillis());
             float s = mFlingAnim.getCurrent();
 //            LOGI("s = %f", s);
             scroll(s);
@@ -192,7 +192,7 @@ namespace Houyi
         
         if (mDirection == EHorizontal)
         {
-            mFlingAnim.start(vx/4, 0);
+            mFlingAnim.start(mWorld->getRoot(), vx/4, 0);
             if (DEBUG_EVENT)
                 LOGD("ListView start fling, vx = %f", vx);
         }

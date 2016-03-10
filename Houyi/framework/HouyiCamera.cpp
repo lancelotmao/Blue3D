@@ -10,6 +10,8 @@
 #include "math.h"
 #include "HouyiMatrix3.h"
 #include "HouyiLog.h"
+#include "HouyiScene.h"
+#include "HouyiWorld.h"
 #include <iostream>
 
 namespace Houyi
@@ -22,8 +24,6 @@ namespace Houyi
          delete [] mKFPos[i];
          }
          delete [] mKFPos;*/
-        
-        mPeekAnim.stop();
 
         for (int i = 0; i < mKFTargetPosLength; i++)
         {
@@ -367,7 +367,7 @@ namespace Houyi
     {
         if (mPeekAnim.isActive())
         {
-            mPeekAnim.process(currentTimeMillis());
+            mPeekAnim.process(getScene()->getWorld()->getRoot(), currentTimeMillis());
             float speed = mPeekAnim.getCurrent();
             startPeek();
             peek(mPeekAnimX1, mPeekAnimY1, mPeekAnimX2, mPeekAnimY2, speed);
@@ -651,7 +651,7 @@ namespace Houyi
         double speed = Math::Clamp<double>(100.0 / (upTime - lastMoveTime), 0, 100);
         double duration = Math::Clamp<double>(1000 * speed, 0, 3000);
         mPeekAnim.setDuration(duration);
-        mPeekAnim.start(speed, 0);
+        mPeekAnim.start(getScene()->getWorld()->getRoot(), speed, 0);
     }
     
     void Camera::startPeekAnim(float vx, float vy)
@@ -672,7 +672,7 @@ namespace Houyi
         double speed = 6 * v;
         double duration = Math::Clamp<double>(v * 3000, 0, 3000);
         mPeekAnim.setDuration(duration);
-        mPeekAnim.start(speed, 0);
+        mPeekAnim.start(getScene()->getWorld()->getRoot(), speed, 0);
     }
     
     void Camera::stopPeekAnim()

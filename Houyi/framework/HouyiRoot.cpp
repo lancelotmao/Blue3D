@@ -32,7 +32,7 @@ namespace Houyi
     Root::~Root()
     {
         LOGD("Start deleting Root. mAutoFinalize = %d\n", mAutoFinalize);
-        mRunnigAnims.clear();
+        
 
         if (mRenderer)
         {
@@ -56,6 +56,7 @@ namespace Houyi
         pthread_mutex_destroy(&mCommandMutex);
         pthread_mutex_destroy(&mDeadObjectsMutex);
 
+        mRunnigAnims.clear();
         LOGD("Root is destroyed\n");
     }
 
@@ -222,7 +223,7 @@ namespace Houyi
         for (int i = 0;i < mRunnigAnims.size();++i)
         {
             Animation* a = mRunnigAnims[i];
-            a->process(now);
+            a->process(this, now);
             if (a->isActive())
             {
                 hasPending = true;

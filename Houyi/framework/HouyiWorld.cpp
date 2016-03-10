@@ -403,12 +403,12 @@ namespace Houyi
             mAnimRestore.save();
             mAnimRestore.setIdentityAsTarget();
             mAnimRestore.setDuration(400);
-            mAnimRestore.start();
+            mAnimRestore.start(mRoot);
             
             mAnimRestoreAxis.save();
             mAnimRestoreAxis.setIdentityAsTarget();
             mAnimRestoreAxis.setDuration(400);
-            mAnimRestoreAxis.start();
+            mAnimRestoreAxis.start(mRoot);
             return true;
         }
         return false;
