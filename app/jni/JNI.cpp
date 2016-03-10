@@ -1,6 +1,7 @@
 #include <jni.h>
 
 #include "BlueWorld.h"
+#include "hengine.h"
 
 using namespace Houyi;
 
@@ -13,6 +14,7 @@ JNIEXPORT void JNICALL Java_com_dwtech_android_blue3d_Blue3DWorld_nativeInvalida
 JNIEXPORT jlong JNICALL Java_com_dwtech_android_blue3d_Blue3DWorld_nativeCreateWorld(JNIEnv * env, jobject obj)
 {
 	BlueWorld* world = HouyiNew BlueWorld();
+	world->create(mRoot);
 	return (jlong)world;
 }
 

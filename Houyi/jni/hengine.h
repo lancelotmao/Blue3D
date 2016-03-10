@@ -11,7 +11,7 @@
 #define HOUYI_OBJECT_CLASS_NAME "com/dwtech/android/houyi/HouyiObject"
 #define HOUYI_OBJECT_ID_NAME    "mHouyiId"
 
-Root* mRoot;
+extern Root* mRoot;
 jfieldID g_nHouyiIdField = 0;
 
 // init only once for each shared library

@@ -176,6 +176,8 @@ extern "C" {
 	JNI_METHOD(HouyiSceneManager, void, nativeDeleteSceneDefer)(JNIEnv * env, jobject obj, jint index);
 };
 
+Root* mRoot;
+
 void lockJNI()
 {
     pthread_mutex_lock (&mJNIMutex);
@@ -657,6 +659,7 @@ JNI_METHOD(HouyiRenderer, void, setClearColor)(JNIEnv * env, jobject obj, jfloat
 JNI_METHOD(HouyiWorld, jlong, nativeCreateWorld)(JNIEnv * env, jobject obj)
 {
 	World* world = HouyiNew World();
+	world->create(mRoot);
 	return (jlong)world;
 }
 
