@@ -32,6 +32,7 @@ namespace Houyi
         mDefaulScene = HouyiNew Scene();
         mDefaulScene->addCamera(camera);
         mDefaulScene->setName("World Default Scene");
+        mDefaulScene->setWorld(this);
         mScenes.push_back(mDefaulScene);
 
         mRootViewNode = HouyiNew View();

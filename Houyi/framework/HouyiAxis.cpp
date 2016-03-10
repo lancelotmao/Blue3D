@@ -99,66 +99,65 @@ namespace Houyi
 
     void Axis::onRenderBegin(Pass* pass)
     {
-//        Root* root = Root::getInstance();
-//        Scene* scene = root->getWorld()->getFocusScene();
-//        Matrix4 m;
-//        if (scene)
-//        {
-//            m = scene->getCurrentCamera()->getViewMatrix();
-//            Renderer* renderer = root->getRenderer();
-//            float sw = renderer->getWidth();
-//            float sh = renderer->getHeight();
-//            float aspect = sw / sh;
-//            float vpadding = mVPadding;
-//            float hpadding = mHPadding;
-//            if (mAlignX == ELeft)
-//            {
-//                m[0][3] = -aspect + mWidth / 2 + hpadding;
-//            }
-//            else if (mAlignX == ERight)
-//            {
-//                m[0][3] = aspect - mWidth / 2 - hpadding;
-//            }
-//            
-//            if (mAlignY == EBottom)
-//            {
-//                m[1][3] = -1 + mHeight / 2 + vpadding;
-//            }
-//            else if (mAlignY == ETop)
-//            {
-//                m[1][3] = 1 - mHeight / 2 - vpadding;
-//            }
-//            m[2][3] = -1 / tan(15 * Math::PI / 180);
-//            mLastMatrix = m;
-//        }
-//        else
-//        {
-//            m = mLastMatrix;
-//        }
-//        
-//        pass->uploadEyeMat(m);
-//
-//        if (scene && scene->getCurrentCamera())
-//        {
-//            Camera* worldCamera = scene->getCurrentCamera();
-//            Camera cam;
-//            cam.setAspectRatio(worldCamera->getAspectRatio());
-//            cam.setFOV(worldCamera->getFOV());
-//            cam.setNearRange(1);
-//            cam.setFarRange(100);
-//            cam.perspective();
-//            pass->uploadProjectionMat(cam.getProjectionMatrix());
-//        }
+        Scene* scene = getScene();
+        Matrix4 m;
+        if (scene)
+        {
+            m = scene->getWorld()->getCurrentCamera()->getViewMatrix();
+            Renderer* renderer = scene->getWorld()->getRoot()->getRenderer();
+            float sw = renderer->getWidth();
+            float sh = renderer->getHeight();
+            float aspect = sw / sh;
+            float vpadding = mVPadding;
+            float hpadding = mHPadding;
+            if (mAlignX == ELeft)
+            {
+                m[0][3] = -aspect + mWidth / 2 + hpadding;
+            }
+            else if (mAlignX == ERight)
+            {
+                m[0][3] = aspect - mWidth / 2 - hpadding;
+            }
+            
+            if (mAlignY == EBottom)
+            {
+                m[1][3] = -1 + mHeight / 2 + vpadding;
+            }
+            else if (mAlignY == ETop)
+            {
+                m[1][3] = 1 - mHeight / 2 - vpadding;
+            }
+            m[2][3] = -1 / tan(15 * Math::PI / 180);
+            mLastMatrix = m;
+        }
+        else
+        {
+            m = mLastMatrix;
+        }
+        
+        pass->uploadEyeMat(m);
+
+        if (scene && scene->getCurrentCamera())
+        {
+            Camera* worldCamera = scene->getCurrentCamera();
+            Camera cam;
+            cam.setAspectRatio(worldCamera->getAspectRatio());
+            cam.setFOV(worldCamera->getFOV());
+            cam.setNearRange(1);
+            cam.setFarRange(100);
+            cam.perspective();
+            pass->uploadProjectionMat(cam.getProjectionMatrix());
+        }
     }
 
     void Axis::onRenderEnd(Pass* pass)
     {
-//    	Camera* worldCamera = Root::getInstance()->getWorld()->getCurrentCamera();
-//		if (!worldCamera)
-//		{
-//			return;
-//		}
-//		pass->uploadEyeMat(worldCamera->getViewMatrix());
-//        pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
+    	Camera* worldCamera = getScene()->getCurrentCamera();
+		if (!worldCamera)
+		{
+			return;
+		}
+		pass->uploadEyeMat(worldCamera->getViewMatrix());
+        pass->uploadProjectionMat(worldCamera->getProjectionMatrix());
     }
 }

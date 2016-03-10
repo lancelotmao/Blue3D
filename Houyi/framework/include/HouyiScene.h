@@ -20,6 +20,7 @@
 namespace Houyi
 {
     class Loader;
+    class World;
     
     class ViewPort
     {
@@ -278,6 +279,9 @@ namespace Houyi
             return mSkeletonPaused;
         }
         
+        World* getWorld();
+        void setWorld(World* world);
+        
         SceneNode* addGrid();
  
         void createFourViewScene(float viewWidth, float viewHeight);
@@ -293,6 +297,8 @@ namespace Houyi
         bool _isNodeInHierarchy(Node* node, Node* cur);
         
     private:
+        World* mWorld;
+        
         // by default scene owns its data
         // when merged with other scene it passes ownership to the merged scene
         bool mOwnsData;

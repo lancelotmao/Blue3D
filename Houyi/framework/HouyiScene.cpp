@@ -17,10 +17,11 @@
 #include "HouyiTextureManager.h"
 #include "HouyiGrid.h"
 #include "HouyiFPCamera.h"
+#include "HouyiWorld.h"
 
 namespace Houyi
 {
-    Scene::Scene() : mOwnsData(true), mRootSceneNode(0),mCurrentCamera(0),
+    Scene::Scene() : mWorld(0), mOwnsData(true), mRootSceneNode(0),mCurrentCamera(0),
     mZUp(false), mHasNegativeScale(false), mCubeMapTexture(0), mSkeletonPaused(false),
     mGrid(0), mUseFPCamera(false)
     {
@@ -71,6 +72,7 @@ namespace Houyi
     
     void Scene::addSceneNode(SceneNode* node)
     {
+        node->setScene(this);
         getRootSceneNode()->addChild(node);
     }
     
@@ -214,7 +216,7 @@ namespace Houyi
     {
         if (!node)
         {
-            LOGE("World::addRenderable NULL node\n");
+            LOGE("Scene::addRenderable NULL node\n");
             return;
         }
         Mesh* mesh = node->getMesh();
@@ -252,7 +254,7 @@ namespace Houyi
         }
         else
         {
-            LOGE("World::addRenderable no mesh. node = %s\n", node->getName().c_str());
+            LOGE("Scene::addRenderable no mesh. node = %s\n", node->getName().c_str());
         }
     }
     
@@ -306,7 +308,7 @@ namespace Houyi
         light->setPosFixed(true);
         getRootSceneNode()->addChild(light);
         mLights.push_back(light);
-        LOGD("World has no light, add default fixed light\n");
+        LOGD("Scene has no light, add default fixed light\n");
     }
     
     void Scene::prepare(Loader* loader)
@@ -605,5 +607,15 @@ namespace Houyi
             pvp.mBound = HRect(viewWidthH, viewHeightH, viewWidthH, viewHeightH);
             mViewPorts.push_back(pvp);
         }
+    }
+    
+    World* Scene::getWorld()
+    {
+        return mWorld;
+    }
+    
+    void Scene::setWorld(World* world)
+    {
+        mWorld = world;
     }
 }

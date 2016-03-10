@@ -78,11 +78,13 @@ namespace Houyi
         inline void addScene(Scene* scene)
         {
             mScenes.push_back(scene);
+            scene->setWorld(this);
             postCreate();
         }
         
         inline void insertScene(Scene* scene, int index)
         {
+            scene->setWorld(this);
             mScenes.insert(mScenes.begin() + index, scene);
         }
         
