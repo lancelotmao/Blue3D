@@ -281,7 +281,7 @@
     int mode = mShadingTable.indexPathForSelectedRow.row;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:mode inSection:0];
     [mShadingTable selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-    Settings::getInstance()->setShadingMode(mode);
+    Settings::getInstance()->setShadingMode(mRoot, mode);
     [self updateShadingMode:mode];
 }
 
@@ -416,7 +416,7 @@
 - (void) updateShadingMode:(int)mode
 {
     if (mode != mCurShadingModeSetting) {
-        Settings::getInstance()->setShadingMode(mode);
+        Settings::getInstance()->setShadingMode(mRoot, mode);
         mCurShadingModeSetting = mode;
     }
 }

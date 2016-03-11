@@ -8,6 +8,8 @@
 
 namespace Houyi
 {
+    class Root;
+    
     class Settings : public Object
     {
     public:
@@ -78,7 +80,7 @@ namespace Houyi
             return mUseHardwareBone && Capability::useHardwareBone();
         }
         
-        void setShadingMode(int mode);
+        void setShadingMode(Root* root, int mode);
 
         inline bool isLightingEnabled()
         {

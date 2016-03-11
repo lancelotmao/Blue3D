@@ -29,81 +29,80 @@ namespace Houyi
         mIns = 0;
     }
 
-    void Settings::setShadingMode(int mode)
+    void Settings::setShadingMode(Root* root, int mode)
     {
-//        Root* root = Root::getInstance();
-//        Renderer* renderer = root->getRenderer();
-//        World* world = root->getWorld();
-//        if (!renderer || !world)
-//        {
-//            mShadingMode = mode;
-//            return;
-//        }
-//        Scene* scene = world->getFocusScene();
-//        if (!scene)
-//        {
-//            mShadingMode = mode;
-//            return;
-//        }
-//        
-//        if (mShadingMode == ESM_Hologram)
-//        {
-//            for (int i = 0;i < scene->getMeshCount();++i)
-//            {
-//                Mesh* mesh = scene->getMesh(i);
-//                mesh->compact();
-//                for (int i = 0;i < mesh->getSurfaceCount();++i)
-//                {
-//                    SurfacePtr surface = mesh->getSurface(i);
-//                    surface->setBufferValid(false);
-//                }
-//            }
-//        }
-//        else if (mode == ESM_Hologram)
-//        {
-//            for (int i = 0;i < scene->getMeshCount();++i)
-//            {
-//                Mesh* mesh = scene->getMesh(i);
-//                mesh->expand();
-//                MeshOptimizer::generateScifiTangent(mesh->getVertexBuffer());
-//                for (int i = 0;i < mesh->getSurfaceCount();++i)
-//                {
-//                    SurfacePtr surface = mesh->getSurface(i);
-//                    surface->setBufferValid(false);
-//                }
-//            }
-//        }
-//        else if (mode == ESM_Wireframe)
-//        {
-//            for (int i = 0;i < scene->getMeshCount();++i)
-//            {
-//                Mesh* mesh = scene->getMesh(i);
-//                for (int i = 0;i < mesh->getSurfaceCount();++i)
-//                {
-//                    SurfacePtr surface = mesh->getSurface(i);
-//                    if (!surface->getWireFrameIndexBuffer())
-//                    {
-//                        MeshOptimizer::generateWireFrame(surface);
-//                    }
-//                }
-//            }
-//        }
-//        mShadingMode = mode;
-        
-//        if (mode == ESM_Hologram)
-//        {
-//            mUseHardwareBone = false;
-//            mClearColor = Color(0, 0, 0, 1);
-//        }
-//        else
-//        {
-//            mUseHardwareBone = true;
-//            mClearColor = mDefClearColor;
-//        }
-
-//        for (int i = 0;i < world->getSceneCount();++i)
+        Renderer* renderer = root->getRenderer();
+        World* world = root->getWorld();
+        if (!renderer || !world)
         {
-//            ShaderManager::getInstance()->updateShader(world->getScene(i));
+            mShadingMode = mode;
+            return;
+        }
+        Scene* scene = world->getFocusScene();
+        if (!scene)
+        {
+            mShadingMode = mode;
+            return;
+        }
+        
+        if (mShadingMode == ESM_Hologram)
+        {
+            for (int i = 0;i < scene->getMeshCount();++i)
+            {
+                Mesh* mesh = scene->getMesh(i);
+                mesh->compact();
+                for (int i = 0;i < mesh->getSurfaceCount();++i)
+                {
+                    SurfacePtr surface = mesh->getSurface(i);
+                    surface->setBufferValid(false);
+                }
+            }
+        }
+        else if (mode == ESM_Hologram)
+        {
+            for (int i = 0;i < scene->getMeshCount();++i)
+            {
+                Mesh* mesh = scene->getMesh(i);
+                mesh->expand();
+                MeshOptimizer::generateScifiTangent(mesh->getVertexBuffer());
+                for (int i = 0;i < mesh->getSurfaceCount();++i)
+                {
+                    SurfacePtr surface = mesh->getSurface(i);
+                    surface->setBufferValid(false);
+                }
+            }
+        }
+        else if (mode == ESM_Wireframe)
+        {
+            for (int i = 0;i < scene->getMeshCount();++i)
+            {
+                Mesh* mesh = scene->getMesh(i);
+                for (int i = 0;i < mesh->getSurfaceCount();++i)
+                {
+                    SurfacePtr surface = mesh->getSurface(i);
+                    if (!surface->getWireFrameIndexBuffer())
+                    {
+                        MeshOptimizer::generateWireFrame(surface);
+                    }
+                }
+            }
+        }
+        mShadingMode = mode;
+        
+        if (mode == ESM_Hologram)
+        {
+            mUseHardwareBone = false;
+            mClearColor = Color(0, 0, 0, 1);
+        }
+        else
+        {
+            mUseHardwareBone = true;
+            mClearColor = mDefClearColor;
+        }
+
+        for (int i = 0;i < world->getSceneCount();++i)
+        {
+            renderer->getShaderManager()->updateShader(world->getScene(i));
         }
     }
 }

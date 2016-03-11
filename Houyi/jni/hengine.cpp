@@ -1440,7 +1440,7 @@ JNI_METHOD(HouyiPass, void, setState)(JNIEnv * env, jobject obj, jint state)
 // Setting
 JNI_METHOD(HouyiSetting, void, setShadingMode)(JNIEnv * env, jobject obj, jint mode)
 {
-    Settings::getInstance()->setShadingMode(mode);
+    Settings::getInstance()->setShadingMode(mRoot, mode);
 }
 
 JNI_METHOD(HouyiSetting, void, setLightingEnabled)(JNIEnv * env, jobject obj, jboolean enable)
