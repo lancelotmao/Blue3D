@@ -158,6 +158,7 @@ extern "C" {
 	JNI_METHOD(HouyiPass, void, setState)(JNIEnv * env, jobject obj, jint state);
 
 	// Setting
+	JNI_METHOD(HouyiSetting, void, setClearColor)(JNIEnv * env, jobject obj, jint color);
 	JNI_METHOD(HouyiSetting, void, setShadingMode)(JNIEnv * env, jobject obj, jint mode);
 	JNI_METHOD(HouyiSetting, void, setLightingEnabled)(JNIEnv * env, jobject obj, jboolean enable);
 
@@ -1438,6 +1439,11 @@ JNI_METHOD(HouyiPass, void, setState)(JNIEnv * env, jobject obj, jint state)
 }
 
 // Setting
+JNI_METHOD(HouyiSetting, void, setClearColor)(JNIEnv * env, jobject obj, jint color)
+{
+    Settings::getInstance()->setClearColor(Color(color));
+}
+
 JNI_METHOD(HouyiSetting, void, setShadingMode)(JNIEnv * env, jobject obj, jint mode)
 {
     Settings::getInstance()->setShadingMode(mRoot, mode);

@@ -92,12 +92,12 @@ namespace Houyi
         if (mode == ESM_Hologram)
         {
             mUseHardwareBone = false;
-            mClearColor = Color(0, 0, 0, 1);
+//            mClearColor = Color(0, 0, 0, 1);
         }
         else
         {
             mUseHardwareBone = true;
-            mClearColor = mDefClearColor;
+//            mClearColor = mDefClearColor;
         }
 
         for (int i = 0;i < world->getSceneCount();++i)

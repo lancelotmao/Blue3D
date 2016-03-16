@@ -7,6 +7,7 @@ public class HouyiSetting {
 	public static final int ESM_Wireframe = 3;
 	public static final int ESM_Hologram = 4;
     
+	public static native void setClearColor(int color);
     public static native void setShadingMode(int mode);
     public static native void setLightingEnabled(boolean enable);
 }
