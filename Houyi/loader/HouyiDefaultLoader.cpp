@@ -13,6 +13,7 @@
 #include "HouyiAABB.h"
 #include "HouyiModelViewCamera.h"
 #include "HouyiFPCamera.h"
+#include "HouyiStringUtils.h"
 
 namespace Houyi
 {
@@ -127,8 +128,12 @@ namespace Houyi
             int textureSize = dis.readInt();
             for (int j = 0;j < textureSize;++j)
             {
-                string name = dis.readUTFString();
-                Texture* texture = tm->createTexture(mScene, name);
+                string texname = dis.readUTFString();
+                string paths[3];
+                paths[0] = StringUtils::getLastPathComponent(texname);
+                paths[1] = StringUtils::getPath(mFilePath) + StringUtils::getLastPathComponent(texname);
+                paths[2] = StringUtils::getTexturePath(mFilePath, texname);
+                Texture* texture = material->createTextureByPath(mScene, paths);
                 if (texture)
                 {
                     material->addTexture(texture);

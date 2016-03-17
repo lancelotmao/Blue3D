@@ -28,6 +28,7 @@ public:
     
     inline ListView* getFilmstrip()
     {
+        mFilmstrip->setWorld(this);
         return mFilmstrip;
     }
 

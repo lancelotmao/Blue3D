@@ -1,5 +1,4 @@
 #include "BlueAdapter.h"
-#include <Houyi/Houyi.h>
 
 #ifdef __APPLE__
 #import "DataManager.h"

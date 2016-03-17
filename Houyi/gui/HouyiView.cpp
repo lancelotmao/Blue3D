@@ -527,6 +527,11 @@ namespace Houyi
 
     void View::startAlphaAnimation(float from, float to, double duration, double delay, int interpolateType)
     {
+        if (!mWorld)
+        {
+            return;
+        }
+        
         if (!mAlphaAnimation)
         {
             mAlphaAnimation = HouyiNew SceneNodeAnimation();

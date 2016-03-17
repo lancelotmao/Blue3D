@@ -2,6 +2,9 @@
 
 using namespace Houyi;
 
+JNIEnv* gJNIEnv;
+JavaVM* gJVM;
+
 extern "C" {
 	JNI_METHOD(HEngine, jlong, ignite)(JNIEnv * env, jobject obj, jobject assetManager, jobject displayMetrics);
 	JNI_METHOD(HEngine, void, stallNative)(JNIEnv * env, jobject obj);

@@ -16,30 +16,15 @@
 
 namespace Houyi
 {
-    TextureManager* TextureManager::mIns = 0;
-    
     TextureManager::TextureManager() : mUploadQuota(1)
     {
         pthread_mutex_init(&mMutex, 0);
     }
     
-//    TextureManager* TextureManager::getInstance()
-//    {
-//        if (!mIns)
-//        {
-//            mIns = HouyiNew TextureManager();
-//            pthread_mutex_init(&mIns->mMutex, 0);
-//        }
-//        return mIns;
-//    }
-    
     TextureManager::~TextureManager()
     {
         removeAllTexture();
-
         pthread_mutex_destroy(&mMutex);
-
-        mIns = 0;
     }
     
     Texture* TextureManager::createTexture(Scene* scene, const string& imageName, TextureConfig config)

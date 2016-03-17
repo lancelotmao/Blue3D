@@ -54,7 +54,6 @@ namespace Houyi
         }
 
     private:
-        static TextureManager* mIns;
         deque<Texture*> mUploadQueue;
         int mUploadQuota;
         pthread_mutex_t mMutex;

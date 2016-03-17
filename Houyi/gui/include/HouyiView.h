@@ -141,6 +141,11 @@ namespace Houyi
             mHGravity = h;
             mVGravity = v;
         }
+        
+        inline void setWorld(World* world)
+        {
+            mWorld = world;
+        }
 
 	protected:
         World* mWorld;

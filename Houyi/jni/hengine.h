@@ -19,8 +19,8 @@ bool gInited = false;
 pthread_mutex_t mJNIMutex;
 
 // declared in android.h
-JNIEnv* gJNIEnv;
-JavaVM* gJVM;
+extern JNIEnv* gJNIEnv;
+extern JavaVM* gJVM;
 jobject gContext;
 AAssetManager* gAssetManager;
 jobject displayMetrics;
