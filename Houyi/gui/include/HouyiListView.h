@@ -91,7 +91,7 @@ namespace Houyi
         float mScroll;
         float mViewLength; // temp solution with constant view length
         float mDownX;
-        Animation mFlingAnim;
+        Animation* mFlingAnim;
         
         deque<AdapterView*> mReusableViewQueue;
         vector<AdapterView*> mViewContainer;

@@ -504,17 +504,17 @@ namespace Houyi
 
     void Root::deleteDeadObject()
     {
-//        pthread_mutex_lock (&mDeadObjectsMutex);
-//        if (mDeadObjects.size() > 0)
-//        {
-//            LOGI("Root deleting dead object on rendering thread. count = %zu\n", mDeadObjects.size());
-//            for (int i = 0;i < mDeadObjects.size();++i)
-//            {
-//                HouyiDelete(mDeadObjects[i]);
-//            }
-//            mDeadObjects.clear();
-//            LOGI("Root deleted dead objects\n");
-//        }
-//        pthread_mutex_unlock (&mDeadObjectsMutex);
+        pthread_mutex_lock (&mDeadObjectsMutex);
+        if (mDeadObjects.size() > 0)
+        {
+            LOGI("Root deleting dead object on rendering thread. count = %zu\n", mDeadObjects.size());
+            for (int i = 0;i < mDeadObjects.size();++i)
+            {
+                HouyiDelete(mDeadObjects[i]);
+            }
+            mDeadObjects.clear();
+            LOGI("Root deleted dead objects\n");
+        }
+        pthread_mutex_unlock (&mDeadObjectsMutex);
      }
 }

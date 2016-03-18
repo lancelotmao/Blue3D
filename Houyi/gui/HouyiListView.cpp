@@ -14,8 +14,9 @@ namespace Houyi
     ListView::ListView(Direction dir) : mDirection(dir), mVisibleFirst(0), mScroll(0), mFocus(-1),
             mCenterFocusRequested(false), mItemClickListener(0)
     {
-        mFlingAnim.setDuration(1000);
-        mFlingAnim.setInterpolationType(Animation::EDecelerate);
+    	mFlingAnim = HouyiNew Animation();
+        mFlingAnim->setDuration(1000);
+        mFlingAnim->setInterpolationType(Animation::EDecelerate);
         setName("ListView");
     }
     
@@ -25,6 +26,7 @@ namespace Houyi
         {
             HouyiDelete(mViewContainer[i]);
         }
+        HouyiDelete(mFlingAnim);
     }
     
     bool ListView::onLayout(const HRect& bound, World* world)
@@ -122,10 +124,10 @@ namespace Houyi
             }
         }
         
-        if (mFlingAnim.isActive())
+        if (mFlingAnim->isActive())
         {
-            mFlingAnim.process(mWorld->getRoot(), currentTimeMillis());
-            float s = mFlingAnim.getCurrent();
+            mFlingAnim->process(mWorld->getRoot(), currentTimeMillis());
+            float s = mFlingAnim->getCurrent();
 //            LOGI("s = %f", s);
             scroll(s);
             ret = true;
@@ -143,7 +145,7 @@ namespace Houyi
         if (e.mType == MotionEvent::TYPE_DOWN)
         {
             mDownX = e.getX();
-            mFlingAnim.stop();
+            mFlingAnim->stop();
             return true;
         }
         else if (e.mType == MotionEvent::TYPE_MOVE)
@@ -192,7 +194,7 @@ namespace Houyi
         
         if (mDirection == EHorizontal)
         {
-            mFlingAnim.start(mWorld->getRoot(), vx/4, 0);
+            mFlingAnim->start(mWorld->getRoot(), vx/4, 0);
             if (DEBUG_EVENT)
                 LOGD("ListView start fling, vx = %f", vx);
         }

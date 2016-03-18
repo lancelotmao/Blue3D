@@ -120,7 +120,6 @@ namespace Houyi
         int materialCount = dis.readInt();
         if (DEBUG_LOADER)
             LOGD("materialCount = %d\n", materialCount);
-        TextureManager* tm = mScene->getTextureManager();
         for (int i = 0;i < materialCount;++i)
         {
             Material* material = HouyiNew Material();
