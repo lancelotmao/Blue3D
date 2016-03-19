@@ -478,7 +478,7 @@ namespace Houyi
 
     void Root::removeAnimation(Animation* anim)
     {
-        for (int i = 0;i < mRunnigAnims.size();++i)
+        for (int i = mRunnigAnims.size() - 1;i >= 0;--i)
         {
             Animation* a = mRunnigAnims[i];
             if (a == anim)
