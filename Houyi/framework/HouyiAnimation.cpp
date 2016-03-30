@@ -6,7 +6,7 @@
 
 namespace Houyi
 {
-    Animation::Animation() : mDuration(1000), mState(EIdle), mListener(0),
+    Animation::Animation() : mRoot(0), mDuration(1000), mState(EIdle), mListener(0),
     		mInterpolationType(ELinear), mStartTime(0), mFrom(0), mTo(1), mCurrent(0)
     {
 

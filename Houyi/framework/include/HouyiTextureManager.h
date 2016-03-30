@@ -21,6 +21,7 @@ using namespace std;
 namespace Houyi
 {
     class Scene;
+    class Root;
     
     class TextureManager : public Allocator
     {
@@ -36,7 +37,7 @@ namespace Houyi
         void removeAllTexture();
         void addTextureToUploadQueue(Texture* texture);
         
-        void upload();
+        void upload(Root* root);
         
         inline int getUploadQuota()
         {

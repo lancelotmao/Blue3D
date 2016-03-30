@@ -88,7 +88,7 @@ namespace Houyi
         
         if (dead)
         {
-//            Root::getInstance()->addDeadObject(dead);
+            dead->getWorld()->getRoot()->addDeadObject(dead);
         }
     }
     
@@ -107,7 +107,7 @@ namespace Houyi
         
         if (dead)
         {
-//            Root::getInstance()->addDeadObject(dead);
+            dead->getWorld()->getRoot()->addDeadObject(dead);
             LOGD("Scene added for deletion: %s\n", dead->getName().c_str());
         }
     }

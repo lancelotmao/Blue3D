@@ -27,21 +27,6 @@ static NSArray* DAE_NAME;
 
 - (void)viewDidLoad
 {
-    NAME = [[NSArray alloc] initWithObjects:@"Crate",
-            @"Character",
-            @"Astro Boy",
-            @"Samba", nil];
-    
-    IMAGE_NAME = [[NSArray alloc] initWithObjects:@"crate.png",
-            @"female.png",
-            @"astroboy.png",
-            @"samba.png", nil];
-    
-    DAE_NAME = [[NSArray alloc] initWithObjects:@"Crate_dae.dae",
-                  @"female.houyi",
-                  @"astroboy.dae",
-                  @"samba.houyi", nil];
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -49,6 +34,33 @@ static NSArray* DAE_NAME;
     
     UINib *cellNIB = [UINib nibWithNibName:@"SampleCell" bundle:nil];
     [mCollectionView registerNib:cellNIB forCellWithReuseIdentifier:@"SampleCell"];
+    
+    DataManager* dataMan = [DataManager getInstance];
+    [dataMan.items removeAllObjects];
+    
+    NSString *resourceDBFolderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"samples"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    
+    NSArray *fileList = [fileManager contentsOfDirectoryAtPath:resourceDBFolderPath error:&error];
+    for (NSString *s in fileList) {
+        NSString* p = [resourceDBFolderPath stringByAppendingPathComponent:s];
+        NSArray *array = [fileManager contentsOfDirectoryAtPath:p error:&error];
+        for (NSString* m in array) {
+            NSString* path = [p stringByAppendingPathComponent:m];
+            if ([path hasSuffix:@"obj"] || [path hasSuffix:@"dae"]
+                || [path hasSuffix:@"3ds"] || [path hasSuffix:@"houyi"] || [path hasSuffix:@"stl"]) {
+                FileItem* item = [FileItem new];
+                item.localPath = path;
+                item.fileName = s;
+                item.thumbnail = [UIImage imageWithContentsOfFile:[p stringByAppendingPathComponent:@"thumbnail.png"]];
+                [dataMan.items addObject:item];
+            }
+        }
+        
+    }
+    [DataManager getInstance].itemCount = fileList.count;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -56,16 +68,6 @@ static NSArray* DAE_NAME;
     self.tabBarController.title = NSLocalizedString(@"Blue 3D", nil);
     self.title = NSLocalizedString(@"Samples", nil);
     navBar.topItem.title = self.tabBarController.title;
-    
-    DataManager* dataMan = [DataManager getInstance];
-    [dataMan.items removeAllObjects];
-    for (int i = 0;i < [IMAGE_NAME count];++i) {
-        FileItem* item = [FileItem new];
-        item.localPath = DAE_NAME[i];
-        item.thumbnail = [UIImage imageNamed:IMAGE_NAME[i]];
-        [dataMan.items addObject:item];
-    }
-    [DataManager getInstance].itemCount = [IMAGE_NAME count];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +78,7 @@ static NSArray* DAE_NAME;
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 4;
+    return [DataManager getInstance].itemCount;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -86,19 +88,19 @@ static NSArray* DAE_NAME;
                                   dequeueReusableCellWithReuseIdentifier:@"SampleCell"
                                   forIndexPath:indexPath];
     int row = [indexPath row];
-    UIImage *image = [UIImage imageNamed:IMAGE_NAME[row]];
-    NSString* name = NAME[row];
+    FileItem* item = [DataManager getInstance].items[row];
+    NSString* name = item.fileName;
     
     UIImageView* iv = (UIImageView*)[cell viewWithTag:100];
-    iv.image = image;
+    iv.image = item.thumbnail;
     
     UILabel* label = (UILabel*)[cell viewWithTag:101];
     label.text = name;
     
     UIImageView* ivPlay = (UIImageView*)[cell viewWithTag:102];
-    if (row < 2) {
+//    if (row < 2) {
         ivPlay.hidden = YES;
-    }
+//    }
     
     return cell;
 }
@@ -109,9 +111,9 @@ static NSArray* DAE_NAME;
     DataManager* dataMan = [DataManager getInstance];
     dataMan.focus = row;
     HouyiAppDelegate* delegate = ((HouyiAppDelegate*)[UIApplication sharedApplication].delegate);
-    FileItem* item = [DataManager getInstance].items[row];
-    item.localPath = DAE_NAME[row];
-    item.isSample = YES;
+//    FileItem* item = [DataManager getInstance].items[row];
+//    item.localPath = DAE_NAME[row];
+//    item.isSample = YES;
 	Blue3DViewController* vc = [delegate getViewerVC];
     vc.title = NAME[row];
     [self.tabBarController presentViewController:vc animated:YES completion:nil];

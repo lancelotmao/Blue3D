@@ -13,6 +13,7 @@
 #include "HouyiImageFactory.h"
 #include "HouyiCanvasFactory.h"
 #include "HouyiScene.h"
+#include "HouyiWorld.h"
 
 namespace Houyi
 {
@@ -70,9 +71,6 @@ namespace Houyi
             pthread_mutex_lock(&mMutex);
             mUploadQueue.push_back(t);
             pthread_mutex_unlock(&mMutex);
-
-//            Root* root = Root::getInstance();
-//            root->requestRender();
         }
         else
         {
@@ -89,9 +87,6 @@ namespace Houyi
             pthread_mutex_lock(&mMutex);
             mUploadQueue.push_back(t);
             pthread_mutex_unlock(&mMutex);
-
-//            Root* root = Root::getInstance();
-//            root->requestRender();
         }
         else
         {
@@ -153,7 +148,7 @@ namespace Houyi
         pthread_mutex_unlock(&mMutex);
     }
 
-    void TextureManager::upload()
+    void TextureManager::upload(Root* root)
     {
         pthread_mutex_lock(&mMutex);
 
@@ -200,8 +195,7 @@ namespace Houyi
                     }
                     t->setState(Texture::EValid);
                     q++;
-//                    Root* root = Root::getInstance();
-//                    root->requestRender();
+                    root->requestRender();
                 }
                 mUploadQueue.erase(mUploadQueue.begin());
             } while (q < mUploadQuota && mUploadQueue.size() > 0);

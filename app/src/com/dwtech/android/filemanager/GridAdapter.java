@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.dwtech.android.blue3d.R;
 import com.dwtech.android.data.DataManager;
+import com.dwtech.android.houyi.HEngine;
 import com.dwtech.android.houyi.utils.IOUtils;
 import com.dwtech.data.Item;
 
@@ -150,16 +152,27 @@ public class GridAdapter extends BaseAdapter {
 	
 	public void setSampleItems() {
 	    clear();
-	    for (int i = 0;i < TUTORIAL.length;++i) {
-	        Item item = new Item();
-	        item.setIsSample(true);
-	        item.setDisplayName(TUTORIAL[i]);
-	        item.setLocalPath(MODEL_NAME[i]);
-	        item.setThumb(mContext.getResources().getDrawable(THUMBNAIL[i]));
-	        if (i > 1) {
-	            item.setHasAnim(true);
-	        }
-	        mItems.add(item);
+	    
+	    String samples[];
+	    try {
+	    	samples = mContext.getAssets().list("samples");
+	    	for (String sample : samples) {
+	    		String files[] = mContext.getAssets().list("samples/" + sample);
+	    		for (String file : files) {
+	    			if (file.endsWith("dae") || file.endsWith("obj") || file.endsWith("3ds") || file.endsWith("stl")
+	    					 || file.endsWith("houyi")) {
+	    				Item item = new Item();
+	    		        item.setIsSample(true);
+	    		        item.setDisplayName(sample);
+	    		        item.setLocalPath("samples/" + sample + "/" + file);
+	    		        Bitmap bmp = HEngine.createBitmap(mContext, "samples/" + sample + "/thumbnail.png");
+	    		        item.setThumb(new BitmapDrawable(mContext.getResources(), bmp));
+	    		        mItems.add(item);
+	    			}
+	    		}
+	    	}
+	    } catch (Exception e) {
+	    	
 	    }
 	}
 	

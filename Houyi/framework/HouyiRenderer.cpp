@@ -225,7 +225,7 @@ namespace Houyi
             mCurrentRenderingScene = world->getScene(s);
             
             // check if we have pending texture upload request
-            mCurrentRenderingScene->getTextureManager()->upload();
+            mCurrentRenderingScene->getTextureManager()->upload(world->getRoot());
             
             if (mSingleViewPort)
             {
