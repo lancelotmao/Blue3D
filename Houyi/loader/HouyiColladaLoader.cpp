@@ -905,6 +905,10 @@ namespace collada
             for (int i = 0, n = colladaMesh->mPolylist.size(); i < n; ++i)
             {
                 Polylist* polyPtr = colladaMesh->mPolylist.at(i);
+                if (!polyPtr || !polyPtr->mVCountPtr)
+                {
+                    continue;
+                }
                 VertexBufferPtr vb = new VertexBuffer(VertexBuffer::EExpandAsTriangles, 0);
                 int inputCnt = polyPtr->mInputs.size();
                 int offsetVertex = -1;

@@ -47,18 +47,18 @@ static NSArray* DAE_NAME;
     for (NSString *s in fileList) {
         NSString* p = [resourceDBFolderPath stringByAppendingPathComponent:s];
         NSArray *array = [fileManager contentsOfDirectoryAtPath:p error:&error];
+        FileItem* item = [FileItem new];
+        item.fileName = s;
         for (NSString* m in array) {
             NSString* path = [p stringByAppendingPathComponent:m];
             if ([path hasSuffix:@"obj"] || [path hasSuffix:@"dae"]
                 || [path hasSuffix:@"3ds"] || [path hasSuffix:@"houyi"] || [path hasSuffix:@"stl"]) {
-                FileItem* item = [FileItem new];
                 item.localPath = path;
-                item.fileName = s;
                 item.thumbnail = [UIImage imageWithContentsOfFile:[p stringByAppendingPathComponent:@"thumbnail.png"]];
-                [dataMan.items addObject:item];
+                break;
             }
         }
-        
+        [dataMan.items addObject:item];
     }
     [DataManager getInstance].itemCount = fileList.count;
 }

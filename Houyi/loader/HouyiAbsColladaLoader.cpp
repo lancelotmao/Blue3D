@@ -1997,6 +1997,11 @@ namespace collada
         unsigned int cnt = atoi((const char*) count);
         xmlFree(count);
         polyPtr->mCount = cnt;
+        if (cnt <= 0)
+        {
+            // mal-format dae file
+            return polyPtr;
+        }
 
         unsigned int expandedVCnt = 0;
 
