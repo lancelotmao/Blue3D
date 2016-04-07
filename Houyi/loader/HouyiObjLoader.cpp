@@ -7,13 +7,13 @@
 namespace Houyi
 {	
 	ObjLoader::ObjLoader() {
-		for(int i = 0; i < 15; i++) {
-			for(int j = 0; j < 50; j++){
+		for(int i = 0; i < 1024; i++) {
+			for(int j = 0; j < 128; j++){
 				mTempCharBuffer[i][j] = '\0';
 			}
 		}
 
-		for(int i = 0; i < 15; i++) {
+		for(int i = 0; i < 1024; i++) {
 			mTempIntBuffer[i][0] = 0;
 		}
 	}
@@ -33,7 +33,7 @@ namespace Houyi
 		bool fSpecial = false;
 		bool twoLines = false;
 		bool firstUsemtl = true;
-		char lastMaterialName[20];
+		char lastMaterialName[128];
 
 		iVertexNumber = 0;
 		currentiVertexNumber = 0;
@@ -100,6 +100,10 @@ namespace Houyi
     			node = HouyiNew SceneNode();
     			node->setMesh(mesh);
     			LOGE("mesh name is: %s", mesh->getName().c_str());
+                if(strncmp(mTempCharBuffer[1], "Cube_Cube.001", 13) == 0) {
+                    LOGE("mesh name is");
+                
+                }
     		} else if(tag == 'v' &&  mTempCharBuffer[0][1] != 'n' &&  mTempCharBuffer[0][1] != 't') {
     			if(vertextIndexArray.size() > 0) {
 					if (lastMaterialName) {
@@ -134,80 +138,126 @@ namespace Houyi
     			vertextTextureArray.push_back(atof(mTempCharBuffer[2]));
     			currentiVertexTextureNumber++;
     		} else if(tag == 'f') {
-    			if(count == 7) {
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[3]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
-
-                    if(vertextNormalArray.size() > 0) {
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[4]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
-                    } else if(vertextTextureArray.size() > 0) {
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[4]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
+                bool hasNormal = vertextNormalArray.size() > 0;
+                bool hasVertextIndex = vertextTextureArray.size() > 0;
+                if(hasNormal && hasVertextIndex) {
+                    for(int j = 1; (1 + (j+ 1) * 3) < count; j++) {
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + j * 3]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + (j+ 1) * 3]));
                     }
-    			} else if(count == 9) {
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[3]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
-                    if(vertextNormalArray.size() > 0) {
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[4]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
-                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[8]));
-                    } else if (vertextTextureArray.size() > 0) {
+                    
+                    for(int j = 1; (2 + (j+ 1) * 3) < count; j++) {
                         vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[4]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
-                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
+                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2 + j * 3]));
+                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2 + (j+ 1) * 3]));
                     }
-
-    			} else if(count == 10) {
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[4]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
-
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[5]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
-
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
-    			} else if(count == 13) {
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[4]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
-
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
-    				vertextIndexArray.push_back(atoi(mTempCharBuffer[10]));
-
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[5]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
-
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
-    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[11]));
-
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
-
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
-    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[12]));
-    			}
+                    
+                    for(int j = 1; (3 + (j+ 1) * 3) < count; j++) {
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3 + j * 3]));
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3 + (j+ 1) * 3]));
+                    }
+                } else if(hasNormal) {
+                    for(int j = 1; (1 + (j+ 1) * 2) < count; j++) {
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + j * 2]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + (j+ 1) * 2]));
+                    }
+                    
+                    for(int j = 1; (2 + (j+ 1) * 2) < count; j++) {
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2 + j * 2]));
+                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2 + (j+ 1) * 2]));
+                    }
+                } else {
+                    for(int j = 1; (1 + (j+ 1) * 2) < count; j++) {
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + j * 2]));
+                        vertextIndexArray.push_back(atoi(mTempCharBuffer[1 + (j+ 1) * 2]));
+                    }
+                    
+                    for(int j = 1; (2 + (j+ 1) * 2) < count; j++) {
+                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2 + j * 2]));
+                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2 + (j+ 1) * 2]));
+                    }
+                }
+//
+//    			if(count == 7) {
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[3]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
+//
+//                    if(vertextNormalArray.size() > 0) {
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                    } else if(vertextTextureArray.size() > 0) {
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                    }
+//    			} else if(count == 9) {
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[3]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[5]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
+//                    if(vertextNormalArray.size() > 0) {
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                        vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[8]));
+//                    } else if (vertextTextureArray.size() > 0) {
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//                        vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
+//                    }
+//
+//    			} else if(count == 10) {
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
+//
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[5]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
+//
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
+//    			} else if(count == 13) {
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[4]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
+//
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[1]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[7]));
+//    				vertextIndexArray.push_back(atoi(mTempCharBuffer[10]));
+//
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[5]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
+//
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[2]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[8]));
+//    				vertextTextureIndexArray.push_back(atoi(mTempCharBuffer[11]));
+//
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[6]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
+//
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[3]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[9]));
+//    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[12]));
+//    			}
     		} else if(strncmp(mTempCharBuffer[0], "usemtl", 6) == 0) {
     			if(!firstUsemtl && lastMaterialName) {
     				addSurface(mesh, node, lastMaterialName);
@@ -308,7 +358,20 @@ namespace Houyi
 			} else if (tag1 == 'N' && tag2 == 's') {
 				material->setShininess(atof(mTempCharBuffer[1]));
 			} else if(!strncmp(mTempCharBuffer[0], "map_Kd", 6)) {
-				string texname = mTempCharBuffer[1];
+				string texname = "";
+				for(int i = 1; i < 1024; i++) {
+					string tempTexname = mTempCharBuffer[i];
+					if(!tempTexname.empty()) {
+						if(i == 1) {
+							texname += tempTexname;
+						} else {
+							texname += " ";
+							texname += tempTexname;
+						}
+					}
+				}
+
+				LOGE("loadMTLFile file name is: %s", texname.c_str());
 	            string paths[3];
 	            paths[0] = StringUtils::getLastPathComponent(texname);
 	            paths[1] = StringUtils::getPath(mFilePath) + StringUtils::getLastPathComponent(texname);
@@ -374,7 +437,7 @@ namespace Houyi
 		mesh->addSurface(s);
 
 		Material *material = mScene->getMaterialManager()->getMaterial(materialName);
-		if(material && vertextNormalIndexArray.size() == 0 && material->getTextureCount() > 0)
+		if(material && material->getTextureCount() > 0)
 			material->setTextureMode(RenderState::EReplace);
 		node->addMaterial(material);
 		vertextIndexArray.clear();
@@ -391,7 +454,7 @@ namespace Houyi
 			}
 			mTempIntBuffer[index][0] = 0;
     		index++;
-			if(index >= 15)
+			if(index >= 1024)
 				break;
     	}
     }

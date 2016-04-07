@@ -48,7 +48,7 @@ public class LoadModelJob implements Runnable {
             String path = mFilePath;
             String cachePath = Item.getHouyiPath(path);
             File cacheFile = new File(cachePath);
-            if (cacheFile.exists()) {
+            if (cacheFile.exists() && false) {
                 in = new FileInputStream(cacheFile);
                 path = cachePath;
             } else if (mIsSample) {
@@ -62,7 +62,7 @@ public class LoadModelJob implements Runnable {
             
             mLoader = HouyiLoader.createLoader(path);
             if (mLoader != null) {
-                scene = mLoader.load(data, data.length, path, 0);
+                scene = mLoader.load(data, data.length, path, mOptions);
                 HEngine.deletePtr(mLoader.getId());
                 if (mIsCanceled) {
                     Log.w(TAG, "LoadModelJob canceled. mIndex = " + mIndex + " mFilePath = " + path);
@@ -75,7 +75,7 @@ public class LoadModelJob implements Runnable {
                         String savePath = Item.getHouyiPath(mFilePath);
                         File file = new File(savePath);
                         if(!file.exists()) {
-                            HouyiSaver.save(savePath, scene);
+                            //HouyiSaver.save(savePath, scene);
                         }
                     }
                 }

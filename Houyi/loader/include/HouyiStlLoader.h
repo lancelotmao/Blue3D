@@ -20,6 +20,12 @@ namespace Houyi
     {
     public:
         virtual Scene* loadFromMemory(const char* data, int size);
+    protected:
+        vector<float> vertextArray;
+    	vector<float> vertextNormalArray;
+        float* vertexPosition;
+        float* vertexNormal;
     };
+
 }
 #endif /* defined(__Houyi__HouyiStlLoader__) */

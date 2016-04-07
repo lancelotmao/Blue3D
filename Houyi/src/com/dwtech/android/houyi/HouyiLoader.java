@@ -11,7 +11,7 @@ public class HouyiLoader extends HouyiObject {
     }
 	
     public HouyiScene load(byte[] data, int size, String filePath, int options) {
-        long scene = nativeLoad(data, size, filePath == null ? "" : filePath, options);
+        long scene = nativeLoad(data, size, filePath == null ? "" : filePath, 1);
         return scene == 0 ? null : new HouyiScene(scene);
     }
     
