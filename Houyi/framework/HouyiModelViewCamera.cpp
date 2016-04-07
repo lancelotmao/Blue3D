@@ -74,7 +74,7 @@ namespace Houyi
         float height = maxy - miny;
         float depth = maxz - minz;
         float maxLength = Math::max(width, height, depth);
-        float z = maxLength / 2 + maxLength / (tan(Camera::DEF_FOV * Math::PI / 360));
+        float z = cz + maxLength / 2 + maxLength / (tan(Camera::DEF_FOV * Math::PI / 360));
         setPosition(cx, cy, z);
         LOGD("ModelViewCamera::init() Estimated z = %f\n", z);
 
