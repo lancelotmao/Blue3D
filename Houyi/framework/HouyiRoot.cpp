@@ -312,10 +312,15 @@ namespace Houyi
         }
 
         Renderer* renderer = getRenderer();
-        renderer->clearContext();
-
-        ShaderManager* sm = mRenderer->getShaderManager();
-        sm->invalidateAll();
+        if (renderer)
+        {
+            renderer->clearContext();
+            ShaderManager* sm = renderer->getShaderManager();
+            if (sm)
+            {
+                sm->invalidateAll();
+            }
+        }
     }
 
     void Root::clearScene()
