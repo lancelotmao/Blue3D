@@ -39,6 +39,9 @@ namespace Houyi
     private:
         SceneManager();
         void deleteSceneNode(Node* node);
+        
+        void addDeadObject(Object* obj);
+        void deleteDeadObject();
 
     private:
         static SceneManager* mIns;
@@ -48,6 +51,9 @@ namespace Houyi
         
         // when exceeded delete the oldest scene
         int mMaxSceneCacheSize;
+        
+        vector<Object*> mDeadScene;
+        pthread_mutex_t mDeadSceneMutex;
     };
 }
 #endif

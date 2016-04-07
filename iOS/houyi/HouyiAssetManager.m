@@ -9,6 +9,12 @@
 #import "HouyiAssetManager.h"
 #import "HouyiViewController.h"
 
+@interface HouyiAssetManager () {
+    NSMutableDictionary* _loadingOps;
+}
+
+@end
+
 @implementation HouyiAssetManager
 
 @synthesize loadDelegate;
@@ -30,22 +36,25 @@ static HouyiAssetManager* ins = nil;
     if(self)
     {
         queue = [NSOperationQueue new];
+        _loadingOps = [NSMutableDictionary new];
     }
     return self;
 }
 
 - (void)cancelAll
 {
+    [_loadingOps removeAllObjects];
     [queue cancelAllOperations];
 }
 
 - (void)cancelInActive :(NSRange)activeRange
 {
-    int start = activeRange.location;
-    int length = activeRange.length;
-    for (int i = 0;i < [queue.operations count];++i) {
-        LoadOperation* op = queue.operations[i];
+    NSInteger start = activeRange.location;
+    NSInteger length = activeRange.length;
+    for (NSString* key in _loadingOps) {
+        LoadOperation* op = [_loadingOps objectForKey:key];
         if (op.index < start || op.index >= start + length) {
+            [_loadingOps removeObjectForKey:op.fileName];
             [op cancel];
         }
     }
@@ -58,13 +67,7 @@ static HouyiAssetManager* ins = nil;
 
 - (LoadOperation*)getOperation :(NSString*)path
 {
-    for (int i = 0;i < [queue.operations count];++i) {
-        LoadOperation* op = queue.operations[i];
-        if ([op.fileName isEqualToString:path]) {
-            return op;
-        }
-    }
-    return 0;
+    return [_loadingOps objectForKey:path];
 }
 
 - (void)loadAsset:(NSString*)assetName
@@ -79,19 +82,13 @@ static HouyiAssetManager* ins = nil;
         assetName = cache;
     }
 
-    @synchronized(queue.operations) {
-        for (int i = 0;i < [queue.operations count];++i) {
-            LoadOperation* op = [queue.operations objectAtIndex:i];
-            if (op && [op.fileName isEqualToString:assetName]) {
-                // already in operation queue. skip
-                return;
-            }
-        }
+    if (!_loadingOps[assetName]) {
         LoadOperation *op = [LoadOperation new];
         op.fileName = assetName;
         op.index = index;
-        op.delegate = self.loadDelegate;
+        op.delegate = self;
         [queue addOperation:op];
+        [_loadingOps setObject:op forKey:assetName];
     }
 }
 
@@ -101,7 +98,12 @@ static HouyiAssetManager* ins = nil;
     
     string filePath = [assetName cStringUsingEncoding:NSUTF8StringEncoding];
     Loader* loader = Loader::getLoader(filePath);
-    return loader->load((const char*)[data bytes], [data length]);
+    return loader->load((const char*)[data bytes], (int)[data length]);
+}
+
+- (void)onLoadFinished:(LoadOperation*)op :(Scene*)scene {
+    [_loadingOps removeObjectForKey:op.fileName];
+    [self.loadDelegate onLoadFinished:op :scene];
 }
 
 @end

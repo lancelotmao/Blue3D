@@ -11,7 +11,7 @@
 
 using namespace Houyi;
 
-@interface HouyiAssetManager : NSObject
+@interface HouyiAssetManager : NSObject <LoadDelegate>
 {
     NSOperationQueue* queue;
 }

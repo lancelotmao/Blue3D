@@ -11,6 +11,7 @@ namespace Houyi
         if (!mIns)
         {
             mIns = HouyiNew SceneManager();
+            pthread_mutex_init(&mIns->mDeadSceneMutex, 0);
         }
         return mIns;
     }
@@ -28,8 +29,11 @@ namespace Houyi
             HouyiDelete (scene);
         }
         mScenes.clear();
+        
+        deleteDeadObject();
 
         pthread_mutex_destroy(&mSceneMutex);
+        pthread_mutex_destroy(&mDeadSceneMutex);
         mIns = 0;
     }
 
@@ -88,7 +92,7 @@ namespace Houyi
         
         if (dead)
         {
-            dead->getWorld()->getRoot()->addDeadObject(dead);
+            addDeadObject(dead);
         }
     }
     
@@ -107,9 +111,32 @@ namespace Houyi
         
         if (dead)
         {
-            dead->getWorld()->getRoot()->addDeadObject(dead);
+            addDeadObject(dead);
             LOGD("Scene added for deletion: %s\n", dead->getName().c_str());
         }
+    }
+    
+    void SceneManager::addDeadObject(Object* obj)
+    {
+        pthread_mutex_lock (&mDeadSceneMutex);
+        mDeadScene.push_back(obj);
+        pthread_mutex_unlock (&mDeadSceneMutex);
+    }
+    
+    void SceneManager::deleteDeadObject()
+    {
+        pthread_mutex_lock (&mDeadSceneMutex);
+        if (mDeadScene.size() > 0)
+        {
+            LOGI("SceneManager deleting dead object on rendering thread. count = %zu\n", mDeadScene.size());
+            for (int i = 0;i < mDeadScene.size();++i)
+            {
+                HouyiDelete(mDeadScene[i]);
+            }
+            mDeadScene.clear();
+            LOGI("SceneManager deleted dead objects\n");
+        }
+        pthread_mutex_unlock (&mDeadSceneMutex);
     }
     
     Scene* SceneManager::findSceneByName(const string& name)
