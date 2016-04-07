@@ -3,7 +3,7 @@
 //  Houyi
 //
 //  Created by Ross on 14-6-6.
-//  Copyright (c) 2014骞� Lance Mao. All rights reserved.
+//  Copyright (c) 2014年 Lance Mao. All rights reserved.
 //
 
 #include "HouyiStlLoader.h"
