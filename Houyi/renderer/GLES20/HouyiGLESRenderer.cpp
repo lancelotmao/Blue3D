@@ -698,6 +698,12 @@ namespace Houyi
             int elementCount = vertexBuffer->getPositionLength() / vertexComponentSize;
             if ((meshRenderMode & Const::ERenderModePoint) != 0)
             {
+                GLPass* pass = (GLPass*)mCurrentPass;
+                int locPointSize = pass->getUniformLocation("uPointSize");
+                if (locPointSize >= 0)
+                {
+                    glUniform1f(locPointSize, surface->getPointSize());
+                }
                 glDrawArrays(GL_POINTS, 0, elementCount);
                 mPointCount += elementCount;
             }
