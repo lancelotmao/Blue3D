@@ -28,23 +28,23 @@
     [mCollectionView registerNib:cellNIB forCellWithReuseIdentifier:@"FileCell"];
     
     mDelegate = (HouyiAppDelegate*)[UIApplication sharedApplication].delegate;
-    if(![mDelegate isPro]) {
-        mBanner = [[ADBannerView alloc] initWithFrame:CGRectZero];
-        [self.view addSubview:mBanner];
-        [mBanner setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
-        [self updateCollectionView];
-        
-        [mCollectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        // pin sides to superview
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[mBanner]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mBanner)]];
-        
-        // set height to a constant
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[mBanner(==66)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mBanner)]];
-        
-        // pin contentView to bannerView with 0 length constraint
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[mCollectionView]-0-[mBanner]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mCollectionView,mBanner)]];
-    }
+//    if(![mDelegate isPro]) {
+//        mBanner = [[ADBannerView alloc] initWithFrame:CGRectZero];
+//        [self.view addSubview:mBanner];
+//        [mBanner setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        
+//        [self updateCollectionView];
+//        
+//        [mCollectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        // pin sides to superview
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[mBanner]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mBanner)]];
+//        
+//        // set height to a constant
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[mBanner(==66)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mBanner)]];
+//        
+//        // pin contentView to bannerView with 0 length constraint
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[mCollectionView]-0-[mBanner]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(mCollectionView,mBanner)]];
+//    }
     
     mDBMan = [DataBaseManager getSharedInstance];
     mFileData = [NSMutableArray new];

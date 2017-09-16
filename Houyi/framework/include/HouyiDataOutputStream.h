@@ -31,7 +31,7 @@ namespace Houyi
 
         inline void writeInt(int i)
         {
-            mFileStream.write(reinterpret_cast<char*>(&i), sizeof(int));
+            mFileStream.write(reinterpret_cast<char*>(&i), 4);
         }
 
         inline void writeIntArray(const int* ia, int offset, int length)

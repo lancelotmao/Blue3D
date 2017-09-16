@@ -22,23 +22,12 @@
 
 @synthesize mMode;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     dataArray = [[NSMutableArray alloc] init];
-    
-    // Add some data for demo purposes.
     [dataArray addObject:@"Default"];
     [dataArray addObject:@"Per Pixel Lighting"];
     [dataArray addObject:@"Solid"];

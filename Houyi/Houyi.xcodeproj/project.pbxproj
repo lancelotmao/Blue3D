@@ -1657,7 +1657,7 @@
 					};
 					16FFE1D21B92CFE300F8BE19 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 277ZS7Z8W4;
+						DevelopmentTeam = BMX598Q6M2;
 					};
 					16FFE1DD1B92CFE300F8BE19 = {
 						CreatedOnToolsVersion = 6.4;
@@ -2022,6 +2022,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BMX598Q6M2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2050,6 +2051,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BMX598Q6M2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2113,6 +2115,7 @@
 				16D7E8B81C6DD401003F44D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16FFE1CD1B92CFE300F8BE19 /* Build configuration list for PBXProject "Houyi" */ = {
 			isa = XCConfigurationList;

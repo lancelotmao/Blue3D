@@ -36,6 +36,27 @@ using namespace Houyi;
     mPanDetector.enabled = mPinchDetector.enabled;
     glkReady = NO;
     mRenderLock = [NSLock new];
+    
+    if (!mRoot)
+    {
+        self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        
+        if (!self.context) {
+            NSLog(@"Failed to create ES context");
+        }
+        
+        mGLKView.context = self.context;
+        mGLKView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+        mGLKView.opaque = NO;
+        
+        [EAGLContext setCurrentContext:self.context];
+        
+        [self onCreate];
+    }
+}
+
+- (void)dealloc {
+    [self onDestroy];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,21 +118,10 @@ using namespace Houyi;
 
 - (void)viewDidLayoutSubviews
 {
-    if (!mRoot)
-    {
-        self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        
-        if (!self.context) {
-            NSLog(@"Failed to create ES context");
-        }
-        
-        mGLKView.context = self.context;
-        mGLKView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-        mGLKView.opaque = NO;
-
-        [EAGLContext setCurrentContext:self.context];
-        
-        [self onCreate];
+    if (mRoot) {
+        int width = mGLKView.frame.size.width;
+        int height = mGLKView.frame.size.height;
+        mRoot->onWindowChanged(width, height);
     }
 
     [super viewDidLayoutSubviews];
@@ -132,7 +142,9 @@ using namespace Houyi;
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [self onDestroy];
+    [super viewDidDisappear:animated];
+    // uncomment this for fast debug memory leak
+//    [self onDestroy];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

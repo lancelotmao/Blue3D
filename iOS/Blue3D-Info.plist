@@ -65,7 +65,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.lance.blue3d</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -163,5 +163,9 @@
 			</dict>
 		</dict>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>查看资料库</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Open Your Camera</string>
 </dict>
 </plist>

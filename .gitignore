@@ -23,3 +23,7 @@ Houyi_sim.fmwk
 app/libs
 .project
 .recommenders
+app/.externalNativeBuild
+.gradle
+.idea
+build

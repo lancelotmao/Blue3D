@@ -67,20 +67,6 @@
       appSecret:@"529dztjxul8w91h"
       root:kDBRootDropbox];
     [DBSession setSharedSession:dbSession];
-    
-    // test for dynamic bundle
-    NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.lance.Houyi"];
-    NSError* e = nil;
-    BOOL p = [bundle preflightAndReturnError:&e];
-    if (p) {
-        [bundle load];
-        
-        Class pluginClass = [bundle principalClass];
-        if (pluginClass == nil) {
-            NSLog(@"no principal class in bundle");
-        }
-    }
-    
     return YES;
 }
 							
