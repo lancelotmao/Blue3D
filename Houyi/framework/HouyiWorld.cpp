@@ -52,10 +52,10 @@ namespace Houyi
     	if(mFocusScene && mFocusScene->getCurrentCamera())
         {
         	Camera* camera = mFocusScene->getCurrentCamera();
-        	if(dynamic_cast<FPCamera*>(camera))
-            {
-        		(static_cast<FPCamera*>(camera))->addVirtualPan();
-            }
+        	// if(dynamic_cast<FPCamera*>(camera))
+            // {
+        	// 	(static_cast<FPCamera*>(camera))->addVirtualPan();
+            // }
     	}
     }
 

@@ -53,12 +53,12 @@ import com.dwtech.android.houyi.utils.IOUtils;
 import com.dwtech.android.houyimodelloader.ModelLoaderActivity;
 import com.dwtech.android.houyimodelloader.PreferenceManager;
 import com.dwtech.data.Item;
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+//import com.google.analytics.tracking.android.EasyTracker;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdSize;
+//import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.common.ConnectionResult;
+//import com.google.android.gms.common.GooglePlayServicesUtil;
 
 public class Blue3DActivity extends FragmentActivity implements ActionBar.TabListener,
 OnNavigationListener {
@@ -100,7 +100,7 @@ OnNavigationListener {
     
     // UI
     private FrameLayout mMainLayout;
-    private AdView mAdView;
+//    private AdView mAdView;
     private ProgressBar mProgressBar;
     private GridView mGridView;
     private GridAdapter mAdapter;
@@ -193,13 +193,13 @@ OnNavigationListener {
 	@Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
+//		EasyTracker.getInstance(this).activityStart(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);
+//		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	@Override
@@ -478,38 +478,38 @@ OnNavigationListener {
     }
     
     private void dropboxClicked(int index) {
-        Item item = (Item)mAdapter.getItem(index);
-        Entry ent = item.getDBEntry();
-        if (ent == null) {
-            return;
-        }
-        if (ent.isDir) {
-            mDBCD = ent.path;
-            startListFolder(LIST_FOLDER_DB);
-        } else if (ent.fileName().endsWith(".dae")) {
-            mDownloadCount = 0;
-            mDownloadingItem = item;
-            String localPath = getDBCacheFolder() + ent.path;
-            mDownloadingItem.setLocalPath(localPath);
-            File f = new File(localPath);
-            // local cache with latest revision exists starts local
-            // TODO save revision and get
-            if (f.exists()) {
-                startLocal(f.toString(), true);
-            } else {
-            	mLoadingDialog = new ProgressDialog(this);
-				mLoadingDialog.setTitle("Loading");
-				String fileName = ent.fileName();
-				mLoadingDialog.setMessage("Downloading " + fileName);
-				mLoadingDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-				mLoadingDialog.setProgress(0);
-				mLoadingDialog.show();
-                // download file to local then start local
-            	DownloadTask task = new DownloadTask();
-                task.execute(ent.path);
-            }
-            DataManager.mFocus = index - mAdapter.getFolderCount();
-        }
+//        Item item = (Item)mAdapter.getItem(index);
+//        Entry ent = item.getDBEntry();
+//        if (ent == null) {
+//            return;
+//        }
+//        if (ent.isDir) {
+//            mDBCD = ent.path;
+//            startListFolder(LIST_FOLDER_DB);
+//        } else if (ent.fileName().endsWith(".dae")) {
+//            mDownloadCount = 0;
+//            mDownloadingItem = item;
+//            String localPath = getDBCacheFolder() + ent.path;
+//            mDownloadingItem.setLocalPath(localPath);
+//            File f = new File(localPath);
+//            // local cache with latest revision exists starts local
+//            // TODO save revision and get
+//            if (f.exists()) {
+//                startLocal(f.toString(), true);
+//            } else {
+//            	mLoadingDialog = new ProgressDialog(this);
+//				mLoadingDialog.setTitle("Loading");
+//				String fileName = ent.fileName();
+//				mLoadingDialog.setMessage("Downloading " + fileName);
+//				mLoadingDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//				mLoadingDialog.setProgress(0);
+//				mLoadingDialog.show();
+//                // download file to local then start local
+//            	DownloadTask task = new DownloadTask();
+//                task.execute(ent.path);
+//            }
+//            DataManager.mFocus = index - mAdapter.getFolderCount();
+//        }
     }
     
     private void listLocalFolder() {
@@ -550,7 +550,7 @@ OnNavigationListener {
                     continue;
                 }
                 item.setLocalPath(getDBCacheFolder() + ent.path);
-                item.setDBEntry(ent);
+//                item.setDBEntry(ent);
                 mAdapter.addItem(item);
 //                Log.d("Houyi", "DropBox file name = " + ent.fileName());
             }
@@ -635,34 +635,34 @@ OnNavigationListener {
             return;
         }
         
-        int ret = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
-        if (ret != ConnectionResult.SUCCESS) {
-            GooglePlayServicesUtil.getErrorDialog(ret, this, 1);
-        }
-        
-        if (mAdView != null) {
-            mMainLayout.removeView(mAdView);
-        }
-        mAdView = new AdView(this);
-        mAdView.setAdSize(AdSize.SMART_BANNER);
-        mAdView.setAdUnitId("a1531d674343139");
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        params.gravity=Gravity.BOTTOM;
-        mAdView.setLayoutParams(params);
-        mMainLayout.addView(mAdView);
-        AdRequest adRequest = new AdRequest.Builder()
-        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-        .addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE")
-        .build();
-
-        // Start loading the ad in the background.
-        mAdView.loadAd(adRequest);
-        
-        int h = mAdView.getAdSize().getHeightInPixels(this);
-        FrameLayout.LayoutParams p = (FrameLayout.LayoutParams)mGridView.getLayoutParams();
-        p.bottomMargin = h;
-        mGridView.setLayoutParams(p);
+//        int ret = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+//        if (ret != ConnectionResult.SUCCESS) {
+//            GooglePlayServicesUtil.getErrorDialog(ret, this, 1);
+//        }
+//
+//        if (mAdView != null) {
+//            mMainLayout.removeView(mAdView);
+//        }
+//        mAdView = new AdView(this);
+//        mAdView.setAdSize(AdSize.SMART_BANNER);
+//        mAdView.setAdUnitId("a1531d674343139");
+//        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+//                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+//        params.gravity=Gravity.BOTTOM;
+//        mAdView.setLayoutParams(params);
+//        mMainLayout.addView(mAdView);
+//        AdRequest adRequest = new AdRequest.Builder()
+//        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+//        .addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE")
+//        .build();
+//
+//        // Start loading the ad in the background.
+//        mAdView.loadAd(adRequest);
+//
+//        int h = mAdView.getAdSize().getHeightInPixels(this);
+//        FrameLayout.LayoutParams p = (FrameLayout.LayoutParams)mGridView.getLayoutParams();
+//        p.bottomMargin = h;
+//        mGridView.setLayoutParams(p);
     }
     
     private void showAbout() {
@@ -695,8 +695,8 @@ OnNavigationListener {
 	
 	public void purchased() {
 		mPreMan.savePro();
-		if (mAdView != null) {
-			mMainLayout.removeView(mAdView);
-		}
+//		if (mAdView != null) {
+//			mMainLayout.removeView(mAdView);
+//		}
 	}
 }

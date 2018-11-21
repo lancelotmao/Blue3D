@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">Blue3D</string>
+
+    <string name="app_name">Blue 3D</string>
+    <string name="about">About</string>
+    <string name="upgrade">Upgrade</string>
+    
+	<string name="sample">Sample</string>
+	<string name="local_storage">Local Storage</string>
+	<string name="dropbox">Drop Box</string>
+	
+	<!-- menu -->
+	<string name="refresh">Refresh</string>
+	<string name="open_camera">Open Camera</string>
+	<string name="show_hide">Show/Hide</string>
+	<string name="control">Control</string>
+	<string name="shading">Shading</string>
+	<string name="presentation">Presentation</string>
+	<string name="stop_presentation">Stop Presentation</string>
+	<string name="screenshot">Take Screen Shot</string>
+	
+	<!-- dialog -->
+	<string name="show_hide_setting">Show/Hide Setting</string>
+	<string name="show_hide_stats">Show FPS and Statistics</string>
+	<string name="show_hide_grid">Show Reference Grid</string>
+	<string name="show_hide_axis">Show Axis x:Red; y:Green; z:Blue</string>
+	<string name="show_hide_aabb">Show Axis Aligned Bounding Box</string>
+	<string name="control_camera">Enable Camera Rotation on</string>
+	<string name="sm_ppl">Per Pixel Lighting</string>
+	<string name="sm_default">Default</string>
+	<string name="sm_solid">Solid</string>
+	<string name="sm_wireframe">WireFrame</string>
+	<string name="sm_hologram">Hologram</string>
+	
+	<string name="about_title">Thank you for choosing Blue 3D! Version 1.0</string>
+	<string name="about_content">Quick control tip:\n- One finger scrolling to rotate camera\n- Two finger pinching and panning to scale and translate\n- Double click on screen to restore initial position</string>
+	
+	<string name="model_viewer">Model Viewer</string>
+	<string name="share">Share</string>
+	
 </resources>

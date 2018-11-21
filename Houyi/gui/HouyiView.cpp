@@ -267,11 +267,11 @@ namespace Houyi
             v->requestLayout();
 		}
         
-        View* p = dynamic_cast<View*>(getParent());
+        View* p = static_cast<View*>(getParent());
         while (p)
         {
             p->mRequestLayout = true;
-            p = dynamic_cast<View*>(p->getParent());
+            p = static_cast<View*>(p->getParent());
         }
     }
 

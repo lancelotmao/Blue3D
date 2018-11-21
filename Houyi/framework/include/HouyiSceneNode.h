@@ -120,8 +120,8 @@ namespace Houyi
             return mHasNegativeScale;
         }
         
-        virtual void onRenderBegin(Pass* pass){}
-        virtual void onRenderEnd(Pass* pass){}
+        virtual void onRenderBegin(Pass* pass) override {}
+        virtual void onRenderEnd(Pass* pass) override {}
         
         inline bool isSelectable()
         {

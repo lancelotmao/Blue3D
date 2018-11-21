@@ -7,7 +7,7 @@
 
 namespace Houyi
 {
-    CameraNode::CameraNode()
+    CameraNode::CameraNode() : mAttachedScene(0)
     {
         mMaterial = HouyiNew Material();
         mMaterials.push_back(mMaterial);
@@ -26,7 +26,9 @@ namespace Houyi
 
     void CameraNode::attachToScene(Scene* scene)
     {
+        this->mAttachedScene = scene;
         scene->addSceneNode(this);
+        mAttachedScene->getWorld()->getRoot()->getRenderer()->getShaderManager()->addPass(mMaterial->getPass());
 
         GeoPlane* plane = HouyiNew GeoPlane(1, 1, 2, 2);
         setMesh(plane);
@@ -39,8 +41,8 @@ namespace Houyi
     {
         Matrix4 m = Matrix4::IDENTITY;
 
-        // TODO
-        Renderer* renderer = 0;//Root::getInstance()->getRenderer();
+        World* world = mAttachedScene->getWorld();
+        Renderer* renderer = world->getRoot()->getRenderer();
         if (!renderer)
         {
         	LOGE("CameraNode::onRenderBegin. NULL renderer");

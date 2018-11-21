@@ -220,7 +220,7 @@ namespace Houyi
 
     bool Renderer::render(World* world)
     {
-        for (int s = world->getSceneCount() - 1;s >= 0;--s)
+        for (int s = 0;s < world->getSceneCount();++s)
         {
             mCurrentRenderingScene = world->getScene(s);
             

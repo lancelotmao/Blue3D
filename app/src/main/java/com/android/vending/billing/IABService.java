@@ -24,7 +24,7 @@ import android.util.Log;
 public class IABService {
 	public static final String TAG = IABService.class.getSimpleName();
 	
-    private IInAppBillingService mService;
+    private Object mService;
     private Activity mActivity;
     
     private String mProPrice;
@@ -41,7 +41,7 @@ public class IABService {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mService = IInAppBillingService.Stub.asInterface(service);
+//            mService = IInAppBillingService.Stub.asInterface(service);
             synchronized (this) {
             	notify();
             }
@@ -93,29 +93,29 @@ public class IABService {
             Bundle querySkus = new Bundle();
             querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
 
-            try {
-                Bundle skuDetails = mService.getSkuDetails(3, mActivity.getPackageName(), "inapp", querySkus);
-                
-                int response = skuDetails.getInt("RESPONSE_CODE");
-                if (response == 0) {
-                   ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
-                   Log.d(TAG, "start listing products size = " + responseList.size());
-                   
-                   for (String thisResponse : responseList) {
-                      JSONObject object = new JSONObject(thisResponse);
-                      String sku = object.getString("productId");
-                      String price = object.getString("price");
-                      Log.d(TAG, "sku = " + sku + ", price = " + price);
-                      if (sku.equals("pro")) {
-                          mProPrice = price;
-                      }
-                   }
-                }
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Bundle skuDetails = mService.getSkuDetails(3, mActivity.getPackageName(), "inapp", querySkus);
+//
+//                int response = skuDetails.getInt("RESPONSE_CODE");
+//                if (response == 0) {
+//                   ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
+//                   Log.d(TAG, "start listing products size = " + responseList.size());
+//
+//                   for (String thisResponse : responseList) {
+//                      JSONObject object = new JSONObject(thisResponse);
+//                      String sku = object.getString("productId");
+//                      String price = object.getString("price");
+//                      Log.d(TAG, "sku = " + sku + ", price = " + price);
+//                      if (sku.equals("pro")) {
+//                          mProPrice = price;
+//                      }
+//                   }
+//                }
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
             return null;
         }
 
@@ -136,21 +136,21 @@ public class IABService {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            try {
-            	Log.d(TAG, "start purchasing products");
-                Bundle buyIntentBundle = mService.getBuyIntent(3, mActivity.getPackageName(),
-                        "pro", "inapp", "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA3367PndB8BTIAHlCrCi2h11Hhhg019iZx+R+RSPq9ka6Z6E31Bu1NE9WQhfrhf8UB5KB7OCudZQ/VnWxu0XA7BCQ+A164hHLfU2eyQwuNghyI6VZs0/R2fHTgn1tqieEoH0Sr60dLm++8QUDPR957aT+mwGnwEW7EcjivpU8Je/N61bWK/mCGylM8MfnPPO4BK231J3ZRMC7SLD81OyzaUQ4T+BF0yqGKhYCepA/XOM+9pjUzF/QpddUM/btBMim4RLgTIJDdnlth66638caXaYUVI+moBh3R96kvbzHKT5gWffyl9hH1sLk4LLl0ihcI4doo39dByqVpSgnB49QIDAQAB");
-                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
-                if (pendingIntent == null) {
-                	return false;
-                }
-                mActivity.startIntentSenderForResult(pendingIntent.getIntentSender(),
-                        1001, new Intent(), Integer.valueOf(0), Integer.valueOf(0),
-                        Integer.valueOf(0));
-                Log.d(TAG, "purchase intent sent");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            try {
+//            	Log.d(TAG, "start purchasing products");
+//                Bundle buyIntentBundle = mService.getBuyIntent(3, mActivity.getPackageName(),
+//                        "pro", "inapp", "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA3367PndB8BTIAHlCrCi2h11Hhhg019iZx+R+RSPq9ka6Z6E31Bu1NE9WQhfrhf8UB5KB7OCudZQ/VnWxu0XA7BCQ+A164hHLfU2eyQwuNghyI6VZs0/R2fHTgn1tqieEoH0Sr60dLm++8QUDPR957aT+mwGnwEW7EcjivpU8Je/N61bWK/mCGylM8MfnPPO4BK231J3ZRMC7SLD81OyzaUQ4T+BF0yqGKhYCepA/XOM+9pjUzF/QpddUM/btBMim4RLgTIJDdnlth66638caXaYUVI+moBh3R96kvbzHKT5gWffyl9hH1sLk4LLl0ihcI4doo39dByqVpSgnB49QIDAQAB");
+//                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+//                if (pendingIntent == null) {
+//                	return false;
+//                }
+//                mActivity.startIntentSenderForResult(pendingIntent.getIntentSender(),
+//                        1001, new Intent(), Integer.valueOf(0), Integer.valueOf(0),
+//                        Integer.valueOf(0));
+//                Log.d(TAG, "purchase intent sent");
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
             return true;
         }
 

@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.dwtech.android.blue3d.R;
-import com.google.analytics.tracking.android.EasyTracker;
+//import com.google.analytics.tracking.android.EasyTracker;
 
 public class SingleImageActivity extends Activity {
     
@@ -42,13 +42,13 @@ public class SingleImageActivity extends Activity {
     @Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
+//		EasyTracker.getInstance(this).activityStart(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);
+//		EasyTracker.getInstance(this).activityStop(this);
 	}
     
     @Override

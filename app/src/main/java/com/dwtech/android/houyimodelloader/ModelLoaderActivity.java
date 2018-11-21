@@ -44,7 +44,7 @@ import com.dwtech.android.houyimodelloader.ModelLoaderRenderer.OnLoadingListener
 import com.dwtech.android.houyimodelloader.ModelLoaderRenderer.PlayIconStatusListener;
 import com.dwtech.android.houyimodelloader.ModelLoaderRenderer.ScreenCaptureListener;
 import com.dwtech.data.Item;
-import com.google.analytics.tracking.android.EasyTracker;
+//import com.google.analytics.tracking.android.EasyTracker;
 
 public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingListener, ScreenCaptureListener, PlayIconStatusListener {
     private ModelLoaderRenderer mRenderer;
@@ -138,13 +138,13 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
     @Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
+//		EasyTracker.getInstance(this).activityStart(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);
+//		EasyTracker.getInstance(this).activityStop(this);
 	}
 	
     @Override

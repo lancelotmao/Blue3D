@@ -289,52 +289,6 @@
 		16FFE41D1B92D1D300F8BE19 /* HouyiGLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE30E1B92D1D300F8BE19 /* HouyiGLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16FFE41E1B92D1D300F8BE19 /* HouyiPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FFE30F1B92D1D300F8BE19 /* HouyiPass.cpp */; };
 		16FFE41F1B92D1D300F8BE19 /* HouyiPass.h in Headers */ = {isa = PBXBuildFile; fileRef = 16FFE3111B92D1D300F8BE19 /* HouyiPass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16FFE4661B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4221B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4231B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4681B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4251B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4691B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4261B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE46A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4281B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4291B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE46C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42B1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE46D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42C1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE46E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42E1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE46F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE42F1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4701B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4311B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4711B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4321B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4721B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4341B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4351B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4741B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4371B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4751B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4381B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4761B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43A1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4771B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43B1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4781B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43D1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4791B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE43E1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4401B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE47B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4411B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE47C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4431B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE47D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4441B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE47E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4461B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4471B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4801B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4491B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4811B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44A1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4821B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44C1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4831B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44D1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4841B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE44F1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4851B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4501B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4861B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4521B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4871B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4531B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4881B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4551B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4891B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4561B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE48A1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4581B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE48B1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4591B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE48C1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45B1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE48D1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45C1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45E1B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE48F1B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE45F1B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4901B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4611B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4911B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4621B92D23300F8BE19 /* vertex.sdr */; };
-		16FFE4921B92D23300F8BE19 /* fragment.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4641B92D23300F8BE19 /* fragment.sdr */; };
-		16FFE4931B92D23300F8BE19 /* vertex.sdr in Resources */ = {isa = PBXBuildFile; fileRef = 16FFE4651B92D23300F8BE19 /* vertex.sdr */; };
 		16FFE4951B92D36F00F8BE19 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4941B92D36F00F8BE19 /* OpenGLES.framework */; };
 		16FFE4971B92D37600F8BE19 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4961B92D37600F8BE19 /* libxml2.dylib */; };
 		16FFE4991B92D39400F8BE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FFE4981B92D39400F8BE19 /* Foundation.framework */; };
@@ -1688,52 +1642,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FFE4741B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4901B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4871B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4811B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE48A1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4771B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4761B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4751B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE48D1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4911B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4721B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE48F1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4841B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4931B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE48C1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE46C1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE46F1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE46D1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4701B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4801B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE47E1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4791B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE47C1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4861B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4891B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4681B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE46A1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE48B1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4691B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4921B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE47B1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4711B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4661B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4821B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE46E1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4781B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE48E1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE4671B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE47F1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE47A1B92D23300F8BE19 /* fragment.sdr in Resources */,
-				16FFE46B1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4731B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4851B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE47D1B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4831B92D23300F8BE19 /* vertex.sdr in Resources */,
-				16FFE4881B92D23300F8BE19 /* fragment.sdr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,6 +40,7 @@ namespace Houyi
         }
 
     private:
+        Scene* mAttachedScene;
         float mPreviewWidth;
         float mPreviewHeight;
         int mAlignX;

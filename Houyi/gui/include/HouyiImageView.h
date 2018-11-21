@@ -17,16 +17,16 @@ namespace Houyi
 		ImageView();
 		virtual ~ImageView();
 
-		virtual void attachToScene(Scene* scene);
+		virtual void attachToScene(Scene* scene) override;
 		virtual void setTexture(Texture* texture);
 		virtual Texture* getTexture();
 		virtual void setImage(ImagePtr image);
 		virtual ImagePtr getImage();
         virtual void setFitType(FitType type);
         
-        virtual bool onLayout(const HRect& bound, World* world);
+        virtual bool onLayout(const HRect& bound, World* world) override;
 
-        virtual void invalidate(HRect diry);
+        virtual void invalidate(HRect diry) override;
 
 	protected:
         virtual void setTexcoord();

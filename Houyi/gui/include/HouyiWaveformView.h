@@ -9,7 +9,7 @@ namespace Houyi
     {
     public:
         WaveformView(AudioTrackPtr data);
-        virtual bool onLayout(const HRect& bound, World* world);
+        virtual bool onLayout(const HRect& bound, World* world) override;
         virtual bool onUpdate() override;
         
         inline void setIndicatorWidth(int width)

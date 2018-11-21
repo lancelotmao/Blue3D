@@ -106,11 +106,11 @@ namespace Houyi
                 }
     		} else if(tag == 'v' &&  mTempCharBuffer[0][1] != 'n' &&  mTempCharBuffer[0][1] != 't') {
     			if(vertextIndexArray.size() > 0) {
-					if (lastMaterialName) {
+					// if (lastMaterialName) {
 						addSurface(mesh, node, lastMaterialName);
 						mScene->addSceneNode(node);
 						mScene->addRenderable(node);
-					}
+					// }
 
 					iVertexNumber += currentiVertexNumber;
 					iVertexNormalNumber += currentiVertexNormalNumber;
@@ -259,7 +259,7 @@ namespace Houyi
 //    				vertextNormalIndexArray.push_back(atoi(mTempCharBuffer[12]));
 //    			}
     		} else if(strncmp(mTempCharBuffer[0], "usemtl", 6) == 0) {
-    			if(!firstUsemtl && lastMaterialName) {
+    			if(!firstUsemtl) {
     				addSurface(mesh, node, lastMaterialName);
     			}
 
@@ -278,11 +278,11 @@ namespace Houyi
 
 		LOGE("last name is %s", lastMaterialName);
     	//Add the last surface in case of some special condition.
-    	if(lastMaterialName) {
+    	// if(lastMaterialName) {
     		addSurface(mesh, node, lastMaterialName);
     		mScene->addSceneNode(node);
     		mScene->addRenderable(node);
-    	}
+    	// }
 
 		LOGE("last mesh over here: %s", mesh->getName().c_str());
     	LOGE("end");

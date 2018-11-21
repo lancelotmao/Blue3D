@@ -1,5 +1,6 @@
 #include "HouyiAllocator.h"
 #include "HouyiLog.h"
+#include <pthread.h>
 
 namespace Houyi
 {

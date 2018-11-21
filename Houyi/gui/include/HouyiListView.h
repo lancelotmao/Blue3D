@@ -58,9 +58,9 @@ namespace Houyi
         virtual bool onUpdate() override;
         virtual bool onTouch(MotionEvent e) override;
         virtual bool onSingleTapUp(const MotionEvent& e) override;
-        virtual bool onFling(const MotionEvent& e, float vx, float vy);
+        virtual bool onFling(const MotionEvent& e, float vx, float vy) override;
 
-        virtual void scroll(float delta);
+        virtual void scroll(float delta) override;
         virtual void setFocus(int focus);
         virtual int getFocus();
 
@@ -69,14 +69,14 @@ namespace Houyi
             mItemClickListener = listener;
         }
         
-        virtual void onDataChanged();
+        virtual void onDataChanged() override;
 
         inline void requestCenterFocus()
         {
             mCenterFocusRequested = true;
         }
         
-        virtual void setVisibility(Visibility v);
+        virtual void setVisibility(Visibility v) override;
 
     protected:
         virtual AdapterView* getValidView(int index);
