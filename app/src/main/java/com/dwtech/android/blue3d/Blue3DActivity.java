@@ -166,7 +166,7 @@ OnNavigationListener {
     	    ArrayList<String> itemList = new ArrayList<String>();
     	    itemList.add(getString(R.string.sample));
     	    itemList.add(getString(R.string.local_storage));
-    	    itemList.add(getString(R.string.dropbox));
+//    	    itemList.add(getString(R.string.dropbox));
     	    ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
     	    actionBar.setListNavigationCallbacks(listAdapter, this);
 	    } else if (mNavMode == NAV_MODE_TAB) {
@@ -471,7 +471,12 @@ OnNavigationListener {
         if (file.isDirectory()) {
             mCD = file;
             startListFolder(LIST_FOLDER_LOCAL);
-        } else if (path.toLowerCase().endsWith(".hae") || path.toLowerCase().endsWith(".dae") || path.toLowerCase().endsWith(".tmx")) {
+        } else if (path.toLowerCase().endsWith(".hae")
+                || path.toLowerCase().endsWith(".dae")
+                || path.toLowerCase().endsWith(".tmx")
+                || path.toLowerCase().endsWith(".obj")
+                || path.toLowerCase().endsWith(".stl")
+                || path.toLowerCase().endsWith(".3ds")) {
             startLocal(path, false);
             DataManager.mFocus = index - mAdapter.getFolderCount();
         }

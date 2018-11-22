@@ -28,3 +28,4 @@ app/.externalNativeBuild
 .idea
 build
 *.iml
+app/release

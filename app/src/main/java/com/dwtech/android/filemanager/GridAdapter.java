@@ -61,7 +61,7 @@ public class GridAdapter extends BaseAdapter {
 		mContext = context;
 		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mFolder = context.getResources().getDrawable(R.drawable.folder);
-        mDefaultThumb = context.getResources().getDrawable(R.drawable.default_thumb);
+        mDefaultThumb = context.getResources().getDrawable(R.drawable.ic_launcher);
         DataManager.mItems = mItems;
 		setSampleItems();
 	}
