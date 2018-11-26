@@ -607,7 +607,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -r -f ${BUILT_PRODUCTS_DIR}/Houyi.framework ${SRCROOT}/iOS/.";
+			shellScript = "cp -r -f ${BUILT_PRODUCTS_DIR}/Houyi.framework ${SRCROOT}/iOS/.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

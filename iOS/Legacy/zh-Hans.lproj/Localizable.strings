@@ -1,0 +1,35 @@
+/* 
+  File.strings
+  Houyi
+
+  Created by Lance Mao on 1/2/14.
+  Copyright (c) 2014 Lance Mao. All rights reserved.
+*/
+
+"Samples" = "示例";
+"Pocket 3D" = "蓝三维";
+"My GPU" = "My GPU";
+"Log Out" = "登出";
+"Go Up" = "上一级";
+"DropBox Root" = "Drop Box跟目录";
+"File" = "文件";
+"Files" = "文件";
+
+"downloading_texture" = "正在下载贴图";
+"yes" = "是";
+"no" = "否";
+"about" = "关于";
+"about_content" = "感谢使用蓝3D. 您可以用双指手势缩放和移动物体，还可以双击屏幕任何地方使模型回到初始位置";
+"check_it_out" = "去看看";
+"later" = "以后再说";
+"iap_title" = "试用版只能下载%d个模型，请升级到完整版.";
+"iap_content" = "完整版可以无限下载模型，并会去掉广告。购买吗？";
+"show_hide" = "显示|隐藏";
+"control" = "控制";
+"shading" = "模型渲染模式";
+"presentation" = "演示";
+"stop_presentation" = "停止演示";
+"screenshot" = "截屏";
+"Purchase Status" = "购买状态";
+"Purchase Success" = "购买成功，感谢使用蓝3D";
+"Purchase Failed" = "购买失败，请稍后再试";

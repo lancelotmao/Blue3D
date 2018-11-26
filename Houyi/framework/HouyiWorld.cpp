@@ -49,14 +49,6 @@ namespace Houyi
 
     void World::onCommand(int command)
     {
-    	if(mFocusScene && mFocusScene->getCurrentCamera())
-        {
-        	Camera* camera = mFocusScene->getCurrentCamera();
-        	// if(dynamic_cast<FPCamera*>(camera))
-            // {
-        	// 	(static_cast<FPCamera*>(camera))->addVirtualPan();
-            // }
-    	}
     }
 
     void World::create(Root* root)

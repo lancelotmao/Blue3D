@@ -36,7 +36,6 @@ namespace Houyi
             return true;
         }
         
-        Scene* scene = world->getDefaultScene();
         float total = 0;
         int size = mAdapter->getSize();
         for (int i = mVisibleFirst;i < size;++i)

@@ -1,18 +1,16 @@
 //
 //  main.m
-//  Houyi
+//  Blue3D
 //
-//  Created by Lance Mao on 13/2/13.
-//  Copyright (c) 2013 Lance Mao. All rights reserved.
+//  Created by lance  on 2018/11/22.
+//  Copyright © 2018 lance. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-#import "HouyiAppDelegate.h"
-
-int main(int argc, char *argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([HouyiAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

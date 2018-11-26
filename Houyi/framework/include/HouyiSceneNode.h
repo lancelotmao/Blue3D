@@ -140,7 +140,7 @@ namespace Houyi
             mEntities.push_back(entity);
         }
 
-        inline int getEntityCount()
+        inline size_t getEntityCount()
         {
             return mEntities.size();
         }

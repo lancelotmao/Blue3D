@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleAspectFit" image="frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="6">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleAspectFit" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                        <rect key="frame" x="39" y="24" width="72" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="37"/>
+                            <constraint firstAttribute="height" constant="72" id="61"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                        <rect key="frame" x="0.0" y="129" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="23"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="19" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="7"/>
+                <constraint firstItem="19" firstAttribute="top" secondItem="3" secondAttribute="top" id="8"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="10"/>
+                <constraint firstItem="4" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="47"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="49"/>
+                <constraint firstItem="19" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="50"/>
+                <constraint firstItem="6" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="51"/>
+                <constraint firstItem="4" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="55"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="3" secondAttribute="top" id="59"/>
+                <constraint firstItem="6" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" id="63"/>
+                <constraint firstItem="19" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="65"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="24" id="67"/>
+                <constraint firstItem="5" firstAttribute="centerY" secondItem="19" secondAttribute="centerY" id="68"/>
+            </constraints>
+            <size key="customSize" width="180" height="186"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="frame.png" width="320" height="256"/>
+        <image name="play.png" width="108" height="108"/>
+    </resources>
+</document>
