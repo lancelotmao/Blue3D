@@ -3,9 +3,7 @@
     android:versionCode="5"
     android:versionName="1.4" >
 
-    <uses-sdk
-        android:minSdkVersion="18"
-        android:targetSdkVersion="18" />
+    <uses-sdk android:targetSdkVersion="18" />
 
     <uses-feature android:glEsVersion="0x00020000" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
