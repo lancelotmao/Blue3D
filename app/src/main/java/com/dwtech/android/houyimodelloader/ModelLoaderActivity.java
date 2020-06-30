@@ -69,7 +69,8 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
         mPreMan.load();
         
         final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null)
+            actionBar.setDisplayHomeAsUpEnabled(true);
         
         Intent i = getIntent();
         Uri uri = i.getData();

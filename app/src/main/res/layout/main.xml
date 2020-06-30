@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fl_main"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:paddingTop="?android:attr/actionBarSize"
-    android:background="@color/blue3dblue" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main" >
 
-    <GridView
-        android:id="@+id/gridView1"
-        android:paddingTop="10dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:numColumns="2" >
-    </GridView>
+        android:orientation="vertical">
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:padding="8dp"
+            android:background="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:columnWidth="88dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_main"
+            app:menu="@menu/bottom_navigation_menu"
+            app:labelVisibilityMode="labeled"
+            />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/pb_listing"

@@ -1,21 +1,21 @@
 <resources>
-
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Holo">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-        <item name="android:windowActionBarOverlay">true</item>
-    </style>
-
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/blue3dblue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/bg_main</item>
+        <item name="android:windowLightStatusBar">true</item>
+<!--        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>-->
+
+
     </style>
 
+<!--    <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">-->
+<!--        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>-->
+<!--    </style>-->
+
+<!--    <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">-->
+<!--        <item name="android:textColor">#FF000000</item>-->
+<!--    </style>-->
 </resources>

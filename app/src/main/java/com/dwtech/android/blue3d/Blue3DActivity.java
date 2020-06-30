@@ -18,12 +18,12 @@ import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.FragmentActivity;
+import android.text.Html;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,9 +32,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.GridView;
 import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 
 import com.android.vending.billing.IABService;
 import com.dropbox.client2.DropboxAPI;
@@ -44,7 +46,6 @@ import com.dropbox.client2.android.AndroidAuthSession;
 import com.dropbox.client2.exception.DropboxException;
 import com.dropbox.client2.session.AppKeyPair;
 import com.dropbox.client2.session.Session.AccessType;
-import com.dwtech.android.blue3d.R;
 import com.dwtech.android.data.DataManager;
 import com.dwtech.android.filemanager.GridAdapter;
 import com.dwtech.android.houyi.HouyiAssetManager;
@@ -53,6 +54,7 @@ import com.dwtech.android.houyi.utils.IOUtils;
 import com.dwtech.android.houyimodelloader.ModelLoaderActivity;
 import com.dwtech.android.houyimodelloader.PreferenceManager;
 import com.dwtech.data.Item;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 //import com.google.analytics.tracking.android.EasyTracker;
 //import com.google.android.gms.ads.AdRequest;
 //import com.google.android.gms.ads.AdSize;
@@ -105,6 +107,7 @@ OnNavigationListener {
     private GridView mGridView;
     private GridAdapter mAdapter;
     private boolean mListing;
+    BottomNavigationView tabBar;
     
     // in app billing
     private IABService mIABService;
@@ -132,50 +135,50 @@ OnNavigationListener {
 		
 		initAdmobView();
 
-		int cc = 3;
-		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-		    cc = getResources().getInteger(R.integer.column_count_port);
-		} else {
-		    cc = getResources().getInteger(R.integer.column_count_land);
-		}
-		mGridView.setNumColumns(cc);
+		ActionBar ab = getActionBar();
+		if (ab != null) {
+		    ab.setBackgroundDrawable(new ColorDrawable(0xFFEDEDED));
+
+            getActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
+
+        }
+
+//		int cc = 3;
+//		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+//		    cc = getResources().getInteger(R.integer.column_count_port);
+//		} else {
+//		    cc = getResources().getInteger(R.integer.column_count_land);
+//		}
+//		mGridView.setNumColumns(cc);
 		mGridView.setAdapter(mAdapter);
 		mGridView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long row) {
-			    if (getActionBar().getSelectedNavigationIndex() == TAB_SAMPLE) {
+
+			    if (tabBar.getSelectedItemId() == R.id.menu_sample) {
 			        startSample(row);
-			    } else if (getActionBar().getSelectedNavigationIndex() == TAB_LOCAL) {
+			    } else if (tabBar.getSelectedItemId() == R.id.menu_file) {
 			        localClicked((int)row);
-                } else if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
-                    if (!isProgressBarShowing()) {
-                        dropboxClicked((int)row);
-                    }
                 }
+//			    else if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
+//                    if (!isProgressBarShowing()) {
+//                        dropboxClicked((int)row);
+//                    }
+//                }
 			}
 		});
-		
-		final ActionBar actionBar = getActionBar();
-		actionBar.setDisplayShowTitleEnabled(false);
 
-	    if (mNavMode == NAV_MODE_LIST) {
-	        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-	        actionBar.setSelectedNavigationItem(mCurrentTab);
-    	    ArrayList<String> itemList = new ArrayList<String>();
-    	    itemList.add(getString(R.string.sample));
-    	    itemList.add(getString(R.string.local_storage));
-//    	    itemList.add(getString(R.string.dropbox));
-    	    ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
-    	    actionBar.setListNavigationCallbacks(listAdapter, this);
-	    } else if (mNavMode == NAV_MODE_TAB) {
-	        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-    	    actionBar.addTab(actionBar.newTab().setText(R.string.sample).setTabListener(this), true);
-    	    actionBar.addTab(actionBar.newTab().setText(R.string.local_storage).setTabListener(this));
-    	    actionBar.addTab(actionBar.newTab().setText(R.string.dropbox).setTabListener(this));
-	    }
-	    
+		tabBar = findViewById(R.id.bottom_navigation);
+        tabBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                showContent(item);
+                return true;
+            }
+        });
+
 	    // Drop box
 	    AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
 	    AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
@@ -264,23 +267,23 @@ OnNavigationListener {
         super.onBackPressed();
     }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-	    // Inflate the menu items for use in the action bar
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.action_menu, menu);
-	    for (int i = 0;i < menu.size();++i) {
-	        MenuItem item = menu.getItem(i);
-	        if (item.getItemId() == R.id.action_upgrade && mPreMan.isPro()) {
-	            item.setVisible(false);
-	        }
-	        if (item.getItemId() == R.id.action_refresh
-	        && getActionBar().getSelectedNavigationIndex() == TAB_SAMPLE) {
-	        	item.setVisible(false);
-	        }
-	    }
-	    return super.onCreateOptionsMenu(menu);
-	}
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//	    // Inflate the menu items for use in the action bar
+//	    MenuInflater inflater = getMenuInflater();
+//	    inflater.inflate(R.menu.action_menu, menu);
+//	    for (int i = 0;i < menu.size();++i) {
+//	        MenuItem item = menu.getItem(i);
+//	        if (item.getItemId() == R.id.action_upgrade && mPreMan.isPro()) {
+//	            item.setVisible(false);
+//	        }
+//	        if (item.getItemId() == R.id.action_refresh
+//	        && getActionBar().getSelectedNavigationIndex() == TAB_SAMPLE) {
+//	        	item.setVisible(false);
+//	        }
+//	    }
+//	    return super.onCreateOptionsMenu(menu);
+//	}
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -337,6 +340,15 @@ OnNavigationListener {
         mCurrentTab = itemPosition;
         invalidateOptionsMenu();
         return true;
+    }
+
+    private void showContent(MenuItem item) {
+        if (item.getItemId() == R.id.menu_sample) {
+            mAdapter.setSampleItems();
+            mAdapter.notifyDataSetChanged();
+        } else if (item.getItemId() == R.id.menu_file) {
+            startListFolder(LIST_FOLDER_LOCAL);
+        }
     }
     
     private void startListFolder() {
