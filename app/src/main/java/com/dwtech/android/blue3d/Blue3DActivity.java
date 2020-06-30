@@ -5,11 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.Manifest;
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
 import android.app.ActionBar.Tab;
@@ -17,6 +17,7 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -24,18 +25,17 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.vending.billing.IABService;
@@ -64,6 +64,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Blue3DActivity extends FragmentActivity implements ActionBar.TabListener,
 OnNavigationListener {
+
+    private static final int REQUEST_PERMISSION = 10000;
 
 	static {
 		IOUtils.loadLibrary("houyiiconv");
@@ -183,6 +185,10 @@ OnNavigationListener {
 	    AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
 	    AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
 	    mDBApi = new DropboxAPI<AndroidAuthSession>(session);
+
+        if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, REQUEST_PERMISSION);
+        }
 	}
 	
 	@Override
@@ -347,7 +353,11 @@ OnNavigationListener {
             mAdapter.setSampleItems();
             mAdapter.notifyDataSetChanged();
         } else if (item.getItemId() == R.id.menu_file) {
-            startListFolder(LIST_FOLDER_LOCAL);
+            if (PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                startListFolder(LIST_FOLDER_LOCAL);
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, REQUEST_PERMISSION);
+            }
         }
     }
     
