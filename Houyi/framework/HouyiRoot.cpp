@@ -21,6 +21,15 @@ set<string> log_set;
 
 namespace Houyi
 {
+    Root* Root::mIns = 0;
+    
+    Root* Root::getInstance() {
+        if (!mIns) {
+            mIns = HouyiNew Root();
+        }
+        return mIns;
+    }
+    
     Root::Root() :
         mAutoFinalize(false), mRenderer(0), mWorld(0),
         mElapsedTime(0), mFrameCount(0), mFPS(0), mPrintFPS(false), mRenderType(ERenderTypeNone)
@@ -57,6 +66,7 @@ namespace Houyi
         pthread_mutex_destroy(&mDeadObjectsMutex);
 
         mRunnigAnims.clear();
+        mIns = 0;
         LOGD("Root is destroyed\n");
     }
 

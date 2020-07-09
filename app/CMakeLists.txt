@@ -51,7 +51,7 @@ find_library( # Sets the name of the path variable.
 
 set(houyi_DIR "${CMAKE_SOURCE_DIR}/../Houyi/libs")
 add_library(houyi SHARED IMPORTED)
-set_target_properties(houyi PROPERTIES IMPORTED_LOCATION ${houyi_DIR}/armeabi-v7a/libhouyi.so)
+set_target_properties(houyi PROPERTIES IMPORTED_LOCATION ${houyi_DIR}/arm64-v8a/libhouyi.so)
 
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in the

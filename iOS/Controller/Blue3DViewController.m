@@ -650,8 +650,20 @@
             scene->resumeSkeleton();
             [self updatePlayIcon :scene];
         }
-
+        
         [self applySetting];
+        
+        if (self.skyboxImagePaths) {
+            string paths[6] = {
+                [self.skyboxImagePaths[0] UTF8String],
+                [self.skyboxImagePaths[1] UTF8String],
+                [self.skyboxImagePaths[2] UTF8String],
+                [self.skyboxImagePaths[3] UTF8String],
+                [self.skyboxImagePaths[4] UTF8String],
+                [self.skyboxImagePaths[5] UTF8String]
+            };
+            scene->addCubeEnvMap(paths);
+        }
         
         FileItem* item = [[DataManager getInstance] getFocusItem];
 //        if (item.dropBoxFile)

@@ -13,7 +13,7 @@ namespace Houyi
         virtual ~GLEnvPass();
 
     protected:
-        virtual void onRender(Scene* scene);
+        virtual void onRender(Renderer* renderer, Scene* scene);
 
     private:
     };

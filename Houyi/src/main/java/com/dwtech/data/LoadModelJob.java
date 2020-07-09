@@ -118,4 +118,8 @@ public class LoadModelJob implements Runnable {
     public HouyiLoader getLoader() {
         return mLoader;
     }
+
+    public Context getContext() {
+        return mContext;
+    }
 }

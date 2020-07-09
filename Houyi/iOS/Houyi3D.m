@@ -34,7 +34,7 @@
 
 - (HouyiRoot*)startEngine {
     HouyiRoot* r = [HouyiRoot new];
-    Root* root = HouyiNew Root();
+    Root* root = Root::getInstance();
     root->init();
     World* world = HouyiNew World();
     world->create(root);

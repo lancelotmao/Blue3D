@@ -289,10 +289,14 @@ namespace Houyi
     bool World::onSingleTapUp(const MotionEvent& e)
     {
         LOGD("World::onSingleTapUp\n");
-//        SceneNode* node = selectMesh(e.getX(), e.getY());
-//        if (node)
+//        RenderEntity entity = selectMesh(e.getX(), e.getY());
+//        if (entity != RenderEntity::NullEntity)
 //        {
-//            node->showAABB();
+//            if (entity.mNode) {
+//                entity.mNode->showAABB();
+//            } else {
+//                LOGE("EMPTY NODE!!!\n");
+//            }
 //        }
         return false;
     }
@@ -639,9 +643,10 @@ namespace Houyi
     {
         if (mFocusScene != scene)
         {
-            mRoot->getRenderer()->getShaderManager()->addDefaultShader(mRoot, scene);
+            mRenderer->getShaderManager()->addDefaultShader(mRoot, scene);
         }
         mFocusScene = scene;
+        scene->setWorld(this);
         sendCommand(10000);
     }
 }

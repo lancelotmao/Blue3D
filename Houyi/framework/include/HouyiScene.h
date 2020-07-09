@@ -21,6 +21,7 @@ namespace Houyi
 {
     class Loader;
     class World;
+    class CubeEnvMap;
     
     class ViewPort
     {
@@ -254,14 +255,12 @@ namespace Houyi
             mHasNegativeScale = has;
         }
         
-        inline void setCubeMapTexture(Texture* cubemapTexture)
-        {
-            mCubeMapTexture = cubemapTexture;
-        }
+        void addCubeEnvMap(const ImagePtr images[6]);
+        void addCubeEnvMap(const string imagePaths[6]);
         
-        inline Texture* getCubeMapTexture()
+        inline CubeEnvMap* getCubeEnvMap()
         {
-            return mCubeMapTexture;
+            return mCubeEnvMap;
         }
         
         inline void setUseFPCamera(bool flag)
@@ -320,7 +319,7 @@ namespace Houyi
         bool mZUp;
         SceneStats mStats;
         bool mHasNegativeScale;
-        Texture* mCubeMapTexture;
+        CubeEnvMap* mCubeEnvMap;
         bool mSkeletonPaused;
         SceneNode* mGrid;
         bool mUseFPCamera;

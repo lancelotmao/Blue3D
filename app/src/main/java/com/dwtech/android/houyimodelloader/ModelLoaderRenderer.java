@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.SurfaceTexture;
 import android.graphics.SurfaceTexture.OnFrameAvailableListener;
 import android.hardware.Camera;
@@ -475,6 +476,15 @@ public class ModelLoaderRenderer extends HouyiGLSurfaceRenderer implements
                         mPlayIconListener.updatePlayIcon();
                     }
                 }
+
+                Bitmap[] bitmaps = new Bitmap[6];
+                bitmaps[0] = HEngine.createBitmap(getContext(), "skyBox/right.png");
+                bitmaps[1] = HEngine.createBitmap(getContext(), "skyBox/left.png");
+                bitmaps[2] = HEngine.createBitmap(getContext(), "skyBox/top.png");
+                bitmaps[3] = HEngine.createBitmap(getContext(), "skyBox/bottom.png");
+                bitmaps[4] = HEngine.createBitmap(getContext(), "skyBox/front.png");
+                bitmaps[5] = HEngine.createBitmap(getContext(), "skyBox/back.png");
+                scene.addCubeEnvMap(bitmaps);
                 
                 if (DataManager.mItems.size() > 0) {
                     Item item = DataManager.mItems.get(index);

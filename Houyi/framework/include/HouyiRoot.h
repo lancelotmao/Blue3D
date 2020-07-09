@@ -40,8 +40,7 @@ namespace Houyi
             ERenderTypeDX
         };
 
-//        static Root* getInstance();
-        Root();
+        static Root* getInstance();
         ~Root();
 
         // set up basic stuff without valid window
@@ -127,10 +126,12 @@ namespace Houyi
         deque<PopupWorld*> mPopupWorlds;
 
     private:
+        Root();
         void onCommand();
         void onAnimation();
 
     private:
+        static Root* mIns;
         queue<int> mCommandQueue;
         pthread_mutex_t mCommandMutex;
         int mRenderType;

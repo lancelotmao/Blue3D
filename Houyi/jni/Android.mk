@@ -16,7 +16,7 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS:= 		-Werror -DANDROID -DDEBUG -DDEBUG_MEM -DANDROID_NDK -mfloat-abi=softfp -mfpu=neon -march=armv7-a -mtune=cortex-a8
+LOCAL_CFLAGS:= 		-Werror -DANDROID -DDEBUG -DDEBUG_MEM -DANDROID_NDK -mfloat-abi=softfp -mfpu=neon
 
 LOCAL_LINK_LIB_PATH:= 	$(LOCAL_PATH)/../libs
 

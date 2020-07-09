@@ -597,7 +597,7 @@
 		16FFE4281B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
 		16FFE4291B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
 		16FFE42B1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
-		16FFE42C1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
+		16FFE42C1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		16FFE42E1B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };
 		16FFE42F1B92D23300F8BE19 /* vertex.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.sdr; sourceTree = "<group>"; };
 		16FFE4311B92D23300F8BE19 /* fragment.sdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.sdr; sourceTree = "<group>"; };

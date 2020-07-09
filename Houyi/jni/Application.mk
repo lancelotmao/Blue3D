@@ -1,10 +1,10 @@
 APP_STL := c++_static
 APP_OPTIM := debug
 APP_PLATFORM := android-18
-APP_ABI := armeabi-v7a
+APP_ABI := arm64-v8a
 
 # Enable NEON
-TARGET_ARCH_ABI=armeabi-v7a
+TARGET_ARCH_ABI=arm64-v8a
 
 #NDK_TOOLCHAIN_VERSION := 4.9
 

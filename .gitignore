@@ -31,3 +31,5 @@ build
 app/release
 iOS/Blue3D.xcodeproj/xcuserdata
 iOS/Legacy/Houyi.framework
+Houyi/.externalNativeBuild
+Blue3D.xcodeproj/xcuserdata

@@ -1,14 +1,13 @@
 attribute vec3 aPosition;
 
-uniform mat4 matProjection;
-uniform mat4 matWorld;
-uniform mat4 matEye;
+uniform mat4 matEyeProjection;
+uniform mat3 matEyeNormal;
 uniform vec3 cam_pos;
 
 varying vec3 ReflectDir;
 
 void main() {
-    vec3 pos = aPosition.xyz + cam_pos.xyz;
+    vec3 pos = matEyeNormal * aPosition.xyz;
     ReflectDir = normalize(aPosition);
-    gl_Position = matProjection * matEye * matWorld * vec4(pos, 1.0);
+    gl_Position = matEyeProjection * vec4(pos, 1.0);
 }

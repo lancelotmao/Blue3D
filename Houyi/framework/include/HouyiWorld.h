@@ -79,6 +79,9 @@ namespace Houyi
         {
             mScenes.push_back(scene);
             scene->setWorld(this);
+            if (mScenes.size() == 1) {
+                setFocusScene(scene);
+            }
             postCreate();
         }
         

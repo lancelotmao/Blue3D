@@ -77,7 +77,7 @@ using namespace Houyi;
 
 - (void)onCreate
 {
-    mRoot = HouyiNew Root();
+    mRoot = Root::getInstance();
     mRoot->init();
     mRoot->onWindowCreated();
     

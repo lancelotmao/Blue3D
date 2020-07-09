@@ -13,9 +13,9 @@ LOCAL_AI_PATH:= $(LOCAL_PATH)/../ai
 LOCAL_GUI_PATH:= $(LOCAL_PATH)/../gui
 LOCAL_ASTRONOMY_PATH:= $(LOCAL_PATH)/../astronomy
 
-TARGET_ARCH_ABI=armeabi-v7a
+TARGET_ARCH_ABI=arm64-v8a
 LOCAL_ARM_NEON := true
-LOCAL_CFLAGS:= 		-Werror -DANDROID -DDEBUG -DDEBUG_MEM -DANDROID_NDK -mfloat-abi=softfp -mfpu=neon -march=armv7-a -mtune=cortex-a8
+LOCAL_CFLAGS:= 		-Werror -DANDROID -DDEBUG -DDEBUG_MEM -DANDROID_NDK -mfloat-abi=softfp -mfpu=neon
 
 LOCAL_C_INCLUDES:= 	$(LOCAL_PATH)
 LOCAL_C_INCLUDES+= 	$(LOCAL_PATH)/..	

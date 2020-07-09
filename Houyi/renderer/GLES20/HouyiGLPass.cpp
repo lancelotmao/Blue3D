@@ -141,7 +141,11 @@ namespace Houyi
         }
 
         int matTexCnt = material->getTextureCount();
-        if (matTexCnt > 0 && (shadingMode == Settings::ESM_Default || shadingMode == Settings::ESM_PPL || !material->isPassConfigurable()))
+        if (material->getCubeMapTexID() > 0)
+        {
+            glBindTexture(GL_TEXTURE_CUBE_MAP, material->getCubeMapTexID());
+        }
+        else if (matTexCnt > 0 && (shadingMode == Settings::ESM_Default || shadingMode == Settings::ESM_PPL || !material->isPassConfigurable()))
         {
             for (int i = 0;i < matTexCnt;++i)
             {
@@ -154,10 +158,6 @@ namespace Houyi
 #ifdef ANDROID
             glBindTexture(GL_TEXTURE_EXTERNAL_OES, material->getExternTexID());
 #endif
-        }
-        else if (material->getCubeMapTexID() > 0)
-        {
-            glBindTexture(GL_TEXTURE_CUBE_MAP, material->getCubeMapTexID());
         }
         else
         {
@@ -226,7 +226,7 @@ namespace Houyi
         Pass* res = NULL;
         if (shaderId == HSHADER_CUBEMAP)
         {
-//            res = HouyiNew GLEnvPass(vshaders[shaderId], pshaders[shaderId]);
+            res = HouyiNew GLEnvPass(vshaders[shaderId], pshaders[shaderId]);
         }
         else if (shaderId == HSHADER_SHADOW_CAST)
         {

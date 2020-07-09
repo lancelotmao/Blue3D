@@ -63,6 +63,7 @@
 }
 
 @property (readwrite, nonatomic) int mMode;
+@property (readwrite, nonatomic) NSArray* skyboxImagePaths;
 
 - (IBAction)showFourViewValueChange:(UISwitch*)sender;
 

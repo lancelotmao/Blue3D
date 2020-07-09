@@ -92,6 +92,7 @@
     dataMan.focus = row;
     NSString* xibName = @"HouyiView";
     Blue3DViewController* vc = [[Blue3DViewController alloc] initWithNibName:xibName bundle:[NSBundle mainBundle]];
+    vc.skyboxImagePaths = [self getSkyboxImagePaths];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -115,8 +116,21 @@
         
         NSString* xibName = @"HouyiView";
         Blue3DViewController* vc = [[Blue3DViewController alloc] initWithNibName:xibName bundle:[NSBundle mainBundle]];
+        vc.skyboxImagePaths = [self getSkyboxImagePaths];
         vc.mMode = EVMSingle;
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+- (NSArray*)getSkyboxImagePaths {
+    NSString *folder = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"skyBox"];
+    NSMutableArray* res = [NSMutableArray new];
+    res[0] = [folder stringByAppendingPathComponent:@"right.png"];
+    res[1] = [folder stringByAppendingPathComponent:@"left.png"];
+    res[2] = [folder stringByAppendingPathComponent:@"top.png"];
+    res[3] = [folder stringByAppendingPathComponent:@"bottom.png"];
+    res[4] = [folder stringByAppendingPathComponent:@"front.png"];
+    res[5] = [folder stringByAppendingPathComponent:@"back.png"];
+    return res;
 }
 @end

@@ -3,16 +3,22 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+//        externalNativeBuild {
+//            cmake {
+//                cppFlags "-fexceptions", "-fno-rtti"
+//            }
+//        }
+//        ndk {
+//            // Specifies the ABI configurations of your native
+//            // libraries Gradle should build and package with your APK.
+//            abiFilters 'armeabi-v7a'
+//        }
     }
 
     buildTypes {
@@ -21,6 +27,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
 
 }
 

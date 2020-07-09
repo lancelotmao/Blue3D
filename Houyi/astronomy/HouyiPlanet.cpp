@@ -17,7 +17,7 @@ namespace Houyi
             mAngularSpeed(0), mAngularSpeedSim(0), mSize(1), mSizeSim(1), mRing(0)
     {
         mName = name;
-        Root* root = HouyiNew Root(); // TODO
+        Root* root = Root::getInstance();
         World* world = root->getWorld();
         Scene* scene = world->getFocusScene();
         

@@ -58,8 +58,7 @@ extern "C" {
     JNI_METHOD(HouyiWorld, void, nativeSetCurrentCamera)(JNIEnv * env, jobject obj, jlong camera);
     JNI_METHOD(HouyiWorld, void, addSceneNode)(JNIEnv * env, jobject obj, jlong node);
     JNI_METHOD(HouyiWorld, void, update)(JNIEnv * env, jobject obj);
-    JNI_METHOD(HouyiWorld, void, setCubeMapTexture)(JNIEnv * env, jobject obj, jlong cubeMapTexture);
-    JNI_METHOD(HouyiWorld, jlong, selectMesh)(JNIEnv * env, jobject obj, jfloat x, jfloat y, jfloat w, jfloat h);
+    JNI_METHOD(HouyiWorld, jlong, selectMesh)(JNIEnv * env, jobject obj, jfloat x, jfloat y);
     JNI_METHOD(HouyiWorld, jlong, nativeAddAxis)(JNIEnv * env, jobject obj);
     JNI_METHOD(HouyiWorld, jlong, nativeAddCameraPlane)(JNIEnv * env, jobject obj, jint tid);
     JNI_METHOD(HouyiWorld, void, nativePrepare)(JNIEnv * env, jobject obj);
@@ -171,6 +170,7 @@ extern "C" {
     JNI_METHOD(HouyiScene, jboolean, nativeIsSkeletonPaused)(JNIEnv * env, jobject obj);
     JNI_METHOD(HouyiScene, void, nativePauseSkeleton)(JNIEnv * env, jobject obj);
     JNI_METHOD(HouyiScene, void, nativeResumeSkeleton)(JNIEnv * env, jobject obj);
+    JNI_METHOD(HouyiScene, void, nativeAddCubeEnvMap)(JNIEnv * env, jobject obj, jobject b0, jobject b1, jobject b2, jobject b3, jobject b4, jobject b5);
 
 	// SceneManager
 	JNI_METHOD(HouyiSceneManager, void, nativeAddScene)(JNIEnv * env, jobject obj, jlong world);
@@ -225,7 +225,7 @@ JNI_METHOD(HEngine, jlong, ignite)(JNIEnv * env, jobject obj, jobject assetManag
 
 	if (!mRoot)
 	{
-		mRoot = HouyiNew Root();
+		mRoot = Root::getInstance();
 		mRoot->init();
 	}
 	return (jlong)mRoot;
@@ -707,15 +707,6 @@ JNI_METHOD(HouyiWorld, void, update)(JNIEnv * env, jobject obj)
 	{
 		pWorld->update();
 	}
-}
-
-JNI_METHOD(HouyiWorld, void, setCubeMapTexture)(JNIEnv * env, jobject obj, jlong cubeMapTexture)
-{
-    World* pWorld = (World *)GetHouyiObject(env, obj);
-    if (pWorld)
-    {
-        pWorld->getFocusScene()->setCubeMapTexture((GLESCubeMapTexture*)cubeMapTexture);
-    }
 }
 
 JNI_METHOD(HouyiWorld, jlong, selectMesh)(JNIEnv * env, jobject obj, jfloat x, jfloat y)
@@ -1503,6 +1494,22 @@ JNI_METHOD(HouyiScene, void, nativeResumeSkeleton)(JNIEnv * env, jobject obj)
     if (pScene)
     {
         return pScene->resumeSkeleton();
+    }
+}
+
+JNI_METHOD(HouyiScene, void, nativeAddCubeEnvMap)(JNIEnv * env, jobject obj, jobject b0, jobject b1, jobject b2, jobject b3, jobject b4, jobject b5)
+{
+    Scene* pScene = (Scene*)GetHouyiObject(env, obj);
+    if (pScene)
+    {
+		ImagePtr images[6];
+		images[0] = ImageFactory::createImage(b0);
+		images[1] = ImageFactory::createImage(b1);
+		images[2] = ImageFactory::createImage(b2);
+		images[3] = ImageFactory::createImage(b3);
+		images[4] = ImageFactory::createImage(b4);
+		images[5] = ImageFactory::createImage(b5);
+        pScene->addCubeEnvMap(images);
     }
 }
 

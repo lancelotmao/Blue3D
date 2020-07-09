@@ -18,11 +18,12 @@
 #include "HouyiGrid.h"
 #include "HouyiFPCamera.h"
 #include "HouyiWorld.h"
+#include "HouyiCubeEnvMap.h"
 
 namespace Houyi
 {
     Scene::Scene() : mWorld(0), mOwnsData(true), mRootSceneNode(0),mCurrentCamera(0),
-    mZUp(false), mHasNegativeScale(false), mCubeMapTexture(0), mSkeletonPaused(false),
+    mZUp(false), mHasNegativeScale(false), mCubeEnvMap(0), mSkeletonPaused(false),
     mGrid(0), mUseFPCamera(false)
     {
         mMaterialMan = HouyiNew MaterialManager();
@@ -412,6 +413,27 @@ namespace Houyi
         {
             addAABBToRenderable((SceneNode*)(node->getChildAt(i)));
         }
+    }
+    
+    void Scene::addCubeEnvMap(const ImagePtr images[6]) {
+        CubeEnvMap* map = HouyiNew CubeEnvMap(this, images);
+        addSceneNode(map);
+        addRenderable(map);
+        mCubeEnvMap = map;
+    }
+    
+    void Scene::addCubeEnvMap(const string imagePaths[6])
+    {
+        CubeEnvMap* map = HouyiNew CubeEnvMap(this,
+                                              imagePaths[0],
+                                              imagePaths[1],
+                                              imagePaths[2],
+                                              imagePaths[3],
+                                              imagePaths[4],
+                                              imagePaths[5]);
+        addSceneNode(map);
+        addRenderable(map);
+        mCubeEnvMap = map;
     }
 
     void Scene::deleteSceneNode(Node* node)

@@ -69,7 +69,6 @@ public class HouyiWorld extends HouyiObject {
     private native void nativeSetCurrentCamera(long camera);
     private native void addSceneNode(long node);
     public native void update();
-    public native void setCubeMapTexture(long instance);
     public native long selectMesh(float x, float y);
     public native void onTouch(float x, float y, int t);
     private native long nativeAddAxis();

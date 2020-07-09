@@ -54,6 +54,7 @@
 		7E7C501821A7EBB3008EB885 /* Houyi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7C4FC821A7AE65008EB885 /* Houyi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E7C501A21A7F2EF008EB885 /* ic_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C501921A7F2EF008EB885 /* ic_camera.png */; };
 		7E7C501C21A7FBD3008EB885 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C501B21A7FBD3008EB885 /* SingleImageViewController.xib */; };
+		7EC08B5824B5CE8100C74BEE /* skyBox in Resources */ = {isa = PBXBuildFile; fileRef = 7EC08B5724B5CE8100C74BEE /* skyBox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -136,6 +137,7 @@
 		7E7C501921A7F2EF008EB885 /* ic_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_camera.png; path = "../../app/src/main/res/drawable-xhdpi/ic_camera.png"; sourceTree = "<group>"; };
 		7E7C501B21A7FBD3008EB885 /* SingleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImageViewController.xib; sourceTree = "<group>"; };
 		7E7C501D21A8E282008EB885 /* Blue3D.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blue3D.entitlements; sourceTree = "<group>"; };
+		7EC08B5724B5CE8100C74BEE /* skyBox */ = {isa = PBXFileReference; lastKnownFileType = folder; name = skyBox; path = ../app/src/main/assets/skyBox; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				7E7C4FB521A7AA1A008EB885 /* Controller */,
 				7E7C4FB221A7A71D008EB885 /* View */,
 				7E27718021A799F500B25BB3 /* Model */,
+				7EC08B5724B5CE8100C74BEE /* skyBox */,
 				7E27717E21A7997200B25BB3 /* samples */,
 				7E27717221A792B200B25BB3 /* images */,
 				7E27716321A7885E00B25BB3 /* Assets.xcassets */,
@@ -385,6 +388,7 @@
 				7E7C500121A7D01A008EB885 /* play.png in Resources */,
 				7E7C501C21A7FBD3008EB885 /* SingleImageViewController.xib in Resources */,
 				7E7C500221A7D01A008EB885 /* frame.png in Resources */,
+				7EC08B5824B5CE8100C74BEE /* skyBox in Resources */,
 				7E7C500021A7D01A008EB885 /* pause.png in Resources */,
 				7E27716521A7885E00B25BB3 /* LaunchScreen.storyboard in Resources */,
 				7E27717921A7933B00B25BB3 /* icloud@3x.png in Resources */,

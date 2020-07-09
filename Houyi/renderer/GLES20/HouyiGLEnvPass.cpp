@@ -1574,10 +1574,9 @@ namespace Houyi
 
     }
 
-    void GLEnvPass::onRender(Scene* scene)
+    void GLEnvPass::onRender(Renderer* renderer, Scene* scene)
     {
-//        Root* root = Root::getInstance();
-//        Renderer* renderer = root->getRenderer();
+//        Root* root = scene->getWorld()->getRoot();
 //        float width = renderer->getWidth();
 //        float height = renderer->getHeight();
 //
@@ -1625,12 +1624,12 @@ namespace Houyi
 //
 //        GLuint vPositionHandle = glGetAttribLocation(mProgram, "aPosition");
 //        // bind position with our hardcoded sphere
-//        glVertexAttribPointer(vPositionHandle, 3, GL_FLOAT, 0, 0, vSphere);
-//        glEnableVertexAttribArray(vPositionHandle);
+////        glVertexAttribPointer(vPositionHandle, 3, GL_FLOAT, 0, 0, vSphere);
+////        glEnableVertexAttribArray(vPositionHandle);
 //        CHECK_GL_ERROR("position handle error");
 //
 //        // draw our env sphere
-//        glDrawElements(GL_TRIANGLES, sizeof(iSphere)/sizeof(GLushort), GL_UNSIGNED_SHORT, iSphere);
+////        glDrawElements(GL_TRIANGLES, sizeof(iSphere)/sizeof(GLushort), GL_UNSIGNED_SHORT, iSphere);
 //
 //        // we don't want later pass to clear our hard work
 ////        rs.clearMaskBit(GL_COLOR_BUFFER_BIT);

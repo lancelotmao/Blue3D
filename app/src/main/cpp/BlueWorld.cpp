@@ -14,14 +14,14 @@ void BlueWorld::onCreate()
 {
     if (mViewMode == 0) // normal
     {
-        mAdapter = HouyiNew BlueAdapter();
-        mFilmstrip = HouyiNew ListView(ListView::EHorizontal);
-        mFilmstrip->setItemClickListener(mAdapter);
-        mFilmstrip->setAdapter(mAdapter);
-        mAdapter->setFocusIndex(mAdapter->getFocus());
-//        mFilmstrip->requestCenterFocus();
-        mFilmstrip->setGravity(View::EHAlignCenter, View::EVAlignTop);
-        addView(mFilmstrip);
+//        mAdapter = HouyiNew BlueAdapter();
+//        mFilmstrip = HouyiNew ListView(ListView::EHorizontal);
+//        mFilmstrip->setItemClickListener(mAdapter);
+//        mFilmstrip->setAdapter(mAdapter);
+//        mAdapter->setFocusIndex(mAdapter->getFocus());
+////        mFilmstrip->requestCenterFocus();
+//        mFilmstrip->setGravity(View::EHAlignCenter, View::EVAlignTop);
+//        addView(mFilmstrip);
     }
     else
     {
