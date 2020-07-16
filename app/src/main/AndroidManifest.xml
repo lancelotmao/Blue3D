@@ -1,18 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dwtech.android.blue3d"
-    android:versionCode="5"
-    android:versionName="1.4" >
-
-    <uses-sdk android:targetSdkVersion="18" />
+    package="com.dwtech.android.blue3d" >
 
     <uses-feature android:glEsVersion="0x00020000" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:name=".Blue3DApp"

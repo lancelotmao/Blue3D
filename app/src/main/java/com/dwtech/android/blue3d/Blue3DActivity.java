@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -254,7 +256,7 @@ OnNavigationListener {
 
     @Override
     public void onBackPressed() {
-        if (getActionBar().getSelectedNavigationIndex() == TAB_LOCAL) {
+        if (tabBar.getSelectedItemId() == R.id.menu_file) {
         	Log.d("Houyi", "mCD = " + mCD);
             if (!mCD.equals(Environment.getExternalStorageDirectory())) {
                 mCD = mCD.getParentFile();

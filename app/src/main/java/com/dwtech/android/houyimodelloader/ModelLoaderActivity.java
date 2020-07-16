@@ -123,7 +123,7 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
 			        mRenderer.unlockRenderThread();
 			    }
 			}
-        });
+         });
         
         applySetting();
         mRenderer.requireScreenCapture(this);
@@ -235,7 +235,7 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setContentView(R.layout.dialog_show_hide);
         
-        CheckBox cb = (CheckBox) dialog.findViewById(R.id.cb_stats);
+        CheckBox cb = dialog.findViewById(R.id.cb_stats);
         cb.setChecked(mPreMan.getShowStats());
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -250,7 +250,7 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
             }
         });
         
-        cb = (CheckBox) dialog.findViewById(R.id.cb_grid);
+        cb = dialog.findViewById(R.id.cb_grid);
         cb.setChecked(mPreMan.getShowGrid());
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -261,7 +261,7 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
             }
         });
         
-        cb = (CheckBox) dialog.findViewById(R.id.cb_axis);
+        cb = dialog.findViewById(R.id.cb_axis);
         cb.setChecked(mPreMan.getShowAxis());
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -272,7 +272,7 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
             }
         });
         
-        cb = (CheckBox) dialog.findViewById(R.id.cb_aabb);
+        cb = dialog.findViewById(R.id.cb_aabb);
         cb.setChecked(mPreMan.getShowAABB());
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -280,6 +280,17 @@ public class ModelLoaderActivity extends HouyiTestActivity implements OnLoadingL
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mPreMan.setShowAABB(isChecked);
                 mRenderer.showAABB(isChecked);
+            }
+        });
+
+        cb = dialog.findViewById(R.id.cb_skybox);
+        cb.setChecked(mPreMan.getShowSkyBox());
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mPreMan.setShowSkyBox(isChecked);
+                mRenderer.showSkyBox(isChecked);
             }
         });
         

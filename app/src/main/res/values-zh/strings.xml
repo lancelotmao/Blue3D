@@ -21,7 +21,8 @@
 	<string name="show_hide_stats">显示FPS和统计</string>
 	<string name="show_hide_grid">显示参考网格</string>
 	<string name="show_hide_axis">显示坐标系</string>
-	
+	<string name="show_sky_box">显示环境</string>
+
 	<string name="model_viewer">模型查看器</string>
 	<string name="share">分享</string>
 </resources>

@@ -11,6 +11,7 @@ public class PreferenceManager {
     private static final String SP_KEY_SHOW_GRID = "showGrid";
     private static final String SP_KEY_SHOW_AXIS = "showAxis";
     private static final String SP_KEY_SHOW_AABB = "showAABB";
+    private static final String SP_KEY_SHOW_SKY_BOX = "showSkyBox";
     
     private static final String SP_KEY_ROTATE_X = "rotateX";
     private static final String SP_KEY_ROTATE_Y = "rotateY";
@@ -25,6 +26,7 @@ public class PreferenceManager {
     private boolean mShowGrid;
     private boolean mShowAxis;
     private boolean mShowAABB;
+    private boolean mShowSkyBox;
     
     private boolean mRotateX;
     private boolean mRotateY;
@@ -50,6 +52,7 @@ public class PreferenceManager {
         mShowGrid = settings.getBoolean(SP_KEY_SHOW_GRID, false);
         mShowAxis = settings.getBoolean(SP_KEY_SHOW_AXIS, false);
         mShowAABB = settings.getBoolean(SP_KEY_SHOW_AABB, false);
+        mShowSkyBox = settings.getBoolean(SP_KEY_SHOW_SKY_BOX, false);
         mRotateX = settings.getBoolean(SP_KEY_ROTATE_X, true);
         mRotateY = settings.getBoolean(SP_KEY_ROTATE_Y, true);
 //        mShadingMode = settings.getInt(SP_KEY_SHADING_MODE, 0);
@@ -114,6 +117,16 @@ public class PreferenceManager {
         mShowAABB = show;
         SharedPreferences settings = mContext.getSharedPreferences(SP_NAME, 0);
         settings.edit().putBoolean(SP_KEY_SHOW_AABB, show).commit();
+    }
+
+    public boolean getShowSkyBox() {
+        return mShowSkyBox;
+    }
+
+    public void setShowSkyBox(boolean show) {
+        mShowSkyBox = show;
+        SharedPreferences settings = mContext.getSharedPreferences(SP_NAME, 0);
+        settings.edit().putBoolean(SP_KEY_SHOW_SKY_BOX, show).commit();
     }
     
     public boolean getRotateX() {

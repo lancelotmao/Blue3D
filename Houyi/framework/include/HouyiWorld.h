@@ -63,6 +63,18 @@ namespace Houyi
         virtual void showAABB();
         virtual void hideAABB();
 
+        inline void showSkyBox() {
+            mShowSkyBox = true;
+        }
+
+        inline void hideSkyBox() {
+            mShowSkyBox = false;
+        }
+
+        inline bool isShowSkyBox() {
+            return mShowSkyBox;
+        }
+
         Map* getMap();
         void setMap(Map* map);
 
@@ -171,6 +183,8 @@ namespace Houyi
         SceneNodeAnimation mAnimRestoreAxis;
 
         Map* mMap;
+
+        bool mShowSkyBox;
     };
 }
 

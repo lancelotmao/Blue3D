@@ -28,4 +28,10 @@
         android:layout_height="wrap_content"
         android:text="@string/show_hide_aabb" />
 
+    <CheckBox
+        android:id="@+id/cb_skybox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_sky_box" />
+
 </LinearLayout>

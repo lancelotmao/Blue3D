@@ -265,6 +265,14 @@ public class ModelLoaderRenderer extends HouyiGLSurfaceRenderer implements
         }
         unlockRenderThread();
     }
+
+    public void showSkyBox(boolean show) {
+        lockRenderThread();
+        if (mWorld != null && !mIsCanceled) {
+            mWorld.showSkyBox(show);
+        }
+        unlockRenderThread();
+    }
 	
 	public void setCameraConstraints(boolean x, boolean y) {
 	    int res = 0;
@@ -469,6 +477,7 @@ public class ModelLoaderRenderer extends HouyiGLSurfaceRenderer implements
                 showGrid(PreferenceManager.getInstance(mContext).getShowGrid());
                 showAxis(PreferenceManager.getInstance(mContext).getShowAxis());
                 mWorld.showAABB(PreferenceManager.getInstance(mContext).getShowAABB());
+                mWorld.showSkyBox(PreferenceManager.getInstance(mContext).getShowSkyBox());
                 HouyiSetting.setShadingMode(PreferenceManager.getInstance(mContext).getShadingMode());
                 if (scene.getSkeletonCount() > 0) {
                     scene.resumeSkeleton();

@@ -26,7 +26,7 @@
 namespace Houyi
 {
     World::World(const string name) : mTick(0), mRenderer(0), mFocusScene(0),
-    mGestureDetector(this), mAxis(0), mCameraNode(0), mMap(0), mRootViewNode(0)
+    mGestureDetector(this), mAxis(0), mCameraNode(0), mMap(0), mRootViewNode(0), mShowSkyBox(false)
     {
         Camera* camera = HouyiNew Camera();
         mDefaulScene = HouyiNew Scene();

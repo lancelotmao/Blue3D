@@ -39,6 +39,10 @@ public class HouyiWorld extends HouyiObject {
     public void showAABB(boolean show) {
         nativeShowAABB(show);
     }
+
+    public void showSkyBox(boolean show) {
+        nativeShowSkyBox(show);
+    }
     
     public void addScene(HouyiScene scene) {
         nativeAddScene(scene);
@@ -75,6 +79,7 @@ public class HouyiWorld extends HouyiObject {
     private native long nativeAddCameraPlane(int tid);
     private native void nativePrepare();
     private native void nativeShowAABB(boolean show);
+    private native void nativeShowSkyBox(boolean show);
     private native void nativeAddScene(HouyiScene scene);
     private native long nativeGetFocusScene();
     private native void nativeSetFocusScene(HouyiScene scene);

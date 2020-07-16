@@ -63,6 +63,7 @@ extern "C" {
     JNI_METHOD(HouyiWorld, jlong, nativeAddCameraPlane)(JNIEnv * env, jobject obj, jint tid);
     JNI_METHOD(HouyiWorld, void, nativePrepare)(JNIEnv * env, jobject obj);
     JNI_METHOD(HouyiWorld, void, nativeShowAABB)(JNIEnv * env, jobject obj, jboolean show);
+    JNI_METHOD(HouyiWorld, void, nativeShowSkyBox)(JNIEnv * env, jobject obj, jboolean show);
     JNI_METHOD(HouyiWorld, void, nativeAddScene)(JNIEnv * env, jobject obj, jobject scene);
     JNI_METHOD(HouyiWorld, jlong, nativeGetFocusScene)(JNIEnv * env, jobject obj);
     JNI_METHOD(HouyiWorld, void, nativeSetFocusScene)(JNIEnv * env, jobject obj, jobject scene);
@@ -764,6 +765,22 @@ JNI_METHOD(HouyiWorld, void, nativeShowAABB)(JNIEnv * env, jobject obj, jboolean
         else
         {
             pWorld->hideAABB();
+        }
+    }
+}
+
+JNI_METHOD(HouyiWorld, void, nativeShowSkyBox)(JNIEnv * env, jobject obj, jboolean show)
+{
+    World* pWorld = (World*)GetHouyiObject(env, obj);
+    if (pWorld)
+    {
+        if (show)
+        {
+            pWorld->showSkyBox();
+        }
+        else
+        {
+            pWorld->hideSkyBox();
         }
     }
 }

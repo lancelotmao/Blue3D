@@ -36,6 +36,7 @@ namespace Houyi
         mat->setPass(Root::getInstance()->getRenderer()->loadShader(HSHADER_CUBEMAP));
         mat->getRenderState().disableLighting();
         mat->getRenderState().disableDepthTest();
+        mat->setPassConfigurable(false);
         addMaterial(mat);
         setZOrder(-1000);
     }
@@ -49,16 +50,21 @@ namespace Houyi
 
     void CubeEnvMap::onRenderBegin(Pass* pass) {
         Scene* scene = getScene();
-        Camera* worldCamera = scene->getWorld()->getCurrentCamera();
-        if (!worldCamera) {
-            return;
-        }
-        
+
         if (!mCubeTexture) {
             mCubeTexture = scene->getTextureManager()->createCubeMapTexture(imgs);
             scene->getTextureManager()->upload(scene->getWorld()->getRoot());
             Material* mat = getMaterial(0);
             mat->setCubeMapTexID(mCubeTexture->getTextureId());
+        }
+
+        if (!scene->getWorld()->isShowSkyBox()) {
+            pass->uploadMatrix4("matEyeProjection", Matrix4::IDENTITY, true);
+            return;
+        }
+        Camera* worldCamera = scene->getWorld()->getCurrentCamera();
+        if (!worldCamera) {
+            return;
         }
         
         Camera cam;

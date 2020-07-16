@@ -24,6 +24,7 @@
 	<string name="show_hide_grid">Show Reference Grid</string>
 	<string name="show_hide_axis">Show Axis x:Red; y:Green; z:Blue</string>
 	<string name="show_hide_aabb">Show Axis Aligned Bounding Box</string>
+	<string name="show_sky_box">Show Sky Box</string>
 	<string name="control_camera">Enable Camera Rotation on</string>
 	<string name="sm_ppl">Per Pixel Lighting</string>
 	<string name="sm_default">Default</string>
