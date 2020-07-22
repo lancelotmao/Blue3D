@@ -121,8 +121,6 @@ OnNavigationListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		createFolder(Environment.getExternalStorageDirectory() + BLUE_DIR);
-		
 		// load preference first which might contains drop box token already
 		mPreMan = PreferenceManager.getInstance(this);
 		mPreMan.load();
@@ -184,12 +182,14 @@ OnNavigationListener {
         });
 
 	    // Drop box
-	    AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
-	    AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
-	    mDBApi = new DropboxAPI<AndroidAuthSession>(session);
+//	    AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
+//	    AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
+//	    mDBApi = new DropboxAPI<AndroidAuthSession>(session);
 
         if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, REQUEST_PERMISSION);
+        } else {
+            createFolder(Environment.getExternalStorageDirectory() + BLUE_DIR);
         }
 	}
 	
@@ -219,24 +219,24 @@ OnNavigationListener {
 
 	    initAdmobView();
 	    
-	    if (mDBApi.getSession().authenticationSuccessful()) {
-	        try {
-	            // Required to complete auth, sets the access token on the session
-	            mDBApi.getSession().finishAuthentication();
-
-	            String accessToken = mDBApi.getSession().getOAuth2AccessToken();
-	            PreferenceManager.getInstance(this).saveDBAccessToken(accessToken);
-	            
-	            if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
-		            Log.i("Houyi", "DropBox logged in. accessToken = " + accessToken);
-		            if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
-		                startListFolder(LIST_FOLDER_DB);
-		            }
-	            }
-	        } catch (IllegalStateException e) {
-	            Log.i("Houyi", "Error authenticating drop box", e);
-	        }
-	    }
+//	    if (mDBApi.getSession().authenticationSuccessful()) {
+//	        try {
+//	            // Required to complete auth, sets the access token on the session
+//	            mDBApi.getSession().finishAuthentication();
+//
+//	            String accessToken = mDBApi.getSession().getOAuth2AccessToken();
+//	            PreferenceManager.getInstance(this).saveDBAccessToken(accessToken);
+//
+//	            if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
+//		            Log.i("Houyi", "DropBox logged in. accessToken = " + accessToken);
+//		            if (getActionBar().getSelectedNavigationIndex() == TAB_DROPBOX) {
+//		                startListFolder(LIST_FOLDER_DB);
+//		            }
+//	            }
+//	        } catch (IllegalStateException e) {
+//	            Log.i("Houyi", "Error authenticating drop box", e);
+//	        }
+//	    }
 	    
 	    mAdapter.notifyDataSetChanged();
 	}
